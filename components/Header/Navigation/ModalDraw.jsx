@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import {
   Drawer,
   Button,
@@ -7,35 +7,43 @@ import {
 } from "@material-tailwind/react";
 import { Heart, List, Search, ShoppingCart, X } from "lucide-react";
 import FunctionNavigation from "./FunctionNavigation";
+import classNames from "classnames";
 
 const ModalDraw = () => {
-  const listNavi = [
-    { name: "Home", href: "home" },
-    { name: "Contact", href: "contact" },
-    { name: "About", href: "about" },
-    { name: "Sign up", href: "signup" },
-  ];
+  const listNavi = useMemo(
+    () => [
+      { name: "Home", href: "home" },
+      { name: "Contact", href: "contact" },
+      { name: "About", href: "about" },
+      { name: "Sign up", href: "signup" },
+    ],
+    []
+  );
+
   const [open, setOpen] = useState(false);
 
   const openDrawer = () => {
     setOpen(true);
   };
-  const closeDrawer = () => setOpen(false);
+
+  const closeDrawer = () => {
+    setOpen(false);
+  };
 
   return (
-    <React.Fragment>
+    <>
       <Button
         onClick={openDrawer}
-        className={`text-red-300 ${open && " hidden"}`}
+        className={classNames("text-red-300", { hidden: open })}
       >
         <List size={24} color="gray" />
       </Button>
       <Drawer
-        children
         open={open}
         onClose={closeDrawer}
-        hidden={false}
-        className={`${!open && " hidden"} z-50 bg-white text-black w-full `}
+        className={classNames("z-50 bg-white text-black w-full", {
+          hidden: !open,
+        })}
       >
         <div className="absolute right-2 bg-white rounded border-2 border-slate-300 w-[350px] ">
           <div className="mb-6 flex items-center justify-between ">
@@ -95,7 +103,7 @@ const ModalDraw = () => {
           </div>
         </div>
       </Drawer>
-    </React.Fragment>
+    </>
   );
 };
 
