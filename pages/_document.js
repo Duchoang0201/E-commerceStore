@@ -9,13 +9,11 @@ export default function Document() {
       <Head />
       <body>
         {" "}
-        <div
+        {/* <div
           className={`flex flex-col h-screen justify-between max-w-screen-xxl mx-auto `}
-        >
-          <Header />
-          <Main />
-          <Footer />
-        </div>
+        > */}
+        <Main />
+        {/* </div> */}
         <NextScript />
       </body>
     </Html>

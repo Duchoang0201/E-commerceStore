@@ -1,6 +1,8 @@
+"use client";
 import React, { useState } from "react";
 import FunctionNavigation from "./FunctionNavigation";
 import { List } from "lucide-react";
+import ModalDraw from "./ModalDraw";
 
 const Navigation = () => {
   const [openList, setOpenList] = useState(true);
@@ -11,30 +13,17 @@ const Navigation = () => {
     { name: "Sign up", href: "signup" },
   ];
   return (
-    <nav className="bg-white pt-7">
-      <div className="flex flex-row items-center h-12">
-        <div className="ssm:w-[0px] md:w-[445px]  hidden xl:block">
-          <a href="https://flowbite.com/" className="w-full ssm:w-[0px]  px-5">
+    <div className="bg-white pt-7 max-w-screen-xxl mx-auto">
+      <div className="lg:flex lg:flex-row lg:items-center lg:justify-normal h-12 flex flex-row justify-between  ">
+        <div className=" md:w-[445px]   xl:block">
+          <a href="https://flowbite.com/" className="w-full  px-5">
             <span className="self-center text-2xl font-bold  text-black ">
               Exclusive
             </span>
           </a>
         </div>
 
-        <div className="flex md:order-2">
-          <button
-            data-collapse-toggle="navbar-search"
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          >
-            <List
-              onClick={() => {
-                setOpenList(!openList);
-              }}
-            />
-          </button>
-        </div>
-        <div className="flex flex-row items-center justify-between w-full ssm:w-full xl:w-[859px]  ">
+        <div className=" flex-row items-center justify-between w-full ssm:w-full xl:w-[859px] hidden lg:flex  ">
           <div className="flex flex-row flex-wrap items-center text-sm font-normal not-italic w-full ssm:w-[0px]">
             <div className="w-[474px]">
               <div
@@ -61,12 +50,15 @@ const Navigation = () => {
               </div>
             </div>
           </div>
-          <div className="text-black">
+          <div className="text-black hidden lg:flex ">
             <FunctionNavigation />
           </div>
         </div>
+        <div className="lg:hidden flex flex-row">
+          <ModalDraw />
+        </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

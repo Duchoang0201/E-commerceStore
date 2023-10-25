@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import "@/styles/globals.css";
 import { Poppins } from "next/font/google";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -16,10 +18,10 @@ export default function App({ Component, pageProps }) {
           font-family: ${poppins.style.fontFamily};
         }
       `}</style>
-      <div
-        className={`flex flex-col h-screen justify-between max-w-screen-xxl mx-auto `}
-      >
+      <div>
+        <Header />
         <Component {...pageProps} />
+        {/* <Footer /> */}
       </div>
     </>
   );

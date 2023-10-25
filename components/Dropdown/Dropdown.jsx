@@ -19,11 +19,7 @@ const Dropdown = ({ data }) => {
         className="text-white  text-sm  py-2.5 text-center inline-flex items-center"
       >
         <span className="w-20">{picked}</span>{" "}
-        {open ? (
-          <ChevronUp width={"24px"} height={"24px"} />
-        ) : (
-          <ChevronDown width={"24px"} height={"24px"} />
-        )}
+        {open ? <ChevronUp size="24" /> : <ChevronDown size="24" />}
       </button>
       {open && (
         <div

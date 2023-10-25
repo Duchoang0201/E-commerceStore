@@ -3,7 +3,7 @@ import React from "react";
 
 const FunctionNavigation = () => {
   return (
-    <div className="flex flex-row items-center gap-4">
+    <div className="flex flex-row items-center gap-4 w-full">
       <form>
         <label
           htmlFor="default-search"
@@ -32,10 +32,9 @@ const FunctionNavigation = () => {
         onClick={() => {
           console.log(`🎶🎶🎶.. 123`);
         }}
-        height={"32px"}
-        width={"32px"}
+        size={32}
       />
-      <ShoppingCart height={"32px"} width={"32px"} />
+      <ShoppingCart size={32} />
     </div>
   );
 };

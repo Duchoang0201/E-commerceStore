@@ -6,10 +6,14 @@ import Navigation from "./Navigation/Navigation";
 
 const Header = () => {
   return (
-    <div className="">
-      <Language />
-      <Navigation />
-    </div>
+    <>
+      <div className="bg-black">
+        <Language />
+      </div>
+      <div className="">
+        <Navigation />
+      </div>
+    </>
   );
 };
 

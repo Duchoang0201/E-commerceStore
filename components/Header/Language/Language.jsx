@@ -3,20 +3,22 @@ import Link from "next/link";
 import Dropdown from "@/components/Dropdown/Dropdown";
 const Language = () => {
   return (
-    <div className="bg-black">
-      <div className="flex flex-row items-center h-12">
-        <div className="w-full ssm:w-[0px] xl:w-[445px]"></div>
-        <div className="flex flex-row items-center justify-between ssm:w-full xl:w-[859px]  ">
-          <div className="flex flex-row flex-wrap items-center text-sm font-normal not-italic w-full ">
-            <div className="w-[474px]">
-              Summer Sale For All Swim Suits And Free Express Delivery - OFF
-              50%!
+    <div className={`max-w-screen-xxl mx-auto `}>
+      <div className="flex flex-row items-center h-12 justify-center">
+        <div className="w-0 ssm:w-[0px] xl:w-[445px]"></div>
+        <div className="flex flex-row items-center justify-between ssm:w-full xl:w-[859px] text-center   ">
+          <div className="flex flex-row  items-center text-sm font-normal not-italic w-full ">
+            <div className="md:w-[474px] ">
+              <span className="text-truncate">
+                Summer Sale For All Swim Suits And Free Express Delivery - OFF
+                50%!
+              </span>
             </div>
             <Link className="font-bold underline text-sm w-[68px]" href="/">
               ShopNow
             </Link>
           </div>
-          <div>
+          <div className="md:flex hidden">
             <Dropdown
               data={[
                 { name: "Tiếng việt", href: "#" },
