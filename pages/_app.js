@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }) {
         }
       `}</style>
       <div>
-        <Header />
+        {/* <Header /> */}
         <Component {...pageProps} />
         <Footer />
       </div>
