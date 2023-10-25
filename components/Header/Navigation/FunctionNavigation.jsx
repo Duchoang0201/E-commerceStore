@@ -1,16 +1,16 @@
-import { Heart, Search, ShoppingCart } from "lucide-react";
 import React from "react";
+import { Heart, Search, ShoppingCart } from "lucide-react";
 
-const FunctionNavigation = () => {
+function FunctionNavigation() {
   return (
     <div className="flex flex-row items-center gap-4 pr-3 w-full">
       <form>
-        <label
+        {/* <label
           htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
         >
           Search
-        </label>
+        </label> */}
         <div className="relative">
           <input
             type="search"
@@ -32,6 +32,6 @@ const FunctionNavigation = () => {
       <ShoppingCart size={32} />
     </div>
   );
-};
+}
 
 export default FunctionNavigation;

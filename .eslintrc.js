@@ -6,7 +6,6 @@ module.exports = {
   extends: [
     "airbnb",
     "eslint:recommended",
-    "next/babel",
     "next/core-web-vitals",
     "plugin:import/recommended",
     "plugin:prettier/recommended",

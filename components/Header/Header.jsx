@@ -1,8 +1,9 @@
 import React from "react";
+
 import Language from "./Language/Language";
 import Navigation from "./Navigation/Navigation";
 
-const Header = () => {
+function Header() {
   return (
     <>
       <div className="bg-black">
@@ -13,6 +14,6 @@ const Header = () => {
       </div>
     </>
   );
-};
+}
 
 export default Header;

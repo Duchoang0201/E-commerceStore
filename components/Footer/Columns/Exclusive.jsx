@@ -1,7 +1,7 @@
 import React from "react";
 
-const Exclusive = () => {
+function Exclusive() {
   return <div>Exclusive</div>;
-};
+}
 
 export default Exclusive;

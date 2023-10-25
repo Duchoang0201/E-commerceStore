@@ -1,18 +1,15 @@
-import React, { useState, useMemo } from "react";
-import { Drawer, Button, Typography } from "@material-tailwind/react";
-import { Heart, List, Search, ShoppingCart, X } from "lucide-react";
+import React, { useState } from "react";
+import { Button, Drawer, Typography } from "@material-tailwind/react";
 import classNames from "classnames";
+import { Heart, List, Search, ShoppingCart, X } from "lucide-react";
 
-const Modaldraw = () => {
-  const listNavi = useMemo(
-    () => [
-      { name: "Home", href: "home" },
-      { name: "Contact", href: "contact" },
-      { name: "About", href: "about" },
-      { name: "Sign up", href: "signup" },
-    ],
-    []
-  );
+function Modaldraw() {
+  const listNavi = [
+    { name: "Home", href: "home" },
+    { name: "Contact", href: "contact" },
+    { name: "About", href: "about" },
+    { name: "Sign up", href: "signup" },
+  ];
 
   const [open, setOpen] = useState(false);
 
@@ -45,25 +42,19 @@ const Modaldraw = () => {
               Exclusive
             </Typography>
 
-            <button className=" right-0" onClick={closeDrawer}>
+            <button type="submit" className=" right-0" onClick={closeDrawer}>
               <X />
             </button>
           </div>
           <div>
             <div className="flex flex-row flex-wrap items-center gap-4">
               <form>
-                <label
-                  htmlFor="default-search"
-                  className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-                >
-                  Search
-                </label>
                 <div className="relative">
                   <input
                     type="search"
                     id="default-search"
                     className="block p-3 text-sm text-gray-900 bg-gray-50 w-[243px]"
-                    placeholder="Search Mockups, Logos..."
+                    placeholder="Looking for..."
                     required
                   />
                   <button
@@ -79,9 +70,9 @@ const Modaldraw = () => {
               <ShoppingCart size={32} />
 
               <ul className="flex flex-col w-full px-2 py-2 h-auto">
-                {listNavi.map((item, index) => {
+                {listNavi.map((item) => {
                   return (
-                    <li key={index} className="w-auto py-2">
+                    <li key={item.name} className="w-auto py-2">
                       <a
                         href={item.href}
                         className=" block px-2 py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
@@ -99,6 +90,6 @@ const Modaldraw = () => {
       </Drawer>
     </>
   );
-};
+}
 
 export default Modaldraw;

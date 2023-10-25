@@ -1,23 +1,38 @@
 import React from "react";
+import Link from "next/link";
+import PropTypes from "prop-types";
 
-const Commons = ({ data }) => {
+function Commons({ data }) {
   const { title, list } = data;
   return (
     <div>
       <h2 className="mb-6 text-xl font-semibold  dark:text-white">{title}</h2>
       <ul className=" font-medium text-base">
-        {list?.map((item, index) => {
+        {list?.map((item) => {
           return (
-            <li key={index} className="mb-4">
-              <a href="#" className="hover:underline">
+            <li key={item.name} className="mb-4">
+              <Link href="/" className="hover:underline">
                 {item.name}
-              </a>
+              </Link>
             </li>
           );
         })}
       </ul>
     </div>
   );
+}
+Commons.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    list: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+      }),
+    ),
+  }),
 };
 
+Commons.defaultProps = {
+  data: {},
+};
 export default Commons;

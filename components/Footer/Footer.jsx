@@ -1,9 +1,10 @@
-"use client";
 import React from "react";
+import Link from "next/link";
+
 import Commons from "./Columns/Commons";
 import FormCommon from "./Columns/FormCommon";
 
-const Footer = () => {
+function Footer() {
   const columnFirst = {
     title: "Support",
     list: [
@@ -42,14 +43,14 @@ const Footer = () => {
               </h2>
               <ul className="  font-medium">
                 <li className="mb-4">
-                  <a href="#" className="text-xl hover:underline">
+                  <Link href="/" className="text-xl hover:underline">
                     Subscribe
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Get 10% off your first order
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
                   <FormCommon />
@@ -65,14 +66,14 @@ const Footer = () => {
               </h2>
               <ul className="  font-medium">
                 <li className="mb-4">
-                  <a href="#" className=" hover:underline">
+                  <Link href="/" className="hover:underline">
                     Subscribe
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Get 10% off your first order
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -84,6 +85,6 @@ const Footer = () => {
       </footer>
     </div>
   );
-};
+}
 
 export default Footer;

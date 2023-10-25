@@ -1,11 +1,9 @@
-"use client";
-
-import { ChevronDown, ChevronUp } from "lucide-react";
-
-import PropTypes from "prop-types";
 import React, { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import Link from "next/link";
+import PropTypes from "prop-types";
 
-const Dropdown = ({ data }) => {
+function Dropdown({ data }) {
   const [open, setOpen] = useState(false);
   const [picked, setPicked] = useState("English");
   const handleOpen = () => {
@@ -15,6 +13,7 @@ const Dropdown = ({ data }) => {
   return (
     <div className="relative inline-block text-left ">
       <button
+        type="submit"
         onClick={handleOpen}
         className="text-white  text-sm  py-2.5 text-center inline-flex items-center"
       >
@@ -29,20 +28,19 @@ const Dropdown = ({ data }) => {
           aria-labelledby="dropdownDefaultButton"
         >
           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-            {data.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => {
-                  setPicked(item.name);
-                  setOpen(!open);
-                }}
-              >
-                <a
+            {data?.map((item) => (
+              <li key={item.name}>
+                <Link
+                  onClick={() => {
+                    setPicked(item.name);
+                    setOpen(!open);
+                  }}
+                  href="/"
                   className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                   role="option"
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -50,15 +48,19 @@ const Dropdown = ({ data }) => {
       )}
     </div>
   );
-};
+}
 
 Dropdown.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
       href: PropTypes.string,
-    })
+    }),
   ),
+};
+
+Dropdown.defaultProps = {
+  data: [],
 };
 
 export default Dropdown;

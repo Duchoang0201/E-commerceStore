@@ -1,14 +1,14 @@
 import React from "react";
-import { useForm, Controller } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { SendHorizontal } from "lucide-react";
+import * as yup from "yup";
 
 const validationSchema = yup.object().shape({
   search: yup.string().email().required(),
 });
 
-const Form = () => {
+function Form() {
   const {
     control,
     handleSubmit,
@@ -19,12 +19,6 @@ const Form = () => {
 
   const onSubmit = (data, event) => {
     event.preventDefault();
-    if (errors.search) {
-      console.log(`🚀🚀🚀!..`, errors.search);
-    } else {
-      // Perform your submission logic here
-      console.log(data);
-    }
   };
 
   return (
@@ -57,6 +51,6 @@ const Form = () => {
       </form>
     </div>
   );
-};
+}
 
 export default Form;
