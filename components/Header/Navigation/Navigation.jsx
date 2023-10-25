@@ -1,7 +1,7 @@
 import React from "react";
 
 import FunctionNavigation from "./FunctionNavigation";
-import Modaldraw from "./Modaldraw";
+import Modaldraw from "./ModalDraw";
 
 function Navigation() {
   const listNavi = [

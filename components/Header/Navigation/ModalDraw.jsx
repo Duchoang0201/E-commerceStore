@@ -3,7 +3,7 @@ import { Button, Drawer, Typography } from "@material-tailwind/react";
 import classNames from "classnames";
 import { Heart, List, Search, ShoppingCart, X } from "lucide-react";
 
-function Modaldraw() {
+function ModalDraw() {
   const listNavi = [
     { name: "Home", href: "home" },
     { name: "Contact", href: "contact" },
@@ -92,4 +92,4 @@ function Modaldraw() {
   );
 }
 
-export default Modaldraw;
+export default ModalDraw;
