@@ -1,15 +1,9 @@
 import React, { useState, useMemo } from "react";
-import {
-  Drawer,
-  Button,
-  Typography,
-  IconButton,
-} from "@material-tailwind/react";
+import { Drawer, Button, Typography } from "@material-tailwind/react";
 import { Heart, List, Search, ShoppingCart, X } from "lucide-react";
-import FunctionNavigation from "./FunctionNavigation";
 import classNames from "classnames";
 
-const ModalDraw = () => {
+const Modaldraw = () => {
   const listNavi = useMemo(
     () => [
       { name: "Home", href: "home" },
@@ -81,7 +75,7 @@ const ModalDraw = () => {
                 </div>
               </form>
 
-              <Heart onClick={() => {}} size={32} />
+              <Heart size={32} />
               <ShoppingCart size={32} />
 
               <ul className="flex flex-col w-full px-2 py-2 h-auto">
@@ -107,4 +101,4 @@ const ModalDraw = () => {
   );
 };
 
-export default ModalDraw;
+export default Modaldraw;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
-import ModelDraw from "@/components/Header/Navigation/ModalDraw";
+import ModelDraw from "@/components/Header/Navigation/Modaldraw";
 import IndexPage from "@/components/IndexPage/IndexPage";
 
 const inter = Inter({ subsets: ["latin"] });

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import FunctionNavigation from "./FunctionNavigation";
-import ModalDraw from "./ModalDraw";
+import ModalDraw from "./Modaldraw";
 
 const Navigation = () => {
   const [openList, setOpenList] = useState(true);
