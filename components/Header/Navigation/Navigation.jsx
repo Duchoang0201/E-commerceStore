@@ -1,7 +1,8 @@
 import React from "react";
+import { List } from "lucide-react";
 
+import { DialogCom } from "./DialogCom";
 import FunctionNavigation from "./FunctionNavigation";
-import Modaldraw from "./ModalDraw";
 
 function Navigation() {
   const listNavi = [
@@ -54,8 +55,10 @@ function Navigation() {
           </div>
         </div>
         <div className="lg:hidden flex flex-row">
-          <Modaldraw />
-          12321
+          <button type="submit">
+            <List />
+          </button>
+          <DialogCom />
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <div>
+    <div className="font-poppins">
       <Header />
       <Component {...pageProps} />
       <Footer />
