@@ -28,12 +28,7 @@ const FunctionNavigation = () => {
         </div>
       </form>
 
-      <Heart
-        onClick={() => {
-          console.log(`🎶🎶🎶.. 123`);
-        }}
-        size={32}
-      />
+      <Heart size={32} />
       <ShoppingCart size={32} />
     </div>
   );
