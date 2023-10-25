@@ -5,12 +5,6 @@ function FunctionNavigation() {
   return (
     <div className="flex flex-row items-center gap-4 pr-3 w-full">
       <form>
-        {/* <label
-          htmlFor="default-search"
-          className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-        >
-          Search
-        </label> */}
         <div className="relative">
           <input
             type="search"

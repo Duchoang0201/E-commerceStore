@@ -1,5 +1,4 @@
 import React from "react";
-import { List } from "lucide-react";
 
 import { DialogCom } from "./DialogCom";
 import FunctionNavigation from "./FunctionNavigation";
@@ -55,9 +54,6 @@ function Navigation() {
           </div>
         </div>
         <div className="lg:hidden flex flex-row">
-          <button type="submit">
-            <List />
-          </button>
           <DialogCom />
         </div>
       </div>

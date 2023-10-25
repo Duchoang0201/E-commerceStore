@@ -7,7 +7,7 @@ function Language() {
   return (
     <div className="mx-auto max-w-screen-xl flex flex-row justify-between">
       <div className="w-0 ssm:w-[0px] xl:w-[445px]" />
-      <div className="flex flex-row items-center justify-between ssm:w-full xl:w-[859px] text-center   ">
+      <div className="flex flex-row items-center justify-between ssm:w-full xl:w-[859px] text-center text-white  ">
         <div className="flex flex-row  items-center text-sm font-normal not-italic w-full ">
           <div className="md:w-[474px] ">
             <span className="text-truncate">

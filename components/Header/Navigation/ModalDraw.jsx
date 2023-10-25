@@ -48,7 +48,7 @@ function ModalDraw() {
             <ul className="flex flex-col w-full px-2 py-2 h-auto">
               {listNavi.map((item) => {
                 return (
-                  <li key={item.name} className="w-auto py-2">
+                  <li key={`${item.name}`} className="w-auto py-2">
                     <a
                       href={item.href}
                       className=" block px-2 py-2 pl-3 pr-4 text-black rounded hover:bg-gray-300   "
