@@ -76,7 +76,7 @@ const ModalDraw = () => {
               <Heart onClick={() => {}} size={32} />
               <ShoppingCart size={32} />
 
-              <ul className="flex flex-col w-full px-2 py-2">
+              <ul className="flex flex-col w-full px-2 py-2 h-auto">
                 {listNavi.map((item, index) => {
                   return (
                     <li key={index} className="w-auto py-2">

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Language from "./Language/Language";
 import Navigation from "./Navigation/Navigation";
