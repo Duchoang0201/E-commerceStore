@@ -53,9 +53,7 @@ const Navigation = () => {
             <FunctionNavigation />
           </div>
         </div>
-        <div className="lg:hidden flex flex-row">
-          <ModalDraw />
-        </div>
+        <div className="lg:hidden flex flex-row">{/* <ModalDraw /> */}</div>
       </div>
     </div>
   );
