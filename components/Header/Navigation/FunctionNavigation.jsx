@@ -3,7 +3,7 @@ import React from "react";
 
 const FunctionNavigation = () => {
   return (
-    <div className="flex flex-row items-center gap-4 w-full">
+    <div className="flex flex-row items-center gap-4 pr-3 w-full">
       <form>
         <label
           htmlFor="default-search"

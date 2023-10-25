@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="mx-auto w-full max-w-screen-xl pt-20 bg-black ">
           <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5 pb-16">
             <div>
-              <h2 className="text-xl mb-6 font-semibold text-gray-900 dark:text-white">
+              <h2 className="text-xl mb-6 font-semibold  dark:text-white">
                 Exclusive
               </h2>
               <ul className="  font-medium">
@@ -60,7 +60,7 @@ const Footer = () => {
             <Commons data={columnSecond} />
             <Commons data={columnThird} />
             <div>
-              <h2 className="mb-6 text-xl font-semibold text-gray-900  dark:text-white">
+              <h2 className="mb-6 text-xl font-semibold  dark:text-white">
                 Download App
               </h2>
               <ul className="  font-medium">

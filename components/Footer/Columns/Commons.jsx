@@ -4,9 +4,7 @@ const Commons = ({ data }) => {
   const { title, list } = data;
   return (
     <div>
-      <h2 className="mb-6 text-xl font-semibold text-gray-900  dark:text-white">
-        {title}
-      </h2>
+      <h2 className="mb-6 text-xl font-semibold  dark:text-white">{title}</h2>
       <ul className=" font-medium text-base">
         {list?.map((item, index) => {
           return (

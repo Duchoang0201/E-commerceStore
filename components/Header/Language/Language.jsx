@@ -3,8 +3,8 @@ import Link from "next/link";
 import Dropdown from "@/components/Dropdown/Dropdown";
 const Language = () => {
   return (
-    <div className={`max-w-screen-xxl mx-auto `}>
-      <div className="flex flex-row items-center h-12 justify-center">
+    <>
+      <div className="mx-auto max-w-screen-xl flex flex-row justify-between">
         <div className="w-0 ssm:w-[0px] xl:w-[445px]"></div>
         <div className="flex flex-row items-center justify-between ssm:w-full xl:w-[859px] text-center   ">
           <div className="flex flex-row  items-center text-sm font-normal not-italic w-full ">
@@ -14,7 +14,10 @@ const Language = () => {
                 50%!
               </span>
             </div>
-            <Link className="font-bold underline text-sm w-[68px]" href="/">
+            <Link
+              className="font-bold underline text-sm w-[68px] px-2"
+              href="/"
+            >
               ShopNow
             </Link>
           </div>
@@ -28,7 +31,7 @@ const Language = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

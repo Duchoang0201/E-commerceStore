@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import FunctionNavigation from "./FunctionNavigation";
-import { List } from "lucide-react";
 import ModalDraw from "./ModalDraw";
 
 const Navigation = () => {
@@ -13,9 +12,9 @@ const Navigation = () => {
     { name: "Sign up", href: "signup" },
   ];
   return (
-    <div className="bg-white pt-7 max-w-screen-xxl mx-auto">
-      <div className="lg:flex lg:flex-row lg:items-center lg:justify-normal h-12 flex flex-row justify-between  ">
-        <div className=" md:w-[445px]   xl:block">
+    <div className="pt-7 md:flex md:flex-row md:items-center md:justify-center md:mx-auto md:max-w-screen-xl  ">
+      <div className="md:flex md:flex-row md:justify-between w-full flex flex-row justify-between  ">
+        <div className="sm:w-[50px] md:w-[200px] xl:w-[445px] items-center ">
           <a href="https://flowbite.com/" className="w-full  px-5">
             <span className="self-center text-2xl font-bold  text-black ">
               Exclusive

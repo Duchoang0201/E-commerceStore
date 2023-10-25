@@ -40,7 +40,7 @@ const ModalDraw = () => {
         <div className="absolute right-2 bg-white rounded border-2 border-slate-300 w-[350px] ">
           <div className="mb-6 flex items-center justify-between ">
             <Typography className="px-2" variant="h5" color="blue-gray">
-              Material Tailwind
+              Exclusive
             </Typography>
 
             <button className=" right-0" onClick={closeDrawer}>
@@ -76,10 +76,10 @@ const ModalDraw = () => {
               <Heart onClick={() => {}} size={32} />
               <ShoppingCart size={32} />
 
-              <ul className=" flex flex-col px-4 md:p-0 mt-6 font-medium border md:flex-row md:space-x-12 md:mt-0 md:border-0 sm:mt-10 rounded-md w-1/2">
+              <ul className="flex flex-col w-full px-2 py-2">
                 {listNavi.map((item, index) => {
                   return (
-                    <li key={index} className="md:w-[61px] w-full py-2">
+                    <li key={index} className="w-auto py-2">
                       <a
                         href={item.href}
                         className=" block px-2 py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
