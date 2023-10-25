@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import FunctionNavigation from "./FunctionNavigation";
-import ModalDraw from "./Modaldraw";
+import Modaldraw from "./Modaldraw";
 
 const Navigation = () => {
   const [openList, setOpenList] = useState(true);
@@ -54,7 +54,7 @@ const Navigation = () => {
           </div>
         </div>
         <div className="lg:hidden flex flex-row">
-          <ModalDraw />
+          <Modaldraw />
         </div>
       </div>
     </div>
