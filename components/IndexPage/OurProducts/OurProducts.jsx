@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 
-import ProductCart from "@/components/Commons/ProductCart";
+import ProductCardFill from "@/components/Commons/ProductCardFill";
 import Title from "@/components/Commons/Title";
 
 import "swiper/css";
@@ -31,7 +31,7 @@ function OurProducts({ ourProducts }) {
         onNext={handleSlideNext}
       />
 
-      <div className="mx-auto  max-w-screen-xl pt-10 ">
+      <div className="mx-auto  max-w-[1170px] pt-10 ">
         <Swiper
           modules={[Grid]}
           onBeforeInit={(swiper) => {
@@ -66,7 +66,7 @@ function OurProducts({ ourProducts }) {
           {ourProducts &&
             ourProducts.map((item) => (
               <SwiperSlide key={item.id} className=" ">
-                <ProductCart
+                <ProductCardFill
                   item={item}
                   isEye={{ isActive: true }}
                   isDiscount={{ isActive: false, value: 20 }}

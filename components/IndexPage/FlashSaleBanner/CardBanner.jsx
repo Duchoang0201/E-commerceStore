@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
 
-import ProductCart from "@/components/Commons/ProductCart";
+import ProductCart from "@/components/Commons/ProductCard";
 import Title from "@/components/Commons/Title";
 
 // import FlashCard from "./FlashCard";
@@ -33,58 +33,60 @@ function CardBanner({ products }) {
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
       />
-      <div className=" mx-auto max-w-[1440px] pl-16 sm:pl-20  lg:pl-20 flex flex-1 justify-center">
-        <Swiper
-          slidesPerView="auto"
-          spaceBetween={10}
-          onBeforeInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          navigation={{
-            nextEl: ".review-swiper-button-next",
-            prevEl: ".review-swiper-button-prev",
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          className="mySwiper "
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            480: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            800: {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            1280: {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-            1440: {
-              slidesPerView: 4.5,
-              spaceBetween: 10,
-            },
-          }}
-        >
-          {products.length > 0 &&
-            products.map((item) => {
-              return (
-                <SwiperSlide key={item.id}>
-                  <ProductCart
-                    item={item}
-                    isEye={{ isActive: true }}
-                    isDiscount={{ isActive: true, value: 20 }}
-                    isHeart={{ isActive: true }}
-                  />
-                </SwiperSlide>
-              );
-            })}
-        </Swiper>
+      <div className="relative mx-auto max-w-[1505px] ">
+        <div className="ml-16 sm:ml-0 2xl:ml-[168px] max-w-[1308px]">
+          {" "}
+          <Swiper
+            spaceBetween={10}
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            navigation={{
+              nextEl: ".review-swiper-button-next",
+              prevEl: ".review-swiper-button-prev",
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            className="mySwiper"
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+              },
+              580: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              800: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+              1440: {
+                slidesPerView: 4.5,
+                spaceBetween: 30,
+              },
+            }}
+          >
+            {products.length > 0 &&
+              products.map((item) => {
+                return (
+                  <SwiperSlide key={item.id}>
+                    <ProductCart
+                      item={item}
+                      isEye={{ isActive: true }}
+                      isDiscount={{ isActive: true, value: 20 }}
+                      isHeart={{ isActive: true }}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+          </Swiper>
+        </div>
       </div>
     </div>
   );

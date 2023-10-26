@@ -43,7 +43,7 @@ function HerroBanner() {
     setShowChild("");
   };
   return (
-    <div className=" md:flex md:flex-row md:items-center md:justify-center md:mx-auto md:max-w-screen-xl ">
+    <div className=" md:flex md:flex-row md:items-center md:justify-center md:mx-auto md:max-w-[1170px] ">
       <div className="md:flex md:flex-row md:justify-between w-full flex flex-row justify-between  ">
         <div className="w-[300px] border-r border-TEXT-1 py-5">
           <ul className="flex flex-col w-auto">

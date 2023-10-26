@@ -25,16 +25,7 @@ function FlashSaleBanner({ products }) {
 
 export default FlashSaleBanner;
 FlashSaleBanner.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      price: PropTypes.number,
-      category: PropTypes.string,
-      description: PropTypes.string,
-      image: PropTypes.string,
-    }),
-  ),
+  products: PropTypes.arrayOf(Object),
 };
 FlashSaleBanner.defaultProps = {
   products: [], // Set a default value for products (an empty array in this case)

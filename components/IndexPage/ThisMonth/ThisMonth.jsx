@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
 
-import ProductCart from "@/components/Commons/ProductCart";
+import ProductCardFill from "@/components/Commons/ProductCardFill";
 import Title from "@/components/Commons/Title";
 
 import "swiper/css";
@@ -30,7 +30,7 @@ function ThisMonth({ thisMonth }) {
         onNext={handleSlideNext}
       />
 
-      <div className="flex flex-row items-center justify-center mx-auto max-w-screen-xl pt-10 ">
+      <div className="flex flex-row items-center justify-center mx-auto max-w-[1170px] pt-10 ">
         <Swiper
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
@@ -40,7 +40,7 @@ function ThisMonth({ thisMonth }) {
               slidesPerView: 1,
               spaceBetween: 30,
             },
-            480: {
+            600: {
               slidesPerView: 2,
               spaceBetween: 30,
             },
@@ -56,8 +56,8 @@ function ThisMonth({ thisMonth }) {
         >
           {thisMonth &&
             thisMonth.map((item) => (
-              <SwiperSlide key={item.id} className="relative group">
-                <ProductCart
+              <SwiperSlide key={item.id} className="relative group ">
+                <ProductCardFill
                   item={item}
                   isEye={{ isActive: true }}
                   isDiscount={{ isActive: false, value: 20 }}

@@ -5,7 +5,7 @@ import { Eye, Heart } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 //  isHeart, isEye, isDiscount
-function ProductCart({ item, isHeart, isEye, isDiscount }) {
+function ProductCard({ item, isHeart, isEye, isDiscount }) {
   const { rate } = item.rating;
   return (
     <div className="w-[270px] h-[350px] ">
@@ -74,15 +74,15 @@ function ProductCart({ item, isHeart, isEye, isDiscount }) {
   );
 }
 
-export default ProductCart;
+export default ProductCard;
 
-ProductCart.propTypes = {
+ProductCard.propTypes = {
   item: PropTypes.shape(Object),
   isHeart: PropTypes.instanceOf(Object),
   isEye: PropTypes.instanceOf(Object),
   isDiscount: PropTypes.instanceOf(Object),
 };
-ProductCart.defaultProps = {
+ProductCard.defaultProps = {
   item: {},
   isHeart: {},
   isEye: {},

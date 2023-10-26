@@ -29,7 +29,7 @@ function Categories({ categories }) {
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
       />
-      <div className="flex flex-row items-center justify-center mx-auto max-w-screen-xl pt-10 ">
+      <div className="flex flex-row items-center justify-center mx-auto max-w-[1170px] pt-10 ">
         <Swiper
           spaceBetween={30}
           onBeforeInit={(swiper) => {
