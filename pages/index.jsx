@@ -5,13 +5,14 @@ import IndexPage from "@/components/IndexPage/IndexPage";
 
 import { axiosClient } from "@/libraries/axiosClient";
 
-export default function Home({ products, categories, thisMonth }) {
+export default function Home({ products, categories, thisMonth, ourProducts }) {
   return (
     <main>
       <IndexPage
         products={products}
         categories={categories}
         thisMonth={thisMonth}
+        ourProducts={ourProducts}
       />
     </main>
   );
@@ -32,11 +33,17 @@ export async function getStaticProps() {
 
   const resThisMonth = await axiosClient.get("/products?limit=5");
   const thisMonth = resThisMonth.data;
+
+  // Our Products
+
+  const resOurProducts = await axiosClient.get("/products");
+  const ourProducts = resOurProducts.data;
   return {
     props: {
       products,
       categories,
       thisMonth,
+      ourProducts,
     },
   };
 }
@@ -62,10 +69,21 @@ Home.propTypes = {
       image: PropTypes.string,
     }),
   ),
+  ourProducts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      price: PropTypes.number,
+      category: PropTypes.string,
+      description: PropTypes.string,
+      image: PropTypes.string,
+    }),
+  ),
 };
 
 Home.defaultProps = {
   products: [],
   categories: [],
   thisMonth: [],
+  ourProducts: [],
 };

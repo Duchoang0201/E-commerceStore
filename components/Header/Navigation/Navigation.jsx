@@ -14,7 +14,7 @@ function Navigation() {
     <div className="pt-7 md:flex md:flex-row md:items-center md:justify-center md:mx-auto md:max-w-screen-xl  ">
       <div className="md:flex md:flex-row md:justify-between w-full flex flex-row justify-between  ">
         <div className="sm:w-[50px] md:w-[200px] xl:w-[445px] items-center ">
-          <a href="https://flowbite.com/" className="w-full  px-5">
+          <a href="https://flowbite.com/" className="w-full  ">
             <span className="self-center text-2xl font-bold  text-black ">
               Exclusive
             </span>

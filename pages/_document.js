@@ -6,11 +6,11 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <link
-        href="https://fonts.googleapis.com/css?family=Poppins"
+        href="https://fonts.googleapis.com/css?family=Poppins&display=optional"
         rel="stylesheet"
       />
       <link
-        href="https://fonts.googleapis.com/css?family=Inter"
+        href="https://fonts.googleapis.com/css?family=Inter&display=optional"
         rel="stylesheet"
       />
       <body>

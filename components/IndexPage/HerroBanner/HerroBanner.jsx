@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import Banner from "./Frame 560.png";
+import "swiper/css/pagination";
+
+import Banner from "./Banner.jpg";
+
+import "swiper/css";
 
 function HerroBanner() {
   const listNavi = [
@@ -48,7 +54,7 @@ function HerroBanner() {
                   onMouseLeave={closeChild}
                   onMouseEnter={openChild}
                   key={`${item.name}`}
-                  className=" w-full px-5 py-2 hover:bg-TEXT-1 rounded-r-2xl "
+                  className=" w-full py-2 hover:bg-TEXT-1 rounded-r-2xl transition-all duration-200 "
                 >
                   <Link
                     href={item.href}
@@ -64,12 +70,12 @@ function HerroBanner() {
                   </Link>
                   {item.name === showChild && item.child && (
                     <ul
-                      className={` w-52 flex flex-col absolute  h-auto ml-52 py-2 bg-Neutral-100 rounded`}
+                      className={` w-52 flex flex-col absolute  h-auto ml-52 py-2 bg-Neutral-100 rounded transition-all duration-200`}
                     >
                       {item.child?.map((child) => {
                         return (
                           <li
-                            className="px-2 py-2 hover:bg-TEXT-1"
+                            className="px-2 py-2 hover:bg-TEXT-1 transition-all duration-200"
                             key={child.name}
                           >
                             <Link
@@ -92,14 +98,45 @@ function HerroBanner() {
 
         <div className=" flex-row items-center justify-between w-full ssm:w-full xl:w-[859px] hidden lg:flex py-5 ">
           <div className="flex flex-row flex-wrap items-center text-sm font-normal not-italic w-full ssm:w-[0px]">
-            <div className="">
-              <div
-                className={`items-center justify-between w-full md:flex md:w-auto md:order-1 `}
-                id="navbar-sticky"
-              >
-                <Image src={Banner} alt="Banner" />
-              </div>
-            </div>
+            <Swiper
+              modules={[Pagination]}
+              pagination={{ clickable: true }}
+              navigation
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <Image src={Banner} alt="banner" width="100%" height="100%" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={Banner} alt="banner" width="100%" height="100%" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={Banner} alt="banner" width="100%" height="100%" />
+              </SwiperSlide>
+              <style>
+                {`
+      /* Style the border of Swiper pagination bullets inline */
+      .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #999999; /* Change to your desired color for the active bullet */
+        opacity: 0.9
+
+      }
+
+      /* Change the color of the active (selected) bullet */
+      .swiper-pagination-bullet-active {
+        background-color: #DB4444; /* Change to your desired color for the active bullet */
+        border: 2px solid white; /* Set the border style */
+
+      },
+   
+    `}
+              </style>
+            </Swiper>
           </div>
         </div>
       </div>

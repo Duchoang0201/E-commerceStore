@@ -2,17 +2,15 @@ import React from "react";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
 import CardBanner from "./CardBanner";
-import Content from "./Content";
 
 function FlashSaleBanner({ products }) {
   return (
     <div>
       {" "}
-      <div className="w-full text-black pt-20">
-        <Content content={`Today's`} />
+      <div className="w-full text-black pt-20 overflow-hidden">
         <CardBanner products={products} />
 
-        <div className="flex justify-center ">
+        <div className="pt-[60px] pb-[60px] flex justify-center border-b border-Neutral-200 ">
           <button
             type="button"
             className="hover:bg-Neutral-600 transform transition-all duration-300 flex flex-row justify-center bg-Secondary-2 w-[234px] h-[56px] text-white-0 items-center text-white font-poppins text-base "
@@ -20,8 +18,6 @@ function FlashSaleBanner({ products }) {
             View All Products
           </button>
         </div>
-
-        <div className="pt-20 border-b border-Neutral-100 mx-auto max-w-screen-2xl" />
       </div>
     </div>
   );

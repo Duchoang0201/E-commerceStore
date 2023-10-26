@@ -5,17 +5,18 @@ import ReactStars from "react-stars";
 import { Eye, Heart } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
+import { Grid } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import "swiper/css/grid";
 import "swiper/css/pagination";
 
 import Title from "@/components/Commons/Title";
 
 import "swiper/css";
 
-function ThisMonth({ thisMonth }) {
+function OurProducts({ ourProducts }) {
   const swiperRef = useRef();
-
   const handleSlidePrev = () => {
     swiperRef.current.slidePrev();
   };
@@ -26,39 +27,47 @@ function ThisMonth({ thisMonth }) {
   return (
     <div>
       <Title
-        content="This Month"
-        title="Best Selling Products"
+        content="Our Products"
+        title="Explore Our Products"
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
       />
 
-      <div className="flex flex-row items-center justify-center mx-auto max-w-screen-xl pt-10 ">
+      <div className="mx-auto  max-w-screen-xl pt-10 ">
         <Swiper
+          modules={[Grid]}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
           breakpoints={{
             0: {
               slidesPerView: 1,
+              grid: { fill: "row", rows: 2 },
+
               spaceBetween: 30,
             },
             480: {
               slidesPerView: 2,
+              grid: { fill: "row", rows: 2 },
+
               spaceBetween: 30,
             },
             800: {
+              grid: { fill: "row", rows: 2 },
+
               slidesPerView: 3,
               spaceBetween: 30,
             },
             1280: {
+              grid: { fill: "row", rows: 2 },
               slidesPerView: 4,
               spaceBetween: 30,
             },
           }}
         >
-          {thisMonth &&
-            thisMonth.map((item) => (
-              <SwiperSlide key={item.id} className="relative group">
+          {ourProducts &&
+            ourProducts.map((item) => (
+              <SwiperSlide key={item.id} className=" ">
                 <div className=" w-full flex flex-row justify-center bg-Secondary-0">
                   <div className="w-[270px] h-[350px]  flex flex-col ">
                     <div
@@ -131,11 +140,11 @@ function ThisMonth({ thisMonth }) {
   );
 }
 
-export default ThisMonth;
+export default OurProducts;
 
-ThisMonth.propTypes = {
-  thisMonth: PropTypes.arrayOf(Object),
+OurProducts.propTypes = {
+  ourProducts: PropTypes.arrayOf(Object),
 };
-ThisMonth.defaultProps = {
-  thisMonth: [], // Set a default value for products (an empty array in this case)
+OurProducts.defaultProps = {
+  ourProducts: [], // Set a default value for products (an empty array in this case)
 };
