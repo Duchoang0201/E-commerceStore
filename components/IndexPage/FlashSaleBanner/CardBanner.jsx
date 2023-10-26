@@ -34,7 +34,7 @@ function CardBanner({ products }) {
         onNext={handleSlideNext}
       />
       <div className="relative mx-auto max-w-[1505px] ">
-        <div className="ml-16 sm:ml-auto 2xl:ml-[168px] max-w-[1308px]">
+        <div className="ml-16 2xl:ml-[168px] max-w-[1308px]">
           {" "}
           <Swiper
             spaceBetween={10}
