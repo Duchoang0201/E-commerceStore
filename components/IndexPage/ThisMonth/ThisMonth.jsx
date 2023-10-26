@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -8,6 +9,8 @@ import "swiper/css/pagination";
 
 import ProductCardFill from "@/components/Commons/ProductCardFill";
 import Title from "@/components/Commons/Title";
+
+import Banner from "./Frame 600.png";
 
 import "swiper/css";
 
@@ -30,7 +33,7 @@ function ThisMonth({ thisMonth }) {
         onNext={handleSlideNext}
       />
 
-      <div className="flex flex-row items-center justify-center mx-auto max-w-[1170px] pt-10 ">
+      <div className="ml-16 sm:ml-0 mx-auto max-w-[1170px] pt-10 ">
         <Swiper
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
@@ -66,6 +69,9 @@ function ThisMonth({ thisMonth }) {
               </SwiperSlide>
             ))}
         </Swiper>
+      </div>
+      <div className="flex flex-row items-center justify-center mx-auto max-w-[1170px] pt-10 ">
+        <Image src={Banner} alt="banner" />
       </div>
       <div className="pt-20 border-b border-red-600" />
     </div>

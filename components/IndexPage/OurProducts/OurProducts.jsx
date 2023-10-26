@@ -31,7 +31,7 @@ function OurProducts({ ourProducts }) {
         onNext={handleSlideNext}
       />
 
-      <div className="mx-auto  max-w-[1170px] pt-10 ">
+      <div className="mx-auto  max-w-[1170px] pt-10 ml-14 sm:ml-0 ">
         <Swiper
           modules={[Grid]}
           onBeforeInit={(swiper) => {
