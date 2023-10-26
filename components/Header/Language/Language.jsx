@@ -22,8 +22,8 @@ function Language() {
         <div className="md:flex hidden">
           <Dropdown
             data={[
-              { name: "Tiếng việt", href: "#" },
-              { name: "English", href: "#" },
+              { name: "Tiếng việt", href: "vi" },
+              { name: "English", href: "en" },
             ]}
           />
         </div>

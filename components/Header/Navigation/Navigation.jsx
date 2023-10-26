@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
+import useTrans from "@/hooks/useTrans";
+
 import { DialogCom } from "./DialogCom";
 import FunctionNavigation from "./FunctionNavigation";
 
 function Navigation() {
   const [activeNav, setActiveNav] = useState("/");
-  const listNavi = [
-    { name: "Home", href: "/" },
-    { name: "Contact", href: "contact" },
-    { name: "About", href: "about" },
-    { name: "Sign up", href: "signup" },
-  ];
+  const { navigationList } = useTrans();
   return (
     <div className="pt-7 md:flex md:flex-row md:items-center md:justify-center md:mx-auto md:max-w-[1170px]  ">
       <div className="md:flex md:flex-row md:justify-between w-full flex flex-row justify-between  ">
@@ -31,28 +28,29 @@ function Navigation() {
                 id="navbar-sticky"
               >
                 <ul className="absolute flex flex-col px-4 md:p-0 mt-6 font-medium border md:flex-row md:space-x-12 md:mt-0 md:border-0 sm:mt-10 rounded-md w-1/2">
-                  {listNavi.map((item) => {
-                    return (
-                      <li
-                        key={`${item.name}`}
-                        className="md:w-[61px] w-full py-2"
-                      >
-                        <Link
-                          onClick={() => {
-                            setActiveNav(item.href);
-                          }}
-                          href={item.href}
-                          className={`block px-2 py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ${
-                            activeNav === item.href &&
-                            "underline decoration-Neutral-300 underline-offset-4"
-                          }`}
-                          aria-current="page"
+                  {navigationList &&
+                    navigationList.map((item) => {
+                      return (
+                        <li
+                          key={`${item.name}`}
+                          className="md:w-[61px] w-full py-2"
                         >
-                          {item.name}
-                        </Link>
-                      </li>
-                    );
-                  })}
+                          <Link
+                            onClick={() => {
+                              setActiveNav(item.href);
+                            }}
+                            href={item.href}
+                            className={`block px-2 py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ${
+                              activeNav === item.href &&
+                              "underline decoration-Neutral-300 underline-offset-4"
+                            }`}
+                            aria-current="page"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      );
+                    })}
                 </ul>
               </div>
             </div>
