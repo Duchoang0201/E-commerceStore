@@ -33,7 +33,7 @@ function ThisMonth({ thisMonth }) {
         onNext={handleSlideNext}
       />
 
-      <div className="ml-16 sm:ml-0 mx-auto max-w-[1170px] pt-10 ">
+      <div className="ml-14 sm:ml-auto mx-auto max-w-[1170px] pt-10 ">
         <Swiper
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
