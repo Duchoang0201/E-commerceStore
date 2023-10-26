@@ -9,10 +9,19 @@ function FlashSaleBanner({ products }) {
     <div>
       {" "}
       <div className="w-full text-black pt-20">
-        <Content />
-        <div>
-          <CardBanner products={products} />
+        <Content content={`Today's`} />
+        <CardBanner products={products} />
+
+        <div className="flex justify-center ">
+          <button
+            type="button"
+            className="hover:bg-Neutral-600 transform transition-all duration-300 flex flex-row justify-center bg-Secondary-2 w-[234px] h-[56px] text-white-0 items-center text-white font-poppins text-base "
+          >
+            View All Products
+          </button>
         </div>
+
+        <div className="pt-20 border-b border-Neutral-100 mx-auto max-w-screen-2xl" />
       </div>
     </div>
   );

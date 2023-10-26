@@ -3,36 +3,36 @@
 import React, { useRef } from "react";
 import { ArrowLeft, ArrowRight, Eye, Heart } from "lucide-react";
 import Image from "next/image";
-import PropTypes from "prop-types"; // Import PropTypes from the correct module
+import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
 
-// Import Swiper styles
+import Content from "../FlashSaleBanner/Content";
+
 import "swiper/css";
 
-function CardBanner({ products }) {
+function ThisMonth({ thisMonth }) {
   const swiperRef = useRef();
+
   return (
     <div>
-      {" "}
-      <div className="flex flex-row justify-between mx-auto max-w-screen-xl py-2">
-        <div className="pl-5">
-          <div className="w-full py-5 bg-red-300 text-[36px] font-semibold font-inter">
-            Flash Sales
-          </div>
+      <Content content="This Month" />
+      <div className="mx-auto max-w-screen-xl pt-5 flex flex-row justify-between">
+        <div className="pl-5 font-inter text-[36px] font-bold">
+          Best Selling Products
         </div>
-        <div className="flex flex-row items-center justify-end ">
+        <div className="flex flex-row items-center justify-end  ">
           <div className="flex flex-row gap-2">
             <button
-              className="text-center flex justify-center items-center w-[46px] h-[46px] rounded-full bg-Secondary-0 "
+              className="text-center flex justify-center items-center w-12 h-12 rounded-full bg-Secondary-0"
               type="button"
               onClick={() => swiperRef.current?.slidePrev()}
             >
               <ArrowLeft />
             </button>
             <button
-              className="text-center flex justify-center items-center w-[46px] h-[46px] rounded-full bg-Secondary-0 "
+              className="text-center flex justify-center items-center w-12 h-12 rounded-full bg-Secondary-0"
               type="button"
               onClick={() => swiperRef.current?.slideNext()}
             >
@@ -41,19 +41,12 @@ function CardBanner({ products }) {
           </div>
         </div>
       </div>
-      <div className=" mx-auto max-w-[1440px] sm:pl-0 lg:pl-20">
+
+      <div className="flex flex-row items-center justify-center mx-auto max-w-screen-xl pt-10 ">
         <Swiper
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
-          navigation={{
-            nextEl: ".review-swiper-button-next",
-            prevEl: ".review-swiper-button-prev",
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          className="mySwiper"
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -71,14 +64,10 @@ function CardBanner({ products }) {
               slidesPerView: 4,
               spaceBetween: 10,
             },
-            1440: {
-              slidesPerView: 4.5,
-              spaceBetween: 10,
-            },
           }}
         >
-          {products.map((item) => {
-            return (
+          {thisMonth &&
+            thisMonth.map((item) => (
               <SwiperSlide key={item.id} className="relative">
                 <div className=" w-full flex flex-row justify-center">
                   <div className="w-[270px] h-[350px]  flex flex-col ">
@@ -111,11 +100,6 @@ function CardBanner({ products }) {
                           <Eye />
                         </div>
                       </div>
-                      <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900">
-                        <div className="font-thin px-3 py-1 bg-Secondary-2 rounded-sm text-white-0">
-                          -40%
-                        </div>
-                      </div>
                     </button>
 
                     <div className="justify-center items-center h-10">
@@ -136,18 +120,18 @@ function CardBanner({ products }) {
                   </div>
                 </div>
               </SwiperSlide>
-            );
-          })}
+            ))}
         </Swiper>
       </div>
+      <div className="pt-20 border-b border-red-600" />
     </div>
   );
 }
 
-export default CardBanner;
+export default ThisMonth;
 
-CardBanner.propTypes = {
-  products: PropTypes.arrayOf(
+ThisMonth.propTypes = {
+  thisMonth: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
       title: PropTypes.string,
@@ -158,6 +142,6 @@ CardBanner.propTypes = {
     }),
   ),
 };
-CardBanner.defaultProps = {
-  products: [], // Set a default value for products (an empty array in this case)
+ThisMonth.defaultProps = {
+  thisMonth: [], // Set a default value for products (an empty array in this case)
 };

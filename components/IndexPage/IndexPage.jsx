@@ -4,17 +4,20 @@ import PropTypes, { string } from "prop-types"; // Import PropTypes from the cor
 import Categories from "./Categories/Categories";
 import FlashSaleBanner from "./FlashSaleBanner/FlashSaleBanner";
 import HerroBanner from "./HerroBanner/HerroBanner";
+import ThisMonth from "./ThisMonth/ThisMonth";
 
-function IndexPage({ products, categories }) {
+function IndexPage({ products, categories, thisMonth }) {
   return (
     <div className="border-t border-TEXT-1 w-full ">
       <HerroBanner />
       <FlashSaleBanner products={products} />
       <Categories categories={categories} />
+      <ThisMonth thisMonth={thisMonth} />
     </div>
   );
 }
 
+export default IndexPage;
 IndexPage.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
@@ -27,10 +30,20 @@ IndexPage.propTypes = {
     }),
   ),
   categories: PropTypes.arrayOf(string),
-};
-IndexPage.defaultProps = {
-  products: [], // Set a default value for products (an empty array in this case)
-  categories: "",
+  thisMonth: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      price: PropTypes.number,
+      category: PropTypes.string,
+      description: PropTypes.string,
+      image: PropTypes.string,
+    }),
+  ),
 };
 
-export default IndexPage;
+IndexPage.defaultProps = {
+  products: [],
+  categories: [],
+  thisMonth: [],
+};

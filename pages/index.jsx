@@ -1,24 +1,42 @@
 import React from "react";
-import PropTypes from "prop-types"; // Import PropTypes from the correct module
+import PropTypes, { string } from "prop-types"; // Import PropTypes from the correct module
 
 import IndexPage from "@/components/IndexPage/IndexPage";
 
 import { axiosClient } from "@/libraries/axiosClient";
 
-export default function Home({ products }) {
+export default function Home({ products, categories, thisMonth }) {
   return (
     <main>
-      <IndexPage products={products} />
+      <IndexPage
+        products={products}
+        categories={categories}
+        thisMonth={thisMonth}
+      />
     </main>
   );
 }
 
 export async function getStaticProps() {
-  const res = await axiosClient.get("/products");
-  const products = res.data;
+  // Products
+
+  const resProducts = await axiosClient.get("/products");
+  const products = resProducts.data;
+
+  // Categories
+
+  const resCategories = await axiosClient.get("/products/categories");
+  const categories = resCategories.data;
+
+  // This Month
+
+  const resThisMonth = await axiosClient.get("/products?limit=5");
+  const thisMonth = resThisMonth.data;
   return {
     props: {
       products,
+      categories,
+      thisMonth,
     },
   };
 }
@@ -33,8 +51,21 @@ Home.propTypes = {
       image: PropTypes.string,
     }),
   ),
+  categories: PropTypes.arrayOf(string),
+  thisMonth: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      price: PropTypes.number,
+      category: PropTypes.string,
+      description: PropTypes.string,
+      image: PropTypes.string,
+    }),
+  ),
 };
 
 Home.defaultProps = {
-  products: [], // Set a default value for products (an empty array in this case)
+  products: [],
+  categories: [],
+  thisMonth: [],
 };
