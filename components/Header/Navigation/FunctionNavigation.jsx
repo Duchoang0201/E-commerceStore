@@ -10,7 +10,7 @@ function FunctionNavigation() {
             type="search"
             id="default-search"
             className="block p-3 text-sm text-gray-900 bg-gray-50 w-[243px]"
-            placeholder="Search Mockups, Logos..."
+            placeholder="What are you looking for?"
             required
           />
           <button
@@ -22,8 +22,8 @@ function FunctionNavigation() {
         </div>
       </form>
 
-      <Heart size={32} />
-      <ShoppingCart size={32} />
+      <Heart color="black" size={32} />
+      <ShoppingCart color="black" size={32} />
     </div>
   );
 }

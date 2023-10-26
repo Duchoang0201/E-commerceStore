@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import Banner from "./Frame 560.png";
 
 function HerroBanner() {
   const listNavi = [
-    { name: "Woman’s Fashion", href: "Woman’sFashion" },
-    { name: "Man's Fashion", href: "Man'sFashion" },
+    {
+      name: "Woman’s Fashion",
+      href: "Woman’sFashion",
+      child: [
+        { name: "women1", href: "women1" },
+        { name: "women2", href: "women2" },
+      ],
+    },
+    {
+      name: "Man's Fashion",
+      href: "Man'sFashion",
+      child: [{ name: "man1", href: "man1" }],
+    },
     { name: "Electronics", href: "Electronics" },
     { name: "Home & Lifestyle", href: "Home & Lifestyle" },
     { name: "Medicine", href: "Medicine" },
@@ -15,21 +28,62 @@ function HerroBanner() {
     { name: "Groceries & Pets", href: "Groceries & Pets" },
     { name: "Health & Beauty", href: "Health & Beauty" },
   ];
+  const [showChild, setShowChild] = useState("");
+  const openChild = (e) => {
+    const liValue = e.target.getAttribute("value");
+    setShowChild(liValue);
+  };
+  const closeChild = () => {
+    setShowChild("");
+  };
   return (
     <div className=" md:flex md:flex-row md:items-center md:justify-center md:mx-auto md:max-w-screen-xl ">
       <div className="md:flex md:flex-row md:justify-between w-full flex flex-row justify-between  ">
-        <div className="w-[300px] border-r-2 py-5">
+        <div className="w-[300px] border-r border-TEXT-1 py-5">
           <ul className="flex flex-col w-auto">
             {listNavi.map((item) => {
               return (
-                <li key={`${item.name}`} className=" w-full px-5 py-2">
-                  <a
+                <li
+                  value={item.name}
+                  onMouseLeave={closeChild}
+                  onMouseEnter={openChild}
+                  key={`${item.name}`}
+                  className=" w-full px-5 py-2 hover:bg-TEXT-1 rounded-r-2xl "
+                >
+                  <Link
                     href={item.href}
-                    className="text-base  text-black w-auto"
+                    className="text-base text-black w-auto flex flex-row justify-between"
                     aria-current="page"
                   >
-                    {item.name}
-                  </a>
+                    <span>{item.name}</span>
+                    {item.child && (
+                      <span>
+                        <ChevronRight size={24} />
+                      </span>
+                    )}
+                  </Link>
+                  {item.name === showChild && item.child && (
+                    <ul
+                      className={` w-52 flex flex-col absolute  h-auto ml-52 py-2 bg-Neutral-100 rounded`}
+                    >
+                      {item.child?.map((child) => {
+                        return (
+                          <li
+                            className="px-2 py-2 hover:bg-TEXT-1"
+                            key={child.name}
+                          >
+                            <Link
+                              href={child.href}
+                              className="text-base text-black w-auto flex flex-row justify-between"
+                              aria-current="page"
+                            >
+                              {child.name}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
                 </li>
               );
             })}

@@ -6,7 +6,7 @@ import Navigation from "./Navigation/Navigation";
 function Header() {
   return (
     <>
-      <div className="bg-black">
+      <div className="bg-black-0">
         <Language />
       </div>
       <div className="">

@@ -9,6 +9,10 @@ export default function Document() {
         href="https://fonts.googleapis.com/css?family=Poppins"
         rel="stylesheet"
       />
+      <link
+        href="https://fonts.googleapis.com/css?family=Inter"
+        rel="stylesheet"
+      />
       <body>
         <Main />
         <NextScript />

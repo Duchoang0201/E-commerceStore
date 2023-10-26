@@ -1,28 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
-import IndexPage from "@/components/IndexPage/IndexPage";
+import CardBanner from "./CardBanner";
+import Content from "./Content";
 
-import { axiosClient } from "@/libraries/axiosClient";
-
-export default function Home({ products }) {
+function FlashSaleBanner({ products }) {
   return (
-    <main>
-      <IndexPage products={products} />
-    </main>
+    <div>
+      {" "}
+      <div className="w-full text-black pt-20">
+        <Content />
+        <CardBanner products={products} />
+      </div>
+    </div>
   );
 }
 
-export async function getStaticProps() {
-  const res = await axiosClient.get("/products");
-  const products = res.data;
-  return {
-    props: {
-      products,
-    },
-  };
-}
-Home.propTypes = {
+export default FlashSaleBanner;
+FlashSaleBanner.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
@@ -34,7 +29,6 @@ Home.propTypes = {
     }),
   ),
 };
-
-Home.defaultProps = {
+FlashSaleBanner.defaultProps = {
   products: [], // Set a default value for products (an empty array in this case)
 };

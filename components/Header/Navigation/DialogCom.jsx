@@ -4,10 +4,8 @@ import { Heart, List, Search, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -30,7 +28,7 @@ export function DialogCom() {
           <List color="gray" />
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="bg-white-0">
         <SheetHeader>
           <SheetTitle>Exclusive</SheetTitle>
           <SheetDescription>
@@ -63,7 +61,7 @@ export function DialogCom() {
                     <li key={`${item.name}`} className="w-auto py-2">
                       <a
                         href={item.href}
-                        className=" block px-2 py-2 pl-3 pr-4 text-black rounded hover:bg-gray-300   "
+                        className=" block px-2 py-2 pl-3 pr-4 text-black rounded hover:bg-TEXT-1 hover:text-white-0   "
                         aria-current="page"
                       >
                         {item.name}
@@ -75,11 +73,11 @@ export function DialogCom() {
             </div>
           </SheetDescription>
         </SheetHeader>
-        <SheetFooter>
+        {/* <SheetFooter>
           <SheetClose asChild>
             <Button type="submit">Save changes</Button>
           </SheetClose>
-        </SheetFooter>
+        </SheetFooter> */}
       </SheetContent>
     </Sheet>
   );
