@@ -11,7 +11,7 @@ function Content() {
       </div>
       <div className=" md:flex md:flex-row md:items-center md:justify-center md:mx-auto md:max-w-screen-xl px-5">
         <div className="md:flex md:flex-row md:justify-between w-full flex flex-row justify-between  ">
-          <div className="w-full py-5 bg-red-300 text-2xl font-semibold font-inter">
+          <div className="w-full py-5 bg-red-300 text-[36px] font-semibold font-inter">
             Flash Sales
           </div>
 

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from "react";
 import { ArrowLeft, ArrowRight, Eye, Heart } from "lucide-react";
 import Image from "next/image";
@@ -146,7 +148,7 @@ CardBanner.propTypes = {
       category: PropTypes.string,
       description: PropTypes.string,
       image: PropTypes.string,
-    })
+    }),
   ),
 };
 CardBanner.defaultProps = {

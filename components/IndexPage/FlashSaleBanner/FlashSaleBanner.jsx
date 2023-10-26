@@ -28,7 +28,7 @@ FlashSaleBanner.propTypes = {
       category: PropTypes.string,
       description: PropTypes.string,
       image: PropTypes.string,
-    })
+    }),
   ),
 };
 FlashSaleBanner.defaultProps = {
