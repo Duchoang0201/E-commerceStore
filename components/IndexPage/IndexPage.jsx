@@ -24,7 +24,7 @@ IndexPage.propTypes = {
       category: PropTypes.string,
       description: PropTypes.string,
       image: PropTypes.string,
-    })
+    }),
   ),
   categories: PropTypes.arrayOf(string),
 };

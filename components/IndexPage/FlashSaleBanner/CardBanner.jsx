@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useRef } from "react";
 import { ArrowLeft, ArrowRight, Eye, Heart } from "lucide-react";
 import Image from "next/image";
@@ -34,9 +32,8 @@ function CardBanner({ products }) {
           </button>
         </div>
       </div>
-      <div className=" flex flex-row items-center justify-center mx-auto max-w-screen-xl px-5">
+      <div className=" mx-auto max-w-[1440px] sm:pl-0 lg:pl-20">
         <Swiper
-          // slidesPerView={4.5}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
@@ -44,27 +41,30 @@ function CardBanner({ products }) {
             nextEl: ".review-swiper-button-next",
             prevEl: ".review-swiper-button-prev",
           }}
-          spaceBetween={30}
           pagination={{
             clickable: true,
           }}
-          className="mySwiper flex flex-row justify-center overflow-hidden "
+          className="mySwiper"
           breakpoints={{
             0: {
               slidesPerView: 1,
-              centeredSlides: true,
+              spaceBetween: 10,
             },
-            580: {
+            480: {
               slidesPerView: 2,
-              centeredSlides: false,
-              centeredSlidesBounds: 12,
+              spaceBetween: 10,
             },
-            860: {
+            800: {
               slidesPerView: 3,
+              spaceBetween: 10,
             },
-            1200: {
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+            1440: {
               slidesPerView: 4.5,
-              initialSlide: 2,
+              spaceBetween: 10,
             },
           }}
         >
@@ -75,7 +75,7 @@ function CardBanner({ products }) {
                   <div className="w-[270px] h-[350px]  flex flex-col ">
                     <button
                       type="button"
-                      className="relative inline-flex justify-center overflow-hidden items-center p-[49px] bg-Secondary-0  text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="group relative inline-flex justify-center overflow-hidden items-center p-[49px] bg-Secondary-0  text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
                       <Image
                         className="relative !w-[172px] !h-[152px]"
@@ -84,6 +84,14 @@ function CardBanner({ products }) {
                         height={152}
                         alt={item.title}
                       />
+                      <div className="absolute h-10 w-full bg-Neutral-600  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <button
+                          type="submit"
+                          className="bg-black text-white-0 py-2 px-5"
+                        >
+                          Add to cart
+                        </button>
+                      </div>
                       <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500  rounded-full top-4 right-4 dark:border-gray-900">
                         <div className="px-2 py-2 bg-white-0 rounded-full">
                           <Heart />
@@ -97,11 +105,6 @@ function CardBanner({ products }) {
                       <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900">
                         <div className="font-thin px-3 py-1 bg-Secondary-2 rounded-sm text-white-0">
                           -40%
-                        </div>
-                      </div>
-                      <div className="absolute inline-flex items-center justify-center text-xs text-white bg-red-500 rounded-full bottom-0 dark:border-gray-900 opacity-0 hover:opacity-100">
-                        <div className="font-thin px-3 py-1 bg-black-0 w-64 rounded-sm text-white-0">
-                          Add to Cart
                         </div>
                       </div>
                     </button>

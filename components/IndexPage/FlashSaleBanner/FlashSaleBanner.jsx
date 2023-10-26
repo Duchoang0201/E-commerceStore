@@ -10,7 +10,9 @@ function FlashSaleBanner({ products }) {
       {" "}
       <div className="w-full text-black pt-20">
         <Content />
-        <CardBanner products={products} />
+        <div>
+          <CardBanner products={products} />
+        </div>
       </div>
     </div>
   );
@@ -26,7 +28,7 @@ FlashSaleBanner.propTypes = {
       category: PropTypes.string,
       description: PropTypes.string,
       image: PropTypes.string,
-    }),
+    })
   ),
 };
 FlashSaleBanner.defaultProps = {

@@ -1,17 +1,16 @@
 "use client";
 
 import React, { useRef } from "react";
-import { ArrowLeft, ArrowRight, Eye, Heart } from "lucide-react";
-import Image from "next/image";
-import PropTypes, { string } from "prop-types"; // Import PropTypes from the correct module
-import { Swiper, SwiperSlide } from "swiper/react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+// import PropTypes, { string } from "prop-types"; // Import PropTypes from the correct module
+import { Swiper } from "swiper/react";
 
 import "swiper/css/pagination";
 
 // Import Swiper styles
 import "swiper/css";
 
-function Categories({ categories }) {
+function Categories() {
   const swiperRef = useRef();
   return (
     <div>
@@ -133,9 +132,9 @@ function Categories({ categories }) {
 
 export default Categories;
 
-Categories.propTypes = {
-  categories: PropTypes.arrayOf(string),
-};
-Categories.defaultProps = {
-  categories: "",
-};
+// Categories.propTypes = {
+//   categories: PropTypes.arrayOf(string),
+// };
+// Categories.defaultProps = {
+//   categories: "",
+// };
