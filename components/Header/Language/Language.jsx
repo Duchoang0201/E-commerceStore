@@ -5,17 +5,17 @@ import Dropdown from "@/components/Dropdown/Dropdown";
 
 function Language() {
   return (
-    <div className="mx-auto max-w-[1170px] flex flex-row justify-between  ">
-      <div className="w-0 ssm:w-[0px] xl:w-[445px]" />
-      <div className="flex flex-row items-center justify-between ssm:w-full xl:w-[859px] text-center text-white-0  ">
-        <div className="flex flex-row  items-center text-sm font-normal not-italic w-full ">
-          <div className="md:w-[474px] ">
-            <span className="text-truncate">
+    <div className="mx-auto max-w-[1170px] flex flex-row">
+      <div className="w-[311px]" />
+      <div className="flex  items-center justify-evenly ssm:w-full xl:w-[859px] text-center text-white-0  ">
+        <div className="flex flex-row  items-center text-sm font-normal not-italic w-full gap-2 ">
+          <div className="md:w-[474px] text-start ">
+            <p className="text-truncate text-[14px]">
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
               50%!
-            </span>
+            </p>
           </div>
-          <Link className="font-bold underline text-sm w-[68px] px-2" href="/">
+          <Link className="font-bold underline text-sm " href="/">
             ShopNow
           </Link>
         </div>

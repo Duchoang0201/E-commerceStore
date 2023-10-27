@@ -15,8 +15,10 @@ import {
 export function LoadingCom({ open, language }) {
   return (
     <Dialog open={open}>
-      <DialogTrigger asChild>
-        <Button variant="outline">{language}</Button>
+      <DialogTrigger asChild className="w-full">
+        <Button className="hover:bg-Neutral-400 items-center flex justify-start">
+          {language}
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

@@ -37,20 +37,20 @@ function Dropdown({ data }) {
       {open && (
         <div
           id="dropdown"
-          className="z-10 origin-top-right absolute right-0 mt-2 w-44 bg-black-0 divide-y divide-gray-100 rounded-lg shadow-lg dark:bg-black"
+          className="z-10 origin-top-right absolute right-0 mt-2 w-44 bg-black-0  rounded-lg shadow-lg dark:bg-black"
           role="listbox"
           aria-labelledby="dropdownDefaultButton"
         >
-          <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+          <ul className="text-sm text-gray-700 ">
             {data?.map((item) => (
-              <li key={item.name}>
+              <li key={item.name} className="">
                 <button
-                  type="button"
+                  type="submit"
                   onClick={() => {
                     changeLang(item.href);
                   }}
                   href={item.href}
-                  className=" block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="w-full"
                 >
                   <LoadingCom language={item.name} open={loading} />
                 </button>
