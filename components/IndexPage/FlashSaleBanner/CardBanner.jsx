@@ -9,6 +9,8 @@ import "swiper/css/pagination";
 import ProductCart from "@/components/Commons/ProductCard";
 import Title from "@/components/Commons/Title";
 
+import useTrans from "@/hooks/useTrans";
+
 // import FlashCard from "./FlashCard";
 // Import Swiper styles
 import "swiper/css";
@@ -16,6 +18,7 @@ import "swiper/css";
 function CardBanner({ products }) {
   const swiperRef = useRef();
 
+  const { flashSaleContent } = useTrans();
   const handleSlidePrev = useCallback(() => {
     swiperRef.current.slidePrev();
   }, []);
@@ -28,8 +31,8 @@ function CardBanner({ products }) {
     <div>
       {" "}
       <Title
-        content="Today's"
-        title="Flash Sales"
+        content={flashSaleContent.content}
+        title={flashSaleContent.title}
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
       />

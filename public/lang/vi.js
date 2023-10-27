@@ -27,4 +27,16 @@ export default {
     { name: "Thú cưng", href: "Groceries & Pets" },
     { name: "Sức khỏe", href: "Health & Beauty" },
   ],
+  flashSaleContent: {
+    title: `Hôm nay`,
+    content: "Flash Sales",
+  },
+  categoriesContent: {
+    title: `Danh mục`,
+    content: "Tìm kiếm bằng danh mục",
+  },
+  ourProductsContent: {
+    title: `Sản phẩm của chúng tôi`,
+    content: "Khám phá sản phẩm",
+  },
 };

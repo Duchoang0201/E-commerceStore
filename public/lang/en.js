@@ -27,4 +27,16 @@ export default {
     { name: "Groceries & Pets", href: "Groceries & Pets" },
     { name: "Health & Beauty", href: "Health & Beauty" },
   ],
+  flashSaleContent: {
+    title: `Today's`,
+    content: "Flash Sales",
+  },
+  categoriesContent: {
+    title: `Categories`,
+    content: "Browse By Category",
+  },
+  ourProductsContent: {
+    title: `Our Products`,
+    content: "Explore Our Products",
+  },
 };

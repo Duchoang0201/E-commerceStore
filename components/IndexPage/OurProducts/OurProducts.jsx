@@ -11,9 +11,12 @@ import "swiper/css/pagination";
 import ProductCardFill from "@/components/Commons/ProductCardFill";
 import Title from "@/components/Commons/Title";
 
+import useTrans from "@/hooks/useTrans";
+
 import "swiper/css";
 
 function OurProducts({ ourProducts }) {
+  const { ourProductsContent } = useTrans();
   const swiperRef = useRef();
   const handleSlidePrev = () => {
     swiperRef.current.slidePrev();
@@ -25,8 +28,8 @@ function OurProducts({ ourProducts }) {
   return (
     <div>
       <Title
-        content="Our Products"
-        title="Explore Our Products"
+        content={ourProductsContent.content}
+        title={ourProductsContent.title}
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
       />

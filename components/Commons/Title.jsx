@@ -10,9 +10,9 @@ function Title({ content, title, onPrev, onNext }) {
   return (
     <div className="pb-[60px]">
       {" "}
-      <Content content={content} />
+      <Content title={title} />
       <div className="mx-auto max-w-[1170px] pt-5 flex flex-row justify-between">
-        <div className="font-inter text-[36px] font-bold">{title}</div>
+        <div className="font-inter text-[36px] font-bold">{content}</div>
         {onPrev && onNext ? (
           <div className="flex flex-row items-center justify-end  ">
             <div className="flex flex-row gap-2">

@@ -9,9 +9,12 @@ import "swiper/css/pagination";
 
 import Title from "@/components/Commons/Title";
 
+import useTrans from "@/hooks/useTrans";
+
 import "swiper/css";
 
 function Categories({ categories }) {
+  const { categoriesContent } = useTrans();
   const swiperRef = useRef();
 
   const handleSlidePrev = () => {
@@ -24,8 +27,8 @@ function Categories({ categories }) {
   return (
     <div>
       <Title
-        content="Categories"
-        title="Browse By Category"
+        content={categoriesContent.content}
+        title={categoriesContent.title}
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
       />
