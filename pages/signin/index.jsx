@@ -1,11 +1,11 @@
 import React from "react";
 
-import SignupForm from "@/components/SignupPage/SignupForm";
+import SigninForm from "@/components/SigninForm/SigninForm";
 // import Image from "next/image";
 
 // import Banner from "./Side Image.png";
 
-function Signup() {
+function Signin() {
   return (
     <div className="max-w-[1440px] mx-auto flex flex-row pt-10">
       <div className="w-[805px] h-[781px] bg-Blue-300">
@@ -13,11 +13,11 @@ function Signup() {
       </div>
       <div className="w-[500px] flex flex-row-reverse">
         <div className="w-[371px] py-[125px]">
-          <SignupForm />
+          <SigninForm />
         </div>
       </div>
     </div>
   );
 }
 
-export default Signup;
+export default Signin;

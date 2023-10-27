@@ -5,9 +5,9 @@ import Dropdown from "@/components/Dropdown/Dropdown";
 
 function Language() {
   return (
-    <div className="mx-auto max-w-[1170px] flex flex-row">
-      <div className="w-[311px]" />
-      <div className="flex  items-center justify-evenly ssm:w-full xl:w-[859px] text-center text-white-0  ">
+    <div className="mx-auto max-w-[1170px] flex justify-center  md:flex md:flex-row">
+      <div className="hidden lg:flex md:w-[311px]" />
+      <div className="flex items-center justify-evenly ssm:w-full xl:w-[859px] text-center text-white-0  ">
         <div className="flex flex-row  items-center text-sm font-normal not-italic w-full gap-2 ">
           <div className="md:w-[474px] text-start ">
             <p className="text-truncate text-[14px]">

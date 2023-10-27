@@ -16,22 +16,22 @@ export default function Rated({ data }) {
 
   const starArray = Array.from({ length: Math.floor(fixRated) }, (_, index) => (
     <div key={index}>
-      <Image src={StarYellow} width={20} height={20} alt="'StarYellow" />
+      <Image src={StarYellow} width="auto" height="auto" alt="'StarYellow" />
     </div>
   ));
   const starLeft = Array.from(
     { length: 5 - Math.ceil(fixRated) },
     (_, index) => (
       <div key={index}>
-        <Image src={StarGray} width={20} height={20} alt="'StarGray" />
+        <Image src={StarGray} width="auto" height="auto" alt="'StarGray" />
       </div>
     ),
   );
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row items-center">
       {starArray}
       {Math.ceil(fixRated) - fixRated === 0.5 && (
-        <Image src={HalfStar} width={20} height={20} alt="'HalfStar" />
+        <Image src={HalfStar} width="auto" height="auto" alt="'HalfStar" />
       )}
       {starLeft}{" "}
     </div>

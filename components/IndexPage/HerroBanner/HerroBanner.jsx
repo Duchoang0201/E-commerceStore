@@ -43,10 +43,10 @@ function HerroBanner() {
     setShowChild("");
   };
   return (
-    <div className=" md:flex md:flex-row md:items-center md:justify-center md:mx-auto md:max-w-[1170px] ">
-      <div className="md:flex md:flex-row md:justify-between w-full flex flex-row justify-between  ">
-        <div className="w-[300px] border-r border-TEXT-1 py-5">
-          <ul className="flex flex-col w-auto">
+    <div className=" xl:flex xl:flex-row xl:items-center xl:justify-between xl:mx-auto xl:max-w-[1170px] px-0">
+      <div className="md:flex md:flex-row  flex flex-row justify-center  ">
+        <div className="hidden  xl:flex xl:w-[259px] border-r border-TEXT-1 py-5">
+          <ul className="xl:flex xl:flex-col  ">
             {listNavi.map((item) => {
               return (
                 <li
@@ -58,14 +58,14 @@ function HerroBanner() {
                 >
                   <Link
                     href={item.href}
-                    className="text-base text-black w-auto flex flex-row justify-between"
+                    className="text-base text-black w-auto flex flex-row justify-between gap-16"
                     aria-current="page"
                   >
-                    <span>{item.name}</span>
+                    <p>{item.name}</p>
                     {item.child && (
-                      <span>
+                      <p>
                         <ChevronRight size={24} />
-                      </span>
+                      </p>
                     )}
                   </Link>
                   {item.name === showChild && item.child && (
@@ -96,22 +96,23 @@ function HerroBanner() {
           </ul>
         </div>
 
-        <div className=" flex-row items-center justify-between w-full ssm:w-full xl:w-[859px] hidden lg:flex py-5 ">
+        <div className="w-full xl:flex xl:w-[901px] xl:pl-5 py-5 ">
           <div className="flex flex-row flex-wrap items-center text-sm font-normal not-italic w-full ssm:w-[0px]">
             <Swiper
+              centeredSlides
               modules={[Pagination]}
               pagination={{ clickable: true }}
               navigation
-              className="mySwiper"
+              className="mySwiper "
             >
-              <SwiperSlide>
-                <Image src={Banner} alt="banner" width="100%" height="100%" />
+              <SwiperSlide className="!flex !justify-center w-full !overflow-x-hidden">
+                <Image src={Banner} alt="banner" width="auto" height="auto" />
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={Banner} alt="banner" width="100%" height="100%" />
+                <Image src={Banner} alt="banner" width="auto" height="auto" />
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={Banner} alt="banner" width="100%" height="100%" />
+                <Image src={Banner} alt="banner" width="auto" height="auto" />
               </SwiperSlide>
               <style>
                 {`
