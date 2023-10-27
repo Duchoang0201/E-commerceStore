@@ -1,12 +1,13 @@
 import React from "react";
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
 // import { Rating } from "@material-tailwind/react";
 import { Eye, Heart } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
+
+import Rated from "../Rating/Rated";
 //  isHeart, isEye, isDiscount
 function ProductCard({ item, isHeart, isEye, isDiscount }) {
-  const { rate } = item.rating;
   return (
     <div className="w-[270px] h-[350px] ">
       <div className="group relative inline-flex justify-center overflow-hidden items-center p-[49px] bg-Secondary-0  text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
@@ -59,7 +60,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
       </div>
 
       <div className=" pt-2 flex flex-row items-center font-bold ">
-        <ReactStars
+        {/* <ReactStars
           value={rate}
           count={5}
           size={24}
@@ -67,7 +68,8 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           color="gray"
           edit={false}
           isHalf
-        />
+        /> */}
+        <Rated data={item.rating} />
         <p className="px-4 opacity-50">({item.rating.count})</p>
       </div>
     </div>

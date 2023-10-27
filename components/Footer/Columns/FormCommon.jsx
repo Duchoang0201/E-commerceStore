@@ -32,7 +32,7 @@ function Form() {
               <input
                 {...field}
                 type="search"
-                id="default-search"
+                id="default-searchFooter"
                 className="block bg-opacity-0 text-white  rounded border-gray-100 p-3 text-sm  bg-gray-50 w-full"
                 placeholder="Enter your email"
               />

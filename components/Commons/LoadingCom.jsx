@@ -1,4 +1,5 @@
 import React from "react";
+import ReactLoading from "react-loading";
 import PropTypes from "prop-types";
 
 import { Button } from "@/components/ui/button";
@@ -6,9 +7,7 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 
@@ -20,16 +19,12 @@ export function LoadingCom({ open, language }) {
           {language}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] border-none">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you are done.
+          <DialogDescription className="flex justify-center">
+            <ReactLoading type="bubbles" color="red" height={150} width={150} />
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter>
-          <Button type="submit">Save changes</Button>
-        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
