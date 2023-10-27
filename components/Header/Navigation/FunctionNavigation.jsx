@@ -9,7 +9,7 @@ function FunctionNavigation() {
           <input
             type="search"
             id="default-search"
-            className="block p-3 text-sm text-gray-900 bg-gray-50 w-[243px]"
+            className="block p-3 text-sm text-gray-900 bg-gray-50 w-[243px] bg-Secondary-0 rounded-md"
             placeholder="What are you looking for?"
             required
           />
@@ -21,9 +21,8 @@ function FunctionNavigation() {
           </button>
         </div>
       </form>
-
-      <Heart color="black" size={32} />
-      <ShoppingCart color="black" size={32} />
+      <Heart strokeWidth={1.25} color="black" size={32} />
+      <ShoppingCart strokeWidth={1.25} color="black" size={32} />
     </div>
   );
 }

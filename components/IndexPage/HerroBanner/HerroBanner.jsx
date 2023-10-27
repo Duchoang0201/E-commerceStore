@@ -25,7 +25,7 @@ function HerroBanner() {
     setShowChild("");
   };
   return (
-    <div className=" xl:flex xl:flex-row xl:items-center xl:justify-between xl:mx-auto xl:max-w-[1170px] px-0">
+    <div className=" xl:flex xl:flex-row xl:items-center xl:justify-between xl:container px-0">
       <div className="md:flex md:flex-row  flex flex-row justify-center  ">
         <div className="hidden xl:flex xl:w-[259px] border-r border-TEXT-1 py-5">
           <ul className="w-full  ">

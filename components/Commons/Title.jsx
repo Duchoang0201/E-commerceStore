@@ -11,7 +11,7 @@ function Title({ content, title, onPrev, onNext }) {
     <div className="pb-[60px]">
       {" "}
       <Content title={title} />
-      <div className="mx-auto max-w-[1170px] pt-5 flex flex-row justify-between">
+      <div className="container pt-5 flex flex-row justify-between">
         <div className="font-inter text-[36px] font-bold">{content}</div>
         {onPrev && onNext ? (
           <div className="flex flex-row items-center justify-end  ">

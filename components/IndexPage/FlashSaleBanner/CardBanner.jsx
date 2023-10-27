@@ -36,8 +36,8 @@ function CardBanner({ products }) {
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
       />
-      <div className="relative mx-auto max-w-[1505px] ">
-        <div className="xl:ml-[140px] 2xl:ml-[168px] sm:ml-0 max-w-[1308px]">
+      <div className="relative container min-[1440px]:max-w-[1440px]  ">
+        <div className="min-[1440px]:ml-[126px] ">
           {" "}
           <Swiper
             spaceBetween={10}
@@ -69,7 +69,7 @@ function CardBanner({ products }) {
                 slidesPerView: 4,
                 spaceBetween: 30,
               },
-              1480: {
+              1440: {
                 slidesPerView: 4.5,
                 spaceBetween: 30,
               },

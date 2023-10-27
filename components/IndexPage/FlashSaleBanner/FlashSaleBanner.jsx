@@ -7,7 +7,7 @@ function FlashSaleBanner({ products }) {
   return (
     <div>
       {" "}
-      <div className="w-full text-black pt-20 overflow-hidden">
+      <div className=" text-black pt-20 ">
         <CardBanner products={products} />
 
         <div className="pt-[60px] pb-[60px] flex justify-center border-b border-Neutral-200 ">
