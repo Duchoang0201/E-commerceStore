@@ -3,12 +3,14 @@ import { Heart, List, Search, ShoppingCart, X } from "lucide-react";
 
 import useTrans from "@/hooks/useTrans";
 
+import Dropdown from "../Dropdown/Dropdown";
+
 function Draw() {
   const [open, setOpen] = useState(false);
   const { navigationList } = useTrans();
 
   return (
-    <div className="relative">
+    <div className="relative flex items-center">
       <button
         className=""
         onClick={() => {
@@ -33,8 +35,8 @@ function Draw() {
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="relative py-10 px-10">
-          <div className="flex flex-row items-center gap-4 pr-3 w-full md:hidden">
+        <div className="relative py-16 px-14 ">
+          <div className="flex flex-col justify-center items-center gap-4  w-full   md:hidden">
             <form>
               <div className="relative">
                 <input
@@ -53,17 +55,28 @@ function Draw() {
               </div>
             </form>
 
-            <Heart size={32} />
-            <ShoppingCart size={32} />
+            <div className="flex flex-row justify-center w-full">
+              {" "}
+              <Heart size={32} />
+              <ShoppingCart size={32} />{" "}
+              <div className="md:hiden ">
+                <Dropdown
+                  data={[
+                    { name: "Tiếng việt", href: "vi" },
+                    { name: "English", href: "en" },
+                  ]}
+                />
+              </div>
+            </div>
           </div>
           <div>
-            <ul className="flex flex-col w-full px-2 py-2 h-auto">
+            <ul className="flex flex-col w-full  py-2 h-auto">
               {navigationList.map((item) => {
                 return (
                   <li key={`${item.name}`} className="w-auto py-2">
                     <a
                       href={item.href}
-                      className=" block px-2 py-2 pl-3 pr-4 text-black rounded hover:bg-TEXT-1 hover:text-white-0   "
+                      className=" block py-2  pr-4 text-black rounded hover:bg-TEXT-1 hover:text-white-0   "
                       aria-current="page"
                     >
                       {item.name}
@@ -81,6 +94,12 @@ function Draw() {
           >
             <X />
           </button>
+          <div
+            type="button"
+            className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-white  top-3 left-14"
+          >
+            Exclusive
+          </div>
         </div>
       </div>
     </div>
