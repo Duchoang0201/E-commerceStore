@@ -7,33 +7,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
 
+import useTrans from "@/hooks/useTrans";
+
 import Banner from "./Banner.jpg";
 
 import "swiper/css";
 
 function HerroBanner() {
-  const listNavi = [
-    {
-      name: "Woman’s Fashion",
-      href: "Woman’sFashion",
-      child: [
-        { name: "women1", href: "women1" },
-        { name: "women2", href: "women2" },
-      ],
-    },
-    {
-      name: "Man's Fashion",
-      href: "Man'sFashion",
-      child: [{ name: "man1", href: "man1" }],
-    },
-    { name: "Electronics", href: "Electronics" },
-    { name: "Home & Lifestyle", href: "Home & Lifestyle" },
-    { name: "Medicine", href: "Medicine" },
-    { name: "Sports & Outdoor", href: "Sports & Outdoor" },
-    { name: "Baby’s & Toys", href: "Baby’s & Toys" },
-    { name: "Groceries & Pets", href: "Groceries & Pets" },
-    { name: "Health & Beauty", href: "Health & Beauty" },
-  ];
+  const { menuList } = useTrans();
+
   const [showChild, setShowChild] = useState("");
   const openChild = (e) => {
     const liValue = e.target.getAttribute("value");
@@ -45,20 +27,20 @@ function HerroBanner() {
   return (
     <div className=" xl:flex xl:flex-row xl:items-center xl:justify-between xl:mx-auto xl:max-w-[1170px] px-0">
       <div className="md:flex md:flex-row  flex flex-row justify-center  ">
-        <div className="hidden  xl:flex xl:w-[259px] border-r border-TEXT-1 py-5">
-          <ul className="xl:flex xl:flex-col  ">
-            {listNavi.map((item) => {
+        <div className="hidden xl:flex xl:w-[259px] border-r border-TEXT-1 py-5">
+          <ul className="w-full  ">
+            {menuList.map((item) => {
               return (
                 <li
                   value={item.name}
                   onMouseLeave={closeChild}
                   onMouseEnter={openChild}
                   key={`${item.name}`}
-                  className=" w-full py-2 hover:bg-TEXT-1 rounded-r-2xl transition-all duration-200 "
+                  className="  py-2 hover:bg-TEXT-1 rounded-r-2xl transition-all duration-200 "
                 >
                   <Link
                     href={item.href}
-                    className="text-base text-black w-auto flex flex-row justify-between gap-16"
+                    className="text-base text-black w-auto flex flex-row justify-between "
                     aria-current="page"
                   >
                     <p>{item.name}</p>
@@ -70,7 +52,7 @@ function HerroBanner() {
                   </Link>
                   {item.name === showChild && item.child && (
                     <ul
-                      className={` w-52 flex flex-col absolute  h-auto ml-52 py-2 bg-Neutral-100 rounded transition-all duration-200`}
+                      className={` w-52 flex flex-col absolute  h-auto ml-52 py-2 bg-Neutral-100 rounded transition-all duration-200 z-50`}
                     >
                       {item.child?.map((child) => {
                         return (

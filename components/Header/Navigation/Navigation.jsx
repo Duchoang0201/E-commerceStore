@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
+import Draw from "@/components/Draw/Draw";
+
 import useTrans from "@/hooks/useTrans";
 
-import { DialogCom } from "./DialogCom";
 import FunctionNavigation from "./FunctionNavigation";
 
 function Navigation() {
@@ -51,7 +52,7 @@ function Navigation() {
             <FunctionNavigation />
           </div>
           <div className="lg:hidden flex flex-row">
-            <DialogCom />
+            <Draw />
           </div>
         </div>
       </div>
