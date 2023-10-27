@@ -54,7 +54,7 @@ function CardBanner({ products }) {
             className="mySwiper"
             breakpoints={{
               0: {
-                slidesPerView: 1.5,
+                slidesPerView: 1.3,
                 spaceBetween: 30,
               },
               580: {
@@ -78,7 +78,10 @@ function CardBanner({ products }) {
             {products.length > 0 &&
               products.map((item) => {
                 return (
-                  <SwiperSlide key={item.id}>
+                  <SwiperSlide
+                    className="flex justify-center items-center"
+                    key={item.id}
+                  >
                     <ProductCart
                       item={item}
                       isEye={{ isActive: true }}
