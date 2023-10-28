@@ -39,4 +39,8 @@ export default {
     title: `Our Products`,
     content: "Explore Our Products",
   },
+  featureContent: {
+    title: `Featured`,
+    content: "New Arrival",
+  },
 };

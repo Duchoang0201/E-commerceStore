@@ -2,39 +2,29 @@ import React from "react";
 import ReactLoading from "react-loading";
 import PropTypes from "prop-types";
 
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import {} from "@/components/ui/dialog";
 
 export function LoadingCom({ open, language }) {
   return (
-    <Dialog open={open}>
-      <DialogTrigger asChild className="w-full">
-        <Button className="hover:bg-Neutral-400 items-center flex justify-start">
-          {language}
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] border-none">
-        <DialogHeader>
-          <DialogDescription className="flex justify-center">
-            <ReactLoading type="bubbles" color="red" height={150} width={150} />
-          </DialogDescription>
-        </DialogHeader>
-      </DialogContent>
-    </Dialog>
+    <div>
+      <div className="flex flex-col text-start hover:bg-Neutral-300 transition-all duration-300 hover:rounded-md px-2 py-2">
+        {language}
+      </div>
+      {open && (
+        <div
+          aria-hidden="true"
+          className="fixed items-center flex inset-0 z-40 bg-black-0 bg-opacity-40 h-screen w-full"
+        >
+          <div className="mx-auto ">
+            <ReactLoading />
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
 LoadingCom.propTypes = {
-  open: PropTypes.instanceOf(Boolean),
-  language: PropTypes.instanceOf(String),
-};
-LoadingCom.defaultProps = {
-  open: false,
-  language: "",
+  open: PropTypes.bool.isRequired,
+  language: PropTypes.string.isRequired,
 };

@@ -55,12 +55,13 @@ function Draw() {
               </div>
             </form>
 
-            <div className="flex flex-row justify-center w-full">
+            <div className="items-center flex flex-row justify-around w-full">
               {" "}
               <Heart size={32} />
               <ShoppingCart size={32} />{" "}
               <div className="md:hiden ">
                 <Dropdown
+                  color="black"
                   data={[
                     { name: "Tiếng việt", href: "vi" },
                     { name: "English", href: "en" },

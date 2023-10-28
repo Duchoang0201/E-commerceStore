@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
+import SpaceBottom from "@/components/Commons/SpaceBottom";
+
 import CardBanner from "./CardBanner";
 
 function FlashSaleBanner({ products }) {
@@ -10,7 +12,7 @@ function FlashSaleBanner({ products }) {
       <div className=" text-black pt-20 ">
         <CardBanner products={products} />
 
-        <div className="pt-[60px] pb-[60px] flex justify-center border-b border-Neutral-200 ">
+        <div className="pt-[60px] flex justify-center ">
           <button
             type="button"
             className="hover:bg-Neutral-600 transform transition-all duration-300 flex flex-row justify-center bg-Secondary-2 w-[234px] h-[56px] text-white-0 items-center text-white font-poppins text-base "
@@ -18,6 +20,7 @@ function FlashSaleBanner({ products }) {
             View All Products
           </button>
         </div>
+        <SpaceBottom border />
       </div>
     </div>
   );

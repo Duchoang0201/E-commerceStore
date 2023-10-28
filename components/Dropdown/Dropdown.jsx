@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Globe } from "lucide-react";
 // import Link from "next/link";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 
 import { LoadingCom } from "../Commons/LoadingCom";
 
-function Dropdown({ data }) {
+function Dropdown({ data, color }) {
   const [loading, setLoading] = useState(false);
   const { locale } = useRouter();
   const router = useRouter();
@@ -23,25 +23,35 @@ function Dropdown({ data }) {
   };
 
   return (
-    <div className="relative inline-block text-left ">
+    <div className="relative inline-block text-end text-white-0 ">
       <button
         type="submit"
         onClick={handleOpen}
-        className="text-white  text-sm  py-2.5 text-center inline-flex items-center"
+        className={` text-white-0  text-sm  py-2.5 text-center inline-flex items-center`}
       >
-        <span className="w-20">
-          {locale === "vi" ? "Tiếng việt" : "English"}
-        </span>{" "}
+        <div
+          className={`${
+            color === "white" ? "text-white-0" : "text-black-0"
+          } w-20 flex flex-row justify-center items-center gap-2`}
+        >
+          <Globe size={32} strokeWidth={1.25} /> {locale === "vi" ? "Vi" : "En"}
+        </div>{" "}
         {open ? <ChevronUp size="24" /> : <ChevronDown size="24" />}
       </button>
       {open && (
         <div
           id="dropdown"
-          className="z-10 origin-top-right absolute right-0 mt-2 w-44 bg-black-0  rounded-lg shadow-lg dark:bg-black"
+          className={`${
+            color !== "white" ? "bg-white-0" : "bg-black-0"
+          } z-10 origin-top-right absolute right-0 mt-2 w-44 bg-black-0  rounded-lg shadow-lg`}
           role="listbox"
           aria-labelledby="dropdownDefaultButton"
         >
-          <ul className="text-sm text-gray-700 ">
+          <ul
+            className={`${
+              color === "white" ? "text-white-0" : "text-black-0"
+            } text-sm`}
+          >
             {data?.map((item) => (
               <li key={item.name} className="">
                 <button
@@ -64,11 +74,11 @@ function Dropdown({ data }) {
 }
 
 Dropdown.propTypes = {
-  data: PropTypes.arrayOf(Object),
+  data: PropTypes.arrayOf(Object).isRequired,
 };
 
-Dropdown.defaultProps = {
-  data: [],
+Dropdown.propTypes = {
+  color: PropTypes.string.isRequired,
 };
 
 export default Dropdown;

@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
 
+import SpaceBottom from "@/components/Commons/SpaceBottom";
+import SpaceTop from "@/components/Commons/SpaceTop";
 import Title from "@/components/Commons/Title";
 
 import useTrans from "@/hooks/useTrans";
@@ -26,6 +28,7 @@ function Categories({ categories }) {
   };
   return (
     <div>
+      <SpaceTop />
       <Title
         content={categoriesContent.content}
         title={categoriesContent.title}
@@ -96,7 +99,7 @@ function Categories({ categories }) {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="pt-20 border-b border-red-600" />
+      <SpaceBottom border />
     </div>
   );
 }

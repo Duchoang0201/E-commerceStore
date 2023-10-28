@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
 import Categories from "./Categories/Categories";
+import Features from "./Feature/Features";
 import FlashSaleBanner from "./FlashSaleBanner/FlashSaleBanner";
 import HerroBanner from "./HerroBanner/HerroBanner";
 import OurProducts from "./OurProducts/OurProducts";
@@ -15,6 +16,7 @@ function IndexPage({ products, categories, thisMonth, ourProducts }) {
       <Categories categories={categories} />
       <ThisMonth thisMonth={thisMonth} />
       <OurProducts ourProducts={ourProducts} />
+      <Features />
     </div>
   );
 }

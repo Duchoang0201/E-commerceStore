@@ -39,4 +39,8 @@ export default {
     title: `Sản phẩm của chúng tôi`,
     content: "Khám phá sản phẩm",
   },
+  featureContent: {
+    title: `Đặc sắc`,
+    content: "Hàng mới về",
+  },
 };

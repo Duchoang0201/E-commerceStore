@@ -6,9 +6,9 @@ import PropTypes from "prop-types";
 function FlashCard({ item }) {
   return (
     <div className="w-[270px] h-[350px]  flex flex-col ">
-      <div className="group relative inline-flex justify-center overflow-hidden items-center p-[49px] bg-Secondary-0  text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      <div className=" group relative inline-flex justify-center overflow-hidden items-center p-[49px] bg-Secondary-0  text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
         <Image
-          className="relative !w-[172px] !h-[152px]"
+          className="relative !w-[172px] !h-[152px] "
           src={item.image}
           width={172}
           height={152}

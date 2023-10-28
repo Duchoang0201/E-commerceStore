@@ -8,7 +8,7 @@ function Language() {
     <div className="container flex justify-center  md:flex md:flex-row">
       <div className="hidden lg:flex  lg:w-[310px]" />
       <div className=" flex justify-between xl:flex xl:justify-between xl:text-center w-full xl:w-[859px]  text-white-0  ">
-        <div className="flex justify-center xl:flex xl:justify-between  items-center text-sm font-normal not-italic w-full gap-2 ">
+        <div className="flex justify-between xl:flex xl:justify-between  items-center text-sm font-normal not-italic w-full gap-2 ">
           <div className="md:w-[550px] text-start flex flex-row ">
             <p className="text-truncate text-[14px]">
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
@@ -18,8 +18,9 @@ function Language() {
               ShopNow
             </Link>
           </div>
-          <div className="md:flex hidden">
+          <div className="md:flex hidden text-Secondary-0">
             <Dropdown
+              color="white"
               data={[
                 { name: "Tiếng việt", href: "vi" },
                 { name: "English", href: "en" },

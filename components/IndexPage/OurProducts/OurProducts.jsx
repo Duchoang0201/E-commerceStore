@@ -34,7 +34,7 @@ function OurProducts({ ourProducts }) {
         onNext={handleSlideNext}
       />
 
-      <div className="container pt-10  ">
+      <div className="container  ">
         <Swiper
           modules={[Grid]}
           onBeforeInit={(swiper) => {
@@ -47,19 +47,24 @@ function OurProducts({ ourProducts }) {
 
               spaceBetween: 30,
             },
-            480: {
-              slidesPerView: 2,
+            710: {
+              slidesPerView: 2.5,
               grid: { fill: "row", rows: 2 },
 
               spaceBetween: 30,
             },
-            800: {
+            1010: {
               grid: { fill: "row", rows: 2 },
 
-              slidesPerView: 3,
+              slidesPerView: 3.5,
               spaceBetween: 30,
             },
             1280: {
+              grid: { fill: "row", rows: 2 },
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+            1440: {
               grid: { fill: "row", rows: 2 },
               slidesPerView: 4,
               spaceBetween: 30,
@@ -68,7 +73,10 @@ function OurProducts({ ourProducts }) {
         >
           {ourProducts &&
             ourProducts.map((item) => (
-              <SwiperSlide key={item.id} className=" ">
+              <SwiperSlide
+                key={item.id}
+                className="!flex !justify-center !items-center "
+              >
                 <ProductCardFill
                   item={item}
                   isEye={{ isActive: true }}
@@ -87,7 +95,7 @@ function OurProducts({ ourProducts }) {
             ))}
         </Swiper>
       </div>
-      <div className="pt-20 border-b border-red-600" />
+      <div className="pt-20 " />
     </div>
   );
 }

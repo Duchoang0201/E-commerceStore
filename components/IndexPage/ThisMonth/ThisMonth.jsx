@@ -8,6 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 
 import ProductCardFill from "@/components/Commons/ProductCardFill";
+import SpaceBottom from "@/components/Commons/SpaceBottom";
+import SpaceTop from "@/components/Commons/SpaceTop";
 import Title from "@/components/Commons/Title";
 
 import Banner from "./Frame 600.png";
@@ -26,6 +28,7 @@ function ThisMonth({ thisMonth }) {
   };
   return (
     <div>
+      <SpaceTop />
       <Title
         content="This Month"
         title="Best Selling Products"
@@ -33,7 +36,7 @@ function ThisMonth({ thisMonth }) {
         onNext={handleSlideNext}
       />
 
-      <div className="sm:ml-auto container pt-10 ">
+      <div className="sm:ml-auto container  ">
         <Swiper
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
@@ -43,15 +46,19 @@ function ThisMonth({ thisMonth }) {
               slidesPerView: 1.3,
               spaceBetween: 30,
             },
-            600: {
-              slidesPerView: 2,
+            710: {
+              slidesPerView: 2.5,
               spaceBetween: 30,
             },
-            800: {
-              slidesPerView: 3,
+            1010: {
+              slidesPerView: 3.5,
               spaceBetween: 30,
             },
             1280: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+            1440: {
               slidesPerView: 4,
               spaceBetween: 30,
             },
@@ -59,7 +66,10 @@ function ThisMonth({ thisMonth }) {
         >
           {thisMonth &&
             thisMonth.map((item) => (
-              <SwiperSlide key={item.id} className="relative group ">
+              <SwiperSlide
+                key={item.id}
+                className="!flex !justify-center !items-center"
+              >
                 <ProductCardFill
                   item={item}
                   isEye={{ isActive: true }}
@@ -73,7 +83,7 @@ function ThisMonth({ thisMonth }) {
       <div className="flex flex-row items-center justify-center container pt-10 ">
         <Image src={Banner} alt="banner" />
       </div>
-      <div className="pt-20 border-b border-red-600" />
+      <SpaceBottom border={false} />
     </div>
   );
 }

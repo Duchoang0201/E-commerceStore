@@ -25,60 +25,65 @@ function HerroBanner() {
     setShowChild("");
   };
   return (
-    <div className=" xl:flex xl:flex-row xl:items-center xl:justify-between xl:container px-0">
+    <div className=" xl:flex xl:flex-row xl:items-center xl:justify-between xl:container ">
       <div className="md:flex md:flex-row  flex flex-row justify-center  ">
-        <div className="hidden xl:flex xl:w-[259px] border-r border-TEXT-1 py-5">
-          <ul className="w-full  ">
-            {menuList.map((item) => {
-              return (
-                <li
-                  value={item.name}
-                  onMouseLeave={closeChild}
-                  onMouseEnter={openChild}
-                  key={`${item.name}`}
-                  className="  py-2 hover:bg-TEXT-1 rounded-r-2xl transition-all duration-200 "
-                >
-                  <Link
-                    href={item.href}
-                    className="text-base text-black w-auto flex flex-row justify-between "
-                    aria-current="page"
+        <div className="border-r pt-10">
+          <div className="hidden xl:flex xl:w-[259px] ">
+            <ul className="w-full   ">
+              {menuList.map((item, index) => {
+                const isLastItem = index === menuList.length - 1;
+                return (
+                  <li
+                    value={item.name}
+                    onMouseLeave={closeChild}
+                    onMouseEnter={openChild}
+                    key={`${item.name}`}
+                    className={`${
+                      isLastItem ? "" : "pb-4"
+                    } hover:bg-TEXT-1 rounded-r-2xl transition-all duration-200`}
                   >
-                    <p>{item.name}</p>
-                    {item.child && (
-                      <p>
-                        <ChevronRight size={24} />
-                      </p>
-                    )}
-                  </Link>
-                  {item.name === showChild && item.child && (
-                    <ul
-                      className={` w-52 flex flex-col absolute  h-auto ml-52 py-2 bg-Neutral-100 rounded transition-all duration-200 z-50`}
+                    <Link
+                      href={item.href}
+                      className="text-base h-[24px] align-bottom text-black w-auto flex flex-row justify-between "
+                      aria-current="page"
                     >
-                      {item.child?.map((child) => {
-                        return (
-                          <li
-                            className="px-2 py-2 hover:bg-TEXT-1 transition-all duration-200"
-                            key={child.name}
-                          >
-                            <Link
-                              href={child.href}
-                              className="text-base text-black w-auto flex flex-row justify-between"
-                              aria-current="page"
+                      <p>{item.name}</p>
+                      {item.child && (
+                        <p>
+                          <ChevronRight size={24} />
+                        </p>
+                      )}
+                    </Link>
+                    {item.name === showChild && item.child && (
+                      <ul
+                        className={` w-52 flex flex-col absolute  h-auto ml-52 py-2 bg-Neutral-100 rounded transition-all duration-200 z-50`}
+                      >
+                        {item.child?.map((child) => {
+                          return (
+                            <li
+                              className="px-2 py-2 hover:bg-TEXT-1 transition-all duration-200"
+                              key={child.name}
                             >
-                              {child.name}
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
+                              <Link
+                                href={child.href}
+                                className="text-base text-black w-auto flex flex-row justify-between"
+                                aria-current="page"
+                              >
+                                {child.name}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
 
-        <div className="w-full xl:flex xl:w-[901px] xl:pl-5 py-5 ">
+        <div className="w-full h-max xl:flex xl:w-[901px] xl:pl-5  pt-10 ">
           <div className="flex flex-row flex-wrap items-center text-sm font-normal not-italic w-full ssm:w-[0px]">
             <Swiper
               centeredSlides

@@ -57,12 +57,12 @@ function CardBanner({ products }) {
                 slidesPerView: 1.3,
                 spaceBetween: 30,
               },
-              580: {
-                slidesPerView: 2,
+              710: {
+                slidesPerView: 2.5,
                 spaceBetween: 30,
               },
-              800: {
-                slidesPerView: 3,
+              1010: {
+                slidesPerView: 3.5,
                 spaceBetween: 30,
               },
               1280: {
@@ -79,7 +79,7 @@ function CardBanner({ products }) {
               products.map((item) => {
                 return (
                   <SwiperSlide
-                    className="flex justify-center items-center"
+                    className="!flex !justify-center !items-center"
                     key={item.id}
                   >
                     <ProductCart
