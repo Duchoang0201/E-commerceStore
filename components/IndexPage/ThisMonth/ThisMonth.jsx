@@ -43,7 +43,7 @@ function ThisMonth({ thisMonth }) {
           }}
           breakpoints={{
             0: {
-              slidesPerView: 1.3,
+              slidesPerView: 1.5,
               spaceBetween: 30,
             },
             710: {

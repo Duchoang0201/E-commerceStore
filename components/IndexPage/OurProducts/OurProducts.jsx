@@ -42,7 +42,7 @@ function OurProducts({ ourProducts }) {
           }}
           breakpoints={{
             0: {
-              slidesPerView: 1.3,
+              slidesPerView: 1.5,
               grid: { fill: "row", rows: 2 },
 
               spaceBetween: 30,
