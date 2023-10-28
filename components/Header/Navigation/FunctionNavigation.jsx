@@ -3,7 +3,7 @@ import { Heart, Search, ShoppingCart } from "lucide-react";
 
 function FunctionNavigation() {
   return (
-    <div className="flex flex-row items-center gap-4 pr-3 w-full">
+    <div className="flex flex-row items-center gap-4 w-full">
       <form>
         <div className="relative">
           <input

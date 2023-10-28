@@ -9,7 +9,7 @@ import Rated from "../Rating/Rated";
 //  isHeart, isEye, isDiscount
 function ProductCard({ item, isHeart, isEye, isDiscount }) {
   return (
-    <div className="w-[270px] h-[350px] ">
+    <div className="!w-[270px] h-[350px] ">
       <div className="group relative inline-flex justify-center overflow-hidden items-center p-[49px] bg-Secondary-0  text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
         <Image
           className="relative !w-[172px] !h-[152px]"

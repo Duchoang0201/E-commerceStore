@@ -52,9 +52,9 @@ function ThisMonth({ thisMonth }) {
             },
             1010: {
               slidesPerView: 3.5,
-              spaceBetween: 30,
+              spaceBetween: 20,
             },
-            1280: {
+            1200: {
               slidesPerView: 4,
               spaceBetween: 30,
             },

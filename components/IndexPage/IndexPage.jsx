@@ -10,7 +10,7 @@ import ThisMonth from "./ThisMonth/ThisMonth";
 // categories, thisMonth, ourProducts
 function IndexPage({ products, categories, thisMonth, ourProducts }) {
   return (
-    <div className="border-t border-TEXT-1 w-full ">
+    <div className="border-t border-Neutral-200 w-full ">
       <HerroBanner />
       <FlashSaleBanner products={products} />
       <Categories categories={categories} />

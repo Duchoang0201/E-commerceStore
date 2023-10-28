@@ -36,8 +36,8 @@ function CardBanner({ products }) {
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
       />
-      <div className="relative container min-[1440px]:max-w-[1440px]  ">
-        <div className="min-[1440px]:ml-[126px] ">
+      <div className="relative container xxl:max-w-[1465px]  ">
+        <div className="xxl:ml-[145px] ">
           {" "}
           <Swiper
             spaceBetween={10}
@@ -55,23 +55,23 @@ function CardBanner({ products }) {
             breakpoints={{
               0: {
                 slidesPerView: 1.5,
-                spaceBetween: 30,
+                spaceBetween: 32,
               },
               710: {
                 slidesPerView: 2.5,
-                spaceBetween: 30,
+                spaceBetween: 32,
               },
               1010: {
                 slidesPerView: 3.5,
-                spaceBetween: 30,
+                spaceBetween: 32,
               },
               1280: {
                 slidesPerView: 4,
-                spaceBetween: 30,
+                spaceBetween: 32,
               },
               1440: {
                 slidesPerView: 4.5,
-                spaceBetween: 30,
+                spaceBetween: 32,
               },
             }}
           >

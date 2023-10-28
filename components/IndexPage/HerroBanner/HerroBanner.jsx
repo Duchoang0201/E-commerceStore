@@ -25,9 +25,9 @@ function HerroBanner() {
     setShowChild("");
   };
   return (
-    <div className=" xl:flex xl:flex-row xl:items-center xl:justify-between xl:container ">
+    <div className="  container ">
       <div className="md:flex md:flex-row  flex flex-row justify-center  ">
-        <div className="border-r pt-10">
+        <div className="border-r border-Neutral-200 pt-10">
           <div className="hidden xl:flex xl:w-[259px] ">
             <ul className="w-full   ">
               {menuList.map((item, index) => {
@@ -49,7 +49,7 @@ function HerroBanner() {
                     >
                       <p>{item.name}</p>
                       {item.child && (
-                        <p>
+                        <p className="pr-4">
                           <ChevronRight size={24} />
                         </p>
                       )}
@@ -83,7 +83,7 @@ function HerroBanner() {
           </div>
         </div>
 
-        <div className="w-full h-max xl:flex xl:w-[901px] xl:pl-5  pt-10 ">
+        <div className="w-full h-max xl:flex xl:w-[910px]   pt-10 ">
           <div className="flex flex-row flex-wrap items-center text-sm font-normal not-italic w-full ssm:w-[0px]">
             <Swiper
               centeredSlides
@@ -92,7 +92,7 @@ function HerroBanner() {
               navigation
               className="mySwiper "
             >
-              <SwiperSlide className="!flex !justify-center w-full !overflow-x-hidden">
+              <SwiperSlide className="!flex !justify-end w-full ">
                 <Image src={Banner} alt="banner" width="auto" height="auto" />
               </SwiperSlide>
               <SwiperSlide>
