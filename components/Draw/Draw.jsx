@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Heart, List, Search, ShoppingCart, X } from "lucide-react";
+import Link from "next/link";
 
+import useCartStore from "@/hooks/useCartStore";
 import useTrans from "@/hooks/useTrans";
 
 import Dropdown from "../Dropdown/Dropdown";
@@ -9,6 +11,7 @@ function Draw() {
   const [open, setOpen] = useState(false);
   const { navigationList } = useTrans();
 
+  const { carts } = useCartStore();
   return (
     <div className="relative flex items-center">
       <button
@@ -57,8 +60,38 @@ function Draw() {
 
             <div className="items-center flex flex-row justify-around w-full">
               {" "}
-              <Heart size={32} />
-              <ShoppingCart size={32} />{" "}
+              <Link
+                href="cart"
+                className=" group relative inline-flex justify-center "
+              >
+                <Heart
+                  className="relative"
+                  strokeWidth={1.25}
+                  color="black"
+                  size={32}
+                />
+                <div className="absolute inline-flex items-start justify-end w-12 h-12 text-xs -top-2 -right-2 ">
+                  <div className="bg-Secondary-2 w-6 h-6 rounded-full text-white-0 flex justify-center">
+                    {carts.length}
+                  </div>
+                </div>
+              </Link>
+              <Link
+                href="cart"
+                className=" group relative inline-flex justify-center "
+              >
+                <ShoppingCart
+                  className="relative"
+                  strokeWidth={1.25}
+                  color="black"
+                  size={32}
+                />
+                <div className="absolute inline-flex items-start justify-end w-12 h-12 text-xs -top-2 -right-2 ">
+                  <div className="bg-Secondary-2 w-6 h-6 rounded-full text-white-0 flex justify-center">
+                    {carts.length}
+                  </div>
+                </div>
+              </Link>
               <div className="md:hiden ">
                 <Dropdown
                   color="black"

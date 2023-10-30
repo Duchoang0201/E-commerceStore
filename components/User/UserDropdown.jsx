@@ -11,12 +11,16 @@ function UserDropdown() {
   const handleOpen = () => {
     setOpen(!open);
   };
+  const handleBlur = () => {
+    setOpen(false);
+  };
 
   return (
     <div className="relative items-center">
       <button
         type="submit"
         onClick={handleOpen}
+        onBlur={handleBlur}
         className={` text-sm text-center flex justify-center items-center`}
       >
         <User strokeWidth={1.25} color="black" size={32} />

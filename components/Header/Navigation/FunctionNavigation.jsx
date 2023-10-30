@@ -1,10 +1,15 @@
+"use client";
+
 import React from "react";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
 import UserDropdown from "@/components/User/UserDropdown";
 
+import useCartStore from "@/hooks/useCartStore";
+
 function FunctionNavigation() {
+  const { carts } = useCartStore();
   return (
     <div className="flex flex-row items-center gap-4 w-full">
       <form>
@@ -24,10 +29,31 @@ function FunctionNavigation() {
           </button>
         </div>
       </form>
-      <Heart strokeWidth={1.25} color="black" size={32} />
-
-      <Link href="cart">
-        <ShoppingCart strokeWidth={1.25} color="black" size={32} />
+      <Link href="cart" className=" group relative inline-flex justify-center ">
+        <Heart
+          className="relative"
+          strokeWidth={1.25}
+          color="black"
+          size={32}
+        />
+        <div className="absolute inline-flex items-start justify-end w-12 h-12 text-xs -top-2 -right-2 ">
+          <div className="bg-Secondary-2 w-6 h-6 rounded-full text-white-0 flex justify-center">
+            {carts.length}
+          </div>
+        </div>
+      </Link>
+      <Link href="cart" className=" group relative inline-flex justify-center ">
+        <ShoppingCart
+          className="relative"
+          strokeWidth={1.25}
+          color="black"
+          size={32}
+        />
+        <div className="absolute inline-flex items-start justify-end w-12 h-12 text-xs -top-2 -right-2 ">
+          <div className="bg-Secondary-2 w-6 h-6 rounded-full text-white-0 flex justify-center">
+            {carts.length}
+          </div>
+        </div>
       </Link>
 
       <UserDropdown />

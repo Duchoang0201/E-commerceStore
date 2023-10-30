@@ -19,21 +19,16 @@ import "swiper/css";
 function ThisMonth({ thisMonth }) {
   const swiperRef = useRef();
 
-  const handleSlidePrev = () => {
-    swiperRef.current.slidePrev();
-  };
-
-  const handleSlideNext = () => {
-    swiperRef.current.slideNext();
-  };
   return (
     <div>
       <SpaceTop />
       <Title
         content="This Month"
         title="Best Selling Products"
-        onPrev={handleSlidePrev}
-        onNext={handleSlideNext}
+        // onPrev={handleSlidePrev}
+        // onNext={handleSlideNext}
+        bgButton="bg-Secondary-2"
+        buttonText="View all"
       />
 
       <div className="sm:ml-auto container  ">

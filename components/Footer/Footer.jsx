@@ -40,7 +40,7 @@ function Footer() {
   return (
     <div className="text-white-0">
       <footer className="bg-black-0">
-        <div className="mx-auto w-full max-w-screen-xl pt-20 bg-black ">
+        <div className="container pt-20 bg-black ">
           <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5 pb-16">
             <div>
               <h2 className="text-xl mb-6 font-semibold  dark:text-white">
@@ -111,10 +111,10 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <span className="py-3 block text-sm text-gray-400 sm:text-center ">
-            © Copyright Rimel 2022. All right reserved
-          </span>
         </div>
+        <p className="py-3 block text-sm text-gray-400 sm:text-center border-t-[0.01px] border-Neutral-50 border-opacity-5">
+          © Copyright Rimel 2022. All right reserved
+        </p>
       </footer>
     </div>
   );
