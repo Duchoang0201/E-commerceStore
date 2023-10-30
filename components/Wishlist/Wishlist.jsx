@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ProductCardFill from "../Commons/ProductCardFill";
+import SpaceTop from "../Commons/SpaceTop";
 
 import "swiper/css";
-import SpaceTop from "../Commons/SpaceTop";
 
 function Wishlist({ data }) {
   return (
