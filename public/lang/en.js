@@ -52,4 +52,16 @@ export default {
     { icon: Star, title: `My Reviews` },
     { icon: LogOut, title: `Logout` },
   ],
+  checkoutForm: [
+    { name: "First Name", route: "firstName", require: true },
+    { name: "Company Name", route: "companyName", require: false },
+    { name: "Street Address", route: "streetAddress", require: true },
+    {
+      name: "Apartment, floor, etc. (optional)",
+      route: "moreAddress",
+      require: false,
+    },
+    { name: "Phone Number", route: "phoneNumbber", require: true },
+    { name: "Email Address", route: "email", require: true },
+  ],
 };

@@ -52,4 +52,12 @@ export default {
     { icon: Star, title: `Đánh giá` },
     { icon: LogOut, title: `Thoát` },
   ],
+  checkoutForm: [
+    { name: "Tên", route: "firstName", require: true },
+    { name: "Tên công ty", route: "companyName", require: false },
+    { name: "Địa chỉ", route: "streetAddress", require: true },
+    { name: "Chung cư, tầng,...", route: "moreAddress", require: false },
+    { name: "Số điện thoại", route: "phoneNumbber", require: true },
+    { name: "Địa chỉ email", route: "email", require: true },
+  ],
 };
