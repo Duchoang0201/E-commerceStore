@@ -1,5 +1,8 @@
 import React from "react";
 import { Heart, Search, ShoppingCart } from "lucide-react";
+import Link from "next/link";
+
+import UserDropdown from "@/components/User/UserDropdown";
 
 function FunctionNavigation() {
   return (
@@ -22,7 +25,12 @@ function FunctionNavigation() {
         </div>
       </form>
       <Heart strokeWidth={1.25} color="black" size={32} />
-      <ShoppingCart strokeWidth={1.25} color="black" size={32} />
+
+      <Link href="cart">
+        <ShoppingCart strokeWidth={1.25} color="black" size={32} />
+      </Link>
+
+      <UserDropdown />
     </div>
   );
 }

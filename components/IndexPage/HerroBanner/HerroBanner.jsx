@@ -92,13 +92,13 @@ function HerroBanner() {
               navigation
               className="mySwiper "
             >
-              <SwiperSlide className="!flex !justify-end w-full ">
+              <SwiperSlide className=" !flex !justify-center xl:!flex xl:!justify-end w-full ">
                 <Image src={Banner} alt="banner" width="auto" height="auto" />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className=" !flex !justify-center xl:!flex xl:!justify-end w-full ">
                 <Image src={Banner} alt="banner" width="auto" height="auto" />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className=" !flex !justify-center xl:!flex xl:!justify-end w-full ">
                 <Image src={Banner} alt="banner" width="auto" height="auto" />
               </SwiperSlide>
               <style>

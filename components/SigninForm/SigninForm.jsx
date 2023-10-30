@@ -9,7 +9,7 @@ const validationSchema = yup.object().shape({
     .required("Email or Phone Number is required")
     .matches(
       /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$|^(\+\d{1,3}[- ]?)?\d{10}$/,
-      "Invalid Email or Phone Number",
+      "Invalid Email or Phone Number"
     ),
   password: yup
     .string()
@@ -26,7 +26,7 @@ function SigninForm() {
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = () => {};
 
   return (
     <div className="flex flex-col">
@@ -51,12 +51,19 @@ function SigninForm() {
                 />
               )}
             />
-            {errors.userName && (
-              <p className="text-Red-500">{errors.userName.message}</p>
-            )}
+            <p
+              className={`${
+                errors.userName ? "opacity-100" : "opacity-0"
+              } relative -top-1 text-Red-500 bg-green-600 transition-all duration-700 ease-in`}
+            >
+              {/* <span className="absolute -top-4">
+                <ChevronUp size={20} />
+              </span> */}
+              {errors.userName?.message}
+            </p>
           </div>
 
-          <div className="relative bg-black pb-10">
+          <div className="relative  pb-10">
             <Controller
               name="password"
               control={control}
@@ -70,15 +77,22 @@ function SigninForm() {
                 />
               )}
             />
-            {errors.password && (
-              <p className="text-Red-500">{errors.password.message}</p>
-            )}
+            <p
+              className={`${
+                errors.password ? "opacity-100" : "opacity-0"
+              } relative -top-1 text-Red-500 bg-green-600 transition-all duration-700 ease-in`}
+            >
+              {/* <span className="absolute -top-4">
+                <ChevronUp size={20} />
+              </span> */}
+              {errors.password?.message}
+            </p>
           </div>
 
           <div className="w-full  rounded-md h-14 text-white-0 flex justify-between items-center mb-4">
             <button
               type="submit"
-              className="px-12 py-2 bg-Secondary-2 text-sm rounded-sm"
+              className="px-12 py-4 bg-Secondary-2 text-sm rounded-sm"
             >
               Log in
             </button>

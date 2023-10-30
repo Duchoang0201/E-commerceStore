@@ -1,3 +1,5 @@
+import { Inbox, LogOut, Star, User, XCircle } from "lucide-react";
+
 export default {
   navigationList: [
     { name: "Home", href: "/" },
@@ -43,4 +45,11 @@ export default {
     title: `Featured`,
     content: "New Arrival",
   },
+  userDropdown: [
+    { icon: User, title: `Manage My Account` },
+    { icon: Inbox, title: `My Order` },
+    { icon: XCircle, title: `My Cancellations` },
+    { icon: Star, title: `My Reviews` },
+    { icon: LogOut, title: `Logout` },
+  ],
 };

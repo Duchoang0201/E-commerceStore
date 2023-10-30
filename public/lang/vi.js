@@ -1,3 +1,5 @@
+import { Inbox, LogOut, Star, User, XCircle } from "lucide-react";
+
 export default {
   navigationList: [
     { name: "Trang chủ", href: "/" },
@@ -43,4 +45,11 @@ export default {
     title: `Đặc sắc`,
     content: "Hàng mới về",
   },
+  userDropdown: [
+    { icon: User, title: `Tài khoản` },
+    { icon: Inbox, title: `Đơn đặt hàng` },
+    { icon: XCircle, title: `Đơn hủy` },
+    { icon: Star, title: `Đánh giá` },
+    { icon: LogOut, title: `Thoát` },
+  ],
 };
