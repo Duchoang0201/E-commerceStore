@@ -9,7 +9,7 @@ const validationSchema = yup.object().shape({
     .required("Email or Phone Number is required")
     .matches(
       /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$|^(\+\d{1,3}[- ]?)?\d{10}$/,
-      "Invalid Email or Phone Number"
+      "Invalid Email or Phone Number",
     ),
   password: yup
     .string()
