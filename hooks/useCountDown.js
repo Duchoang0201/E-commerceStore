@@ -13,18 +13,19 @@ const getReturnValues = (countDown) => {
 };
 
 const useCountdown = (targetDate) => {
-  const countDownDate = new Date(targetDate).getTime();
+  // const countDownDate = new Date(targetDate).getTime();
+  const countDownDate = targetDate;
   const [countDown, setCountDown] = useState(
     countDownDate - new Date().getTime()
   );
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCountDown(countDownDate - new Date().getTime());
+      setCountDown(countDown - 1000);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [countDownDate]);
+  }, [countDown]);
 
   return getReturnValues(countDown);
 };

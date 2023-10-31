@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,56 +17,53 @@ function HerroBanner() {
   const { menuList } = useTrans();
 
   const [showChild, setShowChild] = useState("");
+  const liRef = useRef();
   const openChild = (e) => {
-    const liValue = e.target.getAttribute("value");
+    const liValue = e.currentTarget.getAttribute("value");
     setShowChild(liValue);
   };
   const closeChild = () => {
     setShowChild("");
   };
   return (
-    <div className="  container ">
-      <div className="md:flex md:flex-row  flex flex-row justify-center  ">
-        <div className="border-r border-Neutral-200 pt-10">
-          <div className="hidden xl:flex xl:w-[259px] ">
-            <ul className="w-full   ">
+    <div className="container">
+      <div className="flex flex-row justify-center xl:flex xl:flex-row xl:justify-between">
+        <div className="hidden xl:flex xl:w-full  border-r border-Neutral-200 pt-10 max-w-[233px] w-full">
+          <div className="hidden xl:flex xl:w-full ">
+            <ul className="w-full">
               {menuList.map((item, index) => {
                 const isLastItem = index === menuList.length - 1;
                 return (
                   <li
+                    ref={liRef}
                     value={item.name}
                     onMouseLeave={closeChild}
                     onMouseEnter={openChild}
                     key={`${item.name}`}
                     className={`${
-                      isLastItem ? "" : "pb-4"
-                    } hover:bg-TEXT-1 rounded-r-2xl transition-all duration-200`}
+                      isLastItem ? "" : ""
+                    } rounded-r-2xl max-w-[233px] `}
                   >
                     <Link
                       href={item.href}
-                      className="text-base h-[24px] align-bottom text-black w-auto flex flex-row justify-between "
+                      className={`${
+                        isLastItem ? "pt-2" : "py-2"
+                      } text-base max-w-[217px] align-bottom text-black flex flex-row justify-between hover:bg-TEXT-1 hover:rounded-md duration-200 transition-all`}
                       aria-current="page"
                     >
                       <p>{item.name}</p>
-                      {item.child && (
-                        <p className="pr-4">
-                          <ChevronRight size={24} />
-                        </p>
-                      )}
+                      {item.child && <ChevronRight size={24} />}
                     </Link>
                     {item.name === showChild && item.child && (
                       <ul
-                        className={` w-52 flex flex-col absolute  h-auto ml-52 py-2 bg-Neutral-100 rounded transition-all duration-200 z-50`}
+                        className={` max-w-[210px] w-full flex flex-col absolute -mt-7  h-auto ml-56  bg-Neutral-100 rounded  transition-all duration-200 z-50`}
                       >
                         {item.child?.map((child) => {
                           return (
-                            <li
-                              className="px-2 py-2 hover:bg-TEXT-1 transition-all duration-200"
-                              key={child.name}
-                            >
+                            <li className=" " key={child.name}>
                               <Link
                                 href={child.href}
-                                className="text-base text-black w-auto flex flex-row justify-between"
+                                className="text-base h-10 items-center hover:bg-TEXT-1 hover:rounded-md text-black w-auto flex flex-row justify-between"
                                 aria-current="page"
                               >
                                 {child.name}
@@ -83,26 +80,23 @@ function HerroBanner() {
           </div>
         </div>
 
-        <div className="w-full h-max xl:flex xl:w-[910px]   pt-10 ">
-          <div className="flex flex-row flex-wrap items-center text-sm font-normal not-italic w-full ssm:w-[0px]">
-            <Swiper
-              centeredSlides
-              modules={[Pagination]}
-              pagination={{ clickable: true }}
-              navigation
-              className="mySwiper "
-            >
-              <SwiperSlide className=" !flex !justify-center xl:!flex xl:!justify-end w-full ">
-                <Image src={Banner} alt="banner" width="auto" height="auto" />
-              </SwiperSlide>
-              <SwiperSlide className=" !flex !justify-center xl:!flex xl:!justify-end w-full ">
-                <Image src={Banner} alt="banner" width="auto" height="auto" />
-              </SwiperSlide>
-              <SwiperSlide className=" !flex !justify-center xl:!flex xl:!justify-end w-full ">
-                <Image src={Banner} alt="banner" width="auto" height="auto" />
-              </SwiperSlide>
-              <style>
-                {`
+        <div className="flex flex-col-reverse max-w-[937px] w-full">
+          <Swiper
+            centeredSlides={false}
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            navigation
+            className="mySwiper !max-w-[892px] w-full !mr-0"
+          >
+            <SwiperSlide className=" ">
+              <Image src={Banner} alt="banner" width="auto" height="auto" />
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <Image src={Banner} alt="banner" width="auto" height="auto" />
+            </SwiperSlide>
+
+            <style>
+              {`
       /* Style the border of Swiper pagination bullets inline */
       .swiper-pagination-bullet {
         width: 16px;
@@ -123,9 +117,8 @@ function HerroBanner() {
       },
    
     `}
-              </style>
-            </Swiper>
-          </div>
+            </style>
+          </Swiper>
         </div>
       </div>
     </div>
