@@ -4,6 +4,8 @@ import React, { memo } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import PropTypes from "prop-types";
 
+import { useCountdown } from "@/hooks/useCountDown";
+
 import Content from "./Content";
 
 function Title({
@@ -15,6 +17,7 @@ function Title({
   buttonText,
   isCountDown,
 }) {
+  const [days, hours, minutes, seconds] = useCountdown("11/5/2023 23:59:59");
   return (
     <div className="pb-[60px]">
       {" "}
@@ -26,28 +29,32 @@ function Title({
             <div className="w-[46] h-[50px] flex flex-row gap-[17px]">
               <div className="-mt-3">
                 <div className="text-[12px] font-medium">Days</div>
-                <div className="font-inter text-[32px] font-bold">03</div>
+                <div className="font-inter text-[32px] font-bold">{days}</div>
               </div>
-              <div className="mt-1">
-                <div className="text-[32px] font-bold">:</div>
+              <div className="mt-4">
+                <div className="text-[15px] font-bold text-Button-2">:</div>
               </div>
               <div className="-mt-3">
                 <div className="text-[12px] font-medium">Hours</div>
-                <div className="font-inter text-[32px] font-bold">23</div>
+                <div className="font-inter text-[32px] font-bold">{hours}</div>
               </div>
-              <div className="mt-1">
-                <div className="text-[32px] font-bold">:</div>
+              <div className="mt-4">
+                <div className="text-[15px] font-bold text-Button-2">:</div>
               </div>
               <div className="-mt-3">
                 <div className="text-[12px] font-medium">Minutes</div>
-                <div className="font-inter text-[32px] font-bold">19</div>
+                <div className="font-inter text-[32px] font-bold">
+                  {minutes}
+                </div>
               </div>
-              <div className="mt-1">
-                <div className="text-[32px] font-bold">:</div>
+              <div className="mt-4">
+                <div className="text-[15px] font-bold text-Button-2">:</div>
               </div>
               <div className="-mt-3">
                 <div className="text-[12px] font-medium">Seconds</div>
-                <div className="font-inter text-[32px] font-bold">56</div>
+                <div className="font-inter text-[32px] font-bold">
+                  {seconds}
+                </div>
               </div>
             </div>
           )}

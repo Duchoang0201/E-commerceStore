@@ -39,7 +39,7 @@ function CardBanner({ products }) {
         isCountDown
       />
       <div className="relative container xxl:max-w-[1465px]  ">
-        <div className="xxl:ml-[145px] ">
+        <div className="xxl:ml-[145px] w-auto">
           {" "}
           <Swiper
             slidesPerView="auto"
@@ -54,7 +54,7 @@ function CardBanner({ products }) {
             pagination={{
               clickable: true,
             }}
-            className="mySwiper"
+            className="mySwiper w-full"
             // breakpoints={{
             //   0: {
             //     slidesPerView: 1.5,

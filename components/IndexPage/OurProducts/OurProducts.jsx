@@ -44,6 +44,7 @@ function OurProducts({ ourProducts }) {
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
+          grid={{ fill: "row", rows: 2 }}
           // breakpoints={{
           //   0: {
           //     slidesPerView: 1.5,
