@@ -56,7 +56,7 @@ Home.propTypes = {
       category: PropTypes.string,
       description: PropTypes.string,
       image: PropTypes.string,
-    }),
+    })
   ),
   categories: PropTypes.arrayOf(string),
   thisMonth: PropTypes.arrayOf(
@@ -67,7 +67,7 @@ Home.propTypes = {
       category: PropTypes.string,
       description: PropTypes.string,
       image: PropTypes.string,
-    }),
+    })
   ),
   ourProducts: PropTypes.arrayOf(
     PropTypes.shape({
@@ -77,7 +77,7 @@ Home.propTypes = {
       category: PropTypes.string,
       description: PropTypes.string,
       image: PropTypes.string,
-    }),
+    })
   ),
 };
 

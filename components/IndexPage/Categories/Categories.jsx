@@ -34,69 +34,54 @@ function Categories({ categories }) {
         title={categoriesContent.title}
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
+        buttonText=""
+        bgButton=""
       />
-      <div className="flex flex-row items-center justify-center container pt-10 ">
+      <div className="container ">
         <Swiper
+          slidesPerView="auto"
           spaceBetween={30}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            480: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            800: {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            1280: {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-            1440: {
-              slidesPerView: 6,
-              spaceBetween: 10,
-            },
-          }}
+          // breakpoints={{
+          //   0: {
+          //     slidesPerView: 1,
+          //     spaceBetween: 10,
+          //   },
+          //   480: {
+          //     slidesPerView: 2,
+          //     spaceBetween: 10,
+          //   },
+          //   800: {
+          //     slidesPerView: 3,
+          //     spaceBetween: 10,
+          //   },
+          //   1280: {
+          //     slidesPerView: 4,
+          //     spaceBetween: 10,
+          //   },
+          //   1440: {
+          //     slidesPerView: 6,
+          //     spaceBetween: 10,
+          //   },
+          // }}
         >
-          {categories &&
-            categories.map((item) => (
-              <SwiperSlide
-                key={item}
-                className="border border-Neutral-100 hover:text-white-0 hover:bg-Secondary-2 hover:transition-all hover:duration-500  rounded-lg"
+          {Array.from({ length: 10 }, (_, index) => (
+            <SwiperSlide
+              key={index}
+              className="!max-w-[170px] !max-h-[145px] py-6 border border-Neutral-100 hover:text-white-0 hover:bg-Secondary-2 hover:transition-all hover:duration-500  rounded-lg"
+            >
+              <div
+                key={index}
+                className="w-full min-h-full flex flex-col items-center justify-center"
               >
-                <div className="w-full bg-red-400 h-48 flex flex-col items-center justify-center">
-                  <MonitorSmartphone size={56} className="hover:text-white-0" />
+                <MonitorSmartphone size={56} className="hover:text-white-0" />
 
-                  <div className="py-4">{item}</div>
-                </div>
-              </SwiperSlide>
-            ))}
-          <SwiperSlide className="border border-Neutral-100 hover:text-white-0 hover:bg-Secondary-2  rounded-lg hover:transition-all hover:duration-500">
-            <div className="w-full bg-red-400 h-48 flex flex-col items-center justify-center">
-              <MonitorSmartphone size={56} className="hover:text-white-0 " />
-              <div className="py-4">Gold</div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="border border-Neutral-100 hover:text-white-0 hover:bg-Secondary-2  rounded-lg hover:transition-all hover:duration-500">
-            <div className="w-full bg-red-400 h-48 flex flex-col items-center justify-center">
-              <MonitorSmartphone size={56} className="hover:text-white-0" />
-
-              <div className="py-4">Silver</div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="border border-Neutral-100 hover:text-white-0 hover:bg-Secondary-2  rounded-lg hover:transition-all hover:duration-500">
-            <div className="w-full bg-red-400 h-48 flex flex-col items-center justify-center">
-              <MonitorSmartphone size={56} className="hover:text-white-0" />
-
-              <div className="py-4">Silver</div>
-            </div>
-          </SwiperSlide>
+                <div className="py-4">Item - {index}</div>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
       <SpaceBottom border />

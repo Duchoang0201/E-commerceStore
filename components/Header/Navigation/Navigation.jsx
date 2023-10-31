@@ -10,19 +10,27 @@ import FunctionNavigation from "./FunctionNavigation";
 function Navigation() {
   const [activeNav, setActiveNav] = useState("/");
   const { navigationList } = useTrans();
+  const isUser = true;
+
   return (
     <div className="container">
-      {" "}
-      <div className="pt-7 flex flex-row  ">
-        <div className="!w-[308px] ">
-          <Link href="/" className="self-center text-2xl font-bold text-black ">
+      <div className="pt-7 flex flex-row justify-between pb-4 items-center">
+        <div className="max-w-[118px]  ">
+          <Link
+            href="/"
+            className="font-inter w-full text-[24px] tracking-[0.72px] not-italic  !font-bold text-black "
+          >
             Exclusive
           </Link>
         </div>
 
-        <div className=" lg:w-[892px] lg:flex lg:flex-row lg:justify-between w-full flex justify-end">
-          <div className="text-sm font-normal not-italic hidden lg:flex ">
-            <ul className=" flex flex-row gap-x-12">
+        <div
+          className={`${
+            isUser ? "lg:max-w-[892px] lg:w-full" : "lg:max-w-[862px] lg:w-full"
+          }  `}
+        >
+          <div className=" flex flex-row justify-between">
+            <ul className="hidden lg:flex lg:flex-row lg:justify-between lg:!max-w-[367px] lg:gap-x-12 lg:w-full">
               {navigationList &&
                 navigationList.map((item) => {
                   return (
@@ -32,9 +40,9 @@ function Navigation() {
                           setActiveNav(item.href);
                         }}
                         href={item.href}
-                        className={`block !text-base leading-6 text-black rounded md:hover:bg-transparent md:hover:text-Neutral-300 md:p-0 ${
+                        className={`${
                           activeNav === item.href &&
-                          "underline decoration-Neutral-300 underline-offset-4"
+                          "underline decoration-Neutral-300 underline-offset-4 font-normal text-base"
                         }`}
                         aria-current="page"
                       >
@@ -44,12 +52,10 @@ function Navigation() {
                   );
                 })}
             </ul>
-          </div>
-          <div className="text-black hidden md:flex ">
-            <FunctionNavigation />
-          </div>
-          <div className="lg:hidden flex flex-row">
-            <Draw />
+            <FunctionNavigation isUser={isUser} />
+            <div className="lg:hidden flex flex-row">
+              <Draw />
+            </div>
           </div>
         </div>
       </div>

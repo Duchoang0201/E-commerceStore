@@ -34,11 +34,26 @@ function Draw() {
       )}
       <div
         aria-hidden={open ? "false" : "true"}
-        className={`fixed inset-0 bg-white-0 bg-opacity-90 backdrop-blur-0 left-0 top-0 h-screen w-4/6  transform duration-700  transition-transform z-50 ${
+        className={`fixed inset-0 bg-white-0 bg-opacity-90 backdrop-blur-0 left-0 top-0 h-screen max-w-fit  transform duration-700  transition-transform z-50 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="relative py-16 px-14 ">
+        <div className="flex flex-row justify-between items-center w-[244px] ">
+          <div
+            type="button"
+            className=" text-xs font-bold text-white bg-red-500 border-white  "
+          >
+            Exclusive
+          </div>
+          <button
+            onClick={() => setOpen(false)}
+            type="button"
+            className=" w-4 h-4 text-white bg-Red-500  rounded-full "
+          >
+            <X size={16} color="white" />
+          </button>
+        </div>
+        <div className="w-full pt-4">
           <div className="flex flex-col justify-center items-center gap-4  w-full   md:hidden">
             <form>
               <div className="relative">
@@ -119,20 +134,6 @@ function Draw() {
                 );
               })}
             </ul>
-          </div>
-
-          <button
-            onClick={() => setOpen(false)}
-            type="button"
-            className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full top-3 right-2"
-          >
-            <X />
-          </button>
-          <div
-            type="button"
-            className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-white  top-3 left-14"
-          >
-            Exclusive
           </div>
         </div>
       </div>

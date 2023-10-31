@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useRef } from "react";
+import Link from "next/link";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,8 +12,6 @@ import Title from "@/components/Commons/Title";
 
 import useTrans from "@/hooks/useTrans";
 
-// import FlashCard from "./FlashCard";
-// Import Swiper styles
 import "swiper/css";
 
 function CardBanner({ products }) {
@@ -35,12 +34,15 @@ function CardBanner({ products }) {
         title={flashSaleContent.title}
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
+        buttonText=""
+        bgButton=""
       />
       <div className="relative container xxl:max-w-[1465px]  ">
         <div className="xxl:ml-[145px] ">
           {" "}
           <Swiper
-            spaceBetween={10}
+            slidesPerView="auto"
+            spaceBetween={30}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
@@ -52,42 +54,44 @@ function CardBanner({ products }) {
               clickable: true,
             }}
             className="mySwiper"
-            breakpoints={{
-              0: {
-                slidesPerView: 1.5,
-                spaceBetween: 32,
-              },
-              710: {
-                slidesPerView: 2.5,
-                spaceBetween: 32,
-              },
-              1010: {
-                slidesPerView: 3.5,
-                spaceBetween: 32,
-              },
-              1280: {
-                slidesPerView: 4,
-                spaceBetween: 32,
-              },
-              1440: {
-                slidesPerView: 4.5,
-                spaceBetween: 32,
-              },
-            }}
+            // breakpoints={{
+            //   0: {
+            //     slidesPerView: 1.5,
+            //     spaceBetween: 32,
+            //   },
+            //   710: {
+            //     slidesPerView: 2.5,
+            //     spaceBetween: 32,
+            //   },
+            //   1010: {
+            //     slidesPerView: 3.5,
+            //     spaceBetween: 32,
+            //   },
+            //   1280: {
+            //     slidesPerView: 4,
+            //     spaceBetween: 32,
+            //   },
+            //   1440: {
+            //     slidesPerView: 4.5,
+            //     spaceBetween: 32,
+            //   },
+            // }}
           >
             {products.length > 0 &&
               products.map((item) => {
                 return (
                   <SwiperSlide
-                    className="!flex !justify-center !items-center"
+                    className="!max-w-[270px] !max-h-[350px]"
                     key={item.id}
                   >
-                    <ProductCart
-                      item={item}
-                      isEye={{ isActive: true }}
-                      isDiscount={{ isActive: true, value: 20 }}
-                      isHeart={{ isActive: true }}
-                    />
+                    <Link href="/">
+                      <ProductCart
+                        item={item}
+                        isEye={{ isActive: true }}
+                        isDiscount={{ isActive: true, value: 20 }}
+                        isHeart={{ isActive: true }}
+                      />
+                    </Link>
                   </SwiperSlide>
                 );
               })}

@@ -25,45 +25,47 @@ function ThisMonth({ thisMonth }) {
       <Title
         content="This Month"
         title="Best Selling Products"
-        // onPrev={handleSlidePrev}
-        // onNext={handleSlideNext}
         bgButton="bg-Secondary-2"
         buttonText="View all"
+        onNext=""
+        onPrev=""
       />
 
       <div className="sm:ml-auto container  ">
         <Swiper
+          slidesPerView="auto"
+          spaceBetween={30}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.5,
-              spaceBetween: 30,
-            },
-            710: {
-              slidesPerView: 2.5,
-              spaceBetween: 30,
-            },
-            1010: {
-              slidesPerView: 3.5,
-              spaceBetween: 20,
-            },
-            1200: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-            1440: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-          }}
+          // breakpoints={{
+          //   0: {
+          //     slidesPerView: 1.5,
+          //     spaceBetween: 30,
+          //   },
+          //   710: {
+          //     slidesPerView: 2.5,
+          //     spaceBetween: 30,
+          //   },
+          //   1010: {
+          //     slidesPerView: 3.5,
+          //     spaceBetween: 20,
+          //   },
+          //   1200: {
+          //     slidesPerView: 4,
+          //     spaceBetween: 30,
+          //   },
+          //   1440: {
+          //     slidesPerView: 4,
+          //     spaceBetween: 30,
+          //   },
+          // }}
         >
           {thisMonth &&
             thisMonth.map((item) => (
               <SwiperSlide
                 key={item.id}
-                className="!flex !justify-center !items-center"
+                className="!max-w-[270px] !max-h-[350px]"
               >
                 <ProductCardFill
                   item={item}

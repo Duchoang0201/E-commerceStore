@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }) {
     <div className="font-poppins">
       <Header />
       <Component {...pageProps} />
+      {/* FOOTER HAVE PROBLEM */}
       <Footer />
     </div>
   );

@@ -32,50 +32,54 @@ function OurProducts({ ourProducts }) {
         title={ourProductsContent.title}
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
+        bgButton=""
+        buttonText=""
       />
 
       <div className="container  ">
         <Swiper
+          slidesPerView="auto"
+          spaceBetween={30}
           modules={[Grid]}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.5,
-              grid: { fill: "row", rows: 2 },
+          // breakpoints={{
+          //   0: {
+          //     slidesPerView: 1.5,
+          //     grid: { fill: "row", rows: 2 },
 
-              spaceBetween: 30,
-            },
-            710: {
-              slidesPerView: 2.5,
-              grid: { fill: "row", rows: 2 },
+          //     spaceBetween: 30,
+          //   },
+          //   710: {
+          //     slidesPerView: 2.5,
+          //     grid: { fill: "row", rows: 2 },
 
-              spaceBetween: 30,
-            },
-            1010: {
-              grid: { fill: "row", rows: 2 },
+          //     spaceBetween: 30,
+          //   },
+          //   1010: {
+          //     grid: { fill: "row", rows: 2 },
 
-              slidesPerView: 3.5,
-              spaceBetween: 30,
-            },
-            1280: {
-              grid: { fill: "row", rows: 2 },
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-            1440: {
-              grid: { fill: "row", rows: 2 },
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-          }}
+          //     slidesPerView: 3.5,
+          //     spaceBetween: 30,
+          //   },
+          //   1280: {
+          //     grid: { fill: "row", rows: 2 },
+          //     slidesPerView: 4,
+          //     spaceBetween: 30,
+          //   },
+          //   1440: {
+          //     grid: { fill: "row", rows: 2 },
+          //     slidesPerView: 4,
+          //     spaceBetween: 30,
+          //   },
+          // }}
         >
           {ourProducts &&
             ourProducts.map((item) => (
               <SwiperSlide
                 key={item.id}
-                className="!flex !justify-center !items-center "
+                className="!max-w-[270px] !max-h-[350px]"
               >
                 <ProductCardFill
                   item={item}
@@ -83,14 +87,14 @@ function OurProducts({ ourProducts }) {
                   isDiscount={{ isActive: false, value: 20 }}
                   isHeart={{ isActive: true }}
                 />
-                <div className="absolute h-10 w-full bg-Neutral-600  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                {/* <div className="absolute h-10 w-full bg-Neutral-200  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <button
                     type="submit"
                     className="bg-black text-white-0 py-2 px-5"
                   >
                     Add to cart
                   </button>
-                </div>
+                </div> */}
               </SwiperSlide>
             ))}
         </Swiper>

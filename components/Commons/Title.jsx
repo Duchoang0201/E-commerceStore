@@ -11,8 +11,18 @@ function Title({ content, title, onPrev, onNext, bgButton, buttonText }) {
     <div className="pb-[60px]">
       {" "}
       <Content title={title} />
-      <div className="container pt-5 flex flex-row justify-between">
-        <div className="font-inter text-[36px] font-bold">{content}</div>
+      <div className="container pt-5 flex flex-row justify-between items-center">
+        <div className="font-inter font-semibold text-[36px]">
+          {content}
+          {/* <div className="flex flex-row ">
+            <div className="w-[46] h-[50px]">
+              <div>
+                <div className="text-sm">Days</div>
+                <div className="text-3xl">03</div>
+              </div>
+            </div>
+          </div> */}
+        </div>
         {onPrev && onNext ? (
           <div className="flex flex-row items-center justify-end  ">
             <div className="flex flex-row gap-2">
@@ -48,8 +58,8 @@ function Title({ content, title, onPrev, onNext, bgButton, buttonText }) {
 export default memo(Title);
 
 Title.propTypes = {
-  onPrev: PropTypes.func.isRequired, // Define the onPrev and onNext props
-  onNext: PropTypes.func.isRequired,
+  onPrev: PropTypes.oneOfType([PropTypes.func, PropTypes.any]).isRequired, // onPrev can be a function or null
+  onNext: PropTypes.oneOfType([PropTypes.func, PropTypes.any]).isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   bgButton: PropTypes.string.isRequired,

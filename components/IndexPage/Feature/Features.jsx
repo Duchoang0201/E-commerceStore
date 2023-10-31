@@ -38,6 +38,8 @@ function Features() {
         title={featureContent.title}
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
+        bgButton=""
+        buttonText=""
       />
 
       <div className="container ">

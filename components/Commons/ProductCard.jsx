@@ -1,24 +1,23 @@
 import React from "react";
-// import ReactStars from "react-rating-stars-component";
-// import { Rating } from "@material-tailwind/react";
 import { Eye, Heart } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
 import Rated from "../Rating/Rated";
-//  isHeart, isEye, isDiscount
+
 function ProductCard({ item, isHeart, isEye, isDiscount }) {
   return (
-    <div className="!w-[270px] h-[350px] ">
-      <div className="group relative inline-flex justify-center overflow-hidden items-center p-[49px] bg-Secondary-0  text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
+    <div>
+      <div className="!h-[250px]  relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
         <Image
-          className="relative !w-[172px] !h-[152px]"
+          width="0"
+          height="0"
+          sizes="100vw"
+          className="w-full !h-full object-contain "
           src={item.image}
-          width={172}
-          height={152}
           alt={item.title}
         />
-        <div className="absolute h-10 w-full bg-Neutral-600  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <button type="submit" className="bg-black text-white-0 py-2 px-5">
             Add to cart
           </button>
@@ -46,31 +45,28 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         )}
       </div>
 
-      <div className="justify-center items-center h-10">
-        <p className="font-bold truncate text-ellipsis overflow-hidden">
-          {item.title}
-        </p>
-      </div>
-      <div className="justify-center items-center font-bold">
-        <span className="text-Button-1  ">
-          ${Math.round(Number(item.price) * 0.8)}
-        </span>
+      <div className="pt-4 flex flex-col gap-y-2">
+        <div className="justify-center items-center">
+          <p className="font-medium truncate text-ellipsis overflow-hidden">
+            {item.title}
+          </p>
+        </div>
+        <div className="justify-center items-center font-medium">
+          <span className="text-Button-1  ">
+            ${Math.round(Number(item.price) * 0.8)}
+          </span>
 
-        <span className="px-4 line-through opacity-50">${item.price}</span>
-      </div>
+          <span className="px-4 line-through opacity-50">${item.price}</span>
+        </div>
 
-      <div className=" pt-2 flex flex-row items-center font-bold ">
-        {/* <ReactStars
-          value={rate}
-          count={5}
-          size={24}
-          activeColor="#ffd700"
-          color="gray"
-          edit={false}
-          isHalf
-        /> */}
-        <Rated data={item.rating} />
-        <p className="px-4 opacity-50">({item.rating.count})</p>
+        <div className=" flex flex-row items-center font-semibold">
+          <div>
+            <Rated data={item.rating} />
+          </div>
+          <div>
+            <p className="px-2 opacity-50 text-[14px]">({item.rating.count})</p>
+          </div>
+        </div>
       </div>
     </div>
   );
