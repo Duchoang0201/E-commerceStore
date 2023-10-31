@@ -12,7 +12,7 @@ import useCartStore from "@/hooks/useCartStore";
 function FunctionNavigation({ isUser }) {
   const { carts } = useCartStore();
   return (
-    <div className="hidden md:flex md:flex-row items-center md:justify-between md:w-full md:max-w-[395px]">
+    <div className="hidden md:flex md:flex-row items-center md:justify-between md:w-full max-w-[395px]">
       <form className=" max-w-[243px] w-full flex flex-row justify-between bg-Secondary-0 py-2 pl-5 pr-3 gap-8 rounded-sm">
         <input
           id="default-search"

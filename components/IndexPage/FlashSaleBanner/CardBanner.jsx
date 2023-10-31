@@ -36,6 +36,7 @@ function CardBanner({ products }) {
         onNext={handleSlideNext}
         buttonText=""
         bgButton=""
+        isCountDown
       />
       <div className="relative container xxl:max-w-[1465px]  ">
         <div className="xxl:ml-[145px] ">

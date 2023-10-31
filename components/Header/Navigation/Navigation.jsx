@@ -26,11 +26,13 @@ function Navigation() {
 
         <div
           className={`${
-            isUser ? "lg:max-w-[892px] lg:w-full" : "lg:max-w-[862px] lg:w-full"
+            isUser
+              ? " max-w-[440px] w-full lg:max-w-[892px] lg:w-full"
+              : "lg:max-w-[862px] w-full"
           }  `}
         >
-          <div className=" flex flex-row justify-between">
-            <ul className="hidden lg:flex lg:flex-row lg:justify-between lg:!max-w-[367px] lg:gap-x-12 lg:w-full">
+          <div className="flex justify-end md:flex md:flex-row md:justify-between">
+            <ul className="hidden  lg:flex lg:flex-row lg:justify-between lg:!max-w-[367px] lg:gap-x-12 lg:w-full">
               {navigationList &&
                 navigationList.map((item) => {
                   return (

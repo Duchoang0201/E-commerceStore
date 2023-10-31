@@ -6,22 +6,51 @@ import PropTypes from "prop-types";
 
 import Content from "./Content";
 
-function Title({ content, title, onPrev, onNext, bgButton, buttonText }) {
+function Title({
+  content,
+  title,
+  onPrev,
+  onNext,
+  bgButton,
+  buttonText,
+  isCountDown,
+}) {
   return (
     <div className="pb-[60px]">
       {" "}
       <Content title={title} />
-      <div className="container pt-5 flex flex-row justify-between items-center">
-        <div className="font-inter font-semibold text-[36px]">
-          {content}
-          {/* <div className="flex flex-row ">
-            <div className="w-[46] h-[50px]">
-              <div>
-                <div className="text-sm">Days</div>
-                <div className="text-3xl">03</div>
+      <div className="container flex flex-row justify-between">
+        <div className="flex flex-row gap-x-[87px]">
+          <div className="font-inter font-semibold text-[36px]">{content}</div>
+          {isCountDown && (
+            <div className="w-[46] h-[50px] flex flex-row gap-[17px]">
+              <div className="-mt-3">
+                <div className="text-[12px] font-medium">Days</div>
+                <div className="font-inter text-[32px] font-bold">03</div>
+              </div>
+              <div className="mt-1">
+                <div className="text-[32px] font-bold">:</div>
+              </div>
+              <div className="-mt-3">
+                <div className="text-[12px] font-medium">Hours</div>
+                <div className="font-inter text-[32px] font-bold">23</div>
+              </div>
+              <div className="mt-1">
+                <div className="text-[32px] font-bold">:</div>
+              </div>
+              <div className="-mt-3">
+                <div className="text-[12px] font-medium">Minutes</div>
+                <div className="font-inter text-[32px] font-bold">19</div>
+              </div>
+              <div className="mt-1">
+                <div className="text-[32px] font-bold">:</div>
+              </div>
+              <div className="-mt-3">
+                <div className="text-[12px] font-medium">Seconds</div>
+                <div className="font-inter text-[32px] font-bold">56</div>
               </div>
             </div>
-          </div> */}
+          )}
         </div>
         {onPrev && onNext ? (
           <div className="flex flex-row items-center justify-end  ">
@@ -64,4 +93,9 @@ Title.propTypes = {
   content: PropTypes.string.isRequired,
   bgButton: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
+  isCountDown: PropTypes.bool,
+};
+
+Title.defaultProps = {
+  isCountDown: false,
 };

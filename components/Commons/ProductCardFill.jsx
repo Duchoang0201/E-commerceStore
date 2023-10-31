@@ -8,7 +8,7 @@ import Rated from "../Rating/Rated";
 function ProductCardFill({ item, isHeart, isEye, isDiscount }) {
   return (
     <div>
-      <div className="!h-[250px] relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
+      <div className="!h-[250px]  relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
         <Image
           width="0"
           height="0"
@@ -45,22 +45,28 @@ function ProductCardFill({ item, isHeart, isEye, isDiscount }) {
         )}
       </div>
 
-      <div className="justify-center items-center h-10">
-        <p className="font-bold truncate text-ellipsis overflow-hidden">
-          {item.title}
-        </p>
-      </div>
-      <div className="justify-center items-center font-bold">
-        <span className="text-Button-1  ">
-          ${Math.round(Number(item.price) * 0.8)}
-        </span>
+      <div className="pt-4 flex flex-col gap-y-2">
+        <div className="justify-center items-center">
+          <p className="font-medium truncate text-ellipsis overflow-hidden">
+            {item.title}
+          </p>
+        </div>
+        <div className="justify-center items-center font-medium">
+          <span className="text-Button-1  ">
+            ${Math.round(Number(item.price) * 0.8)}
+          </span>
 
-        <span className="px-4 line-through opacity-50">${item.price}</span>
-      </div>
+          <span className="px-4 line-through opacity-50">${item.price}</span>
+        </div>
 
-      <div className=" pt-2 flex flex-row items-center font-bold ">
-        <Rated data={item.rating} />
-        <p className="px-4 opacity-50">({item.rating.count})</p>
+        <div className=" flex flex-row items-center font-semibold">
+          <div>
+            <Rated data={item.rating} />
+          </div>
+          <div>
+            <p className="px-2 opacity-50 text-[14px]">({item.rating.count})</p>
+          </div>
+        </div>
       </div>
     </div>
   );

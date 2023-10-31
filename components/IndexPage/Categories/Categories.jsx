@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { MonitorSmartphone } from "lucide-react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
@@ -15,7 +15,7 @@ import useTrans from "@/hooks/useTrans";
 
 import "swiper/css";
 
-function Categories({ categories }) {
+function Categories() {
   const { categoriesContent } = useTrans();
   const swiperRef = useRef();
 
@@ -76,7 +76,11 @@ function Categories({ categories }) {
                 key={index}
                 className="w-full min-h-full flex flex-col items-center justify-center"
               >
-                <MonitorSmartphone size={56} className="hover:text-white-0" />
+                <MonitorSmartphone
+                  strokeWidth={1}
+                  size={56}
+                  className="hover:text-white-0"
+                />
 
                 <div className="py-4">Item - {index}</div>
               </div>
@@ -91,10 +95,10 @@ function Categories({ categories }) {
 
 export default Categories;
 
-Categories.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.string),
-};
+// Categories.propTypes = {
+//   categories: PropTypes.arrayOf(PropTypes.string),
+// };
 
-Categories.defaultProps = {
-  categories: [],
-};
+// Categories.defaultProps = {
+//   categories: [],
+// };
