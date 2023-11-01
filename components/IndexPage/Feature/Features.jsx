@@ -43,10 +43,34 @@ function Features() {
       />
 
       <div className="container ">
-        <div className="flex flex-row justify-between h-auto">
-          <div>
-            <Image src={Banner1} alt="Banner1" />
+        <div className="flex flex-row justify-between max-h-[600px]">
+          <div className="max-w-[570px] w-[570px] bg-black-0 relative">
+            <div className="relative h-auto mt-[89px] mx-[29px]">
+              <div className="relative">
+                <Image
+                  className="!w-[511px] !h-auto"
+                  src={Banner1}
+                  alt="Banner1"
+                  layout="responsive"
+                  width={511}
+                  height={511}
+                  objectFit="contain"
+                />
+              </div>
+              <div className="flex flex-col justify-between gap-y-4 max-w-[242px] ml-[3px] max-h-[122px] h-full w-auto absolute bottom-8  bg-opacity-50 text-white-0">
+                <div className="font-inter text-[24px] font-semibold leading-6">
+                  PlayStation 5
+                </div>
+                <div className="text-[14px] font-poppins">
+                  Black and White version of the PS5 coming out on sale.
+                </div>
+                <div className="font-poppins text-base font-medium">
+                  Shop Now
+                </div>
+              </div>
+            </div>
           </div>
+
           <div className="flex flex-col justify-between">
             <Image src={Banner2} alt="Banner2" />
 
