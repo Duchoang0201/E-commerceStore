@@ -22,12 +22,12 @@ function Title({
   const saturdayOfWeek = getNextDay("saturday") + 7 * 60 * 60;
   const [days, hours, minutes, seconds] = useCountdown(saturdayOfWeek);
   return (
-    <div className="pb-[60px]">
+    <div className="mb-[40px]">
       {" "}
       <Content title={title} />
-      <div className="container flex flex-row justify-between">
+      <div className="container flex flex-row justify-between mt-[20px]">
         <div className="flex flex-col w-full gap-y-2 md:flex md:flex-row md:gap-x-[87px]">
-          <div className="font-inter font-semibold text-[28px] md:text-[36px]">
+          <div className="font-inter font-semibold text-[20px] sm:text-[28px] md:text-[36px]">
             {content}
           </div>
           {isCountDown && (

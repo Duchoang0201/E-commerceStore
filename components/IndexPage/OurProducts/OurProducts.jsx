@@ -100,7 +100,15 @@ function OurProducts({ ourProducts }) {
             ))}
         </Swiper>
       </div>
-      <div className="pt-20 " />
+      <button
+        type="button"
+        className={`mt-[60px] mb-[140px] container hover:bg-Neutral-600 w-auto  transform transition-all duration-300 flex flex-row justify-center bg-Secondary-2  text-white-0 items-center  `}
+      >
+        <div className="text-white font-poppins text-base py-4 px-12">
+          {" "}
+          View All Products
+        </div>
+      </button>
     </div>
   );
 }

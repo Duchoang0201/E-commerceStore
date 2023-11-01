@@ -37,6 +37,10 @@ export default {
     title: `Categories`,
     content: "Browse By Category",
   },
+  thismonthContent: {
+    title: `This Month`,
+    content: "Best Selling Products",
+  },
   ourProductsContent: {
     title: `Our Products`,
     content: "Explore Our Products",

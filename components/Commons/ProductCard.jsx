@@ -8,15 +8,10 @@ import Rated from "../Rating/Rated";
 function ProductCard({ item, isHeart, isEye, isDiscount }) {
   return (
     <div>
-      <div className="!h-[250px]  relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
-        <Image
-          width="0"
-          height="0"
-          sizes="100vw"
-          className="w-full !h-full object-contain "
-          src={item.image}
-          alt={item.title}
-        />
+      <div className="  relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
+        <div className="relative  h-[250px] ">
+          <Image fill src={item.image} alt={item.title} objectFit="contain" />
+        </div>
         <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <button type="submit" className="bg-black text-white-0 py-2 px-5">
             Add to cart

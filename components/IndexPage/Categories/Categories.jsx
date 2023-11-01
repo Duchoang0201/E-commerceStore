@@ -7,8 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
 
-import SpaceBottom from "@/components/Commons/SpaceBottom";
-import SpaceTop from "@/components/Commons/SpaceTop";
 import Title from "@/components/Commons/Title";
 
 import useTrans from "@/hooks/useTrans";
@@ -27,8 +25,7 @@ function Categories() {
     swiperRef.current.slideNext();
   };
   return (
-    <div>
-      <SpaceTop />
+    <div className="container mt-[80px] pb-[70px] border-b border-Neutral-200">
       <Title
         content={categoriesContent.content}
         title={categoriesContent.title}
@@ -37,7 +34,7 @@ function Categories() {
         buttonText=""
         bgButton=""
       />
-      <div className="container ">
+      <div>
         <Swiper
           slidesPerView="auto"
           spaceBetween={30}
@@ -88,7 +85,6 @@ function Categories() {
           ))}
         </Swiper>
       </div>
-      <SpaceBottom border />
     </div>
   );
 }
