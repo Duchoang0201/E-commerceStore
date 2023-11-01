@@ -37,6 +37,10 @@ export default {
     title: `Danh mục`,
     content: "Tìm kiếm bằng danh mục",
   },
+  thismonthContent: {
+    title: `Nổi bật trong tháng`,
+    content: "Sản phẩm bán chạy",
+  },
   ourProductsContent: {
     title: `Sản phẩm của chúng tôi`,
     content: "Khám phá sản phẩm",

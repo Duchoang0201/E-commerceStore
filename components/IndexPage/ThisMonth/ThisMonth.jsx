@@ -135,6 +135,7 @@ function ThisMonth({ thisMonth }) {
               }}
             />
             <Image
+              objectFit="contain"
               src={Banner}
               alt="banner"
               width={568} // Set the width to match the parent div's width

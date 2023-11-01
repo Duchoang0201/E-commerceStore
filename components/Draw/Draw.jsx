@@ -21,7 +21,7 @@ function Draw() {
         }}
         type="button"
       >
-        <List color="gray" />
+        <List strokeWidth={2} size={32} color="black" />
       </button>
       {open && (
         <div
