@@ -14,7 +14,7 @@ function Navigation() {
 
   return (
     <div className="container">
-      <div className="pt-7 flex flex-row justify-between pb-4 items-center">
+      <div className="pt-[41px] flex flex-row justify-between pb-[12px] items-center">
         <div className="max-w-[118px]  ">
           <Link
             href="/"

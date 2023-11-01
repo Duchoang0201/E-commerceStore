@@ -42,10 +42,10 @@ function Features() {
         buttonText=""
       />
 
-      <div className="container ">
-        <div className="flex flex-row justify-between max-h-[600px]">
-          <div className="max-w-[570px] w-[570px] bg-black-0 relative">
-            <div className="relative h-auto mt-[89px] mx-[29px]">
+      <div className="container  mt-[65px] ">
+        <div className="flex flex-col gap-y-2 sm:flex sm:flex-row sm:justify-between ">
+          <div className="max-w-[570px]  bg-black-0 relative">
+            <div className="relative w-full h-auto mt-[89px] mx-[29px]">
               <div className="relative">
                 <Image
                   className="!w-[511px] !h-auto"
@@ -64,22 +64,71 @@ function Features() {
                 <div className="text-[14px] font-poppins">
                   Black and White version of the PS5 coming out on sale.
                 </div>
-                <div className="font-poppins text-base font-medium">
+                <div className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
                   Shop Now
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col justify-between">
-            <Image src={Banner2} alt="Banner2" />
-
-            <div className="flex flex-row justify-between ">
-              <div>
-                <Image src={Banner3} alt="Banner3" />
+          <div className=" flex flex-col justify-between">
+            <div
+              className="max-w-[570px]  relative"
+              style={{ backgroundColor: "#0D0D0D" }}
+            >
+              <div className="relative ">
+                {" "}
+                <div className=" text-white-0 md:pl-[138px]">
+                  <Image src={Banner2} alt="Banner2" width={432} height={286} />
+                </div>
               </div>
-              <div>
-                <Image src={Banner4} alt="Banner4" />
+              <div className="flex flex-col justify-between gap-y-4 max-w-[255px] ml-[24px] max-h-[122px] h-full w-auto absolute bottom-6  bg-opacity-50 text-white-0">
+                <div className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
+                  Women’s Collections
+                </div>
+                <div className="text-[14px] font-poppins">
+                  Featured woman collections that give you another vibe.
+                </div>
+                <div className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
+                  Shop Now
+                </div>
+              </div>
+            </div>
+
+            <div className=" max-h-[284px] flex flex-row justify-between">
+              <div className="bg-black-0 relative ">
+                {" "}
+                <div className="w-full h-auto text-white-0 px-10 pt-[31px] pb-8 relative">
+                  <Image src={Banner3} alt="Banner3" width={190} height={221} />
+                </div>
+                <div className="flex flex-col justify-between gap-y-2 max-w-[191px] ml-[24px]  absolute  bottom-6  bg-opacity-50 text-white-0">
+                  <div className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
+                    Speakers
+                  </div>
+                  <div className="text-[14px] font-poppins">
+                    Amazon wireless speakers
+                  </div>
+                  <div className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
+                    Shop Now
+                  </div>
+                </div>
+              </div>
+              <div className="bg-black-0 relative ">
+                {" "}
+                <div className="w-full h-auto text-white-0 px-10 pt-[31px] pb-8 relative">
+                  <Image src={Banner4} alt="Banner4" width={190} height={221} />
+                </div>
+                <div className="flex flex-col justify-between gap-y-2 max-w-[191px] ml-[24px]  absolute bottom-16  bg-opacity-50 text-white-0">
+                  <div className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
+                    Perfume
+                  </div>
+                  <div className="text-[14px] font-poppins">
+                    GUCCI INTENSE OUD EDP
+                  </div>
+                  <div className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
+                    Shop Now
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -31,7 +31,7 @@ function ThisMonth({ thisMonth }) {
         onPrev=""
       />
 
-      <div className="sm:ml-auto container  ">
+      <div className=" container pt-[73px] ">
         <Swiper
           slidesPerView="auto"
           spaceBetween={30}

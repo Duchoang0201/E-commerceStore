@@ -34,7 +34,7 @@ function Categories() {
         buttonText=""
         bgButton=""
       />
-      <div>
+      <div className="mt-[65px]">
         <Swiper
           slidesPerView="auto"
           spaceBetween={30}

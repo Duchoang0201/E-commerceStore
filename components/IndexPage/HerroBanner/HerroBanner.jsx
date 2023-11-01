@@ -80,7 +80,7 @@ function HerroBanner() {
           </div>
         </div>
 
-        <div className="flex flex-col-reverse max-w-[937px] w-full">
+        <div className="flex flex-col-reverse max-w-[937px] w-full -pt-2">
           <Swiper
             centeredSlides={false}
             modules={[Pagination]}

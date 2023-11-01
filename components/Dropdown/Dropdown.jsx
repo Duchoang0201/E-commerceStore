@@ -34,7 +34,7 @@ function Dropdown({ data, color }) {
             color === "white" ? "text-white-0" : "text-black-0"
           } w-20 flex flex-row justify-center items-center gap-2`}
         >
-          <Globe size={32} strokeWidth={1.25} /> {locale === "vi" ? "Vi" : "En"}
+          <Globe size={28} strokeWidth={1.25} /> {locale === "vi" ? "Vi" : "En"}
         </div>{" "}
         {open ? <ChevronUp size="24" /> : <ChevronDown size="24" />}
       </button>

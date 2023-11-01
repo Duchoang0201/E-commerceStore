@@ -38,12 +38,13 @@ function CardBanner({ products }) {
         bgButton=""
         isCountDown
       />
-      <div className="relative container xxl:max-w-[1465px]  ">
-        <div className="xxl:ml-[145px] w-auto">
+      <div className=" mx-auto max-w-screen-xxl mt-[32px] ">
+        <div className="">
           {" "}
           <Swiper
-            slidesPerView="auto"
+            slidesPerView={5}
             spaceBetween={30}
+            // slidesOffsetAfter={140}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
@@ -54,7 +55,7 @@ function CardBanner({ products }) {
             pagination={{
               clickable: true,
             }}
-            className="mySwiper w-full"
+            className="mySwiper "
             // breakpoints={{
             //   0: {
             //     slidesPerView: 1.5,
@@ -81,10 +82,7 @@ function CardBanner({ products }) {
             {products.length > 0 &&
               products.map((item) => {
                 return (
-                  <SwiperSlide
-                    className="!max-w-[270px] !max-h-[350px]"
-                    key={item.id}
-                  >
+                  <SwiperSlide className="!max-w-[270px]" key={item.id}>
                     <Link href="/">
                       <ProductCart
                         item={item}
