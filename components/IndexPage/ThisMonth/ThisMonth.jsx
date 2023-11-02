@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 
 import ProductCardFill from "@/components/Commons/ProductCardFill";
-import Title from "@/components/Commons/Title";
+import TitleFunction from "@/components/Commons/TitleFunction";
 
 import useTrans from "@/hooks/useTrans";
 
@@ -22,7 +22,16 @@ function ThisMonth({ thisMonth }) {
 
   return (
     <div className="my-[70px]">
-      <Title
+      {/* <Title
+        content={thismonthContent.content}
+        title={thismonthContent.title}
+        bgButton="bg-Secondary-2"
+        buttonText="View all"
+        onNext=""
+        onPrev=""
+      /> */}
+
+      <TitleFunction
         content={thismonthContent.content}
         title={thismonthContent.title}
         bgButton="bg-Secondary-2"
@@ -30,9 +39,9 @@ function ThisMonth({ thisMonth }) {
         onNext=""
         onPrev=""
       />
-
-      <div className=" container pt-[73px] ">
+      <div className=" container pt-[60px] ">
         <Swiper
+          freeMode
           watchSlidesProgress="true"
           slidesPerView="auto"
           spaceBetween={30}

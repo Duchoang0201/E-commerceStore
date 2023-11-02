@@ -19,18 +19,10 @@
   }
 }
 
-.swiper-slide {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ) !important; /* Transparent white background */
-  backdrop-filter: blur(10px) !important; /* Apply a blur effect */
-}
 
-:root {
-  font-size: 12px;
+
+/* :root {
+  font-size: 24px;
 
   @media (min-width: them("screens.md")) {
     font-size: 14px
@@ -39,4 +31,4 @@
   @media (min-width: them("screens.lg")) {
     font-size: 16px;
   }
-}
+} */

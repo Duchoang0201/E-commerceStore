@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
 
-import Title from "@/components/Commons/Title";
+import TitleFunction from "@/components/Commons/TitleFunction";
 
 import useTrans from "@/hooks/useTrans";
 
@@ -25,8 +25,8 @@ function Categories() {
     swiperRef.current.slideNext();
   };
   return (
-    <div className="container mt-[80px] pb-[70px] border-b border-Neutral-200">
-      <Title
+    <div className=" mt-[80px] pb-[70px] border-b border-Neutral-200">
+      <TitleFunction
         content={categoriesContent.content}
         title={categoriesContent.title}
         onPrev={handleSlidePrev}
@@ -34,7 +34,7 @@ function Categories() {
         buttonText=""
         bgButton=""
       />
-      <div className="mt-[65px]">
+      <div className="mt-[60px] container">
         <Swiper
           watchSlidesProgress="true"
           slidesPerView="auto"
@@ -68,7 +68,7 @@ function Categories() {
           {Array.from({ length: 10 }, (_, index) => (
             <SwiperSlide
               key={index}
-              className="!max-w-[170px] !max-h-[145px] py-6 border border-Neutral-100 hover:text-white-0 hover:bg-Secondary-2 hover:transition-all hover:duration-500  rounded-lg"
+              className="!max-w-[170px] !max-h-[145px] py-6 border border-Neutral-100 hover:text-white-0 hover:!bg-Secondary-2 hover:transition-all hover:duration-500  rounded-lg"
             >
               <div
                 key={index}

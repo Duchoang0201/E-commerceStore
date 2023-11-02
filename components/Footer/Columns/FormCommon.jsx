@@ -22,32 +22,30 @@ function Form() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="relative bg-black  border-2 rounded">
-          <Controller
-            name="search"
-            control={control}
-            render={({ field }) => (
-              <input
-                {...field}
-                type="search"
-                id="default-searchFooter"
-                className="block bg-opacity-0 text-white  rounded border-gray-100 p-3 text-sm  bg-gray-50 w-full"
-                placeholder="Enter your email"
-              />
-            )}
-          />
-          {errors.search && (
-            <p className="text-red-500">{errors.search.message}</p>
+    <div className="max-w-[217px]">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="border-2 border-Neutral-50 rounded-md w-full flex flex-row justify-evenly"
+      >
+        <Controller
+          name="search"
+          control={control}
+          render={({ field }) => (
+            <input
+              {...field}
+              type="search"
+              id="default-searchFooter"
+              className=" bg-opacity-0 bg-black-0 overflow-visible rounded w-5/6  p-3 text-sm "
+              placeholder="Enter your email"
+            />
           )}
-          <button
-            type="submit"
-            className="text-white absolute right-2.5 bottom-2.5 focus:ring-4 focus:outline-none font-medium rounded-lg"
-          >
-            <SendHorizontal />
-          </button>
-        </div>
+        />
+        {errors.search && (
+          <p className="text-red-500">{errors.search.message}</p>
+        )}
+        <button className="mr-5" type="submit">
+          <SendHorizontal color="white" />
+        </button>
       </form>
     </div>
   );

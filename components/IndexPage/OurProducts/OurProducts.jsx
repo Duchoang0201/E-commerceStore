@@ -36,7 +36,7 @@ function OurProducts({ ourProducts }) {
         buttonText=""
       />
 
-      <div className="container mt-[65px]  ">
+      <div className="container mt-[60px]  ">
         <Swiper
           watchSlidesProgress="true"
           slidesPerView="auto"

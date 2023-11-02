@@ -26,10 +26,14 @@ function ProductCard({
     //     "0 0 10px 0 rgba(0, 0, 0, 0.5) inset, 0 0 0 10px rgba(0, 0, 0, 1)}",
     // }}
     >
-      <div className=" h-auto relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
-        <div className="relative  h-[250px] ">
-          <Image fill src={item.image} alt={item.title} objectFit="contain" />
-        </div>
+      <div className=" h-auto relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg  max-h-[250px]">
+        <Image
+          className="object-contain aspect-square"
+          width={270}
+          height={250}
+          src={item.image}
+          alt={item.title}
+        />
         <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <button type="submit" className="bg-black text-white-0 py-2 px-5">
             Add to cart
@@ -59,11 +63,9 @@ function ProductCard({
       </div>
 
       <div className="pt-4 flex flex-col gap-y-2">
-        <div className="justify-center items-center">
-          <p className="font-medium truncate text-ellipsis overflow-hidden">
-            {item.title}
-          </p>
-        </div>
+        <span className="font-medium truncate text-ellipsis overflow-hidden">
+          {item.title}
+        </span>
         <div className="justify-center items-center font-medium">
           <span className="text-Button-1  ">
             ${Math.round(Number(item.price) * 0.8)}
@@ -77,7 +79,9 @@ function ProductCard({
             <Rated data={item.rating} />
           </div>
           <div>
-            <p className="px-2 opacity-50 text-[14px]">({item.rating.count})</p>
+            <span className="px-2 opacity-50 text-[14px]">
+              ({item.rating.count})
+            </span>
           </div>
         </div>
       </div>

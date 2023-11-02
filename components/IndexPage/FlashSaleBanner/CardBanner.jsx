@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 
 import ProductCart from "@/components/Commons/ProductCard";
-import Title from "@/components/Commons/Title";
+import TitleFunction from "@/components/Commons/TitleFunction";
 
 import useTrans from "@/hooks/useTrans";
 
@@ -34,14 +34,14 @@ function CardBanner({ products }) {
 
   return (
     <div className="relative">
-      <Title
+      <TitleFunction
         content={flashSaleContent.content}
         title={flashSaleContent.title}
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
-        buttonText=""
-        bgButton=""
         isCountDown
+        paddingY="16"
+        buttonText="View All"
       />
       {/* <div className="w-full relative">
         <div
@@ -52,8 +52,8 @@ function CardBanner({ products }) {
           <div className="content">Your content goes here.</div>
         </div>
       </div> */}
-      <div className="container xxl:max-w-[1465px] !mt-[32px] relative max-h-[350px]">
-        <div className="xxl:ml-[115px] h-auto">
+      <div className="container xxl:max-w-[1465px] mt-[40px] relative max-h-[350px]">
+        <div className="xxl:ml-[105px] h-auto">
           <Swiper
             watchSlidesProgress
             slidesPerView="auto"
@@ -68,13 +68,13 @@ function CardBanner({ products }) {
             pagination={{
               clickable: true,
             }}
-            className="mySwiper !overflow-visible !h-auto"
+            className="mySwiper xxl:!overflow-visible !h-auto"
           >
             {products.length > 0 &&
               products.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className="!max-w-[270px] swiper-slide !h-auto"
+                    className="!max-w-[270px] swiper-slide"
                     key={item.id}
                   >
                     {({ isVisible }) => {
@@ -97,6 +97,8 @@ function CardBanner({ products }) {
                 );
               })}
           </Swiper>
+
+          {/* // STYLE */}
           <style>
             {`
           /* Style for all swiper slides */
@@ -127,8 +129,8 @@ function CardBanner({ products }) {
           
           /* Style for the currently active slide */
           .swiper-slide.swiper-slide-active {
-            // border: 2px solid red;
-          }
+            width: 100%
+            }
           
           /* Style for slides that are both visible and fully visible */
           .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible {

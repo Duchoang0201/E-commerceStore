@@ -6,8 +6,6 @@ import Image from "next/image";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 
-import SpaceBottom from "@/components/Commons/SpaceBottom";
-import SpaceTop from "@/components/Commons/SpaceTop";
 import Title from "@/components/Commons/Title";
 
 import useTrans from "@/hooks/useTrans";
@@ -43,9 +41,9 @@ function Features() {
       />
 
       <div className="container  mt-[65px] ">
-        <div className="flex flex-col gap-y-2 sm:flex sm:flex-row sm:justify-between ">
+        <div className="flex flex-col gap-y-2 sm:flex sm:flex-row sm:justify-between sm: ">
           <div className="max-w-[570px]  bg-black-0 relative">
-            <div className="relative w-full h-auto mt-[89px] mx-[29px]">
+            <div className="relative w-auto h-auto mt-[89px] mx-[29px]">
               <div className="relative">
                 <Image
                   className="!w-[511px] !h-auto"
@@ -71,7 +69,7 @@ function Features() {
             </div>
           </div>
 
-          <div className=" flex flex-col justify-between">
+          <div className=" flex flex-col justify-between gap-y-2">
             <div
               className="max-w-[570px]  relative"
               style={{ backgroundColor: "#0D0D0D" }}
@@ -134,9 +132,7 @@ function Features() {
           </div>
         </div>
       </div>
-      <SpaceTop />
-      <SpaceTop />
-      <div className="container items-center flex flex-col justify-between lg:flex lg:flex-row lg:justify-center gap-x-[88px]">
+      <div className="container items-center flex flex-col justify-between lg:flex lg:flex-row lg:justify-center gap-x-[88px] my-[140px] ">
         <div>
           <Image src={Banner5} alt="Banner5" />
         </div>
@@ -147,7 +143,6 @@ function Features() {
           <Image src={Banner7} alt="Banner7" />
         </div>
       </div>
-      <SpaceBottom border={false} />
     </div>
   );
 }

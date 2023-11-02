@@ -178,7 +178,7 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1218px",
+        "2xl": "1234px",
       },
     },
     // containerCover: {
