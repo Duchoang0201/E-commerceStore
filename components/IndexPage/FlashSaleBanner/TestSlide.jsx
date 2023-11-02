@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // import required modules
 import { FreeMode, Pagination } from "swiper/modules";
 // Import Swiper React components

@@ -20,3 +20,7 @@
 }
 
 
+.swiper-slide {
+  background: rgba(255, 255, 255, 0.8) !important; /* Transparent white background */
+  backdrop-filter: blur(10px) !important; /* Apply a blur effect */
+}

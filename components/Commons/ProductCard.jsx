@@ -5,9 +5,27 @@ import PropTypes from "prop-types";
 
 import Rated from "../Rating/Rated";
 
-function ProductCard({ item, isHeart, isEye, isDiscount }) {
+function ProductCard({
+  item,
+  isHeart,
+  isEye,
+  isDiscount,
+  // lastVisibleSlideIndex,
+  // index,
+  // isVisible,
+}) {
   return (
-    <div>
+    <div
+    // className={`${
+    //   lastVisibleSlideIndex === index && isVisible
+    //     ? "before:w-1/2 before:ml-32 before:inset-1 before:z-40  before:h-full before:bg-white-0 before:bg-opacity-60 before:backdrop-blur-2xl before:absolute before:flex before:flex-row before:justify-end"
+    //     : "opacity-100"
+    // }`}
+    // style={{
+    //   boxShadow:
+    //     "0 0 10px 0 rgba(0, 0, 0, 0.5) inset, 0 0 0 10px rgba(0, 0, 0, 1)}",
+    // }}
+    >
       <div className="  relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
         <div className="relative  h-[250px] ">
           <Image fill src={item.image} alt={item.title} objectFit="contain" />
@@ -74,6 +92,9 @@ ProductCard.propTypes = {
   isHeart: PropTypes.instanceOf(Object),
   isEye: PropTypes.instanceOf(Object),
   isDiscount: PropTypes.instanceOf(Object),
+  // isVisible: PropTypes.instanceOf(Boolean).isRequired,
+  // lastVisibleSlideIndex: PropTypes.instanceOf(Number).isRequired,
+  // index: PropTypes.instanceOf(Number).isRequired,
 };
 ProductCard.defaultProps = {
   item: {},

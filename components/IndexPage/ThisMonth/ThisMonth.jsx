@@ -33,6 +33,7 @@ function ThisMonth({ thisMonth }) {
 
       <div className=" container pt-[73px] ">
         <Swiper
+          watchSlidesProgress="true"
           slidesPerView="auto"
           spaceBetween={30}
           onBeforeInit={(swiper) => {

@@ -36,6 +36,7 @@ function Categories() {
       />
       <div className="mt-[65px]">
         <Swiper
+          watchSlidesProgress="true"
           slidesPerView="auto"
           spaceBetween={30}
           onBeforeInit={(swiper) => {

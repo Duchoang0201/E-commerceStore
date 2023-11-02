@@ -38,6 +38,7 @@ function OurProducts({ ourProducts }) {
 
       <div className="container mt-[65px]  ">
         <Swiper
+          watchSlidesProgress="true"
           slidesPerView="auto"
           spaceBetween={30}
           modules={[Grid]}
