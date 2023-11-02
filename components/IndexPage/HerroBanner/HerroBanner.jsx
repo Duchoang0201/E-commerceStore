@@ -35,28 +35,28 @@ function HerroBanner() {
                 const isLastItem = index === menuList.length - 1;
                 return (
                   <li
-                    ref={liRef}
-                    value={item.name}
-                    onMouseLeave={closeChild}
-                    onMouseEnter={openChild}
                     key={`${item.name}`}
                     className={`${
                       isLastItem ? "" : ""
                     } rounded-r-2xl max-w-[233px] `}
                   >
                     <Link
+                      ref={liRef}
+                      value={item.name}
+                      onMouseLeave={closeChild}
+                      onMouseEnter={openChild}
                       href={item.href}
                       className={`${
                         isLastItem ? "pt-2" : "py-2"
                       } text-base max-w-[217px] align-bottom text-black flex flex-row justify-between hover:bg-TEXT-1 hover:rounded-md duration-200 transition-all`}
                       aria-current="page"
                     >
-                      <p>{item.name}</p>
+                      <span>{item.name}</span>
                       {item.child && <ChevronRight size={24} />}
                     </Link>
                     {item.name === showChild && item.child && (
                       <ul
-                        className={` max-w-[210px] w-full flex flex-col absolute -mt-7  h-auto ml-56  bg-Neutral-100 rounded  transition-all duration-200 z-50`}
+                        className={` max-w-[210px] w-full flex flex-col absolute -mt-7  h-auto ml-[223px]  bg-Neutral-100 rounded  transition-all duration-200 z-50`}
                       >
                         {item.child?.map((child) => {
                           return (

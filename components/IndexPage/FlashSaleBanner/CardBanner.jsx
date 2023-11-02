@@ -52,8 +52,8 @@ function CardBanner({ products }) {
           <div className="content">Your content goes here.</div>
         </div>
       </div> */}
-      <div className="container xxl:max-w-[1465px] !mt-[32px] relative">
-        <div className="xxl:ml-[115px] w-auto">
+      <div className="container xxl:max-w-[1465px] !mt-[32px] relative max-h-[350px]">
+        <div className="xxl:ml-[115px] h-auto">
           <Swiper
             watchSlidesProgress
             slidesPerView="auto"
@@ -68,13 +68,13 @@ function CardBanner({ products }) {
             pagination={{
               clickable: true,
             }}
-            className="mySwiper !overflow-visible"
+            className="mySwiper !overflow-visible !h-auto"
           >
             {products.length > 0 &&
               products.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className="!max-w-[270px] swiper-slide"
+                    className="!max-w-[270px] swiper-slide !h-auto"
                     key={item.id}
                   >
                     {({ isVisible }) => {

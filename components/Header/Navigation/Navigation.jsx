@@ -36,7 +36,10 @@ function Navigation() {
               {navigationList &&
                 navigationList.map((item) => {
                   return (
-                    <li key={`${item.name}`} className=" py-2 ">
+                    <li
+                      key={`${item.name}`}
+                      className=" py-2 whitespace-nowrap"
+                    >
                       <Link
                         onClick={() => {
                           setActiveNav(item.href);

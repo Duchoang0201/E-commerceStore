@@ -26,7 +26,7 @@ function ProductCard({
     //     "0 0 10px 0 rgba(0, 0, 0, 0.5) inset, 0 0 0 10px rgba(0, 0, 0, 1)}",
     // }}
     >
-      <div className="  relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
+      <div className=" h-auto relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
         <div className="relative  h-[250px] ">
           <Image fill src={item.image} alt={item.title} objectFit="contain" />
         </div>

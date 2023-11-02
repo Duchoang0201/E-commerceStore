@@ -40,24 +40,21 @@ function Title({
           )}
         </div>
         {onPrev && onNext ? (
-          <div className="flex flex-row items-center justify-end max-w-[100px] w-full -mt-3 ">
-            <div className="flex flex-row gap-2 w-full">
-              <button
-                className="text-center flex justify-center w-full items-center rounded-full bg-Secondary-0"
-                type="button"
-                onClick={onPrev}
-              >
-                <ArrowLeft />
-              </button>
-
-              <button
-                className="text-center flex justify-center items-center w-full h-12 rounded-full bg-Secondary-0"
-                type="button"
-                onClick={onNext}
-              >
-                <ArrowRight />
-              </button>
-            </div>
+          <div className="flex flex-row gap-2 max-w-[100px] ">
+            <button
+              className="max-w-[46px] h-auto justify-center flex p-[11px] rounded-full bg-Secondary-0"
+              type="button"
+              onClick={onPrev}
+            >
+              <ArrowLeft size={24} />
+            </button>
+            <button
+              className="max-w-[46px] h-auto justify-center flex p-[11px] rounded-full bg-Secondary-0"
+              type="button"
+              onClick={onPrev}
+            >
+              <ArrowRight size={24} />
+            </button>
           </div>
         ) : (
           <button

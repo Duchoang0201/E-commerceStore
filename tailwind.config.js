@@ -178,16 +178,16 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1234px",
+        "2xl": "1218px",
       },
     },
-    containerCover: {
-      center: true,
-      // padding: "2rem",
-      screens: {
-        "2xl": "1440px",
-      },
-    },
+    // containerCover: {
+    //   center: true,
+    //   // padding: "2rem",
+    //   screens: {
+    //     "2xl": "1440px",
+    //   },
+    // },
     extend: {
       keyframes: {
         "accordion-down": {
