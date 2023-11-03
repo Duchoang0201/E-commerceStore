@@ -1,5 +1,4 @@
 import React from "react";
-import { getCookies } from "cookies-next";
 import PropTypes from "prop-types";
 
 import Card from "@/components/CartCom/CartCom";

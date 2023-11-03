@@ -1,23 +1,23 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import { getCookie } from "cookies-next";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
 import { getAllData } from "@/constant/ALLPROUCTS";
+import useCartStore from "@/hooks/useCartStore";
 
 function CartCom({ data }) {
   const [carts, setCarts] = useState([]);
-
+  const { increase } = useCartStore();
   useEffect(() => {
     const fetchData = async () => {
       const total = await getAllData();
 
       const promises = data[0].products.map(async (item) => {
         const matchingChild = total.find(
-          (child) => item.productId === child.id
+          (child) => item.productId === child.id,
         );
         return { product: matchingChild, quantity: item.quantity };
       });
