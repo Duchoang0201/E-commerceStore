@@ -1,33 +1,14 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
-import { getAllData } from "@/constant/ALLPROUCTS";
 import useCartStore from "@/hooks/useCartStore";
 
-function CartCom({ data }) {
-  const [carts, setCarts] = useState([]);
+function CartCom({ carts }) {
   const { increase } = useCartStore();
-  useEffect(() => {
-    const fetchData = async () => {
-      const total = await getAllData();
-
-      const promises = data[0].products.map(async (item) => {
-        const matchingChild = total.find(
-          (child) => item.productId === child.id,
-        );
-        return { product: matchingChild, quantity: item.quantity };
-      });
-
-      const updatedCartsList = await Promise.all(promises);
-      setCarts(updatedCartsList);
-    };
-
-    fetchData();
-  }, [data, setCarts]);
 
   const total = useMemo(() => {
     const found = carts.reduce((curr, acc) => {
@@ -163,5 +144,5 @@ function CartCom({ data }) {
 export default CartCom;
 
 CartCom.propTypes = {
-  data: PropTypes.instanceOf(Object).isRequired,
+  carts: PropTypes.instanceOf(Object).isRequired,
 };
