@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 
+import AppButton from "@/components/AppButton/AppButton";
 import ProductCardFill from "@/components/Commons/ProductCardFill";
 import Title from "@/components/Commons/Title";
 
@@ -36,52 +37,44 @@ function OurProducts({ ourProducts }) {
         buttonText=""
       />
 
-      <div className="container mt-[60px]  ">
+      <div className="container  mt-[65px] ">
         <Swiper
           watchSlidesProgress="true"
-          slidesPerView="auto"
-          spaceBetween={30}
+          // slidesPerView="auto"
+          // spaceBetween={30}
           modules={[Grid]}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
           grid={{ fill: "row", rows: 2 }}
-          // breakpoints={{
-          //   0: {
-          //     slidesPerView: 1.5,
-          //     grid: { fill: "row", rows: 2 },
-
-          //     spaceBetween: 30,
-          //   },
-          //   710: {
-          //     slidesPerView: 2.5,
-          //     grid: { fill: "row", rows: 2 },
-
-          //     spaceBetween: 30,
-          //   },
-          //   1010: {
-          //     grid: { fill: "row", rows: 2 },
-
-          //     slidesPerView: 3.5,
-          //     spaceBetween: 30,
-          //   },
-          //   1280: {
-          //     grid: { fill: "row", rows: 2 },
-          //     slidesPerView: 4,
-          //     spaceBetween: 30,
-          //   },
-          //   1440: {
-          //     grid: { fill: "row", rows: 2 },
-          //     slidesPerView: 4,
-          //     spaceBetween: 30,
-          //   },
-          // }}
+          breakpoints={{
+            1280: {
+              slidesPerView: "auto",
+              spaceBetween: 30,
+              grid: { fill: "row", rows: 2 },
+            },
+            830: {
+              slidesPerView: "4",
+              spaceBetween: 30,
+              grid: { fill: "row", rows: 2 },
+            },
+            480: {
+              slidesPerView: "3",
+              spaceBetween: 30,
+              grid: { fill: "row", rows: 2 },
+            },
+            320: {
+              slidesPerView: 1.5,
+              spaceBetween: 30,
+              grid: { fill: "row", rows: 2 },
+            },
+          }}
         >
           {ourProducts &&
             ourProducts.map((item) => (
               <SwiperSlide
                 key={item.id}
-                className="!max-w-[270px] !max-h-[350px]"
+                className="!max-w-[270px] !max-h-[350px]  "
               >
                 <ProductCardFill
                   item={item}
@@ -101,15 +94,10 @@ function OurProducts({ ourProducts }) {
             ))}
         </Swiper>
       </div>
-      <button
-        type="button"
-        className={`mt-[60px] mb-[140px] container hover:bg-Neutral-600 w-auto  transform transition-all duration-300 flex flex-row justify-center bg-Secondary-2  text-white-0 items-center  `}
-      >
-        <div className="text-white font-poppins text-base py-4 px-12">
-          {" "}
-          View All Products
-        </div>
-      </button>
+
+      <div className="container flex flex-row justify-center mt-[58px] mb-[140px]">
+        <AppButton buttonText="View All Products" paddingY="16" />
+      </div>
     </div>
   );
 }

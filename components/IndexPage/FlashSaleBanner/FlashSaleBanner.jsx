@@ -1,20 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
+import AppButton from "@/components/AppButton/AppButton";
+
 import CardBanner from "./CardBanner";
 
 function FlashSaleBanner({ products }) {
   return (
-    <div className=" text-black mt-[20px] lg:mt-[140px] ">
+    <div className=" text-black mt-[25px] lg:mt-[140px] ">
       <CardBanner products={products} />
 
-      <div className="py-[60px] flex justify-center border-b border-Neutral-200 container ">
-        <button
-          type="button"
-          className="hover:bg-Neutral-600 transform transition-all duration-300 flex flex-row justify-center bg-Secondary-2 w-[234px] h-[56px] text-white-0 items-center text-white font-poppins text-base "
-        >
-          View All Products
-        </button>
+      <div className="mt-[59px] pb-[60px] flex flex-row justify-center border-b border-Neutral-200 container ">
+        <AppButton buttonText="View All Products" paddingY={16} />
       </div>
     </div>
   );

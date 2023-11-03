@@ -41,7 +41,7 @@ function Footer() {
     <div className="text-white-0">
       <footer className="bg-black-0">
         <div className="container pt-20 bg-black ">
-          <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5 pb-16">
+          <div className="grid grid-cols-1 sm:grid sm:grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5 pb-16">
             <div>
               <h2 className="text-xl mb-6 font-semibold  dark:text-white">
                 Exclusive

@@ -5,30 +5,12 @@ import PropTypes from "prop-types";
 
 import Rated from "../Rating/Rated";
 
-function ProductCard({
-  item,
-  isHeart,
-  isEye,
-  isDiscount,
-  // lastVisibleSlideIndex,
-  // index,
-  // isVisible,
-}) {
+function ProductCard({ item, isHeart, isEye, isDiscount }) {
   return (
-    <div
-    // className={`${
-    //   lastVisibleSlideIndex === index && isVisible
-    //     ? "before:w-1/2 before:ml-32 before:inset-1 before:z-40  before:h-full before:bg-white-0 before:bg-opacity-60 before:backdrop-blur-2xl before:absolute before:flex before:flex-row before:justify-end"
-    //     : "opacity-100"
-    // }`}
-    // style={{
-    //   boxShadow:
-    //     "0 0 10px 0 rgba(0, 0, 0, 0.5) inset, 0 0 0 10px rgba(0, 0, 0, 1)}",
-    // }}
-    >
-      <div className=" h-auto relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg  max-h-[250px]">
+    <div className="w-full relative ">
+      <div className="group overflow-hidden relative w-auto rounded-md">
         <Image
-          className="object-contain aspect-square"
+          className="object-contain aspect-[270/250] w-full"
           width={270}
           height={250}
           src={item.image}
@@ -40,22 +22,18 @@ function ProductCard({
           </button>
         </div>
         {isHeart.isActive && (
-          <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500  rounded-full top-4 right-4 dark:border-gray-900">
-            <div className="px-2 py-2 bg-white-0 rounded-full">
-              <Heart />
-            </div>
+          <div className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2">
+            <Heart className="w-[24/34] h-[24/34] " />
           </div>
         )}
         {isEye.isActive && (
-          <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500  rounded-full top-16 right-4 dark:border-gray-900">
-            <div className="px-2 py-2 bg-white-0 rounded-full">
-              <Eye />
-            </div>
+          <div className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-14 right-2">
+            <Eye className="w-[24/34] h-[24/34] " />
           </div>
         )}
         {isDiscount.isActive && (
           <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900">
-            <div className="font-thin px-3 py-1 bg-Secondary-2 rounded-sm text-white-0">
+            <div className="text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 bg-Secondary-2 rounded-sm text-white-0">
               -{isDiscount.value}%
             </div>
           </div>
@@ -96,9 +74,6 @@ ProductCard.propTypes = {
   isHeart: PropTypes.instanceOf(Object),
   isEye: PropTypes.instanceOf(Object),
   isDiscount: PropTypes.instanceOf(Object),
-  // isVisible: PropTypes.instanceOf(Boolean).isRequired,
-  // lastVisibleSlideIndex: PropTypes.instanceOf(Number).isRequired,
-  // index: PropTypes.instanceOf(Number).isRequired,
 };
 ProductCard.defaultProps = {
   item: {},

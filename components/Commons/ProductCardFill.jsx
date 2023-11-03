@@ -7,7 +7,7 @@ import Rated from "../Rating/Rated";
 
 function ProductCardFill({ item, isHeart, isEye, isDiscount }) {
   return (
-    <div>
+    <div className="">
       <div className="!h-[250px]  relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
         <Image
           width="0"

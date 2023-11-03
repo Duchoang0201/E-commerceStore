@@ -5,7 +5,7 @@ function AppButton({ paddingY, buttonText }) {
   return (
     <button
       type="button"
-      className={`py-[${paddingY}px] min-h-[44px] bg-Secondary-2 text-white-0 px-12 whitespace-nowrap`}
+      className={`py-[${paddingY}px] rounded-md min-h-[44px] bg-Secondary-2 text-white-0 px-4 md:px-12 whitespace-nowrap`}
     >
       {buttonText}
     </button>

@@ -24,7 +24,7 @@ function TitleFunction({
     <div className="lg:!max-h-[108px] container flex flex-row justify-between">
       <div className="md:flex md:flex-row md:gap-x-[87px] flex flex-col">
         <div
-          className={`${isCountDown ? "gap-y-6" : "gap-y-5"}  flex flex-col `}
+          className={`${!isCountDown ? "gap-y-5" : "gap-y-6"}  flex flex-col `}
         >
           {" "}
           <div className=" flex flex-row items-center justify-start  ">

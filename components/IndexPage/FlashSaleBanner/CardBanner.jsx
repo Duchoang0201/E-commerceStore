@@ -53,11 +53,11 @@ function CardBanner({ products }) {
         </div>
       </div> */}
       <div className="container xxl:max-w-[1465px] mt-[40px] relative max-h-[350px]">
-        <div className="xxl:ml-[105px] h-auto">
+        <div className="xxl:ml-[105px] ">
           <Swiper
             watchSlidesProgress
-            slidesPerView="auto"
-            spaceBetween={30}
+            // slidesPerView="auto"
+            // spaceBetween={30}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
@@ -68,13 +68,35 @@ function CardBanner({ products }) {
             pagination={{
               clickable: true,
             }}
-            className="mySwiper xxl:!overflow-visible !h-auto"
+            className="mySwiper xxl:!overflow-visible "
+            breakpoints={{
+              1280: {
+                slidesPerView: "auto",
+                spaceBetween: 30,
+              },
+              860: {
+                slidesPerView: 3.5,
+                spaceBetween: 30,
+              },
+              680: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              320: {
+                slidesPerView: 1.5,
+                spaceBetween: 30,
+              },
+            }}
           >
             {products.length > 0 &&
               products.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className="!max-w-[270px] swiper-slide"
+                    className=" swiper-slide !max-w-[270px] !h-auto"
                     key={item.id}
                   >
                     {({ isVisible }) => {
@@ -101,6 +123,8 @@ function CardBanner({ products }) {
           {/* // STYLE */}
           <style>
             {`
+
+    
           /* Style for all swiper slides */
           .swiper-slide {
             opacity: 0.4  ;
@@ -111,14 +135,12 @@ function CardBanner({ products }) {
             filter: none; /* Remove blur for visible slides */
 
             opacity: 0.7 !important;
-            // width: 50%; /* Set half of the width for previous slides */
           }
           /* Style for slides that are currently visible */
           .swiper-slide.swiper-slide-visible {
             opacity: 1;
             z-index: 10;
             filter: none; /* Remove blur for visible slides */
-            width: 50%; /* Set half of the width for visible slides */
           }
           
           /* Style for slides that are fully visible in the viewport */
@@ -128,9 +150,7 @@ function CardBanner({ products }) {
           }
           
           /* Style for the currently active slide */
-          .swiper-slide.swiper-slide-active {
-            width: 100%
-            }
+       
           
           /* Style for slides that are both visible and fully visible */
           .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible {

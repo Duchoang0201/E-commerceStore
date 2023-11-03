@@ -28,7 +28,7 @@ function HerroBanner() {
   return (
     <div className="container">
       <div className="flex flex-row justify-center xl:flex xl:flex-row xl:justify-between">
-        <div className="hidden xl:flex xl:w-full  border-r border-Neutral-200 pt-8 max-w-[233px] w-full">
+        <div className="hidden xl:flex xl:w-full  border-r border-Neutral-200 pt-[31px] max-w-[233px] w-full">
           <div className="hidden xl:flex xl:w-full ">
             <ul className="w-full">
               {menuList.map((item, index) => {
@@ -80,7 +80,7 @@ function HerroBanner() {
           </div>
         </div>
 
-        <div className="flex flex-col-reverse max-w-[937px] w-full -pt-2">
+        <div className="flex flex-col-reverse max-w-[937px] w-full ">
           <Swiper
             watchSlidesProgress="true"
             centeredSlides={false}
