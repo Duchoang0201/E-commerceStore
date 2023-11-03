@@ -1,5 +1,6 @@
 import { Inbox, LogOut, Star, User, XCircle } from "lucide-react";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   navigationList: [
     { name: "Home", href: "/" },
@@ -50,11 +51,11 @@ export default {
     content: "New Arrival",
   },
   userDropdown: [
-    { icon: User, title: `Manage My Account` },
-    { icon: Inbox, title: `My Order` },
-    { icon: XCircle, title: `My Cancellations` },
-    { icon: Star, title: `My Reviews` },
-    { icon: LogOut, title: `Logout` },
+    { icon: User, title: `Manage My Account`, route: "manageaccount" },
+    { icon: Inbox, title: `My Order`, route: "myorder" },
+    { icon: XCircle, title: `My Cancellations`, route: "cancellations" },
+    { icon: Star, title: `My Reviews`, route: "myreviews" },
+    { icon: LogOut, title: `Logout`, route: "logout" },
   ],
   checkoutForm: [
     { name: "First Name", route: "firstName", require: true },

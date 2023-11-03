@@ -1,7 +1,12 @@
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { setCookie } from "cookies-next";
+import { jwtDecode } from "jwt-decode";
 import * as yup from "yup";
+
+import { axiosClient } from "@/libraries/axiosClient";
+import { useRouter } from "next/router";
 
 const validationSchema = yup.object().shape({
   userName: yup
@@ -9,7 +14,7 @@ const validationSchema = yup.object().shape({
     .required("Email or Phone Number is required")
     .matches(
       /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$|^(\+\d{1,3}[- ]?)?\d{10}$/,
-      "Invalid Email or Phone Number",
+      "Invalid Email or Phone Number"
     ),
   password: yup
     .string()
@@ -23,10 +28,21 @@ function SigninForm() {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(validationSchema),
+    // resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = () => {};
+  const router = useRouter();
+  const onSubmit = async () => {
+    const data = await axiosClient.post("/auth/login", {
+      username: "mor_2314",
+      password: "83r5^_",
+    });
+    const { token } = data.data;
+    const decoded = jwtDecode(token);
+    const user = JSON.stringify(decoded);
+    setCookie("user", user);
+    router.push("/");
+  };
 
   return (
     <div className="flex flex-col">

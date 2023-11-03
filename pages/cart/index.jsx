@@ -1,4 +1,5 @@
 import React from "react";
+import { getCookies } from "cookies-next";
 import PropTypes from "prop-types";
 
 import Card from "@/components/CartCom/CartCom";
@@ -27,6 +28,8 @@ export async function getStaticProps() {
 
   const resCarts = await axiosClient.get("/carts/user/1");
   const { data } = resCarts;
+
+  // set Coockies
 
   return {
     props: {

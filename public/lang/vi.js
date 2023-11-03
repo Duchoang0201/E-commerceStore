@@ -50,11 +50,11 @@ export default {
     content: "Hàng mới về",
   },
   userDropdown: [
-    { icon: User, title: `Tài khoản` },
-    { icon: Inbox, title: `Đơn đặt hàng` },
-    { icon: XCircle, title: `Đơn hủy` },
-    { icon: Star, title: `Đánh giá` },
-    { icon: LogOut, title: `Thoát` },
+    { icon: User, title: `Tài khoản`, route: "manageaccount" },
+    { icon: Inbox, title: `Đơn đặt hàng`, route: "myorder" },
+    { icon: XCircle, title: `Đơn hủy`, route: "cancellations" },
+    { icon: Star, title: `Đánh giá`, route: "myreviews" },
+    { icon: LogOut, title: `Thoát`, route: "logout" },
   ],
   checkoutForm: [
     { name: "Tên", route: "firstName", require: true },

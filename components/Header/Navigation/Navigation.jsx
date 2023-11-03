@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { getCookie } from "cookies-next";
 import Link from "next/link";
 
 import Draw from "@/components/Draw/Draw";
@@ -10,8 +11,8 @@ import FunctionNavigation from "./FunctionNavigation";
 function Navigation() {
   const [activeNav, setActiveNav] = useState("/");
   const { navigationList } = useTrans();
-  const isUser = true;
-
+  const isUser = getCookie("user");
+  console.log(`🚀🚀🚀!..isUser`, isUser);
   return (
     <div className="container">
       <div className="pt-[40px] flex flex-row justify-between mb-[14px] items-center">

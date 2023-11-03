@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { getCookie } from "cookies-next";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
 import { getAllData } from "@/constant/ALLPROUCTS";
-import useCartStore from "@/hooks/useCartStore";
 
 function CartCom({ data }) {
-  const { carts, increase, getCarts } = useCartStore();
+  const [carts, setCarts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,17 +17,17 @@ function CartCom({ data }) {
 
       const promises = data[0].products.map(async (item) => {
         const matchingChild = total.find(
-          (child) => item.productId === child.id,
+          (child) => item.productId === child.id
         );
         return { product: matchingChild, quantity: item.quantity };
       });
 
       const updatedCartsList = await Promise.all(promises);
-      getCarts(updatedCartsList);
+      setCarts(updatedCartsList);
     };
 
     fetchData();
-  }, [data, getCarts]);
+  }, [data, setCarts]);
 
   const total = useMemo(() => {
     const found = carts.reduce((curr, acc) => {
@@ -35,6 +35,7 @@ function CartCom({ data }) {
     }, 0);
     return found;
   }, [carts]);
+
   return (
     <div>
       <div className=" rounded shadow-md flex flex-row gap-x-[284px] px-10 py-6 text-base leading-6 font-normal">
