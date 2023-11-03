@@ -75,6 +75,7 @@ function UserDropdown() {
                   onClick={() => {
                     if (item.route === "logout") {
                       deleteCookie("user");
+                      deleteCookie("carts");
                     }
                   }}
                   href={item.route === "logout" ? "/" : item.route}

@@ -11,6 +11,7 @@ import FunctionNavigation from "./FunctionNavigation";
 function Navigation() {
   const [activeNav, setActiveNav] = useState("/");
   const { navigationList } = useTrans();
+
   const isUser = getCookie("user");
 
   return (

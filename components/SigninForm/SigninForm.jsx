@@ -40,6 +40,12 @@ function SigninForm() {
     const { token } = data.data;
     const decoded = jwtDecode(token);
     const user = JSON.stringify(decoded);
+
+    const cartsData = await axiosClient.get(`/carts/user/${decoded.sub}`);
+    const { data: carts } = cartsData;
+
+    setCookie("carts", JSON.stringify(carts[0]));
+
     setCookie("user", user);
     router.push("/");
   };

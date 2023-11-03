@@ -2,6 +2,7 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Search } from "lucide-react";
+import Link from "next/link";
 import * as yup from "yup";
 
 const validationSchema = yup.object().shape({
@@ -115,7 +116,12 @@ function SignupForm() {
           </div>
           <div className="flex justify-center items-center">
             <p className="px-2">Already have account?</p>
-            <span>Log in</span>
+            <Link
+              href="/signin"
+              className="opacity-70 underline underline-offset-8"
+            >
+              Log in
+            </Link>
           </div>
         </form>
       </div>
