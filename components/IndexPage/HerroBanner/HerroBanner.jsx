@@ -43,8 +43,9 @@ function HerroBanner() {
                     <Link
                       ref={liRef}
                       value={item.name}
+                      // onMouseOver={closeChild}
                       onMouseLeave={closeChild}
-                      onMouseEnter={openChild}
+                      onMouseOver={openChild}
                       href={item.href}
                       className={`${
                         isLastItem ? "pt-2" : "py-2"
@@ -53,26 +54,26 @@ function HerroBanner() {
                     >
                       <span>{item.name}</span>
                       {item.child && <ChevronRight size={24} />}
+                      {item.name === showChild && item.child && (
+                        <ul
+                          className={` max-w-[210px] w-full flex flex-col absolute mt-2  h-auto ml-[215px]  bg-Neutral-100 rounded  transition-all duration-200 z-50`}
+                        >
+                          {item.child?.map((child) => {
+                            return (
+                              <li key={child.name}>
+                                <Link
+                                  href={child.href}
+                                  className="text-base h-10 items-center hover:bg-TEXT-1 hover:rounded-md text-black w-auto flex flex-row justify-between"
+                                  aria-current="page"
+                                >
+                                  {child.name}
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      )}
                     </Link>
-                    {item.name === showChild && item.child && (
-                      <ul
-                        className={` max-w-[210px] w-full flex flex-col absolute -mt-7  h-auto ml-[223px]  bg-Neutral-100 rounded  transition-all duration-200 z-50`}
-                      >
-                        {item.child?.map((child) => {
-                          return (
-                            <li className=" " key={child.name}>
-                              <Link
-                                href={child.href}
-                                className="text-base h-10 items-center hover:bg-TEXT-1 hover:rounded-md text-black w-auto flex flex-row justify-between"
-                                aria-current="page"
-                              >
-                                {child.name}
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    )}
                   </li>
                 );
               })}

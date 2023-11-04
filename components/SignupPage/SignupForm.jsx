@@ -33,12 +33,12 @@ function SignupForm() {
 
   return (
     <div className="flex flex-col">
-      <div className="text-[36px] font-inter leading-8 font-semibold tracking-[1.44px] pb-6">
+      <span className="text-[16px] md:text-[24px] xl:text-[36px] font-inter leading-8 font-semibold tracking-[1.44px] pb-2 xl:pb-6">
         Create an account
-      </div>
-      <div className="text-[16px] font-poppins leading-6 pb-12">
+      </span>
+      <span className="text-[8px] md:text-[12px] xl:text-[16px] font-poppins leading-6 pb-2 xl:pb-12">
         Enter your details below
-      </div>
+      </span>
       <div className="text-black-0">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="relative bg-black pb-10">

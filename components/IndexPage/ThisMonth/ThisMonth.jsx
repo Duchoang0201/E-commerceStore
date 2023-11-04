@@ -22,15 +22,6 @@ function ThisMonth({ thisMonth }) {
 
   return (
     <div className="my-[70px]">
-      {/* <Title
-        content={thismonthContent.content}
-        title={thismonthContent.title}
-        bgButton="bg-Secondary-2"
-        buttonText="View all"
-        onNext=""
-        onPrev=""
-      /> */}
-
       <TitleFunction
         content={thismonthContent.content}
         title={thismonthContent.title}
@@ -88,8 +79,8 @@ function ThisMonth({ thisMonth }) {
           {" "}
           <div className="w-full h-auto bg-black-0 flex flex-row">
             {" "}
-            <div className="pt-[37px] pr-[44px] py-[43px] ssm:pl-[56px] ssm:flex ssm:flex-row relative">
-              <div className="w-auto h-auto flex flex-col gap-4  md:gap-8 md:relative absolute z-50 ">
+            <div className="pt-[37px] pr-[44px] py-[43px] pl-20 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
+              <div className="w-2/3 h-fit flex flex-col gap-12  md:gap-8 md:relative absolute z-50 ">
                 <span className="font-poppins" style={{ color: "#0F6" }}>
                   {" "}
                   Categories
