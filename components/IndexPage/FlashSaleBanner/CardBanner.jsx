@@ -83,11 +83,11 @@ function CardBanner({ products }) {
                 spaceBetween: 30,
               },
               480: {
-                slidesPerView: 2,
+                slidesPerView: 2.5,
                 spaceBetween: 30,
               },
               320: {
-                slidesPerView: 1.5,
+                slidesPerView: 2,
                 spaceBetween: 30,
               },
             }}

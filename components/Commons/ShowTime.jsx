@@ -7,18 +7,18 @@ function ShowTime({ days, hours, minutes, seconds }) {
       {" "}
       <div className=" w-full  flex flex-row gap-2 md:flex md:flex-row  md:gap-[17px] text-center">
         <div className="flex flex-col justify-end">
-          <div className="text-[8px] md:text-[12px] font-medium leading-[18px]">
+          <span className="text-[8px] md:text-[12px] font-medium leading-[18px] text-start">
             Days
-          </div>
-          <div className="font-inter text-[18px] md:text-[32px] font-bold leading-[30px]">
+          </span>
+          <span className="font-inter text-[18px] md:text-[32px] font-bold leading-[30px]">
             {days.toString().padStart(2, "0")}
-          </div>
+          </span>
         </div>
         <div>
           <div className="text-[15px] font-bold text-Button-2 mt-4">:</div>
         </div>
         <div>
-          <div className="text-[8px] md:text-[12px] font-medium leading-[18px]">
+          <div className="text-[8px] md:text-[12px] font-medium leading-[18px] text-start">
             Hours
           </div>
           <div className="font-inter text-[18px] md:text-[32px] font-bold leading-[30px]">
@@ -29,7 +29,7 @@ function ShowTime({ days, hours, minutes, seconds }) {
           <div className="text-[15px] font-bold text-Button-2 mt-4">:</div>
         </div>
         <div>
-          <div className="text-[8px] md:text-[12px] font-medium leading-[18px]">
+          <div className="text-[8px] md:text-[12px] font-medium leading-[18px] text-start">
             Minutes
           </div>
           <div className="font-inter text-[18px] md:text-[32px] font-bold leading-[30px]">
@@ -40,7 +40,7 @@ function ShowTime({ days, hours, minutes, seconds }) {
           <div className="text-[15px] font-bold text-Button-2 mt-4">:</div>
         </div>
         <div>
-          <div className="text-[8px] md:text-[12px] font-medium leading-[18px]">
+          <div className="text-[8px] md:text-[12px] font-medium leading-[18px] text-start">
             Seconds
           </div>
           <div className="font-inter text-[18px] md:text-[32px] font-bold leading-[30px]">

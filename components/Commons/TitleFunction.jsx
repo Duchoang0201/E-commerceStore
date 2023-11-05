@@ -16,7 +16,7 @@ function TitleFunction({
   onNext,
   isCountDown,
   buttonText,
-  paddingY,
+  // paddingY,
 }) {
   const saturdayOfWeek = getNextDay("saturday") + 7 * 60 * 60;
   const [days, hours, minutes, seconds] = useCountdown(saturdayOfWeek);
@@ -56,7 +56,7 @@ function TitleFunction({
           </div>
         ) : (
           <div className="flex flex-col justify-end h-full ">
-            <AppButton buttonText={buttonText} paddingY={paddingY} />
+            <AppButton buttonText={buttonText} paddingY={16} />
           </div>
         )}
       </div>
@@ -73,5 +73,5 @@ TitleFunction.propTypes = {
   content: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   isCountDown: PropTypes.bool.isRequired,
-  paddingY: PropTypes.string.isRequired,
+  // paddingY: PropTypes.string.isRequired,
 };
