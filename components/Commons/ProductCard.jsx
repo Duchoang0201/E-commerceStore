@@ -23,11 +23,11 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         </div>
         {isHeart.isActive && (
           <div className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2">
-            <Heart className="w-[24/34] h-[24/34] " />
+            <Heart size={24} />
           </div>
         )}
         {isEye.isActive && (
-          <div className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-14 right-2">
+          <div className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[5rem] sm:top-14 right-2">
             <Eye className="w-[24/34] h-[24/34] " />
           </div>
         )}

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import MoveTop from "@/components/MoveTop/MoveTop";
 
 import "@/styles/globals.css";
 
@@ -13,6 +14,7 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />
       {/* FOOTER HAVE PROBLEM */}
       <Footer />
+      <MoveTop />
     </div>
   );
 }

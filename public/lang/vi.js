@@ -1,5 +1,6 @@
 import { Inbox, LogOut, Star, User, XCircle } from "lucide-react";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   navigationList: [
     { name: "Trang chủ", href: "/" },
@@ -63,5 +64,29 @@ export default {
     { name: "Chung cư, tầng,...", route: "moreAddress", require: false },
     { name: "Số điện thoại", route: "phoneNumbber", require: true },
     { name: "Địa chỉ email", route: "email", require: true },
+  ],
+  accountMenu: [
+    {
+      name: "Quản lý tài khoản",
+      route: "managemyaccount",
+      child: [
+        { name: "Thông tin cá nhân", route: "myprofile" },
+        { name: "Địa chỉ đặt hàng", route: "addressbook" },
+        { name: "Phương thức thanh toán", route: "paymentoptions" },
+      ],
+    },
+    {
+      name: "Đơn đặt hàng",
+      route: "myorders",
+      child: [
+        { name: "Đổi trả", route: "myreturns" },
+        { name: "Hủy", route: "mycancellations" },
+      ],
+    },
+    {
+      name: "Yêu thích",
+      route: "mywishList",
+      child: [null],
+    },
   ],
 };

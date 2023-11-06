@@ -174,7 +174,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      poppins: "Poppins",
+      poppins: ["Poppins"],
+      // poppins: ["poppins"],
       inter: "Inter",
     },
     container: {

@@ -69,4 +69,28 @@ export default {
     { name: "Phone Number", route: "phoneNumbber", require: true },
     { name: "Email Address", route: "email", require: true },
   ],
+  accountMenu: [
+    {
+      name: "Manage My Account",
+      route: "managemyaccount",
+      child: [
+        { name: "My Profile", route: "myprofile" },
+        { name: "Address Book", route: "addressbook" },
+        { name: "My Payment Options", route: "paymentoptions" },
+      ],
+    },
+    {
+      name: "My Orders",
+      route: "myorders",
+      child: [
+        { name: "My Returns", route: "myreturns" },
+        { name: "My Cancellations", route: "mycancellations" },
+      ],
+    },
+    {
+      name: "My WishList",
+      route: "mywishList",
+      child: [null],
+    },
+  ],
 };

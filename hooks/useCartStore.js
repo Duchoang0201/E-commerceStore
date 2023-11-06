@@ -1,7 +1,5 @@
 import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
-
-import { axiosClient } from "@/libraries/axiosClient";
+import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
 const useCartStore = create(
   devtools(
@@ -14,7 +12,7 @@ const useCartStore = create(
         increase: async (item) => {
           const { carts } = get();
           const productChange = carts.find(
-            (child) => child.product.id === item.id
+            (child) => child.product.id === item.id,
           );
           productChange.quantity += 1;
           // await axiosClient.patch("/carts/3", {
@@ -30,10 +28,10 @@ const useCartStore = create(
       }),
       {
         name: "cart-storage",
-        getStorage: () => sessionStorage,
-      }
-    )
-  )
+        storage: createJSONStorage(() => sessionStorage),
+      },
+    ),
+  ),
 );
 
 export default useCartStore;

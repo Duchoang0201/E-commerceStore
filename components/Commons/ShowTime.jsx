@@ -15,7 +15,9 @@ function ShowTime({ days, hours, minutes, seconds }) {
           </span>
         </div>
         <div>
-          <div className="text-[15px] font-bold text-Button-2 mt-4">:</div>
+          <div className="text-[15px] font-bold text-Button-2 mt-6 md:mt-4">
+            :
+          </div>
         </div>
         <div>
           <div className="text-[8px] md:text-[12px] font-medium leading-[18px] text-start">
@@ -26,7 +28,9 @@ function ShowTime({ days, hours, minutes, seconds }) {
           </div>
         </div>
         <div>
-          <div className="text-[15px] font-bold text-Button-2 mt-4">:</div>
+          <div className="text-[15px] font-bold text-Button-2 mt-6 md:mt-4">
+            :
+          </div>
         </div>
         <div>
           <div className="text-[8px] md:text-[12px] font-medium leading-[18px] text-start">
@@ -37,7 +41,9 @@ function ShowTime({ days, hours, minutes, seconds }) {
           </div>
         </div>
         <div>
-          <div className="text-[15px] font-bold text-Button-2 mt-4">:</div>
+          <div className="text-[15px] font-bold text-Button-2 mt-6 md:mt-4">
+            :
+          </div>
         </div>
         <div>
           <div className="text-[8px] md:text-[12px] font-medium leading-[18px] text-start">

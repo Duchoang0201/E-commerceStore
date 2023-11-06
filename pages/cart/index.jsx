@@ -2,20 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Card from "@/components/CartCom/CartCom";
-import SpaceBottom from "@/components/Commons/SpaceBottom";
-import SpaceTop from "@/components/Commons/SpaceTop";
 
 import { axiosClient } from "@/libraries/axiosClient";
 
 function CartPage({ carts }) {
   return (
     <div className="container">
-      <SpaceTop />
-      <div> Home / Cart</div>
-      <SpaceTop />
+      <div className="my-[80px]"> Home / Cart</div>
       <Card carts={carts} />
-      <SpaceBottom border={false} />
-      <SpaceBottom border={false} />
     </div>
   );
 }

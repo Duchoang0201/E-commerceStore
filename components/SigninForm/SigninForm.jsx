@@ -1,12 +1,10 @@
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { setCookie } from "cookies-next";
-import { jwtDecode } from "jwt-decode";
 import { useRouter } from "next/router";
 import * as yup from "yup";
 
-import { axiosClient } from "@/libraries/axiosClient";
+import useAuthStore from "@/hooks/useAuth";
 
 const validationSchema = yup.object().shape({
   userName: yup
@@ -30,24 +28,26 @@ function SigninForm() {
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
-
+  const { login } = useAuthStore();
   const router = useRouter();
-  const onSubmit = async () => {
-    const data = await axiosClient.post("/auth/login", {
-      username: "mor_2314",
-      password: "83r5^_",
-    });
-    const { token } = data.data;
-    const decoded = jwtDecode(token);
-    const user = JSON.stringify(decoded);
-
-    const cartsData = await axiosClient.get(`/carts/user/${decoded.sub}`);
-    const { data: carts } = cartsData;
-
-    setCookie("carts", JSON.stringify(carts[0]));
-
-    setCookie("user", user);
+  const onSubmit = async (e) => {
+    login(e);
     router.push("/");
+    // const data = await axiosClient.post("/auth/login", {
+    //   username: "mor_2314",
+    //   password: "83r5^_",
+    // });
+    // const { token } = data.data;
+    // const decoded = jwtDecode(token);
+    // const user = JSON.stringify(decoded);
+
+    // const cartsData = await axiosClient.get(`/carts/user/${decoded.sub}`);
+    // const { data: carts } = cartsData;
+
+    // setCookie("carts", JSON.stringify(carts[0]));
+
+    // setCookie("user", user);
+    // router.push("/");
   };
 
   return (

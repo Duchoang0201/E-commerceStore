@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { deleteCookie } from "cookies-next";
 import { User } from "lucide-react";
 import Link from "next/link";
 
+import useAuthStore from "@/hooks/useAuth";
 // import Link from "next/link";
 import useTrans from "@/hooks/useTrans";
 
@@ -30,6 +30,7 @@ function UserDropdown() {
     };
   }, [open]);
 
+  const { logout } = useAuthStore();
   return (
     <div className="relative items-center  w-full">
       {/* <button
@@ -74,8 +75,9 @@ function UserDropdown() {
                   value={item.name}
                   onClick={() => {
                     if (item.route === "logout") {
-                      deleteCookie("user");
-                      deleteCookie("carts");
+                      // deleteCookie("user");
+                      // deleteCookie("carts");
+                      logout();
                     }
                   }}
                   href={item.route === "logout" ? "/" : item.route}

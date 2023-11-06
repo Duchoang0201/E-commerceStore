@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { getCookie } from "cookies-next";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Draw from "@/components/Draw/Draw";
 
+import useAuthStore from "@/hooks/useAuth";
 import useTrans from "@/hooks/useTrans";
 
 import FunctionNavigation from "./FunctionNavigation";
@@ -11,9 +12,16 @@ import FunctionNavigation from "./FunctionNavigation";
 function Navigation() {
   const [activeNav, setActiveNav] = useState("/");
   const { navigationList } = useTrans();
+  const router = useRouter();
+  const { user: isUser } = useAuthStore();
 
-  const isUser = getCookie("user");
-
+  useEffect(() => {
+    if (router.asPath === "/") {
+      setActiveNav("/home");
+    } else {
+      setActiveNav(router.asPath);
+    }
+  }, [router.asPath]);
   return (
     <div className="pb-[14px] pt-[40px] border-b border-Neutral-200">
       <div className="container">
@@ -45,11 +53,11 @@ function Navigation() {
                       >
                         <Link
                           onClick={() => {
-                            setActiveNav(item.href);
+                            setActiveNav(router.asPath);
                           }}
                           href={item.href}
                           className={`${
-                            activeNav === item.href &&
+                            activeNav === `/${item.href}` &&
                             "underline decoration-Neutral-300 underline-offset-4 font-normal text-base"
                           }`}
                           aria-current="page"

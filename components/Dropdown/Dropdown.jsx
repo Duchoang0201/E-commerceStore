@@ -36,7 +36,7 @@ function Dropdown({ data, color }) {
         >
           <Globe size={28} strokeWidth={1.25} /> {locale === "vi" ? "Vi" : "En"}
         </div>{" "}
-        {open ? <ChevronUp size="24" /> : <ChevronDown size="24" />}
+        {open ? <ChevronUp size="22" /> : <ChevronDown size="22" />}
       </button>
       {open && (
         <div

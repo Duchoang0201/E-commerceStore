@@ -5,9 +5,9 @@ import Dropdown from "@/components/Dropdown/Dropdown";
 
 function Language() {
   return (
-    <div className="container flex flex-row justify-between">
+    <div className="container flex flex-row justify-between ">
       <div className="max-w-[310px] " />
-      <div className="flex flex-row justify-between max-w-[859px] w-full text-white-0  ">
+      <div className="flex flex-row justify-between max-w-[859px] w-full text-white-0 -my-[2px] ">
         <div className="flex justify-between xl:flex xl:justify-between  items-center text-sm font-normal not-italic w-full gap-2 ">
           <div className="max-w-[550px] w-full flex flex-row justify-between">
             <p className="text-truncate text-[14px]">
