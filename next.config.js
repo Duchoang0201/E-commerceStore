@@ -5,7 +5,7 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   images: {
-    domains: ["fakestoreapi.com"],
+    domains: ["fakestoreapi.com", "swiperjs.com"],
     loader: "default",
   },
 };

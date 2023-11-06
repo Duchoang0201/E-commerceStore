@@ -17,7 +17,7 @@ function Navigation() {
 
   useEffect(() => {
     if (router.asPath === "/") {
-      setActiveNav("/home");
+      setActiveNav("//");
     } else {
       setActiveNav(router.asPath);
     }
