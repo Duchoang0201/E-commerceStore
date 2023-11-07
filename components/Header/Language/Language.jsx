@@ -14,7 +14,10 @@ function Language() {
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
               50%!
             </p>
-            <Link className="font-semibold underline text-sm px-2 " href="/">
+            <Link
+              className="font-semibold underline text-sm px-2 flex flex-row justify-center "
+              href="/"
+            >
               ShopNow
             </Link>
           </div>
