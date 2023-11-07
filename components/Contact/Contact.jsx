@@ -2,7 +2,6 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Mail, Phone } from "lucide-react";
 
-import AleartApp from "../AleartApp/AleartApp";
 import AppButton from "../AppButton/AppButton";
 
 function Contact() {
@@ -16,7 +15,6 @@ function Contact() {
   return (
     <div className="">
       {" "}
-      <AleartApp />
       <div className="flex flex-row justify-between">
         <div className="flex flex-col justify-start max-w-[340px] gap-y-[23px] shadow-sm rounded-sm px-[35px] pt-[40px] pb-[51px]">
           <div className="flex flex-col gap-4 ">

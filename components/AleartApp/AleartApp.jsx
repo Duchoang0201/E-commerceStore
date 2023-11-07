@@ -12,15 +12,13 @@ function AleartApp({ data }) {
   const timeRef = useRef();
 
   useEffect(() => {
-    if (newClick) {
-      setOpen(true);
-      if (timeRef.current) {
-        clearTimeout(timeRef.current);
-      }
-      timeRef.current = setTimeout(() => {
-        setOpen(false);
-      }, time);
+    setOpen(true);
+    if (timeRef.current) {
+      clearTimeout(timeRef.current);
     }
+    timeRef.current = setTimeout(() => {
+      setOpen(false);
+    }, time);
   }, [time, newClick]);
 
   return (

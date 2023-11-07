@@ -17,7 +17,7 @@ function Navigation() {
 
   useEffect(() => {
     if (router.asPath === "/") {
-      setActiveNav("//");
+      setActiveNav("/");
     } else {
       setActiveNav(router.asPath);
     }
@@ -47,10 +47,7 @@ function Navigation() {
                 {navigationList &&
                   navigationList.map((item) => {
                     return (
-                      <li
-                        key={`${item.name}`}
-                        className=" py-2 whitespace-nowrap"
-                      >
+                      <li key={item.name} className=" py-2 whitespace-nowrap">
                         <Link
                           onClick={() => {
                             setActiveNav(router.asPath);

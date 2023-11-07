@@ -1,17 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import AleartApp from "@/components/AleartApp/AleartApp";
+// import AleartApp from "@/components/AleartApp/AleartApp";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import MoveTop from "@/components/MoveTop/MoveTop";
 
-import useMessage from "@/hooks/useMessage";
-
+// import useMessage from "@/hooks/useMessage";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  const { messages } = useMessage();
+  // const { messages } = useMessage();
 
   return (
     <div className="font-poppins">
@@ -20,7 +19,7 @@ export default function App({ Component, pageProps }) {
       {/* FOOTER HAVE PROBLEM */}
       <Footer />
       <MoveTop />
-      <AleartApp data={messages} />
+      {/* <AleartApp data={messages} /> */}
     </div>
   );
 }
