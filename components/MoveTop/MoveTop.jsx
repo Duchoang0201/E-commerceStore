@@ -6,7 +6,7 @@ function MoveTop() {
 
   useEffect(() => {
     const handleOpen = () => {
-      if (window.scrollY > 500) {
+      if (window.scrollY > 800) {
         setOpenMoveTop(true);
       } else {
         setOpenMoveTop(false);

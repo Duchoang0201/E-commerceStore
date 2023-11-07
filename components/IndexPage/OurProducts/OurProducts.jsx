@@ -64,7 +64,7 @@ function OurProducts({ ourProducts }) {
               grid: { fill: "row", rows: 2 },
             },
             320: {
-              slidesPerView: 1.5,
+              slidesPerView: 2,
               spaceBetween: 30,
               grid: { fill: "row", rows: 2 },
             },

@@ -15,7 +15,7 @@ function Contact() {
   return (
     <div className="">
       {" "}
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-col sm:flex sm:flex-row sm:justify-between">
         <div className="flex flex-col justify-start max-w-[340px] gap-y-[23px] shadow-sm rounded-sm px-[35px] pt-[40px] pb-[51px]">
           <div className="flex flex-col gap-4 ">
             <div className=" flex flex-row items-center">
@@ -44,7 +44,7 @@ function Contact() {
         </div>
         <div className="max-w-[800px]  w-full shadow-sm px-[30px] py-[40px]">
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col ">
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-col  xl:flex xl:flex-row xl:justify-between">
               <div className="relative bg-black max-w-[235px] w-full mb-6 ">
                 <Controller
                   name="name"
@@ -122,7 +122,7 @@ function Contact() {
               )}
             </div>
             <div className="flex flex-row justify-end ">
-              <div className="flex flex-row gap-8">
+              <div className="xl:flex flex-row gap-8">
                 <button type="button">Cancel</button>
                 <AppButton buttonText="Save Change" paddingY="16" />
               </div>

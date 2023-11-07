@@ -65,8 +65,8 @@ function AboutCom() {
   ];
   return (
     <div className="container">
-      <div className=" overflow-visible flex flex-row justify-between relative ">
-        <div className="max-w-[525px] w-full mt-[137px] text-start ">
+      <div className="flex flex-col  overflow-visible md:flex md:flex-row md:justify-between relative ">
+        <div className="max-w-[525px] w-full mt-[137px] text-start order-2 md:order-1">
           <span className="font-inter text-[54px] font-semibold leading-[64px] tracking-[3.24px]">
             Our Story
           </span>
@@ -83,11 +83,11 @@ function AboutCom() {
             ranging from consumer.
           </p>
         </div>
-        <div className="overflow-visible  -mr-[267px]  ">
+        <div className="overflow-visible order-1  md:-mr-[267px]  ">
           <Image src={Banner} alt="banner" width={837} height={609} />
         </div>
       </div>
-      <div className="my-[140px] flex flex-row justify-between w-full ">
+      <div className="my-[140px] flex flex-col items-center gap-y-6 xl:flex xl:flex-row justify-between w-full ">
         {arrList.map((item) => {
           return (
             <div
@@ -179,7 +179,7 @@ function AboutCom() {
         </style>
       </Swiper>
 
-      <div className="flex flex-row max-w-[943px] mx-auto justify-between mt-[125px] my-[110px] ">
+      <div className="flex flex-col justify-between items-center md:flex md:flex-row max-w-[943px] mx-auto md:justify-between mt-[125px] my-[110px] ">
         {arrSP.map((item) => {
           return (
             <div

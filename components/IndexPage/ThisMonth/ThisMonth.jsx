@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -64,12 +65,14 @@ function ThisMonth({ thisMonth }) {
                 key={item.id}
                 className="!max-w-[270px] !max-h-[350px]"
               >
-                <ProductCard
-                  item={item}
-                  isEye={{ isActive: true }}
-                  isDiscount={{ isActive: false, value: 20 }}
-                  isHeart={{ isActive: true }}
-                />
+                <Link href={`/products/${item.id}`}>
+                  <ProductCard
+                    item={item}
+                    isEye={{ isActive: true }}
+                    isDiscount={{ isActive: false, value: 20 }}
+                    isHeart={{ isActive: true }}
+                  />
+                </Link>
               </SwiperSlide>
             ))}
         </Swiper>

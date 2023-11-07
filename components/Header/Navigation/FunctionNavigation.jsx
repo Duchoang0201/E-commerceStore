@@ -1,28 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 
 import UserDropdown from "@/components/User/UserDropdown";
 
 import useCartStore from "@/hooks/useCartStore";
+import useSearch from "@/hooks/useSearch";
 
 function FunctionNavigation({ isUser }) {
   const loveList = [];
   const { carts } = useCartStore();
+  const { handleSubmit, control } = useForm();
+  const [valueSearch, setValueSearch] = useState();
+  const { setSearch } = useSearch();
+  const router = useRouter();
+  const onSubmit = (data) => {
+    setSearch(data.search);
+    setValueSearch(data.search);
 
+    router.push("/searchpage");
+  };
   return (
     <div
       className={` hidden md:flex md:flex-row md:gap-x- items-center md:justify-end md:w-full max-w-[395px] w-full gap-x-[24px]`}
     >
-      <form className=" max-w-[243px] w-full flex flex-row justify-between bg-Secondary-0 py-[7px] pl-5 pr-3  rounded-sm">
-        <input
-          id="default-search"
-          className="text-[12px] bg-Secondary-0 w-[153px]  outline-none  "
-          placeholder="What are you looking for?"
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="max-w-[243px] w-full flex flex-row justify-between bg-Secondary-0 py-[7px] pl-5 pr-3 rounded-sm"
+      >
+        <Controller
+          name="search" // Add a name for the input field
+          control={control}
+          render={({ field }) => (
+            <input
+              value={valueSearch}
+              id="default-search"
+              {...field}
+              className="text-[12px] bg-Secondary-0 w-[153px] outline-none"
+              placeholder="What are you looking for?"
+            />
+          )}
         />
 
-        <button type="submit" className=" ">
+        <button type="submit">
           <Search strokeWidth={1.25} />
         </button>
       </form>
