@@ -1,18 +1,15 @@
 import React from "react";
-import { getCookie } from "cookies-next";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
 import UserDropdown from "@/components/User/UserDropdown";
 
+import useCartStore from "@/hooks/useCartStore";
+
 function FunctionNavigation({ isUser }) {
   const loveList = [];
-  const cart123 = getCookie("carts");
-  let carts = [];
-  if (cart123) {
-    carts = JSON.parse(cart123);
-  }
+  const { carts } = useCartStore();
 
   return (
     <div
@@ -63,15 +60,12 @@ function FunctionNavigation({ isUser }) {
           href="cart"
           className=" group relative  max-w-[32px] max-h-[32px] "
         >
-          {carts.products &&
-          carts.products.length > 0 &&
-          isUser &&
-          isUser.user ? (
+          {carts && carts.length > 0 && isUser && isUser.user ? (
             <div className="flex flex-col items-start justify-end w-[32px] h-[32px]  ">
               <ShoppingCart strokeWidth={1.25} color="black" size={24} />
               <div className="absolute inline-flex items-start justify-end text-xs bottom-1/2 left-1/2">
                 <div className="bg-Secondary-2 w-[16px] h-[16px] rounded-full text-[12px] text-white-0 flex justify-center">
-                  {carts.products.length}
+                  {carts.length}
                 </div>
               </div>
             </div>

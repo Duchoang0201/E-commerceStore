@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, { string } from "prop-types"; // Import PropTypes from the correct module
+import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
 import IndexPage from "@/components/IndexPage/IndexPage";
 
@@ -48,42 +48,8 @@ export async function getStaticProps() {
   };
 }
 Home.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      price: PropTypes.number,
-      category: PropTypes.string,
-      description: PropTypes.string,
-      image: PropTypes.string,
-    }),
-  ),
-  categories: PropTypes.arrayOf(string),
-  thisMonth: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      price: PropTypes.number,
-      category: PropTypes.string,
-      description: PropTypes.string,
-      image: PropTypes.string,
-    }),
-  ),
-  ourProducts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      price: PropTypes.number,
-      category: PropTypes.string,
-      description: PropTypes.string,
-      image: PropTypes.string,
-    }),
-  ),
-};
-
-Home.defaultProps = {
-  products: [],
-  categories: [],
-  thisMonth: [],
-  ourProducts: [],
+  products: PropTypes.instanceOf(Object).isRequired,
+  categories: PropTypes.instanceOf(Object).isRequired,
+  thisMonth: PropTypes.instanceOf(Object).isRequired,
+  ourProducts: PropTypes.instanceOf(Object).isRequired,
 };

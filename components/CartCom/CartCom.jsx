@@ -3,12 +3,12 @@
 import React, { useMemo } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
-import PropTypes from "prop-types";
 
+// import PropTypes from "prop-types";
 import useCartStore from "@/hooks/useCartStore";
 
-function CartCom({ carts }) {
-  const { increase } = useCartStore();
+function CartCom() {
+  const { increase, decrease, carts } = useCartStore();
 
   const total = useMemo(() => {
     const found = carts.reduce((curr, acc) => {
@@ -66,7 +66,7 @@ function CartCom({ carts }) {
                       <button
                         type="button"
                         onClick={() => {
-                          increase(item.product);
+                          decrease(item.product);
                         }}
                       >
                         {" "}
@@ -115,7 +115,7 @@ function CartCom({ carts }) {
             <div className="text-xl font-medium">Cart Total</div>
             <div className="py-4 flex flex-row justify-between border-b-2 border-Neutral-200">
               <div className="font-normal leading-6 text-base">Subtotal:</div>
-              <div>12</div>
+              <div>{total}</div>
             </div>
             <div className="py-4 flex flex-row justify-between border-b-2 border-Neutral-200">
               <div className="font-normal leading-6 text-base">Shipping:</div>
@@ -143,6 +143,6 @@ function CartCom({ carts }) {
 
 export default CartCom;
 
-CartCom.propTypes = {
-  carts: PropTypes.instanceOf(Object).isRequired,
-};
+// CartCom.propTypes = {
+//   carts: PropTypes.instanceOf(Object).isRequired,
+// };

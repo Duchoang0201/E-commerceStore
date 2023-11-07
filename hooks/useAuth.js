@@ -10,6 +10,8 @@ import {
 
 import { axiosClient } from "@/libraries/axiosClient";
 
+import useCartStore from "./useCartStore";
+
 const useAuthStore = create(
   devtools(
     persist(
@@ -22,14 +24,24 @@ const useAuthStore = create(
           });
           const { token } = data.data;
           const decoded = jwtDecode(token);
-          const user = JSON.stringify(decoded);
+          // const user = JSON.stringify(decoded);
 
           const cartsData = await axiosClient.get(`/carts/user/${decoded.sub}`);
-          const { data: carts } = cartsData;
+          let { data: carts } = cartsData;
 
-          setCookie("carts", JSON.stringify(carts[0]));
+          if (carts) {
+            const promises = carts[0].products.map(async (item) => {
+              const resCart = await axiosClient.get(
+                `/products/${item.productId}`,
+              );
+              return { quantity: item.quantity, product: resCart.data }; // Assuming you want to return the data, not an array with a single item
+            });
+            carts = await Promise.all(promises);
+            useCartStore.getState().getCarts(carts);
+          }
+          // setCookie("carts", JSON.stringify(carts[0]));
 
-          setCookie("user", user);
+          setCookie("token", token);
 
           set({ user: decoded });
         },

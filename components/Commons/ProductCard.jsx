@@ -3,9 +3,12 @@ import { Eye, Heart } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
+import useCartStore from "@/hooks/useCartStore";
+
 import Rated from "../Rating/Rated";
 
 function ProductCard({ item, isHeart, isEye, isDiscount }) {
+  const { addCart } = useCartStore();
   return (
     <div className="w-full relative ">
       <div className="group overflow-hidden relative w-auto rounded-md">
@@ -17,7 +20,13 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           alt={item.title}
         />
         <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <button type="submit" className="bg-black text-white-0 py-2 px-5">
+          <button
+            type="submit"
+            onClick={() => {
+              addCart(item);
+            }}
+            className="bg-black text-white-0 py-2 px-5"
+          >
             Add to cart
           </button>
         </div>

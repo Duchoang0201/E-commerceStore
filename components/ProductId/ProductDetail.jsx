@@ -21,6 +21,7 @@ function ProductDetail({ product }) {
     title: product.title,
   });
 
+  const [amountProduct, setAmountProduct] = useState(0);
   return (
     <div className="flex flex-row  justify-between">
       <div className="relative">
@@ -119,14 +120,24 @@ function ProductDetail({ product }) {
           <div className="flex flex-row max-h-[44px] justify-between">
             <div className="flex flex-row border border-opacity-50 border-black-0 justify-between max-w-[160px] w-full items-center">
               <button
+                onClick={() => {
+                  if (amountProduct <= 0) {
+                    setAmountProduct(0);
+                  } else {
+                    setAmountProduct((prev) => prev - 1);
+                  }
+                }}
                 type="button"
                 className="w-[41px] border-r border-opacity-50 border-black-0 h-full rounded-sm flex justify-center items-center"
               >
                 <Minus />
               </button>
-              <span>2</span>
+              <span>{amountProduct}</span>
               <button
                 type="button"
+                onClick={() => {
+                  setAmountProduct((prev) => prev + 1);
+                }}
                 className="w-[41px] bg-Secondary-2 border-l h-full border-opacity-50 border-black-0 rounded-sm flex justify-center items-center"
               >
                 <Plus />

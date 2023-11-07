@@ -1,15 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import Card from "@/components/CartCom/CartCom";
 
 import { axiosClient } from "@/libraries/axiosClient";
 
-function CartPage({ carts }) {
+function CartPage() {
   return (
     <div className="container">
       <div className="my-[80px]"> Home / Cart</div>
-      <Card carts={carts} />
+      <Card />
     </div>
   );
 }
@@ -28,7 +27,6 @@ export async function getServerSideProps({ req }) {
     });
     carts = await Promise.all(promises);
   }
-
   return {
     props: {
       carts,
@@ -36,6 +34,6 @@ export async function getServerSideProps({ req }) {
   };
 }
 
-CartPage.propTypes = {
-  carts: PropTypes.instanceOf(Object).isRequired,
-};
+// CartPage.propTypes = {
+//   carts: PropTypes.instanceOf(Object).isRequired,
+// };
