@@ -1,12 +1,7 @@
 import { setCookie } from "cookies-next";
 import { jwtDecode } from "jwt-decode";
 import { create } from "zustand";
-import {
-  createJSONStorage,
-  devtools,
-  persist,
-  sessionStorage,
-} from "zustand/middleware";
+import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
 import { axiosClient } from "@/libraries/axiosClient";
 
