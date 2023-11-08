@@ -22,6 +22,14 @@ function Navigation() {
       setActiveNav(router.asPath);
     }
   }, [router.asPath]);
+  const isUserClass =
+    isUser && isUser.name
+      ? "max-w-[440px] w-full lg:max-w-[892px] lg:w-min"
+      : `  ${
+          router.asPath === "/signin" || router.asPath === "/signup"
+            ? "max-w-[820px] w-full"
+            : "w-full lg:max-w-[862px]"
+        }`;
   return (
     <div className="pb-[14px] pt-[40px] border-b border-Neutral-200">
       <div className="container">
@@ -35,14 +43,8 @@ function Navigation() {
             </Link>
           </div>
 
-          <div
-            className={`${
-              isUser
-                ? " max-w-[440px] w-full lg:max-w-[892px] lg:w-full"
-                : "lg:max-w-[862px] w-full"
-            }  `}
-          >
-            <div className=" flex flex-row justify-end gap-4  lg:flex lg:flex-row lg:justify-between ">
+          <div className={isUserClass}>
+            <div className="flex flex-row justify-end gap-4  lg:flex lg:flex-row lg:justify-between w-full">
               <ul className="hidden  lg:flex lg:flex-row lg:justify-between lg:!max-w-[367px] lg:gap-x-12 lg:w-full">
                 {navigationList &&
                   navigationList.map((item) => {

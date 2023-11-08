@@ -36,7 +36,7 @@ function Account() {
   return (
     <div>
       {" "}
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between ">
         <div className="flex flex-col justify-start gap-y-[23px]">
           {accountMenu.map((item) => {
             return (
@@ -55,7 +55,7 @@ function Account() {
             );
           })}
         </div>
-        <div className="max-w-[870px] max-h-[630px] h-full w-full shadow-sm px-[80px] py-[40px]">
+        <div className="max-w-[870px] max-h-[630px] h-full w-full shadow-md px-[80px] py-[40px]">
           <span className="text-Secondary-2 text-[20px] font-medium">
             Edit Your Profile
           </span>

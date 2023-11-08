@@ -25,11 +25,11 @@ function FunctionNavigation({ isUser }) {
   };
   return (
     <div
-      className={` hidden md:flex md:flex-row md:gap-x- items-center md:justify-end md:w-full max-w-[395px] w-full gap-x-[24px]`}
+      className={` hidden md:flex md:flex-row items-center md:justify-end md:w-fit max-w-[395px] w-full gap-x-[24px]`}
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-[243px] w-full flex flex-row justify-between bg-Secondary-0 py-[7px] pl-5 pr-3 rounded-sm"
+        className="max-w-[243px] w-full flex flex-row gap-x-[34px] bg-Secondary-0 py-[7px] pl-5 pr-3 rounded-sm"
       >
         <Controller
           name="search" // Add a name for the input field
@@ -49,7 +49,12 @@ function FunctionNavigation({ isUser }) {
           <Search strokeWidth={1.25} />
         </button>
       </form>
-      <div className="flex flex-row gap-x-4">
+      <div
+        className={`flex flex-row gap-x-4 ${
+          (router.asPath === "/signin" || router.asPath === "/signup") &&
+          "hidden"
+        }`}
+      >
         {" "}
         <Link
           href="wishlist"
