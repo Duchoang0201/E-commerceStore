@@ -1,5 +1,5 @@
 import React from "react";
-import { Eye, Heart } from "lucide-react";
+import { Eye, Trash } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
@@ -9,9 +9,9 @@ import useWishList from "@/hooks/useWishList";
 
 import Rated from "../Rating/Rated";
 
-function ProductCard({ item, isHeart, isEye, isDiscount }) {
+function WishItem({ item, isEye, isTrash }) {
   const { setOpenPhoto } = useOpenPhoto();
-  const { addWishList } = useWishList();
+  const { removeWishList } = useWishList();
   const { addCart } = useCartStore();
   return (
     <div className="w-full relative ">
@@ -23,7 +23,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           src={item.image}
           alt={item.title}
         />
-        <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center bottom-0   ">
           <button
             type="submit"
             onClick={(e) => {
@@ -35,37 +35,31 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
             Add to cart
           </button>
         </div>
-        {isHeart.isActive && (
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
 
-              addWishList(item);
-            }}
-            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2"
-          >
-            <Heart size={24} />
-          </button>
-        )}
         {isEye.isActive && (
           <button
             onClick={(e) => {
               e.preventDefault();
+
               setOpenPhoto(item.image);
             }}
             type="button"
-            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[5rem] sm:top-14 right-2"
+            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4  right-2"
           >
             <Eye className="w-[24/34] h-[24/34] " />
           </button>
         )}
-        {isDiscount.isActive && (
-          <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900">
-            <div className="text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 bg-Secondary-2 rounded-sm text-white-0">
-              -{isDiscount.value}%
-            </div>
-          </div>
+        {isTrash.isActive && (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              removeWishList(item);
+            }}
+            type="button"
+            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4  right-2"
+          >
+            <Trash className="w-[24/34] h-[24/34] " />
+          </button>
         )}
       </div>
 
@@ -96,17 +90,15 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
   );
 }
 
-export default ProductCard;
+export default WishItem;
 
-ProductCard.propTypes = {
+WishItem.propTypes = {
   item: PropTypes.shape(Object),
-  isHeart: PropTypes.instanceOf(Object),
   isEye: PropTypes.instanceOf(Object),
-  isDiscount: PropTypes.instanceOf(Object),
+  isTrash: PropTypes.instanceOf(Object),
 };
-ProductCard.defaultProps = {
+WishItem.defaultProps = {
   item: {},
-  isHeart: {},
   isEye: {},
-  isDiscount: {},
+  isTrash: {},
 };

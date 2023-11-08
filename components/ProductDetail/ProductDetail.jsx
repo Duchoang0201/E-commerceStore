@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 // import required modules
@@ -19,7 +19,13 @@ function ProductDetail({ product }) {
     image: product.image,
     title: product.title,
   });
-
+  useEffect(() => {
+    setPickImage({
+      index: 0,
+      image: product.image,
+      title: product.title,
+    });
+  }, [product.id, product.image, product.title]);
   const [amountProduct, setAmountProduct] = useState(0);
   return (
     <div className="xl:flex xl:flex-row xl:justify-between flex flex-col gap-y-24 items-center">
@@ -81,7 +87,7 @@ function ProductDetail({ product }) {
       </div>
       <div className="w-2/3 xl:max-w-[400px]">
         <div className="flex flex-col gap-y-4">
-          <p className="text-[24px] font-bold leading-6 tracking-[0.72px] w-full truncate">
+          <p className="text-[24px] font-bold leading-6 tracking-[0.72px] w-full ">
             {product.title}
           </p>
           <div className="flex flex-row items-center">

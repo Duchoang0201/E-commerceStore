@@ -106,7 +106,7 @@ function CardBanner({ products }) {
                     {({ isVisible }) => {
                       handleSlideVisibilityChange(isVisible, index);
                       return (
-                        <Link href="/">
+                        <Link href={`/products/${item.id}`}>
                           <ProductCart
                             index={index}
                             lastVisibleSlideIndex={lastVisibleSlideIndex}

@@ -1,15 +1,19 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import ProductCard from "../Commons/ProductCard";
+import useWishList from "@/hooks/useWishList";
+
 import SpaceTop from "../Commons/SpaceTop";
+import WishItem from "../Commons/WishItem";
 
 import "swiper/css";
 
 function Wishlist({ data }) {
+  const { wishList } = useWishList();
   return (
     <div>
       <div className="pb-[60px]">
@@ -24,43 +28,47 @@ function Wishlist({ data }) {
           </button>
         </div>
       </div>
-      <Swiper
-        freeMode
-        watchSlidesProgress="true"
-        breakpoints={{
-          1280: {
-            slidesPerView: "auto",
-            spaceBetween: 30,
-          },
-          860: {
-            slidesPerView: "4",
-            spaceBetween: 30,
-          },
-          480: {
-            slidesPerView: "3",
-            spaceBetween: 30,
-          },
-          320: {
-            slidesPerView: 1.5,
-            spaceBetween: 30,
-          },
-        }}
-      >
-        {data &&
-          data.map((item) => (
-            <SwiperSlide
-              key={item.id}
-              className="!max-w-[270px] !max-h-[350px]"
-            >
-              <ProductCard
-                item={item}
-                isEye={{ isActive: true }}
-                isDiscount={{ isActive: false, value: 20 }}
-                isHeart={{ isActive: true }}
-              />
-            </SwiperSlide>
-          ))}
-      </Swiper>
+      {wishList.length > 0 && (
+        <Swiper
+          freeMode
+          watchSlidesProgress="true"
+          breakpoints={{
+            1280: {
+              slidesPerView: "auto",
+              spaceBetween: 30,
+            },
+            860: {
+              slidesPerView: "4",
+              spaceBetween: 30,
+            },
+            480: {
+              slidesPerView: "3",
+              spaceBetween: 30,
+            },
+            320: {
+              slidesPerView: 1.5,
+              spaceBetween: 30,
+            },
+          }}
+        >
+          {wishList &&
+            wishList.map((item) => (
+              <SwiperSlide
+                key={item.id}
+                className="!max-w-[270px] !max-h-[350px]"
+              >
+                <Link href={`/products/${item.id}`}>
+                  <WishItem
+                    item={item}
+                    isTrash={{ isActive: true }}
+                    isDiscount={{ isActive: false, value: 20 }}
+                    isHeart={{ isActive: true }}
+                  />
+                </Link>
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      )}
 
       <SpaceTop />
       <div className="flex flex-row justify-between">
@@ -106,7 +114,7 @@ function Wishlist({ data }) {
               key={item.id}
               className="!max-w-[270px] !max-h-[350px]"
             >
-              <ProductCard
+              <WishItem
                 item={item}
                 isEye={{ isActive: true }}
                 isDiscount={{ isActive: false, value: 20 }}

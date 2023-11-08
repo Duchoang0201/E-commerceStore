@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import { Grid } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -81,12 +82,15 @@ function OurProducts({ ourProducts }) {
                 key={item.id}
                 className="!max-w-[270px] !max-h-[350px]  "
               >
-                <ProductCardFill
-                  item={item}
-                  isEye={{ isActive: true }}
-                  isDiscount={{ isActive: false, value: 20 }}
-                  isHeart={{ isActive: true }}
-                />
+                <Link href={`/products/${item.id}`}>
+                  {" "}
+                  <ProductCardFill
+                    item={item}
+                    isEye={{ isActive: true }}
+                    isDiscount={{ isActive: false, value: 20 }}
+                    isHeart={{ isActive: true }}
+                  />
+                </Link>
                 {/* <div className="absolute h-10 w-full bg-Neutral-200  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <button
                     type="submit"

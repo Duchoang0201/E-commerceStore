@@ -43,7 +43,7 @@ function ProductInfor({ product, amountProduct, setAmountProduct }) {
           </div>
         </div>
         <div className="flex flex-row max-h-[44px] justify-between">
-          <div className="flex flex-row border border-opacity-50 border-black-0 justify-between max-w-[160px] w-full items-center">
+          <div className="flex flex-row border border-opacity-50 border-black-0 justify-between max-w-[160px] w-full items-center rounded-md">
             <button
               onClick={() => {
                 if (amountProduct <= 0) {
@@ -63,9 +63,9 @@ function ProductInfor({ product, amountProduct, setAmountProduct }) {
               onClick={() => {
                 setAmountProduct((prev) => prev + 1);
               }}
-              className="w-[41px] bg-Secondary-2 border-l h-full border-opacity-50 border-black-0 rounded-sm flex justify-center items-center"
+              className="w-[41px] bg-Secondary-2 border-l h-full border-opacity-50 border-black-0 rounded-sm flex justify-center items-center "
             >
-              <Plus />
+              <Plus color="white" />
             </button>
           </div>
           <AppButton buttonText="Buy Now" paddingY="10" />

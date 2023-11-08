@@ -9,9 +9,10 @@ import UserDropdown from "@/components/User/UserDropdown";
 
 import useCartStore from "@/hooks/useCartStore";
 import useSearch from "@/hooks/useSearch";
+import useWishList from "@/hooks/useWishList";
 
 function FunctionNavigation({ isUser }) {
-  const loveList = [];
+  const { wishList: loveList } = useWishList();
   const { carts } = useCartStore();
   const { handleSubmit, control } = useForm();
   const [valueSearch, setValueSearch] = useState();
@@ -60,7 +61,7 @@ function FunctionNavigation({ isUser }) {
           href="wishlist"
           className=" group relative  max-w-[32px] max-h-[32px] "
         >
-          {loveList.length > 0 && isUser.user ? (
+          {loveList.length > 0 ? (
             <div className="flex flex-row justify-center items-center w-[32px] h-[32px]  ">
               <Heart
                 className="relative"

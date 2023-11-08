@@ -1,5 +1,4 @@
 import React from "react";
-import { X } from "lucide-react";
 import Image from "next/image";
 
 import useOpenPhoto from "@/hooks/useOpenPhoto";
@@ -31,9 +30,9 @@ function PhotoPreview() {
           <button
             onClick={() => setOpenPhoto(false)}
             type="button"
-            className=" w-4 h-4 text-white bg-Red-500  rounded-full "
+            className=" w-4 h-4 text-white-0 bg-Red-500  rounded-full  flex flex-row items-center justify-center  "
           >
-            <X size={16} color="white" />
+            {/* <X size={16} color="white" /> */}X
           </button>
         </div>
         <div className="w-full pt-4 flex flex-row justify-center items-center">

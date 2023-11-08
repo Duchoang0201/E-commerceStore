@@ -9,29 +9,38 @@ const useWishList = create(
       (set, get) => ({
         wishList: [],
         addWishList: async (item) => {
-          const { carts, increase } = get();
-          const checkValue = carts.find(
-            (child) => child.product.id === item.id,
-          );
+          const { wishList } = get();
+          const checkValue = wishList.find((child) => child.id === item.id);
           if (checkValue) {
-            increase(item);
+            useMessage.getState().setMessage({
+              type: "warning",
+              time: 2000,
+              text: "product already taken in Wish List",
+            });
           } else {
-            carts.push({ quantity: 1, product: item });
+            wishList.push(item);
+            useMessage.getState().setMessage({
+              type: "success",
+              time: 2000,
+              text: "Add a product to Wish List",
+            });
           }
-          useMessage
-            .getState()
-            .setMessage({ type: "success", time: 2000, text: "Add a Cart" });
-          set({ carts });
+          set({ wishList });
         },
         removeWishList: async (item) => {
-          const { carts } = get();
-          carts.filter((child) => child.product.id !== item.id);
+          const { wishList } = get();
+          const newList = wishList.filter((child) => child.id !== item.id);
 
-          set({ carts });
+          useMessage.getState().setMessage({
+            type: "success",
+            time: 2000,
+            text: "Delete a product ",
+          });
+          set({ wishList: newList });
         },
 
         reset: () => {
-          set({ carts: [] });
+          set({ wishList: [] });
         },
       }),
       {
