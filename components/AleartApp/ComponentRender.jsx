@@ -12,7 +12,7 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimation(item.anima1);
-    }, 500); // Render after 2 seconds
+    }, 100); // Render after 2 seconds
 
     return () => {
       clearTimeout(timer);
@@ -25,13 +25,13 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
   const { newClick } = useMessage();
 
   useEffect(() => {
-    if (beginRef.current) {
-      clearTimeout(beginRef.current);
-    }
-    beginRef.current = setTimeout(() => {
-      setAnimation(item.anima1);
-      animationRef.current = item.anima1;
-    }, 600 * index);
+    // if (beginRef.current) {
+    //   clearTimeout(beginRef.current);
+    // }
+    // beginRef.current = setTimeout(() => {
+    //   setAnimation(item.anima1);
+    //   animationRef.current = item.anima1;
+    // }, 200 * index);
 
     if (timeRef.current) {
       clearTimeout(timeRef.current);
@@ -39,7 +39,7 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
     timeRef.current = setTimeout(() => {
       setAnimation(item.anima2);
       animationRef.current = item.anima2;
-    }, 1200);
+    }, 3000 * index);
 
     return () => {
       if (deleteRef.current) {
@@ -50,7 +50,7 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
         //   return oldItems?.filter((circle) => circle?.id !== item.id);
         // });
         handleCompleteAnimation(item.id);
-      }, 1500);
+      }, 3500 * index);
     };
   }, [
     handleCompleteAnimation,
@@ -72,7 +72,7 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
 
       className={`${
         animation === "!translate-x-0" ? animation : "translate-x-[600px]"
-      }   fixed right-[50px] z-10 top-[50px] transform duration-700 transition-transform ease-out `}
+      }   fixed right-[50px] z-10 top-[50px] transform duration-1000 transition-transform ease-out `}
     >
       <div
         className={`${type === "infor" && "bg-Blue-500"} ${
