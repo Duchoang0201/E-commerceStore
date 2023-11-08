@@ -22,7 +22,7 @@ function ProductDetail({ product }) {
 
   const [amountProduct, setAmountProduct] = useState(0);
   return (
-    <div className="xl:flex xl:flex-row xl:justify-between flex flex-col items-center">
+    <div className="xl:flex xl:flex-row xl:justify-between flex flex-col gap-y-24 items-center">
       <div className=" lg:flex lg:flex-row">
         <Swiper
           breakpoints={{
@@ -33,7 +33,6 @@ function ProductDetail({ product }) {
             },
             860: {
               slidesPerView: 2,
-              width: "500px",
               direction: "horizontal",
             },
           }}
@@ -43,10 +42,11 @@ function ProductDetail({ product }) {
             .map((_, index) => {
               return (
                 <SwiperSlide
-                  className=" !w-[50px] md:!w-[170px] md:!h-[138px]"
+                  className=" !w-[75px] md:!w-[170px] md:!h-[138px]"
                   key={`${_ - index}`}
                 >
                   <button
+                    className="w-full h-auto"
                     type="button"
                     onClick={() => {
                       setPickImage({
@@ -55,14 +55,13 @@ function ProductDetail({ product }) {
                         title: product.title,
                       });
                     }}
-                    className="!w-[170px] !h-[138px] relative"
                   >
                     <Image
                       src={product.image}
                       alt={product.title}
                       width={170}
                       height={138}
-                      className="object-contain w-full h-full"
+                      className="object-contain aspect-[170/138] "
                     />
                   </button>
                 </SwiperSlide>

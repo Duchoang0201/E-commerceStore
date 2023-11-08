@@ -4,10 +4,12 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 
 import useCartStore from "@/hooks/useCartStore";
+import useOpenPhoto from "@/hooks/useOpenPhoto";
 
 import Rated from "../Rating/Rated";
 
 function ProductCard({ item, isHeart, isEye, isDiscount }) {
+  const { setOpenPhoto } = useOpenPhoto();
   const { addCart } = useCartStore();
   return (
     <div className="w-full relative ">
@@ -37,9 +39,16 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           </div>
         )}
         {isEye.isActive && (
-          <div className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[5rem] sm:top-14 right-2">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setOpenPhoto(item.image);
+            }}
+            type="button"
+            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[5rem] sm:top-14 right-2"
+          >
             <Eye className="w-[24/34] h-[24/34] " />
-          </div>
+          </button>
         )}
         {isDiscount.isActive && (
           <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900">

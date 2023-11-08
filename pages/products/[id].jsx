@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import ProductDetail from "@/components/ProductId/ProductDetail";
+import ProductCard from "@/components/Commons/ProductCard";
+import ProductDetail from "@/components/ProductDetail/ProductDetail";
 
 import { axiosClient } from "@/libraries/axiosClient";
 
-function ProductId({ product }) {
+function ProductId({ product, related }) {
   return (
     <div className="container mt-[80px] mb-[140px] ">
       <div className="my-[80px] flex flex-row justify-between">
@@ -13,7 +15,59 @@ function ProductId({ product }) {
         <span>Home / {product.title}</span>
       </div>
 
-      <ProductDetail product={product} />
+      <ProductDetail product={product} related={related} />
+
+      <div className="flex flex-row justify-between mt-[140px] mb-[60px]">
+        <div className=" flex flex-row items-center justify-start  ">
+          <div className="w-5 h-10 bg-Secondary-2 rounded-sm " />
+          <div className="text-Secondary-2 text-lg px-5 font-semibold ">
+            Related Item
+          </div>
+        </div>
+        <button
+          type="button"
+          className="py-[16px] rounded-md min-h-[44px] border border-Neutral-200  text-black-0 px-4 md:px-12 whitespace-nowrap"
+        >
+          See All
+        </button>
+      </div>
+      <Swiper
+        freeMode
+        watchSlidesProgress="true"
+        breakpoints={{
+          1280: {
+            slidesPerView: "auto",
+            spaceBetween: 30,
+          },
+          860: {
+            slidesPerView: "4",
+            spaceBetween: 30,
+          },
+          480: {
+            slidesPerView: "3",
+            spaceBetween: 30,
+          },
+          320: {
+            slidesPerView: 1.5,
+            spaceBetween: 30,
+          },
+        }}
+      >
+        {related &&
+          related.map((item) => (
+            <SwiperSlide
+              key={item.id}
+              className="!max-w-[270px] !max-h-[350px]"
+            >
+              <ProductCard
+                item={item}
+                isEye={{ isActive: true }}
+                isDiscount={{ isActive: false, value: 20 }}
+                isHeart={{ isActive: true }}
+              />
+            </SwiperSlide>
+          ))}
+      </Swiper>
     </div>
   );
 }
@@ -34,9 +88,17 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const results = await axiosClient.get(`/products/${params.id}`);
   const product = results.data;
-  return { props: { product } };
+
+  // Fetch related items based on category
+  const relatedItem = await axiosClient.get(
+    `/products/category/${product.category}`,
+  );
+  const related = relatedItem.data;
+
+  return { props: { product, related } };
 }
 
 ProductId.propTypes = {
   product: PropTypes.instanceOf(Object).isRequired,
+  related: PropTypes.instanceOf(Object).isRequired,
 };

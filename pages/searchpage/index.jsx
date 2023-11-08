@@ -10,7 +10,7 @@ function SearchCom({ data }) {
   const { searchString } = useSearch();
   const newData = data.filter(
     (row) =>
-      searchString === "" ||
+      searchString === undefined ||
       row.title.toLowerCase().includes(searchString.toLowerCase()),
   );
   return (

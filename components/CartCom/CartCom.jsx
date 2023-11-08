@@ -18,7 +18,7 @@ function CartCom() {
   }, [carts]);
 
   return (
-    <div>
+    <div className="mb-[140px]">
       <div className=" rounded shadow-md flex flex-row gap-x-[284px] px-10 py-6 text-base leading-6 font-normal">
         <div>Product</div>
         <div>Price</div>

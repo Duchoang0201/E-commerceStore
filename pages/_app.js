@@ -6,6 +6,7 @@ import AleartApp from "@/components/AleartApp/AleartApp";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import MoveTop from "@/components/MoveTop/MoveTop";
+import PhotoPreview from "@/components/PhotoPreview/PhotoPreview";
 
 import useMessage from "@/hooks/useMessage";
 
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }) {
       <Footer />
       <MoveTop />
       <AleartApp data={messages} />
+      <PhotoPreview />
     </div>
   );
 }

@@ -164,6 +164,7 @@ function Checkout() {
                         <div className="flex flex-row items-center gap-x-6">
                           <div className="pl-1">
                             <Image
+                              className="aspect-square"
                               src={item.product.image}
                               width={54}
                               height={54}

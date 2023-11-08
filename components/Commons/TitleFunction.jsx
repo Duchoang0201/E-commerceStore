@@ -18,7 +18,10 @@ function TitleFunction({
   buttonText,
   // paddingY,
 }) {
-  const saturdayOfWeek = getNextDay("saturday") + 7 * 60 * 60;
+  const saturdayOfWeek =
+    getNextDay("saturday") -
+    (8 * 60 * 60 * 1000 + 45 * 60 * 1000 + 8 * 1000) +
+    7 * 60 * 60 * 1000;
   const [days, hours, minutes, seconds] = useCountdown(saturdayOfWeek);
   return (
     <div className="lg:!max-h-[108px] container flex flex-row justify-between">
