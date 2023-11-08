@@ -15,7 +15,7 @@ function Language() {
               50%!
             </p>
             <Link
-              className="font-semibold underline text-sm px-2 flex flex-row justify-center "
+              className="font-semibold underline text-sm px-2 flex flex-row justify-center text-center items-center"
               href="/"
             >
               ShopNow

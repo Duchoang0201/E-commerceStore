@@ -25,15 +25,74 @@ function CartCom() {
         <div>Quantity</div>
         <div>Subtotal</div>
       </div>
-      <div className="sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-3 xl:grid xl:grid-cols-1 gap-y-10">
+      <div className="ssm:grid ssm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 xl:grid xl:grid-cols-1 gap-y-10">
         {carts &&
           carts.map((item) => {
             return (
               <div
                 key={item.product.id}
-                className="xl:flex xl:flex-row rounded shadow-md  py-6 text-base leading-6 font-normal"
+                className="xl:flex xl:flex-row xl:justify-between rounded shadow-md  py-6 text-base leading-6 font-normal"
               >
-                <div className=" lg:flex lg:flex-col lg:justify-center xl:flex xl:flex-row xl:items-center xl:w-[347px] xl:pl-10 gap-x-4">
+                <div className=" flex flex-col justify-center items-center xl:flex xl:flex-row xl:items-center xl:w-[347px] xl:pl-10 gap-x-4">
+                  <Image
+                    className="xl:!w-14 xl:!h-14 lg:!w-36 lg:!h-36 !w-28 !h-28"
+                    width={54}
+                    height={54}
+                    src={item.product.image}
+                    alt={item.product.title}
+                  />
+                  <p className="text-black-0 truncate w-full text-center xl:text-start">
+                    {" "}
+                    {item.product?.title}{" "}
+                  </p>
+                </div>
+                <div className="flex flex-col justify-center items-center xl:flex xl:flex-row xl:max-w-[784px]  xl:justify-between xl:w-full">
+                  <p className="xl:max-w-[320px] xl:w-full ">
+                    ${item.product?.price}
+                  </p>
+                  <div className="xl:max-w-[360px] xl:w-full ">
+                    <div className="rounded-lg border-Neutral-300 w-[50px]  xl:w-[72px] xl:h-[44px] border flex flex-row justify-between py-[6px] px-3 items-center">
+                      <div>{item.quantity}</div>
+                      <div className="flex flex-col items-center">
+                        <button
+                          className="mouseup"
+                          type="button"
+                          onClick={() => {
+                            increase(item.product);
+                          }}
+                        >
+                          {" "}
+                          <ChevronUp size={16} />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            decrease(item.product);
+                          }}
+                        >
+                          {" "}
+                          <ChevronDown size={16} />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="max-w-[124px] text-center xl:text-start w-full xl:pl-5">
+                    ${item.product.price * item.quantity}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+      </div>
+      {/* <div className="sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-3 xl:grid xl:grid-cols-1 gap-y-10">
+        {carts &&
+          carts.map((item) => {
+            return (
+              <div
+                key={item.product.id}
+                className="xl:flex xl:flex-row xl:justify-between rounded shadow-md  py-6 text-base leading-6 font-normal"
+              >
+                <div className=" flex flex-col justify-center items-center xl:flex xl:flex-row xl:items-center xl:w-[347px] xl:pl-10 gap-x-4">
                   <Image
                     className="xl:!w-14 xl:!h-14 lg:!w-36 lg:!h-36 !w-28 !h-28"
                     width={54}
@@ -46,42 +105,44 @@ function CartCom() {
                     {item.product?.title}{" "}
                   </p>
                 </div>
-                <div className=" lg:flex lg:flex-col lg:justify-center  xl:flex xl:flex-row xl:items-center xl:justify-start xl:w-[347px] xl:pl-28 ">
-                  ${item.product?.price}
-                </div>
-                <div className="lg:flex lg:flex-col lg:justify-center  xl:flex xl:flex-row xl:items-center xl:justify-start xl:w-[347px] xl:pl-36">
-                  <div className="rounded-lg border-Neutral-300  w-[72px] h-[44px] border flex flex-row justify-between py-[6px] px-3 items-center">
-                    <div>{item.quantity}</div>
-                    <div className="flex flex-col items-center">
-                      <button
-                        className="mouseup"
-                        type="button"
-                        onClick={() => {
-                          increase(item.product);
-                        }}
-                      >
-                        {" "}
-                        <ChevronUp size={16} />
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          decrease(item.product);
-                        }}
-                      >
-                        {" "}
-                        <ChevronDown size={16} />
-                      </button>
+                <div className="flex flex-row justify-between max-w-[784px] w-full">
+                  <div className="max-w-[60px] w-full">
+                    ${item.product?.price}
+                  </div>
+                  <div className="max-w-[130px] w-full flex justify-start">
+                    <div className="rounded-lg border-Neutral-300  w-[72px] h-[44px] border flex flex-row justify-between py-[6px] px-3 items-center">
+                      <div>{item.quantity}</div>
+                      <div className="flex flex-col items-center">
+                        <button
+                          className="mouseup"
+                          type="button"
+                          onClick={() => {
+                            increase(item.product);
+                          }}
+                        >
+                          {" "}
+                          <ChevronUp size={16} />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            decrease(item.product);
+                          }}
+                        >
+                          {" "}
+                          <ChevronDown size={16} />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="flex justify-end xl:flex xl:flex-row xl:items-center xl:w-[347px] xl:justify-start  xl:pl-52 ">
-                  ${item.product.price * item.quantity}
+                  <div className="max-w-[80px] w-full flex items-start">
+                    ${item.product.price * item.quantity}
+                  </div>
                 </div>
               </div>
             );
           })}
-      </div>
+      </div> */}
       <div className=" rounded flex flex-row justify-between text-base leading-6 font-normal pt-10">
         <div className="border border-Neutral-300  px-12 py-3 text-base font-bold leading-6">
           Return To Shop
@@ -91,13 +152,13 @@ function CartCom() {
         </div>
       </div>
       <div className=" flex flex-col justify-center items-center gap-y-10 rounded lg:flex lg:flex-row lg:justify-between lg:items-start text-base leading-6 font-normal pt-10">
-        <div className=" w-[527px]">
+        <div className=" max-w-[527px] w-full">
           <form>
             <div className="flex flex-row justify-between">
               <input
                 type="search"
                 id="default-search"
-                className="block p-3 text-sm text-gray-900 bg-gray-50 w-[300px] border border-Neutral-600 rounded-md"
+                className="block p-3 text-sm text-gray-900 bg-gray-50 max-w-[300px] w-full border border-Neutral-600 rounded-md"
                 placeholder="Coupon Code"
                 required
               />
@@ -110,7 +171,7 @@ function CartCom() {
             </div>
           </form>
         </div>
-        <div className=" w-[470px] h-[324px] border-2 border-Neutral-600 rounded-md">
+        <div className=" max-w-[470px] w-full max-h-[324px] h-full border-2 border-Neutral-600 rounded-md">
           <div className="py-8 px-6">
             <div className="text-xl font-medium">Cart Total</div>
             <div className="py-4 flex flex-row justify-between border-b-2 border-Neutral-200">

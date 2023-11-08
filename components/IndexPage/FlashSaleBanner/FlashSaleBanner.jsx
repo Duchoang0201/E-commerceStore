@@ -7,7 +7,7 @@ import CardBanner from "./CardBanner";
 
 function FlashSaleBanner({ products }) {
   return (
-    <div className=" text-black mt-[25px] lg:mt-[140px] ">
+    <div className=" text-black  ">
       <CardBanner products={products} />
 
       <div className="pt-[59px] pb-[60px] flex flex-row justify-center border-b border-Neutral-200 container ">

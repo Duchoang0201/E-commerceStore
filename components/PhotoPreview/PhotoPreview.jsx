@@ -17,7 +17,7 @@ function PhotoPreview() {
       )}
       <div
         aria-hidden={photoOpen ? "false" : "true"}
-        className={`fixed inset-0 bg-black-0 bg-opacity-5 backdrop-blur-0 my-[50px] mx-auto w-fit transform duration-700  transition-transform z-50 ${
+        className={`fixed inset-0 bg-black-0 bg-opacity-5 backdrop-blur-0 my-[20px]  mx-auto w-fit transform duration-700  transition-transform z-50 ${
           photoOpen ? "translate-x-0" : "-translate-x-[2000px]"
         }`}
       >
@@ -37,7 +37,7 @@ function PhotoPreview() {
           </button>
         </div>
         <div className="w-full pt-4 flex flex-row justify-center items-center">
-          <Image src={photoOpen} alt="Pick" width={600} height={600} />
+          <Image src={photoOpen} alt="Pick" width={400} height={400} />
         </div>
       </div>
     </div>

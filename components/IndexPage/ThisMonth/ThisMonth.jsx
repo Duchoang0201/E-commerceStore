@@ -22,7 +22,7 @@ function ThisMonth({ thisMonth }) {
   const { thismonthContent } = useTrans();
 
   return (
-    <div className="my-[70px]">
+    <div>
       <TitleFunction
         content={thismonthContent.content}
         title={thismonthContent.title}
@@ -46,15 +46,19 @@ function ThisMonth({ thisMonth }) {
               spaceBetween: 30,
             },
             860: {
-              slidesPerView: "4",
+              slidesPerView: 4,
               spaceBetween: 30,
             },
             480: {
-              slidesPerView: "3",
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            400: {
+              slidesPerView: 2.5,
               spaceBetween: 30,
             },
             320: {
-              slidesPerView: 1.5,
+              slidesPerView: 2,
               spaceBetween: 30,
             },
           }}
@@ -95,25 +99,25 @@ function ThisMonth({ thisMonth }) {
                   <div className="max-w-[62px] w-full relative rounded-full bg-white-0 aspect-square">
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                       <span className="">23</span>
-                      <span className="text-[11px]">Hours</span>
+                      <span className="md:text-[11px]">Day</span>
                     </div>
                   </div>
                   <div className="max-w-[62px] w-full relative rounded-full bg-white-0 aspect-square">
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                       <span className="">23</span>
-                      <span className="text-[11px]">Hours</span>
+                      <span className="md:text-[11px]"> Hours</span>
                     </div>
                   </div>
                   <div className="max-w-[62px] w-full relative rounded-full bg-white-0 aspect-square">
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                       <span className="">23</span>
-                      <span className="text-[11px]">Hours</span>
+                      <span className="md:text-[11px]">Minutes</span>
                     </div>
                   </div>
                   <div className="max-w-[62px] w-full relative rounded-full bg-white-0 aspect-square">
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                       <span className="">23</span>
-                      <span className="text-[11px]">Hours</span>
+                      <span className="md:text-[11px]">Second</span>
                     </div>
                   </div>
                 </div>

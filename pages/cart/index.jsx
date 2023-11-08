@@ -2,8 +2,6 @@ import React from "react";
 
 import Card from "@/components/CartCom/CartCom";
 
-import { axiosClient } from "@/libraries/axiosClient";
-
 function CartPage() {
   return (
     <div className="container">
@@ -16,17 +14,18 @@ function CartPage() {
 export default CartPage;
 
 export async function getServerSideProps({ req }) {
-  let carts = [];
+  // let carts = [];
 
   const cartsString = req.cookies.carts;
-  if (cartsString) {
-    const data = JSON.parse(cartsString);
-    const promises = data.products.map(async (item) => {
-      const resCart = await axiosClient.get(`/products/${item.productId}`);
-      return { quantity: item.quantity, product: resCart.data }; // Assuming you want to return the data, not an array with a single item
-    });
-    carts = await Promise.all(promises);
-  }
+  const carts = JSON.parse(cartsString);
+  // if (cartsString) {
+  //   const data = JSON.parse(cartsString);
+  //   const promises = data.products.map(async (item) => {
+  //     const resCart = await axiosClient.get(`/products/${item.productId}`);
+  //     return { quantity: item.quantity, product: resCart.data }; // Assuming you want to return the data, not an array with a single item
+  //   });
+  //   carts = await Promise.all(promises);
+  // }
   return {
     props: {
       carts,

@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-import useTrans from "@/hooks/useTrans";
-
 import AppButton from "../AppButton/AppButton";
+
+import AccountNavi from "./AccountNavi";
+import Draw from "./Draw";
 
 const validationSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -30,30 +31,15 @@ function Account() {
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
-
+  const [open, setOpen] = useState(false);
   const onSubmit = (data) => console.log(data);
-  const { accountMenu } = useTrans();
+
   return (
-    <div>
+    <div className="relative">
       {" "}
-      <div className="flex flex-row justify-between ">
-        <div className="flex flex-col justify-start gap-y-[23px]">
-          {accountMenu.map((item) => {
-            return (
-              <div key={item.name} className="max-w-[300px] w-full h-auto ">
-                <span className="text-base font-medium">{item.name}</span>
-                <div className="pl-[35px] flex flex-col gap-y-2 pt-[16px]">
-                  {item.child.map((child) => {
-                    return (
-                      <div key={child?.name}>
-                        <span className="opacity-50">{child?.name}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
+      <div className="md:flex md:flex-row md:justify-between ">
+        <div className="hidden md:flex">
+          <AccountNavi />
         </div>
         <div className="max-w-[870px] max-h-[630px] h-full w-full shadow-md px-[80px] py-[40px]">
           <span className="text-Secondary-2 text-[20px] font-medium">
@@ -63,7 +49,7 @@ function Account() {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col pt-[14px]"
           >
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-col lg:flex lg:flex-row lg:justify-between">
               <div className="relative bg-black max-w-[330px] w-full mb-6 ">
                 <Controller
                   name="firstName"
@@ -109,7 +95,7 @@ function Account() {
                 )}
               </div>
             </div>
-            <div className="flex flex-row pb-4 justify-between">
+            <div className="flex flex-col lg:flex lg:flex-row lg:justify-between">
               <div className="relative bg-black  max-w-[330px] w-full ">
                 <Controller
                   name="email"
@@ -223,6 +209,9 @@ function Account() {
             </div>
           </form>
         </div>
+      </div>
+      <div className="visible md:hidden absolute left-[2px] top-[150px]  z-10">
+        <Draw open={open} setOpen={setOpen} />
       </div>
     </div>
   );

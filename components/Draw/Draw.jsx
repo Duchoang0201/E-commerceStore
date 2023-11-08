@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { Heart, List, Search, ShoppingCart, X } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import useCartStore from "@/hooks/useCartStore";
+import useSearch from "@/hooks/useSearch";
 import useTrans from "@/hooks/useTrans";
 
 import Dropdown from "../Dropdown/Dropdown";
@@ -10,8 +13,16 @@ import Dropdown from "../Dropdown/Dropdown";
 function Draw() {
   const [open, setOpen] = useState(false);
   const { navigationList } = useTrans();
-
   const { carts } = useCartStore();
+  const router = useRouter();
+  const { setSearch } = useSearch();
+
+  const { handleSubmit, control } = useForm();
+  const onSubmit = (data) => {
+    setSearch(data.search);
+
+    router.push("/searchpage");
+  };
   return (
     <div className="relative flex items-center">
       <button
@@ -41,49 +52,53 @@ function Draw() {
         <div className="flex flex-row justify-between items-center w-[244px] ">
           <div
             type="button"
-            className=" text-xs font-bold text-white bg-red-500 border-white  "
+            className=" text-xl font-bold text-white bg-red-500 border-white  "
           >
             Exclusive
           </div>
           <button
             onClick={() => setOpen(false)}
             type="button"
-            className=" w-4 h-4 text-white bg-Red-500  rounded-full "
+            className=" w-4 h-4 text-white-0 text-center bg-Red-500  rounded-full "
           >
-            <X size={16} color="white" />
+            <X size={12} color="white" />
           </button>
         </div>
         <div className="w-full pt-4">
           <div className="flex flex-col justify-center items-center gap-4  w-full   md:hidden">
-            <form>
-              <div className="relative">
-                <input
-                  type="search"
-                  id="draw-default-search"
-                  className="block p-3 text-sm text-gray-900 bg-gray-50 w-[243px]"
-                  placeholder="Looking for..."
-                  required
-                />
-                <button
-                  type="submit"
-                  className="text-black absolute right-2.5 bottom-2.5  focus:ring-4 focus:outline-none  font-medium rounded-lg "
-                >
-                  <Search />
-                </button>
-              </div>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="max-w-[243px] w-full flex flex-row gap-x-[34px] bg-Secondary-0 py-[7px] pl-5 pr-3 rounded-sm"
+            >
+              <Controller
+                name="search" // Add a name for the input field
+                control={control}
+                render={({ field }) => (
+                  <input
+                    id="default-search"
+                    {...field}
+                    className="text-[12px] bg-Secondary-0 w-[153px] outline-none"
+                    placeholder="What are you looking for?"
+                  />
+                )}
+              />
+
+              <button type="submit">
+                <Search strokeWidth={1.25} />
+              </button>
             </form>
 
             <div className="items-center flex flex-row justify-around w-full">
               {" "}
               <Link
-                href="cart"
+                href="wishlist"
                 className=" group relative inline-flex justify-center "
               >
                 <Heart
                   className="relative"
                   strokeWidth={1.25}
                   color="black"
-                  size={32}
+                  size={24}
                 />
                 <div className="absolute inline-flex items-start justify-end w-12 h-12 text-xs -top-2 -right-2 ">
                   <div className="bg-Secondary-2 w-6 h-6 rounded-full text-white-0 flex justify-center">
@@ -99,7 +114,7 @@ function Draw() {
                   className="relative"
                   strokeWidth={1.25}
                   color="black"
-                  size={32}
+                  size={24}
                 />
                 <div className="absolute inline-flex items-start justify-end w-12 h-12 text-xs -top-2 -right-2 ">
                   <div className="bg-Secondary-2 w-6 h-6 rounded-full text-white-0 flex justify-center">
@@ -123,13 +138,13 @@ function Draw() {
               {navigationList.map((item) => {
                 return (
                   <li key={`${item.name}`} className="w-auto py-2">
-                    <a
+                    <Link
                       href={item.href}
-                      className=" block py-2  pr-4 text-black rounded hover:bg-TEXT-1 hover:text-white-0   "
+                      className=" block py-2  pr-4 text-black rounded hover:bg-TEXT-1 hover:text-white-0   text-center"
                       aria-current="page"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}

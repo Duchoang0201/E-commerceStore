@@ -34,7 +34,7 @@ const useAuthStore = create(
             carts = await Promise.all(promises);
             useCartStore.getState().getCarts(carts);
           }
-          // setCookie("carts", JSON.stringify(carts[0]));
+          setCookie("carts", JSON.stringify(carts[0]));
 
           setCookie("token", token);
 

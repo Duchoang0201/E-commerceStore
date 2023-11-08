@@ -37,7 +37,7 @@ function OurProducts({ ourProducts }) {
         buttonText=""
       />
 
-      <div className="container  mt-[65px] ">
+      <div className="container   ">
         <Swiper
           watchSlidesProgress="true"
           // slidesPerView="auto"
@@ -54,12 +54,17 @@ function OurProducts({ ourProducts }) {
               grid: { fill: "row", rows: 2 },
             },
             830: {
-              slidesPerView: "4",
+              slidesPerView: 4,
               spaceBetween: 30,
               grid: { fill: "row", rows: 2 },
             },
             480: {
-              slidesPerView: "3",
+              slidesPerView: 3,
+              spaceBetween: 30,
+              grid: { fill: "row", rows: 2 },
+            },
+            400: {
+              slidesPerView: 2.5,
               spaceBetween: 30,
               grid: { fill: "row", rows: 2 },
             },

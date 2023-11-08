@@ -11,11 +11,21 @@ import ThisMonth from "./ThisMonth/ThisMonth";
 function IndexPage({ products, categories, thisMonth, ourProducts }) {
   return (
     <div className=" w-full ">
-      <HerroBanner />
-      <FlashSaleBanner products={products} />
-      <Categories categories={categories} />
-      <ThisMonth thisMonth={thisMonth} />
-      <OurProducts ourProducts={ourProducts} />
+      <section>
+        <HerroBanner />
+      </section>
+      <section className="mt-[25px] lg:mt-[140px]">
+        <FlashSaleBanner products={products} />
+      </section>
+      <section className="mt-[80px] ">
+        <Categories categories={categories} />
+      </section>
+      <section className="my-[70px]">
+        <ThisMonth thisMonth={thisMonth} />
+      </section>
+      <section className="pt-[65px]">
+        <OurProducts ourProducts={ourProducts} />
+      </section>
       <Features />
     </div>
   );
