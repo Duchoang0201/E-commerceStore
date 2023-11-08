@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,6 +24,14 @@ function CardBanner({ products }) {
     swiperRef.current.slideNext();
   }, []);
 
+  const [lastVisibleSlideIndex, setLastVisibleSlideIndex] = useState(null);
+
+  const handleSlideVisibilityChange = (isVisible, slideIndex) => {
+    if (isVisible) {
+      setLastVisibleSlideIndex(slideIndex);
+    }
+  };
+
   return (
     <div className="relative">
       <TitleFunction
@@ -35,74 +43,90 @@ function CardBanner({ products }) {
         paddingY="16"
         buttonText="View All"
       />
+      {/* <div className="w-full relative">
+        <div
+          className="absolute inset-0 bg-black-0 bg-opacity-50 filter blur-md"
+          style={{ zIndex: -1 }}
+        />
+        <div className="container bg-Red-300  p-4 relative z-10">
+          <div className="content">Your content goes here.</div>
+        </div>
+      </div> */}
+      <div className="container xxl:max-w-[1465px] mt-[40px] relative max-h-[350px]">
+        <div className="xxl:ml-[105px] ">
+          <Swiper
+            watchSlidesProgress
+            // slidesPerView="auto"
+            // spaceBetween={30}
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            navigation={{
+              nextEl: ".review-swiper-button-next",
+              prevEl: ".review-swiper-button-prev",
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            className="mySwiper xxl:!overflow-visible "
+            breakpoints={{
+              1280: {
+                slidesPerView: "auto",
+                spaceBetween: 30,
+              },
+              860: {
+                slidesPerView: 3.5,
+                spaceBetween: 30,
+              },
+              680: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              480: {
+                slidesPerView: 2.5,
+                spaceBetween: 30,
+              },
+              400: {
+                slidesPerView: 2.5,
+                spaceBetween: 30,
+              },
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+            }}
+          >
+            {products.length > 0 &&
+              products.map((item, index) => {
+                return (
+                  <SwiperSlide
+                    className=" swiper-slide !max-w-[270px] !h-auto"
+                    key={item.id}
+                  >
+                    {({ isVisible }) => {
+                      handleSlideVisibilityChange(isVisible, index);
+                      return (
+                        <Link href="/">
+                          <ProductCart
+                            index={index}
+                            lastVisibleSlideIndex={lastVisibleSlideIndex}
+                            isVisible={isVisible}
+                            item={item}
+                            isEye={{ isActive: true }}
+                            isDiscount={{ isActive: true, value: 20 }}
+                            isHeart={{ isActive: true }}
+                          />
+                        </Link>
+                      );
+                    }}
+                  </SwiperSlide>
+                );
+              })}
+          </Swiper>
 
-      <div className="container xxl:ml-[105px] xxl:max-w-[1465px] mt-[40px] relative max-h-[350px]">
-        <Swiper
-          watchSlidesProgress
-          onBeforeInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          navigation={{
-            nextEl: ".review-swiper-button-next",
-            prevEl: ".review-swiper-button-prev",
-          }}
-          className="mySwiper xxl:!overflow-visible "
-          breakpoints={{
-            1280: {
-              slidesPerView: "auto",
-              spaceBetween: 30,
-            },
-            860: {
-              slidesPerView: 3.5,
-              spaceBetween: 30,
-            },
-            680: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            480: {
-              slidesPerView: 2.5,
-              spaceBetween: 30,
-            },
-            400: {
-              slidesPerView: 2.5,
-              spaceBetween: 30,
-            },
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-          }}
-        >
-          {products.length > 0 &&
-            products.map((item, index) => {
-              return (
-                <SwiperSlide
-                  className=" swiper-slide !max-w-[270px] "
-                  key={item.id}
-                >
-                  {({ isVisible }) => {
-                    return (
-                      <Link href={`/products/${item.id}`}>
-                        <ProductCart
-                          index={index}
-                          isVisible={isVisible}
-                          item={item}
-                          isEye={{ isActive: true }}
-                          isDiscount={{ isActive: true, value: 20 }}
-                          isHeart={{ isActive: true }}
-                        />
-                      </Link>
-                    );
-                  }}
-                </SwiperSlide>
-              );
-            })}
-        </Swiper>
-
-        {/* // STYLE */}
-        <style>
-          {`
+          {/* // STYLE */}
+          <style>
+            {`
 
     
           /* Style for all swiper slides */
@@ -139,9 +163,10 @@ function CardBanner({ products }) {
           }
    
     `}
-        </style>
+          </style>
 
-        {/* // */}
+          {/* // */}
+        </div>
       </div>
     </div>
   );
