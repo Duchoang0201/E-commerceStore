@@ -39,7 +39,7 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
     timeRef.current = setTimeout(() => {
       setAnimation(item.anima2);
       animationRef.current = item.anima2;
-    }, 3000 * index);
+    }, 2000 * index);
 
     return () => {
       if (deleteRef.current) {
@@ -50,7 +50,7 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
         //   return oldItems?.filter((circle) => circle?.id !== item.id);
         // });
         handleCompleteAnimation(item.id);
-      }, 3500 * index);
+      }, 2500 * index);
     };
   }, [
     handleCompleteAnimation,
