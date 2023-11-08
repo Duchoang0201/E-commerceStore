@@ -19,7 +19,7 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
     };
   }, [item.anima1]);
 
-  const beginRef = useRef();
+  //   const beginRef = useRef();
   const timeRef = useRef();
   const deleteRef = useRef();
   const { newClick } = useMessage();
