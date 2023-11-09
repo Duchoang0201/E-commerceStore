@@ -45,8 +45,8 @@ const useAuthStore = create(
         },
       }),
       {
-        name: "cart-storage",
-        getStorage: createJSONStorage(() => sessionStorage),
+        name: "authStorage",
+        storage: createJSONStorage(() => sessionStorage),
       },
     ),
   ),

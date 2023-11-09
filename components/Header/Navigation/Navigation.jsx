@@ -26,7 +26,7 @@ function Navigation() {
     isUser && isUser.name
       ? "max-w-[440px] w-full lg:max-w-[892px] lg:w-min"
       : `  ${
-          router.asPath === "/signin" || router.asPath === "/signup"
+          router.pathname === "/signin" || router.pathname === "/signup"
             ? "max-w-[820px] w-full"
             : "w-full lg:max-w-[862px]"
         }`;

@@ -24,6 +24,7 @@ function FunctionNavigation({ isUser }) {
 
     router.push("/searchpage");
   };
+
   return (
     <div
       className={` hidden md:flex md:flex-row items-center md:justify-end md:w-fit max-w-[395px] w-full gap-x-[24px]`}
@@ -52,7 +53,7 @@ function FunctionNavigation({ isUser }) {
       </form>
       <div
         className={`flex flex-row gap-x-4 ${
-          (router.asPath === "/signin" || router.asPath === "/signup") &&
+          (router.pathname === "/signin" || router.pathname === "/signup") &&
           "hidden"
         }`}
       >
