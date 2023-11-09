@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import * as yup from "yup";
 
 import useAuthStore from "@/hooks/useAuth";
+import { LoadingCom } from "../Commons/LoadingCom";
 
 const validationSchema = yup.object().shape({
   userName: yup
@@ -14,7 +15,7 @@ const validationSchema = yup.object().shape({
     .required("Email or Phone Number is required")
     .matches(
       /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$|^(\+\d{1,3}[- ]?)?\d{10}$/,
-      "Invalid Email or Phone Number",
+      "Invalid Email or Phone Number"
     ),
   password: yup
     .string()
@@ -32,10 +33,12 @@ function SigninForm() {
   });
   const { login } = useAuthStore();
   const router = useRouter();
+  const [loadingCom, setLoadingCom] = useState(false);
   const onSubmit = async (e) => {
+    setLoadingCom(true);
     try {
       await login(e);
-
+      setLoadingCom(false);
       router.push("/");
     } catch (error) {
       console.log(`🚀🚀🚀!..error`, error);
@@ -60,6 +63,8 @@ function SigninForm() {
 
   return (
     <div className="flex flex-col">
+      <LoadingCom language="waitting" open={loadingCom} />
+
       <span className="text-[16px] md:text-[24px] xl:text-[36px] font-inter leading-8 font-semibold tracking-[1.44px] pb-2 xl:pb-6">
         Log in to Exclusive
       </span>
