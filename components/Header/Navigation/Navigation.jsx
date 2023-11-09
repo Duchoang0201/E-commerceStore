@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -15,6 +15,9 @@ function Navigation() {
   const router = useRouter();
   const { user: isUser } = useAuthStore();
 
+  useEffect(() => {
+    setActiveNav(router.pathname);
+  }, [router.pathname]);
   const isUserClass =
     isUser && isUser.name
       ? "max-w-[440px] w-full lg:max-w-[892px] lg:w-min"

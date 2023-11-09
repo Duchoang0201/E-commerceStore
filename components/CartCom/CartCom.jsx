@@ -41,7 +41,7 @@ function CartCom() {
                     src={item.product.image}
                     alt={item.product.title}
                   />
-                  <p className="text-black-0 truncate w-full text-center xl:text-start">
+                  <p className="text-black-0 truncate  xl:w-full w-3/5 text-center xl:text-start">
                     {" "}
                     {item.product?.title}{" "}
                   </p>
