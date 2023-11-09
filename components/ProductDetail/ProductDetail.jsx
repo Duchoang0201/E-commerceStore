@@ -87,7 +87,7 @@ function ProductDetail({ product }) {
       </div>
       <div className="w-2/3 xl:max-w-[400px]">
         <div className="flex flex-col gap-y-4">
-          <p className="text-[24px] font-bold leading-6 tracking-[0.72px] w-full ">
+          <p className="text-[14px] md:text-[24px] font-bold leading-6 tracking-[0.72px] w-full ">
             {product.title}
           </p>
           <div className="flex flex-row items-center">

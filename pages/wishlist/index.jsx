@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import SpaceBottom from "@/components/Commons/SpaceBottom";
-import SpaceTop from "@/components/Commons/SpaceTop";
 import Wishlist from "@/components/Wishlist/Wishlist";
 
 import { axiosClient } from "@/libraries/axiosClient";
@@ -10,10 +8,9 @@ import { axiosClient } from "@/libraries/axiosClient";
 function WishlisePage({ data }) {
   return (
     <div className="container">
-      <SpaceTop />
-      <Wishlist data={data} />
-      <SpaceBottom border={false} />
-      <SpaceBottom border={false} />
+      <section className="mt-[70px] mb-[140px]">
+        <Wishlist data={data} />
+      </section>
     </div>
   );
 }

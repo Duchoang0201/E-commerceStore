@@ -14,10 +14,12 @@ function CartPage() {
 export default CartPage;
 
 export async function getServerSideProps({ req }) {
-  // let carts = [];
+  let carts = [];
 
   const cartsString = req.cookies.carts;
-  const carts = JSON.parse(cartsString);
+  if (cartsString) {
+    carts = JSON.parse(cartsString);
+  }
   // if (cartsString) {
   //   const data = JSON.parse(cartsString);
   //   const promises = data.products.map(async (item) => {

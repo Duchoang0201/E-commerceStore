@@ -54,7 +54,7 @@ function Navigation() {
                           onClick={() => {
                             setActiveNav(router.asPath);
                           }}
-                          href={item.href}
+                          href={`/${item.href}`}
                           className={`${
                             activeNav === `/${item.href}` &&
                             "underline decoration-Neutral-300 underline-offset-4 font-normal text-base"

@@ -15,7 +15,6 @@ function AleartApp({ data }) {
   // const timeRef = useRef();
   const [listMess, setListMess] = useState([]);
 
-  console.log(`🚀🚀🚀!..listMess`, listMess);
   const handleCompleteAnimation = useCallback((id) => {
     setListMess((oldItems) => {
       return oldItems?.filter((circle) => circle?.id !== id);
