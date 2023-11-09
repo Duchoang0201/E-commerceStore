@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from "react";
 import {
   Bus,
@@ -91,7 +92,7 @@ function AboutCom() {
         {arrList.map((item) => {
           return (
             <div
-              key={item.icon}
+              key={item.title}
               className=" border rounded border-opacity-10 border-black-0 max-w-[270px] w-full max-h-[230px] "
             >
               <div className=" justify-center items-center flex flex-col gap-y-6  my-[30px]">
@@ -120,9 +121,10 @@ function AboutCom() {
       >
         {Array(10)
           .fill(null)
-          .map((index) => {
+          .map((_, index) => {
+            console.log(`🚀🚀🚀!..index`, index);
             return (
-              <SwiperSlide className="!max-w-[370px] w-full" key={index}>
+              <SwiperSlide className="!max-w-[370px] w-full" key={index + 1}>
                 <div className=" flex flex-col ">
                   <div className="max-w-[370px] w-full h-auto">
                     <Image
@@ -183,7 +185,7 @@ function AboutCom() {
         {arrSP.map((item) => {
           return (
             <div
-              key={item.icon}
+              key={item.title}
               className="rounded max-w-[270px] w-full max-h-[230px] "
             >
               <div className=" justify-center items-center flex flex-col gap-y-6  my-[30px]">

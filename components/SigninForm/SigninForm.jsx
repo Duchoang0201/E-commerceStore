@@ -64,7 +64,7 @@ function SigninForm() {
 
   return (
     <div className="flex flex-col">
-      <LoadingCom language="waitting" open={loadingCom} />
+      <LoadingCom open={loadingCom} />
 
       <span className="text-[16px] md:text-[24px] xl:text-[36px] font-inter leading-8 font-semibold tracking-[1.44px] pb-2 xl:pb-6">
         Log in to Exclusive

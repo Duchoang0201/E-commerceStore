@@ -36,7 +36,9 @@ function PhotoPreview() {
           </button>
         </div>
         <div className="w-full pt-4 flex flex-row justify-center items-center">
-          <Image src={photoOpen} alt="Pick" width={400} height={400} />
+          {photoOpen && (
+            <Image src={photoOpen} alt="Pick" width={400} height={400} />
+          )}
         </div>
       </div>
     </div>

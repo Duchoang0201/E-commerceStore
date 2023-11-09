@@ -7,9 +7,11 @@ import {} from "@/components/ui/dialog";
 export function LoadingCom({ open, language }) {
   return (
     <div>
-      <div className="flex flex-col text-start hover:bg-Neutral-300 transition-all duration-300 hover:rounded-md px-2 py-2">
-        {language}
-      </div>
+      {language && (
+        <div className="flex flex-col text-start hover:bg-Neutral-300 transition-all duration-300 hover:rounded-md px-2 py-2">
+          {language}
+        </div>
+      )}
       {open && (
         <div
           aria-hidden="true"

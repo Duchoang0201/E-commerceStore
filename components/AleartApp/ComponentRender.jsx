@@ -107,5 +107,5 @@ export default ComponentRender;
 ComponentRender.propTypes = {
   item: PropTypes.instanceOf(Object).isRequired,
   handleCompleteAnimation: PropTypes.instanceOf(Object).isRequired,
-  index: PropTypes.instanceOf(Object).isRequired,
+  index: PropTypes.number.isRequired,
 };

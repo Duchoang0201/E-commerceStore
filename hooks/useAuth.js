@@ -1,4 +1,4 @@
-import { setCookie } from "cookies-next";
+import { deleteCookie, setCookie } from "cookies-next";
 import { jwtDecode } from "jwt-decode";
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
@@ -41,12 +41,17 @@ const useAuthStore = create(
           set({ user: decoded });
         },
         logout: async () => {
+          useCartStore.getState().getCarts([]);
+
+          deleteCookie("carts");
+
+          deleteCookie("token");
           set({ user: null });
         },
       }),
       {
         name: "authStorage",
-        storage: createJSONStorage(() => sessionStorage),
+        storage: createJSONStorage(() => localStorage),
       },
     ),
   ),

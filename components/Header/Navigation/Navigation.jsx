@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -15,13 +15,6 @@ function Navigation() {
   const router = useRouter();
   const { user: isUser } = useAuthStore();
 
-  useEffect(() => {
-    if (router.asPath === "/") {
-      setActiveNav("//");
-    } else {
-      setActiveNav(router.asPath);
-    }
-  }, [router.asPath]);
   const isUserClass =
     isUser && isUser.name
       ? "max-w-[440px] w-full lg:max-w-[892px] lg:w-min"
@@ -52,13 +45,16 @@ function Navigation() {
                       <li key={item.name} className=" py-2 whitespace-nowrap">
                         <Link
                           onClick={() => {
-                            setActiveNav(router.asPath);
+                            setActiveNav(
+                              `/${item.href === "/" ? "" : item.href}`,
+                            );
                           }}
-                          href={`/${item.href}`}
+                          href={`/${item.href === "/" ? "" : item.href}`}
                           className={`${
-                            activeNav === `/${item.href}` &&
-                            "underline decoration-Neutral-300 underline-offset-4 font-normal text-base"
-                          }`}
+                            activeNav ===
+                              `/${item.href === "/" ? "" : item.href}` &&
+                            "underline "
+                          } decoration-Neutral-300 underline-offset-4 font-normal text-base`}
                           aria-current="page"
                         >
                           {item.name}

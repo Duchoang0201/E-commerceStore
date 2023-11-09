@@ -64,7 +64,7 @@ const useCartStore = create(
       }),
       {
         name: "cartStorage",
-        storage: createJSONStorage(() => sessionStorage),
+        storage: createJSONStorage(() => localStorage),
       },
     ),
   ),

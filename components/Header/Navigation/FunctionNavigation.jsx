@@ -116,5 +116,5 @@ function FunctionNavigation({ isUser }) {
 export default FunctionNavigation;
 
 FunctionNavigation.propTypes = {
-  isUser: PropTypes.bool.isRequired,
+  isUser: PropTypes.instanceOf(Object).isRequired,
 };
