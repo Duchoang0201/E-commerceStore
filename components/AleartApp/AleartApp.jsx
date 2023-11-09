@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-import PropTypes from "prop-types";
 
 import useMessage from "@/hooks/useMessage";
 
@@ -9,7 +8,7 @@ function getUniqueID() {
   return Math.floor(Math.random() * Date.now()).toString();
 }
 
-function AleartApp({ data }) {
+function AleartApp() {
   const { newClick } = useMessage();
   const [open, setOpen] = useState(false);
   // const timeRef = useRef();
@@ -89,7 +88,6 @@ function AleartApp({ data }) {
             index={index + 1}
             item={item}
             key={item.id}
-            data={data}
             open={open}
             setOpen={setOpen}
             setListMess={setListMess}
@@ -126,7 +124,3 @@ function AleartApp({ data }) {
 }
 
 export default AleartApp;
-
-AleartApp.propTypes = {
-  data: PropTypes.instanceOf(Object).isRequired,
-};

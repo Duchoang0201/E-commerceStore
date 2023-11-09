@@ -51,7 +51,7 @@ export default {
     content: "Hàng mới về",
   },
   userDropdown: [
-    { icon: User, title: `Tài khoản`, route: "manageaccount" },
+    { icon: User, title: `Tài khoản`, route: "account" },
     { icon: Inbox, title: `Đơn đặt hàng`, route: "myorder" },
     { icon: XCircle, title: `Đơn hủy`, route: "cancellations" },
     { icon: Star, title: `Đánh giá`, route: "myreviews" },

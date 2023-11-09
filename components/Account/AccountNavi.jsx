@@ -17,7 +17,15 @@ function AccountNavi() {
                 {item.child.map((child) => {
                   return (
                     <div key={child?.name}>
-                      <span className="opacity-50">{child?.name}</span>
+                      <span
+                        className={`${
+                          child?.route === "myprofile"
+                            ? "text-Secondary-2"
+                            : "text-opacity-50 text-black-0"
+                        } `}
+                      >
+                        {child?.name}
+                      </span>
                     </div>
                   );
                 })}

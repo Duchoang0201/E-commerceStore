@@ -58,7 +58,7 @@ function FunctionNavigation({ isUser }) {
       >
         {" "}
         <Link
-          href="wishlist"
+          href="/wishlist"
           className=" group relative  max-w-[32px] max-h-[32px] "
         >
           {loveList.length > 0 ? (
@@ -86,7 +86,7 @@ function FunctionNavigation({ isUser }) {
           )}
         </Link>
         <Link
-          href="cart"
+          href="/cart"
           className=" group relative  max-w-[32px] max-h-[32px] "
         >
           {carts && carts.length > 0 && isUser && isUser.user ? (
@@ -102,7 +102,11 @@ function FunctionNavigation({ isUser }) {
             <ShoppingCart strokeWidth={1.25} color="black" size={32} />
           )}
         </Link>
-        {isUser && isUser.user && <UserDropdown isUser={isUser} />}
+        {isUser && isUser.user && (
+          // <Link href="/account">
+          <UserDropdown isUser={isUser} />
+          // </Link>
+        )}
       </div>
     </div>
   );

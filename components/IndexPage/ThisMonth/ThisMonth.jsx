@@ -87,7 +87,7 @@ function ThisMonth({ thisMonth }) {
           <div className="w-full h-auto bg-black-0 flex flex-row">
             {" "}
             <div className="pt-[37px] pr-[44px] py-[43px] pl-20 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
-              <div className="w-2/3 h-fit flex flex-col gap-12  md:gap-8 md:relative absolute z-50 ">
+              <div className="w-2/3 h-fit flex flex-col gap-12  md:gap-8 md:relative absolute z-30 ">
                 <span className="font-poppins" style={{ color: "#0F6" }}>
                   {" "}
                   Categories
@@ -96,29 +96,29 @@ function ThisMonth({ thisMonth }) {
                   Enhance Your Music Experience
                 </span>
                 <div className="flex flex-row w-full gap-2 md:gap-6">
-                  <div className="max-w-[62px] w-full relative rounded-full bg-white-0 aspect-square">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                      <span className="">23</span>
-                      <span className="md:text-[11px]">Day</span>
-                    </div>
+                  <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+                    {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
+                    <span className="">23</span>
+                    <span className="md:text-[11px]">Day</span>
+                    {/* </div> */}
                   </div>
-                  <div className="max-w-[62px] w-full relative rounded-full bg-white-0 aspect-square">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                      <span className="">23</span>
-                      <span className="md:text-[11px]"> Hours</span>
-                    </div>
+                  <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+                    {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
+                    <span className="">23</span>
+                    <span className="md:text-[11px]"> Hours</span>
+                    {/* </div> */}
                   </div>
-                  <div className="max-w-[62px] w-full relative rounded-full bg-white-0 aspect-square">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                      <span className="">23</span>
-                      <span className="md:text-[11px]">Minutes</span>
-                    </div>
+                  <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+                    {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
+                    <span className="">23</span>
+                    <span className="md:text-[11px]">Minutes</span>
+                    {/* </div> */}
                   </div>
-                  <div className="max-w-[62px] w-full relative rounded-full bg-white-0 aspect-square">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                      <span className="">23</span>
-                      <span className="md:text-[11px]">Second</span>
-                    </div>
+                  <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+                    {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
+                    <span className="">23</span>
+                    <span className="md:text-[11px]">Second</span>
+                    {/* </div> */}
                   </div>
                 </div>
                 <div>

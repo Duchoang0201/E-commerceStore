@@ -19,7 +19,9 @@ function Wishlist({ data }) {
       <div className="pb-[60px]">
         {" "}
         <div className=" pt-5 flex flex-row justify-between items-center">
-          <div className="font-inter text-xl ">Wishlist ({data.length})</div>
+          <div className="font-inter text-xl ">
+            Wishlist ({wishList.length})
+          </div>
           <button
             type="button"
             className="py-[16px] rounded-md min-h-[44px] border border-Neutral-200  text-black-0 px-4 md:px-12 whitespace-nowrap"

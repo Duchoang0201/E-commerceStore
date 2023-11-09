@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { User } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import useAuthStore from "@/hooks/useAuth";
 // import Link from "next/link";
@@ -13,7 +14,7 @@ function UserDropdown() {
   const handleOpen = () => {
     setOpen(!open);
   };
-
+  const router = useRouter();
   const dropdownRef = useRef();
   // Add a click event listener to close the dropdown when clicking outside
   useEffect(() => {
@@ -46,7 +47,9 @@ function UserDropdown() {
         onClick={handleOpen}
         type="button"
         className={`${
-          open ? " bg-Secondary-2 text-white-0" : "text-black-0"
+          open || router.asPath === "/account"
+            ? " bg-Secondary-2 text-white-0"
+            : "text-black-0"
         } w-[32px] h-[32px]  flex flex-row justify-center   items-center rounded-full `}
       >
         <User strokeWidth={1.5} size={open ? 24 : 32} />
@@ -80,7 +83,7 @@ function UserDropdown() {
                       logout();
                     }
                   }}
-                  href={item.route === "logout" ? "/" : item.route}
+                  href={item.route === "logout" ? "/" : `/${item.route}`}
                   className=" text-white-0  flex flex-row items-center gap-4"
                 >
                   {" "}

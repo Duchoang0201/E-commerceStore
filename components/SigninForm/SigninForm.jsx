@@ -31,8 +31,14 @@ function SigninForm() {
   const { login } = useAuthStore();
   const router = useRouter();
   const onSubmit = async (e) => {
-    login(e);
-    router.push("/");
+    try {
+      await login(e);
+
+      router.push("/");
+    } catch (error) {
+      console.log(`🚀🚀🚀!..error`, error);
+    }
+
     // const data = await axiosClient.post("/auth/login", {
     //   username: "mor_2314",
     //   password: "83r5^_",

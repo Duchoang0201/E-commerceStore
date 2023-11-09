@@ -3,9 +3,13 @@ import { Bus, Heart, Minus, Plus, Repeat } from "lucide-react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
+import useWishList from "@/hooks/useWishList";
+
 import AppButton from "../AppButton/AppButton";
 
 function ProductInfor({ product, amountProduct, setAmountProduct }) {
+  const { addWishList } = useWishList();
+
   return (
     <div>
       {" "}
@@ -69,9 +73,15 @@ function ProductInfor({ product, amountProduct, setAmountProduct }) {
             </button>
           </div>
           <AppButton buttonText="Buy Now" paddingY="10" />
-          <div className="w-[44px] h-[44px] rounded-sm border flex justify-center items-center">
+          <button
+            type="button"
+            onClick={() => {
+              addWishList(product);
+            }}
+            className="w-[44px] h-[44px] rounded-sm border flex justify-center items-center"
+          >
             <Heart strokeWidth={0.8} size={32} />
-          </div>
+          </button>
         </div>
         <div>
           <div className="flex flex-row items-center border border-black-0 border-opacity-50 pt-6 pb-4 pl-4">

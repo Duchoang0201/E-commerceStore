@@ -4,15 +4,16 @@ import PropTypes from "prop-types";
 
 import useMessage from "@/hooks/useMessage";
 
-function ComponentRender({ data, index, item, handleCompleteAnimation }) {
-  const { type, time, text } = data;
+function ComponentRender({ index, item, handleCompleteAnimation }) {
+  const { messages } = useMessage();
+  const { type, time, text } = messages;
   const animationRef = useRef("translate-x-0");
 
   const [animation, setAnimation] = useState("translate-x-[600px]");
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimation(item.anima1);
-    }, 100); // Render after 2 seconds
+    }, 500); // Render after 2 seconds
 
     return () => {
       clearTimeout(timer);
@@ -36,21 +37,27 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
     if (timeRef.current) {
       clearTimeout(timeRef.current);
     }
-    timeRef.current = setTimeout(() => {
-      setAnimation(item.anima2);
-      animationRef.current = item.anima2;
-    }, 2000 * index);
+    timeRef.current = setTimeout(
+      () => {
+        setAnimation(item.anima2);
+        animationRef.current = item.anima2;
+      },
+      1500 * Number(`${1}.${index}`),
+    );
 
     return () => {
       if (deleteRef.current) {
         clearTimeout(deleteRef.current);
       }
-      deleteRef.current = setTimeout(() => {
-        // setListMess((oldItems) => {
-        //   return oldItems?.filter((circle) => circle?.id !== item.id);
-        // });
-        handleCompleteAnimation(item.id);
-      }, 2500 * index);
+      deleteRef.current = setTimeout(
+        () => {
+          // setListMess((oldItems) => {
+          //   return oldItems?.filter((circle) => circle?.id !== item.id);
+          // });
+          handleCompleteAnimation(item.id);
+        },
+        1800 * Number(`${1}.${index}`),
+      );
     };
   }, [
     handleCompleteAnimation,
@@ -98,7 +105,6 @@ function ComponentRender({ data, index, item, handleCompleteAnimation }) {
 export default ComponentRender;
 
 ComponentRender.propTypes = {
-  data: PropTypes.instanceOf(Object).isRequired,
   item: PropTypes.instanceOf(Object).isRequired,
   handleCompleteAnimation: PropTypes.instanceOf(Object).isRequired,
   index: PropTypes.instanceOf(Object).isRequired,

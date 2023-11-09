@@ -51,7 +51,7 @@ export default {
     content: "New Arrival",
   },
   userDropdown: [
-    { icon: User, title: `Manage My Account`, route: "manageaccount" },
+    { icon: User, title: `Manage My Account`, route: "account" },
     { icon: Inbox, title: `My Order`, route: "myorder" },
     { icon: XCircle, title: `My Cancellations`, route: "cancellations" },
     { icon: Star, title: `My Reviews`, route: "myreviews" },
