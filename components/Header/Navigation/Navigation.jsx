@@ -57,7 +57,7 @@ function Navigation() {
                             activeNav ===
                               `/${item.href === "/" ? "" : item.href}` &&
                             "underline "
-                          } decoration-Neutral-300 underline-offset-4 font-normal text-base`}
+                          } decoration-Neutral-300 underline-offset-4 font-normal text-base hover:font-bold`}
                           aria-current="page"
                         >
                           {item.name}
