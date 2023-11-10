@@ -113,21 +113,46 @@ function AboutCom() {
         })}
       </div>
       <Swiper
-        centeredSlides="auto"
-        spaceBetween={30}
         modules={[Pagination]}
         pagination={{ clickable: true }}
         className="mySwiper"
+        breakpoints={{
+          // 1280: {
+          //   slidesPerView: "auto",
+          //   spaceBetween: 30,
+          //   grid: { fill: "row", rows: 2 },
+          // },
+          // 830: {
+          //   slidesPerView: 4,
+          //   spaceBetween: 30,
+          //   grid: { fill: "row", rows: 2 },
+          // },
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            grid: { fill: "row", rows: 2 },
+          },
+          400: {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+            grid: { fill: "row", rows: 2 },
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            grid: { fill: "row", rows: 2 },
+          },
+        }}
       >
         {Array(10)
           .fill(null)
           .map((_, index) => {
-            console.log(`🚀🚀🚀!..index`, index);
             return (
               <SwiperSlide className="!max-w-[370px] w-full" key={index + 1}>
                 <div className=" flex flex-col ">
                   <div className="max-w-[370px] w-full h-auto">
                     <Image
+                      className="aspect-[370/430]"
                       objectFit="contain"
                       src={Banner}
                       alt="Banner"
