@@ -34,7 +34,7 @@ function FunctionNavigation({ isUser }) {
         className="max-w-[243px] w-full flex flex-row gap-x-[34px] bg-Secondary-0 py-[7px] pl-5 pr-3 rounded-sm"
       >
         <Controller
-          name="search" // Add a name for the input field
+          name="search"
           control={control}
           render={({ field }) => (
             <input
@@ -90,7 +90,7 @@ function FunctionNavigation({ isUser }) {
           href="/cart"
           className=" group relative  max-w-[32px] max-h-[32px] "
         >
-          {carts && carts.length > 0 && isUser && isUser.user ? (
+          {carts && carts.length > 0 ? (
             <div className="flex flex-col items-start justify-end w-[32px] h-[32px]  ">
               <ShoppingCart strokeWidth={1.25} color="black" size={24} />
               <div className="absolute inline-flex items-start justify-end text-xs bottom-1/2 left-1/2">

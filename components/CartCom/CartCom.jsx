@@ -38,7 +38,7 @@ function CartCom() {
                     className="xl:!w-14 xl:!h-14 lg:!w-36 lg:!h-36 !w-28 !h-28"
                     width={54}
                     height={54}
-                    src={item.product.image}
+                    src={item.product.images[0]}
                     alt={item.product.title}
                   />
                   <p className="text-black-0 truncate  xl:w-full w-3/5 text-center xl:text-start">
