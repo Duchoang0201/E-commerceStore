@@ -77,11 +77,12 @@ function WishItem({ item, isEye, isTrash }) {
 
         <div className=" flex flex-row items-center font-semibold">
           <div>
-            <Rated data={item.rating} />
+            <Rated data={{ rate: 4 }} />
           </div>
           <div>
             <span className="px-2 opacity-50 text-[14px]">
-              ({item.rating.count})
+              {/* ({item.rating.count}) */}
+              100
             </span>
           </div>
         </div>
