@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   try {
     const [resProduct] = await Promise.all([
-      axiosClient.get(`/products/category/${params.id}`),
+      axiosClient.get(`/categories/${params.id}/products`),
     ]);
 
     const product = resProduct.data;

@@ -52,7 +52,7 @@ function Categories({ categories }) {
                 key={item.id}
                 className="!max-w-[170px] !max-h-[145px] py-6 border border-Neutral-100 hover:text-white-0 hover:!bg-Secondary-2 hover:transition-all hover:duration-500  rounded-lg"
               >
-                <Link href={`/products/category/${item.name}`}>
+                <Link href={`/products/category/${item.id}`}>
                   <div className="w-full min-h-full flex flex-col items-center justify-center">
                     {/* <MonitorSmartphone
                       strokeWidth={1}
