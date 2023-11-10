@@ -13,32 +13,20 @@ const useAuthStore = create(
       (set) => ({
         user: {},
         login: async () => {
-          const data = await axiosClient.post("/auth/login", {
-            username: "mor_2314",
-            password: "83r5^_",
+          const { data } = await axiosClient.post("/auth/login", {
+            email: "john@mail.com",
+            password: "changeme",
           });
-          const { token } = data.data;
-          const decoded = jwtDecode(token);
-          // const user = JSON.stringify(decoded);
-
-          const cartsData = await axiosClient.get(`/carts/user/${decoded.sub}`);
-          let { data: carts } = cartsData;
-
-          if (carts) {
-            const promises = carts[0].products.map(async (item) => {
-              const resCart = await axiosClient.get(
-                `/products/${item.productId}`,
-              );
-              return { quantity: item.quantity, product: resCart.data }; // Assuming you want to return the data, not an array with a single item
-            });
-            carts = await Promise.all(promises);
-            useCartStore.getState().getCarts(carts);
-          }
-          setCookie("carts", JSON.stringify(carts[0]));
-
+          const token = data.access_token;
           setCookie("token", token);
 
-          set({ user: decoded });
+          const refreshToken = data.refresh_token;
+          setCookie("refreshToken", refreshToken);
+
+          const decoded = jwtDecode(token);
+
+          const { data: user } = await axiosClient.get(`/users/${decoded.sub}`);
+          set({ user });
         },
         logout: async () => {
           useCartStore.getState().getCarts([]);

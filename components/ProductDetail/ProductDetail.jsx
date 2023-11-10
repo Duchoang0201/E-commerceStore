@@ -16,14 +16,14 @@ import "swiper/css";
 function ProductDetail({ product }) {
   const [pickImage, setPickImage] = useState({
     index: 0,
-    image: product.image,
-    title: product.title,
+    image: product.images[0],
+    title: "hello",
   });
   useEffect(() => {
     setPickImage({
       index: 0,
-      image: product.image,
-      title: product.title,
+      image: product.images[0],
+      title: "hello",
     });
   }, [product.id, product.image, product.title]);
   const [amountProduct, setAmountProduct] = useState(0);
@@ -43,38 +43,36 @@ function ProductDetail({ product }) {
             },
           }}
         >
-          {Array(4)
-            .fill(null)
-            .map((_, index) => {
-              return (
-                <SwiperSlide
-                  className=" !w-[75px] md:!w-[170px] md:!h-[138px]"
-                  key={`${_ - index}`}
+          {product.images.map((item, index) => {
+            return (
+              <SwiperSlide
+                className=" !w-[75px] md:!w-[170px] md:!h-[138px]"
+                key={item}
+              >
+                <button
+                  className="w-full h-auto"
+                  type="button"
+                  onClick={() => {
+                    setPickImage({
+                      index,
+                      image: item,
+                      title: "Hello",
+                    });
+                  }}
                 >
-                  <button
-                    className="w-full h-auto"
-                    type="button"
-                    onClick={() => {
-                      setPickImage({
-                        index,
-                        image: product.image,
-                        title: product.title,
-                      });
-                    }}
-                  >
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      width={170}
-                      height={138}
-                      className="object-contain aspect-[170/138] "
-                    />
-                  </button>
-                </SwiperSlide>
-              );
-            })}
+                  <Image
+                    src={item}
+                    alt={item}
+                    width={170}
+                    height={138}
+                    className="object-contain aspect-[170/138] "
+                  />
+                </button>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
-        <div className=" w-full lg:w-[600px] flex flex-row justify-center relative ">
+        <div className=" w-full lg:w-[500px] flex flex-row justify-center relative bg-Secondary-0">
           <Image
             width={300}
             height={300}
@@ -91,7 +89,7 @@ function ProductDetail({ product }) {
             {product.title}
           </p>
           <div className="flex flex-row items-center">
-            <Rated data={product.rating} />
+            <Rated data={{ rate: 4 }} />
             <span className="opacity-50 ml-2">(150 Reviews)</span>
             <div className="border-r h-4 ml-4" />
             <span className="ml-4 opacity-60 text-[14px] text-success-500">

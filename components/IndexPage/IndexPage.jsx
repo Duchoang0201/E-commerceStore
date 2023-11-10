@@ -20,7 +20,7 @@ function IndexPage({ products, categories, thisMonth, ourProducts }) {
       <section className="mt-[80px] ">
         <Categories categories={categories} />
       </section>
-      <section className="my-[70px]">
+      <section className="mt-[70px] mb-[6px]">
         <ThisMonth thisMonth={thisMonth} />
       </section>
       <section className="pt-[65px]">
@@ -34,7 +34,7 @@ function IndexPage({ products, categories, thisMonth, ourProducts }) {
 export default IndexPage;
 IndexPage.propTypes = {
   products: PropTypes.arrayOf(Object),
-  categories: PropTypes.arrayOf(String),
+  categories: PropTypes.arrayOf(Object),
   thisMonth: PropTypes.arrayOf(Object),
   ourProducts: PropTypes.arrayOf(Object),
 };

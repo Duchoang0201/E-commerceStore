@@ -18,16 +18,28 @@ function WishlisePage({ data }) {
 export default WishlisePage;
 
 export async function getStaticProps() {
-  // Carts
+  try {
+    // Use Promise.all to make concurrent requests
+    const [resCarts] = await Promise.all([
+      axiosClient.get("/products?limit=4"),
+    ]);
 
-  const resCarts = await axiosClient.get("/products?limit=4");
-  const { data } = resCarts;
+    const { data } = resCarts;
 
-  return {
-    props: {
-      data,
-    },
-  };
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
 }
 
 WishlisePage.propTypes = {

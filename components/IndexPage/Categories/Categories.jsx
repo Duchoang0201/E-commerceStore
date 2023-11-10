@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useRef } from "react";
-import { MonitorSmartphone } from "lucide-react";
+// import { MonitorSmartphone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
 // import PropTypes from "prop-types";
@@ -48,21 +49,25 @@ function Categories({ categories }) {
           {categories.map((item) => {
             return (
               <SwiperSlide
-                key={`${item}-1`}
+                key={item.id}
                 className="!max-w-[170px] !max-h-[145px] py-6 border border-Neutral-100 hover:text-white-0 hover:!bg-Secondary-2 hover:transition-all hover:duration-500  rounded-lg"
               >
-                <Link href={`/products/category/${item}`}>
-                  <div
-                    key={item}
-                    className="w-full min-h-full flex flex-col items-center justify-center"
-                  >
-                    <MonitorSmartphone
+                <Link href={`/products/category/${item.name}`}>
+                  <div className="w-full min-h-full flex flex-col items-center justify-center">
+                    {/* <MonitorSmartphone
                       strokeWidth={1}
                       size={56}
                       className="hover:text-white-0"
+                    /> */}
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={56}
+                      height={56}
+                      className="object-contain aspect-[56/56]"
                     />
 
-                    <div className="py-4">{item}</div>
+                    <div className="py-4">{item.name}</div>
                   </div>
                 </Link>
               </SwiperSlide>

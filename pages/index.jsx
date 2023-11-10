@@ -3,7 +3,9 @@ import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
 import IndexPage from "@/components/IndexPage/IndexPage";
 
-import { axiosClient } from "@/libraries/axiosClient";
+// import { axiosClient } from "@/libraries/axiosClient";
+// import { axiosClient } from "@/libraries/axiosClient";
+import { getDataFunction } from "@/libraries/getDataFunction";
 
 export default function Home({ products, categories, thisMonth, ourProducts }) {
   return (
@@ -19,25 +21,51 @@ export default function Home({ products, categories, thisMonth, ourProducts }) {
 }
 
 export async function getStaticProps() {
-  // Products
+  const data = [
+    { dataName: "products", apiLink: "/products" },
+    { dataName: "categories", apiLink: "/categories" },
+    {
+      dataName: "thisMonth",
+      apiLink: "/products/?price_min=100&price_max=1000&offset=10&limit=10",
+    },
+    { dataName: "ourProducts", apiLink: "/products" },
+  ];
+  const { products, categories, thisMonth, ourProducts } =
+    await getDataFunction(data);
 
-  const resProducts = await axiosClient.get("/products");
-  const products = resProducts.data;
+  // try {
+  //   const [resProducts, resCategories, resThisMonth, resOurProducts] =
+  //     await Promise.all([
+  //       axiosClient.get("/products"),
+  //       axiosClient.get("/categories"),
+  //       axiosClient.get(
+  //         "products/?price_min=100&price_max=1000&offset=10&limit=10"
+  //       ),
+  //       axiosClient.get("/products"),
+  //     ]);
+  //   const products = resProducts.data;
+  //   const categories = resCategories.data;
+  //   const thisMonth = resThisMonth.data;
+  //   const ourProducts = resOurProducts.data;
 
-  // Categories
-
-  const resCategories = await axiosClient.get("/products/categories");
-  const categories = resCategories.data;
-
-  // This Month
-
-  const resThisMonth = await axiosClient.get("/products?limit=5");
-  const thisMonth = resThisMonth.data;
-
-  // Our Products
-
-  const resOurProducts = await axiosClient.get("/products");
-  const ourProducts = resOurProducts.data;
+  //   return {
+  //     props: {
+  //       products,
+  //       categories,
+  //       thisMonth,
+  //       ourProducts,
+  //     },
+  //   };
+  // } catch (error) {
+  //   return {
+  //     props: {
+  //       products: [],
+  //       categories: [],
+  //       thisMonth: [],
+  //       ourProducts: [],
+  //     },
+  //   };
+  // }
   return {
     props: {
       products,
@@ -47,6 +75,7 @@ export async function getStaticProps() {
     },
   };
 }
+
 Home.propTypes = {
   products: PropTypes.instanceOf(Object).isRequired,
   categories: PropTypes.instanceOf(Object).isRequired,

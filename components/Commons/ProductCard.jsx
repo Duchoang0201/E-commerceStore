@@ -20,7 +20,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           className="object-contain aspect-[270/250] w-full"
           width={270}
           height={250}
-          src={item.image}
+          src={item.images[0]}
           alt={item.title}
         />
         <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -52,7 +52,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           <button
             onClick={(e) => {
               e.preventDefault();
-              setOpenPhoto(item.image);
+              setOpenPhoto(item.images[0]);
             }}
             type="button"
             className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[5rem] sm:top-14 right-2"
@@ -82,12 +82,11 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         </div>
 
         <div className=" flex flex-row items-center font-semibold">
-          <div>
-            <Rated data={item.rating} />
-          </div>
+          <Rated data={{ rate: 4 }} />
           <div>
             <span className="px-2 opacity-50 text-[14px]">
-              ({item.rating.count})
+              {/* ({item.rating.count}) */}
+              100
             </span>
           </div>
         </div>

@@ -3,42 +3,68 @@ import { Eye, Heart } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
+import useCartStore from "@/hooks/useCartStore";
+import useOpenPhoto from "@/hooks/useOpenPhoto";
+import useWishList from "@/hooks/useWishList";
+
 import Rated from "../Rating/Rated";
 
+// import Rated from "../Rating/Rated";
+
 function ProductCardFill({ item, isHeart, isEye, isDiscount }) {
+  const { setOpenPhoto } = useOpenPhoto();
+  const { addWishList } = useWishList();
+  const { addCart } = useCartStore();
   return (
     <div className="">
-      <div className="!h-[250px]  relative group justify-center overflow-hidden text-sm font-medium text-center text-white  rounded-lg ">
+      <div className="group overflow-hidden relative w-auto rounded-md">
         <Image
-          width="0"
-          height="0"
-          sizes="100vw"
-          className="w-full !h-full object-contain "
-          src={item.image}
+          className="object-contain aspect-[270/250] w-full"
+          width={270}
+          height={250}
+          src={item.images[0]}
           alt={item.title}
         />
         <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <button type="submit" className="bg-black text-white-0 py-2 px-5">
+          <button
+            type="submit"
+            onClick={(e) => {
+              e.preventDefault();
+              addCart(item);
+            }}
+            className="bg-black text-white-0 py-2 px-5"
+          >
             Add to cart
           </button>
         </div>
         {isHeart.isActive && (
-          <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500  rounded-full top-4 right-4 dark:border-gray-900">
-            <div className="px-2 py-2 bg-white-0 rounded-full">
-              <Heart />
-            </div>
-          </div>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+
+              addWishList(item);
+            }}
+            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2"
+          >
+            <Heart size={24} />
+          </button>
         )}
         {isEye.isActive && (
-          <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500  rounded-full top-16 right-4 dark:border-gray-900">
-            <div className="px-2 py-2 bg-white-0 rounded-full">
-              <Eye />
-            </div>
-          </div>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setOpenPhoto(item.images[0]);
+            }}
+            type="button"
+            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[5rem] sm:top-14 right-2"
+          >
+            <Eye className="w-[24/34] h-[24/34] " />
+          </button>
         )}
         {isDiscount.isActive && (
           <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900">
-            <div className="font-thin px-3 py-1 bg-Secondary-2 rounded-sm text-white-0">
+            <div className="text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 bg-Secondary-2 rounded-sm text-white-0">
               -{isDiscount.value}%
             </div>
           </div>
@@ -60,11 +86,12 @@ function ProductCardFill({ item, isHeart, isEye, isDiscount }) {
         </div>
 
         <div className=" flex flex-row items-center font-semibold">
+          <Rated data={{ rate: 4 }} />
           <div>
-            <Rated data={item.rating} />
-          </div>
-          <div>
-            <p className="px-2 opacity-50 text-[14px]">({item.rating.count})</p>
+            <p className="px-2 opacity-50 text-[14px]">
+              {/* ({item.rating.count}) */}
+              100
+            </p>
           </div>
         </div>
       </div>

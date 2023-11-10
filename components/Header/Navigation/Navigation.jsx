@@ -14,18 +14,18 @@ function Navigation() {
   const { navigationList } = useTrans();
   const router = useRouter();
   const { user: isUser } = useAuthStore();
-
   useEffect(() => {
     setActiveNav(router.pathname);
   }, [router.pathname]);
-  const isUserClass =
-    isUser && isUser.name
-      ? "max-w-[440px] w-full lg:max-w-[892px] lg:w-min"
-      : `  ${
-          router.pathname === "/signin" || router.pathname === "/signup"
-            ? "max-w-[820px] w-full"
-            : "w-full lg:max-w-[862px]"
-        }`;
+  const isUserClass = `${
+    router.pathname === "/signin" || router.pathname === "/signup"
+      ? `max-w-[820px] w-full `
+      : `w-full lg:max-w-[862px] ${
+          isUser &&
+          isUser?.name &&
+          `max-w-[440px] w-full lg:max-w-[892px] lg:justify-between lg:w-full`
+        } `
+  }`;
   return (
     <div className="pb-[14px] pt-[40px] border-b border-Neutral-200">
       <div className="container">

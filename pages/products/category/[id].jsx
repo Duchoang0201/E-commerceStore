@@ -16,20 +16,44 @@ function ProductCategory({ product }) {
 export default ProductCategory;
 
 export async function getStaticPaths() {
-  const results = await axiosClient.get(`/products/categories`);
-  const products = results.data;
-  const paths = products.map((item) => ({
-    params: { id: `${item}` },
-  }));
+  try {
+    const results = await axiosClient.get(`/categories`);
 
-  return { paths, fallback: false };
+    const paths = results.data.map((item) => ({
+      params: { id: `${item.id}` },
+    }));
+
+    return { paths, fallback: false };
+  } catch (error) {
+    console.error("Error fetching data for paths:", error);
+
+    return { paths: [], fallback: false };
+  }
 }
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-  const results = await axiosClient.get(`/products/category/${params.id}`);
-  const product = results.data;
-  return { props: { product } };
+  try {
+    const [resProduct] = await Promise.all([
+      axiosClient.get(`/products/category/${params.id}`),
+    ]);
+
+    const product = resProduct.data;
+
+    return {
+      props: {
+        product,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data for props:", error);
+
+    return {
+      props: {
+        product: [],
+      },
+    };
+  }
 }
 
 ProductCategory.propTypes = {

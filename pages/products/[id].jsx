@@ -83,7 +83,6 @@ export async function getStaticPaths() {
   const paths = products.map((item) => ({
     params: { id: `${item.id}` },
   }));
-
   return { paths, fallback: false };
 }
 
@@ -94,7 +93,7 @@ export async function getStaticProps({ params }) {
 
   // Fetch related items based on category
   const relatedItem = await axiosClient.get(
-    `/products/category/${product.category}`,
+    `/categories/${product.category.id}/products`,
   );
   const related = relatedItem.data;
 

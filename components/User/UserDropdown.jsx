@@ -9,7 +9,7 @@ import useTrans from "@/hooks/useTrans";
 
 function UserDropdown() {
   const { userDropdown } = useTrans();
-  const [hoverIcon, setHoverIcon] = useState("manageaccount");
+  const [hoverIcon, setHoverIcon] = useState("account");
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);
@@ -21,6 +21,7 @@ function UserDropdown() {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setOpen(false);
+        setHoverIcon("account");
       }
     }
 

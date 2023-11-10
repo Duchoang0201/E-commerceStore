@@ -68,10 +68,10 @@ function FunctionNavigation({ isUser }) {
                 className="relative"
                 strokeWidth={1.25}
                 color="black"
-                width={20}
-                height={18}
+                width={24}
+                height={24}
               />
-              <div className="absolute inline-flex items-start justify-end text-xs bottom-1/2 left-1/2">
+              <div className="absolute inline-flex items-start justify-end text-xs bottom-1/2 right-0">
                 <div className="bg-Secondary-2 w-[16px] h-[16px] rounded-full text-[12px] text-white-0 flex justify-center">
                   {loveList.length}
                 </div>
@@ -103,7 +103,7 @@ function FunctionNavigation({ isUser }) {
             <ShoppingCart strokeWidth={1.25} color="black" size={32} />
           )}
         </Link>
-        {isUser && isUser.user && (
+        {isUser && isUser.name && (
           // <Link href="/account">
           <UserDropdown isUser={isUser} />
           // </Link>
