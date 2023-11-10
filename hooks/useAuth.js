@@ -25,7 +25,7 @@ const cartServer = [
         "https://placeimg.com/640/480/any?r=0.8807778235430017",
       ],
     },
-    quantity: 1,
+    quantity: 2,
   },
 ];
 const useAuthStore = create(
@@ -53,19 +53,19 @@ const useAuthStore = create(
 
           const { carts, getCarts } = useCartStore.getState();
 
-          cartServer.forEach((mergeValue) => {
-            const checkValue = carts.find(
-              (child) => child.product.id === mergeValue.product.id,
+          carts.forEach((cartItem) => {
+            const existingCartItem = cartServer.find(
+              (serverItem) => serverItem.product.id === cartItem.product.id,
             );
-
-            if (checkValue) {
-              // eslint-disable-next-line no-param-reassign
-              mergeValue.quantity += checkValue.quantity;
+            if (existingCartItem) {
+              // If the product already exists in cartServer, update the quantity
+              existingCartItem.quantity += cartItem.quantity;
             } else {
-              cartServer.push(checkValue);
+              // If the product doesn't exist in cartServer, add it
+              cartServer.push({ ...cartItem });
             }
-            getCarts(cartServer);
           });
+          getCarts(cartServer);
           set({ user });
         },
         logout: async () => {
