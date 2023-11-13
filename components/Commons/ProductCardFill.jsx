@@ -19,7 +19,7 @@ function ProductCardFill({ item, isHeart, isEye, isDiscount }) {
     <div className="">
       <div className="group overflow-hidden relative w-auto rounded-md">
         <Image
-          className="object-contain aspect-[270/250] w-full"
+          className="aspect-[270/250] w-full"
           width={270}
           height={250}
           src={item.images[0]}
@@ -45,7 +45,7 @@ function ProductCardFill({ item, isHeart, isEye, isDiscount }) {
 
               addWishList(item);
             }}
-            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2"
+            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
           >
             <Heart size={24} />
           </button>
@@ -57,7 +57,7 @@ function ProductCardFill({ item, isHeart, isEye, isDiscount }) {
               setOpenPhoto(item.images[0]);
             }}
             type="button"
-            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[5rem] sm:top-14 right-2"
+            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[5rem] sm:top-14 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
           >
             <Eye className="w-[24/34] h-[24/34] " />
           </button>

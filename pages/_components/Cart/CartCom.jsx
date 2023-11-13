@@ -9,13 +9,13 @@ import useCartStore from "@/hooks/useCartStore";
 
 function CartCom() {
   const { increase, decrease, carts } = useCartStore();
-
+  const dep = carts.map((item) => item.quantity).join(",");
   const total = useMemo(() => {
-    const found = carts.reduce((curr, acc) => {
-      return acc.quantity * acc.product.price + curr;
+    const result = carts.reduce((acc, item) => {
+      return item.quantity * item.product.price + acc;
     }, 0);
-    return found;
-  }, [carts]);
+    return result;
+  }, [carts, dep]);
 
   return (
     <div className="mb-[140px]">
@@ -84,65 +84,7 @@ function CartCom() {
             );
           })}
       </div>
-      {/* <div className="sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-3 xl:grid xl:grid-cols-1 gap-y-10">
-        {carts &&
-          carts.map((item) => {
-            return (
-              <div
-                key={item.product.id}
-                className="xl:flex xl:flex-row xl:justify-between rounded shadow-md  py-6 text-base leading-6 font-normal"
-              >
-                <div className=" flex flex-col justify-center items-center xl:flex xl:flex-row xl:items-center xl:w-[347px] xl:pl-10 gap-x-4">
-                  <Image
-                    className="xl:!w-14 xl:!h-14 lg:!w-36 lg:!h-36 !w-28 !h-28"
-                    width={54}
-                    height={54}
-                    src={item.product.image}
-                    alt={item.product.title}
-                  />
-                  <p className="text-black-0 lg:truncate lg:w-52   justify-center">
-                    {" "}
-                    {item.product?.title}{" "}
-                  </p>
-                </div>
-                <div className="flex flex-row justify-between max-w-[784px] w-full">
-                  <div className="max-w-[60px] w-full">
-                    ${item.product?.price}
-                  </div>
-                  <div className="max-w-[130px] w-full flex justify-start">
-                    <div className="rounded-lg border-Neutral-300  w-[72px] h-[44px] border flex flex-row justify-between py-[6px] px-3 items-center">
-                      <div>{item.quantity}</div>
-                      <div className="flex flex-col items-center">
-                        <button
-                          className="mouseup"
-                          type="button"
-                          onClick={() => {
-                            increase(item.product);
-                          }}
-                        >
-                          {" "}
-                          <ChevronUp size={16} />
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            decrease(item.product);
-                          }}
-                        >
-                          {" "}
-                          <ChevronDown size={16} />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="max-w-[80px] w-full flex items-start">
-                    ${item.product.price * item.quantity}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-      </div> */}
+
       <div className=" rounded flex flex-row justify-between text-base leading-6 font-normal pt-10">
         <div className="border border-Neutral-300  px-12 py-3 text-base font-bold leading-6">
           Return To Shop
@@ -176,7 +118,7 @@ function CartCom() {
             <div className="text-xl font-medium">Cart Total</div>
             <div className="py-4 flex flex-row justify-between border-b-2 border-Neutral-200">
               <div className="font-normal leading-6 text-base">Subtotal:</div>
-              <div>{total}</div>
+              <div>${total.toFixed(2)}</div>
             </div>
             <div className="py-4 flex flex-row justify-between border-b-2 border-Neutral-200">
               <div className="font-normal leading-6 text-base">Shipping:</div>
@@ -184,7 +126,7 @@ function CartCom() {
             </div>
             <div className="py-4 flex flex-row justify-between">
               <div className="font-normal leading-6 text-base">Total:</div>
-              <div>{total}</div>
+              <div>${total.toFixed(2)}</div>
             </div>
 
             <div className="flex justify-center">
@@ -203,7 +145,3 @@ function CartCom() {
 }
 
 export default CartCom;
-
-// CartCom.propTypes = {
-//   carts: PropTypes.instanceOf(Object).isRequired,
-// };
