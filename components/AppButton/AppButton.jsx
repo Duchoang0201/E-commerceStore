@@ -19,5 +19,5 @@ AppButton.propTypes = {
   buttonText: PropTypes.string.isRequired,
 };
 AppButton.defaultProps = {
-  paddingY: 16,
+  paddingY: "16",
 };

@@ -1,13 +1,15 @@
+"use client";
+
 import React from "react";
 import { Eye, Heart } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
+import Rated from "@/components/Rating/Rated";
+
 import useCartStore from "@/hooks/useCartStore";
 import useOpenPhoto from "@/hooks/useOpenPhoto";
 import useWishList from "@/hooks/useWishList";
-
-import Rated from "../Rating/Rated";
 
 function ProductCard({ item, isHeart, isEye, isDiscount }) {
   const { setOpenPhoto } = useOpenPhoto();

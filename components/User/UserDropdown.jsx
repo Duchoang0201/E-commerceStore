@@ -51,7 +51,7 @@ function UserDropdown() {
           open || router.asPath === "/account"
             ? " bg-Secondary-2 text-white-0"
             : "text-black-0"
-        } w-[32px] h-[32px]  flex flex-row justify-center   items-center rounded-full `}
+        } w-[32px] h-[32px]  flex flex-row justify-center   items-center rounded-full hover:bg-Secondary-2 hover:duration-500 hover:text-white-0 `}
       >
         <User strokeWidth={1.5} size={open ? 24 : 32} />
       </button>

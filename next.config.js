@@ -2,6 +2,7 @@
 const { i18n } = require("./i18n.config");
 
 const nextConfig = {
+  pageExtensions: ["js", "ts", "page.jsx", "page.tsx"],
   i18n,
   reactStrictMode: true,
   images: {

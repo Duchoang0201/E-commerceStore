@@ -9,7 +9,6 @@ export default async function middleware(req) {
   if (pathname === "/signin") {
     if (token?.name && token?.value) {
       newUrl.pathname = "/";
-
       return NextResponse.rewrite(newUrl);
     }
   }
