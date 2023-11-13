@@ -1,3 +1,5 @@
+"use client";
+
 import { deleteCookie, setCookie } from "cookies-next";
 import { jwtDecode } from "jwt-decode";
 import { create } from "zustand";
@@ -79,6 +81,7 @@ const useAuthStore = create(
       {
         name: "authStorage",
         storage: createJSONStorage(() => localStorage),
+        skipHydration: true,
       },
     ),
   ),

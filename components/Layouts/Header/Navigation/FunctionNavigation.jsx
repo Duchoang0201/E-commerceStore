@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
@@ -12,19 +12,33 @@ import useSearch from "@/hooks/useSearch";
 import useWishList from "@/hooks/useWishList";
 
 function FunctionNavigation({ isUser }) {
+  const searchRef = useRef();
+  const router = useRouter();
+
   const { wishList: loveList } = useWishList();
   const { carts } = useCartStore();
-  const { handleSubmit, control } = useForm();
-  const [valueSearch, setValueSearch] = useState();
+  const { handleSubmit, control } = useForm({
+    defaultValues: {
+      search: router.query.title,
+    },
+  });
   const { setSearch } = useSearch();
-  const router = useRouter();
   const onSubmit = (data) => {
-    setSearch(data.search);
-    setValueSearch(data.search);
+    if (searchRef.current) {
+      clearTimeout(searchRef.current);
+    }
+    searchRef.current = setTimeout(() => {
+      if (data.search) {
+        setSearch(data.search);
 
-    router.push("/searchpage");
+        router.push(`/searchpage?title=${data.search}`);
+      } else {
+        setSearch("");
+
+        router.push(`/searchpage?title=${""}`);
+      }
+    }, [1000]);
   };
-
   return (
     <div
       className={` hidden md:flex md:flex-row items-center md:justify-end md:w-fit max-w-[395px] w-full gap-x-[24px]`}
@@ -38,7 +52,8 @@ function FunctionNavigation({ isUser }) {
           control={control}
           render={({ field }) => (
             <input
-              value={valueSearch}
+              defaultValue={field.value}
+              value={field.value}
               id="default-search"
               {...field}
               className="text-[12px] bg-Secondary-0 w-[153px] outline-none"
@@ -60,7 +75,7 @@ function FunctionNavigation({ isUser }) {
         {" "}
         <Link
           href="/wishlist"
-          className=" group relative flex flex-row justify-center items-end  max-w-[32px] max-h-[32px]  hover:text-white-0 hover:bg-Secondary-2 hover:duration-500 rounded-full"
+          className=" group relative flex flex-row justify-center items-center  max-w-[32px] max-h-[32px]  hover:text-white-0 hover:bg-Secondary-2 hover:duration-500 rounded-full"
         >
           {loveList.length > 0 ? (
             <div className="flex flex-row justify-center items-center w-[32px] h-[32px]  ">
@@ -82,7 +97,7 @@ function FunctionNavigation({ isUser }) {
         </Link>
         <Link
           href="/cart"
-          className=" group relative  max-w-[32px] max-h-[32px] hover:bg-Secondary-2 hover:duration-500 rounded-full hover:text-white-0"
+          className=" group relative flex-row justify-center items-center  max-w-[32px] max-h-[32px] hover:bg-Secondary-2 hover:duration-500 rounded-full hover:text-white-0"
         >
           {carts && carts.length > 0 ? (
             <div className="flex flex-col items-start justify-end w-[32px] h-[32px]  ">

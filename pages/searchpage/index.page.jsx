@@ -1,35 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import FilterComponent from "@/components/Searchpage/FilterComponent";
 import SearchPage from "@/components/Searchpage/SearchPage";
 
-import useSearch from "@/hooks/useSearch";
 import { axiosClient } from "@/libraries/axiosClient";
 
 function SearchCom({ data }) {
-  const { searchString } = useSearch();
-  const newData = data.filter(
-    (row) =>
-      searchString === undefined ||
-      row.title.toLowerCase().includes(searchString.toLowerCase()),
-  );
-  const configData = newData.filter((child) =>
-    child.images[0].includes("https"),
-  );
   return (
-    <div className="my-[140px]">
-      <SearchPage data={configData} />
+    <div>
+      <FilterComponent />
+      <div className="my-[140px]">
+        <SearchPage data={data} />
+      </div>
     </div>
   );
 }
 
 export default SearchCom;
 
-export async function getStaticProps() {
-  // Carts
-
-  const resCarts = await axiosClient.get("/products");
-  const { data } = resCarts;
+export async function getServerSideProps(context) {
+  // Extract all query parameters from the context
+  const queryParams = context.query;
+  // Construct the URL with dynamic parameters
+  const url = `/products/?${Object.entries(queryParams)
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
+    )
+    .join("&")}`;
+  // Make the API request
+  const resCarts = await axiosClient.get(url);
+  const { data: configOne } = resCarts;
+  const data = configOne.filter((item) => item.images[0].includes("https"));
 
   return {
     props: {

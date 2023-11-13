@@ -35,14 +35,6 @@ function UserDropdown() {
   const { logout } = useAuthStore();
   return (
     <div className="relative items-center  w-full">
-      {/* <button
-        type="submit"
-        onClick={handleOpen}
-        className={` text-sm text-center flex justify-center items-center`}
-      >
-        <User strokeWidth={1.25} color="black" size={32} />
-      </button> */}
-
       <button
         ref={dropdownRef}
         onClick={handleOpen}

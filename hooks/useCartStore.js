@@ -1,3 +1,5 @@
+"use client";
+
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
@@ -58,6 +60,14 @@ const useCartStore = create(
           // });
           set({ carts });
         },
+        remove: async (item) => {
+          const { carts } = get();
+
+          const productChange = carts.filter(
+            (child) => child.product.id !== item.id,
+          );
+          set({ carts: productChange });
+        },
         reset: () => {
           set({ carts: [] });
         },
@@ -65,6 +75,7 @@ const useCartStore = create(
       {
         name: "cartStorage",
         storage: createJSONStorage(() => localStorage),
+        skipHydration: true,
       },
     ),
   ),

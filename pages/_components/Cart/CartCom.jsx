@@ -8,7 +8,7 @@ import Image from "next/image";
 import useCartStore from "@/hooks/useCartStore";
 
 function CartCom() {
-  const { increase, decrease, carts } = useCartStore();
+  const { increase, decrease, carts, remove } = useCartStore();
   const dep = carts.map((item) => item.quantity).join(",");
   const total = useMemo(() => {
     const result = carts.reduce((acc, item) => {
@@ -34,13 +34,25 @@ function CartCom() {
                 className="xl:flex xl:flex-row xl:justify-between rounded shadow-md  py-6 text-base leading-6 font-normal"
               >
                 <div className=" flex flex-col justify-center items-center xl:flex xl:flex-row xl:items-center xl:w-[347px] xl:pl-10 gap-x-4">
-                  <Image
-                    className="xl:!w-14 xl:!h-14 lg:!w-36 lg:!h-36 !w-28 !h-28"
-                    width={54}
-                    height={54}
-                    src={item.product.images[0]}
-                    alt={item.product.title}
-                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      remove(item.product);
+                    }}
+                    className="relative group"
+                  >
+                    <Image
+                      className="xl:!w-14 xl:!h-14 lg:!w-36 lg:!h-36 !w-28 !h-28"
+                      width={54}
+                      height={54}
+                      src={item.product.images[0]}
+                      alt={item.product.title}
+                    />
+                    <div className="absolute -left-3 -top-3 w-6 h-6 rounded-full bg-Secondary-2 inline-flex flex-row justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-white-0">X</span>
+                    </div>
+                  </button>
+
                   <p className="text-black-0 truncate  xl:w-full w-3/5 text-center xl:text-start">
                     {" "}
                     {item.product?.title}{" "}

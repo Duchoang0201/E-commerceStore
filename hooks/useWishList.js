@@ -45,7 +45,8 @@ const useWishList = create(
       }),
       {
         name: "wishList-Storage",
-        storage: createJSONStorage(() => sessionStorage),
+        storage: createJSONStorage(() => localStorage),
+        skipHydration: true,
       },
     ),
   ),

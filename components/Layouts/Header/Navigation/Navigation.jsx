@@ -5,7 +5,9 @@ import { useRouter } from "next/router";
 import Draw from "@/components/Draw/Draw";
 
 import useAuthStore from "@/hooks/useAuth";
+import useCartStore from "@/hooks/useCartStore";
 import useTrans from "@/hooks/useTrans";
+import useWishList from "@/hooks/useWishList";
 
 import FunctionNavigation from "./FunctionNavigation";
 
@@ -14,6 +16,12 @@ function Navigation() {
   const { navigationList } = useTrans();
   const router = useRouter();
   const { user: isUser } = useAuthStore();
+  useEffect(() => {
+    useAuthStore.persist.rehydrate();
+    useWishList.persist.rehydrate();
+    useCartStore.persist.rehydrate();
+  }, []);
+
   useEffect(() => {
     setActiveNav(router.pathname);
   }, [router.pathname]);
