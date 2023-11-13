@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { deleteCookie } from "cookies-next";
+import React from "react";
 import PropTypes from "prop-types";
 
 import AleartApp from "@/components/AleartApp/AleartApp";
@@ -12,14 +11,14 @@ import PhotoPreview from "@/components/PhotoPreview/PhotoPreview";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  useEffect(() => {
-    window.addEventListener("beforeunload", (event) => {
-      event.preventDefault();
-      localStorage.clear();
-      deleteCookie("token");
-      deleteCookie("refreshToken");
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("beforeunload", (event) => {
+  //     event.preventDefault();
+  //     localStorage.clear();
+  //     deleteCookie("token");
+  //     deleteCookie("refreshToken");
+  //   });
+  // }, []);
   return (
     <div className="font-poppins">
       <Header />
