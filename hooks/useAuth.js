@@ -35,7 +35,7 @@ const useAuthStore = create(
     persist(
       (set) => ({
         user: {},
-        login: async () => {
+        login: async (userLogin) => {
           const { data } = await axiosClient.post("/auth/login", {
             email: "john@mail.com",
             password: "changeme",

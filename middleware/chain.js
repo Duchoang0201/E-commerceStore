@@ -1,12 +1,13 @@
-export function chain(functions, index) {
-  const current = functions[index];
+import authCheck from "./authCheck";
+import authExp from "./authExp";
 
-  if (current) {
-    const next = chain(functions, index + 1);
-    return current(next);
-  }
+export function combinedMiddleware() {
+  return async (req) => {
+    // Execute authExp
+    const authExpResponse = await authExp(req);
 
-  return (req, event, res) => {
-    return res;
+    // Execute authCheck passing authExp as middleware
+    const authCheckMiddleware = authCheck(() => authExpResponse);
+    return authCheckMiddleware(req);
   };
 }

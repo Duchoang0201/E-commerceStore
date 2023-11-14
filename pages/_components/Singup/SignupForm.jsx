@@ -7,6 +7,9 @@ import { Search } from "lucide-react";
 import Link from "next/link";
 import * as yup from "yup";
 
+import useAuthStore from "@/hooks/useAuth";
+import { axiosClient } from "@/libraries/axiosClient";
+
 const validationSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
   userName: yup
@@ -31,7 +34,11 @@ function SignupForm() {
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const { login } = useAuthStore();
+  const onSubmit = async (data) => {
+    await axiosClient.post(`/users/`, data);
+    login(data);
+  };
 
   return (
     <div className="flex flex-col">

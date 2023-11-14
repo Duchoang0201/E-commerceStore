@@ -12,11 +12,11 @@ function AccountCom() {
         {" "}
         <span>Home/My Account</span>
         <span>
-          Welcome! <span className="text-Secondary-2">{user?.user}</span>
+          Welcome! <span className="text-Secondary-2">{user.name}</span>
         </span>
       </div>
 
-      <Account />
+      <Account user={user} />
     </div>
   );
 }

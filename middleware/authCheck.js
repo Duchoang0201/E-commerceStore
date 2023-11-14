@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 import { NextResponse } from "next/server";
 
-const authCheck = (middleware) => {
+function authCheck(middlewareFunction) {
   return async (req) => {
     const { pathname } = req.nextUrl;
     const newUrl = req.nextUrl.clone();
@@ -12,8 +12,8 @@ const authCheck = (middleware) => {
         return NextResponse.rewrite(newUrl);
       }
     }
-    return middleware(req);
+    return middlewareFunction(req);
   };
-};
+}
 
 export default authCheck;

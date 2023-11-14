@@ -15,8 +15,9 @@ function Dropdown({ data, color }) {
     setOpen(!open);
   };
   const changeLang = (lang) => {
+    const currentPath = router.asPath;
     setLoading(true);
-    router.push("/", "/", { locale: lang }).then(() => {
+    router.push(currentPath, currentPath, { locale: lang }).then(() => {
       setLoading(false);
       setOpen(!open);
     });

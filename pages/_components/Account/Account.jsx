@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import PropTypes from "prop-types";
 import * as yup from "yup";
 
 import AppButton from "@/components/AppButton/AppButton";
@@ -220,3 +221,7 @@ function Account() {
 }
 
 export default Account;
+
+Account.propTypes = {
+  user: PropTypes.instanceOf(Object).isRequired,
+};
