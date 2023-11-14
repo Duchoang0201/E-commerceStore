@@ -1,7 +1,7 @@
 "use client";
 
 import { deleteCookie, setCookie } from "cookies-next";
-import { jwtDecode } from "jwt-decode";
+// import { jwtDecode } from "jwt-decode";
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
@@ -49,9 +49,11 @@ const useAuthStore = create(
           const refreshToken = data.refresh_token;
           setCookie("refreshToken", refreshToken);
 
-          const decoded = jwtDecode(token);
-
-          const { data: user } = await axiosClient.get(`/users/${decoded.sub}`);
+          const { data: user } = await axiosClient.get(`/auth/profile`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
 
           const { carts, getCarts } = useCartStore.getState();
 
@@ -70,11 +72,16 @@ const useAuthStore = create(
           getCarts(cartServer);
           set({ user });
         },
+        getUser: async (user) => {
+          set({ user });
+        },
         logout: async () => {
           localStorage.clear();
-          deleteCookie("carts");
 
+          deleteCookie("carts");
+          deleteCookie("refreshToken");
           deleteCookie("token");
+          deleteCookie("user");
           set({ user: null });
         },
       }),

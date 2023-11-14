@@ -43,9 +43,9 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
 
               addWishList(item);
             }}
-            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
+            className="w-[24px] h-[24px] md:w-[34px] md:h-[34px]  absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
           >
-            <Heart size={24} />
+            <Heart className="w-2/3 h-2/3" />
           </button>
         )}
         {isEye.isActive && (
@@ -55,9 +55,9 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
               setOpenPhoto(item.images[0]);
             }}
             type="button"
-            className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[5rem] sm:top-14 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
+            className="w-[24px] h-[24px] md:w-[34px] md:h-[34px] absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[4.5rem] sm:top-14 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
           >
-            <Eye className="w-[24/34] h-[24/34] " />
+            <Eye className="w-2/3 h-2/3 " />
           </button>
         )}
         {isDiscount.isActive && (

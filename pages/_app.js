@@ -11,14 +11,6 @@ import PhotoPreview from "@/components/PhotoPreview/PhotoPreview";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  // useEffect(() => {
-  //   window.addEventListener("beforeunload", (event) => {
-  //     event.preventDefault();
-  //     localStorage.clear();
-  //     deleteCookie("token");
-  //     deleteCookie("refreshToken");
-  //   });
-  // }, []);
   return (
     <div className="font-poppins">
       <Header />

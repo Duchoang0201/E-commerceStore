@@ -76,7 +76,7 @@ function UserDropdown() {
                       logout();
                     }
                   }}
-                  href={item.route === "logout" ? "/" : `/${item.route}`}
+                  href={item.route === "logout" ? "#" : `/${item.route}`}
                   className=" text-white-0  flex flex-row items-center gap-4"
                 >
                   {" "}

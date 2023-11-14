@@ -16,6 +16,11 @@ function Navigation() {
   const { navigationList } = useTrans();
   const router = useRouter();
   const { user: isUser } = useAuthStore();
+  // let isUser = {};
+  // const checkUser = getCookie("user");
+  // if (checkUser) {
+  //   isUser = JSON.parse(checkUser);
+  // }
   useEffect(() => {
     useAuthStore.persist.rehydrate();
     useWishList.persist.rehydrate();
