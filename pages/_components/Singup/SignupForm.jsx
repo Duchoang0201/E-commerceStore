@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Search } from "lucide-react";
 import Link from "next/link";
@@ -11,10 +11,11 @@ import useAuthStore from "@/hooks/useAuth";
 import { axiosClient } from "@/libraries/axiosClient";
 
 const validationSchema = yup.object().shape({
-  name: yup.string().required("Name is required"),
+  name: yup.string().required("User name is required"),
+
   userName: yup
     .string()
-    .required("Email or Phone Number is required")
+    .required("User name is required")
     .matches(
       /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$|^(\+\d{1,3}[- ]?)?\d{10}$/,
       "Invalid Email or Phone Number",
@@ -27,7 +28,7 @@ const validationSchema = yup.object().shape({
 
 function SignupForm() {
   const {
-    control,
+    register,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -36,7 +37,12 @@ function SignupForm() {
 
   const { login } = useAuthStore();
   const onSubmit = async (data) => {
-    await axiosClient.post(`/users/`, data);
+    await axiosClient.post(`/users/`, {
+      ...data,
+      avatar:
+        "https://assets-prd.ignimgs.com/2023/06/17/atla-1280a-1687040323227.jpg",
+      email: data.userName,
+    });
     login(data);
   };
 
@@ -51,18 +57,11 @@ function SignupForm() {
       <div className="text-black-0">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="relative bg-black pb-10">
-            <Controller
-              name="name"
-              control={control}
-              render={({ field }) => (
-                <input
-                  {...field}
-                  type="text"
-                  id="name"
-                  className="block bg-opacity-0 text-white border-Neutral-200 border-b-2 py-3 text-sm bg-gray-50 w-full focus:outline-none "
-                  placeholder="Name"
-                />
-              )}
+            <input
+              {...register("name")}
+              type="text"
+              className="block bg-opacity-0 text-white border-Neutral-200 border-b-2 py-3 text-sm bg-gray-50 w-full focus:outline-none "
+              placeholder="Name"
             />
             {errors.name && (
               <p className="text-error-600">{errors.name.message}</p>
@@ -70,17 +69,10 @@ function SignupForm() {
           </div>
 
           <div className="relative bg-black pb-10">
-            <Controller
-              name="userName"
-              control={control}
-              render={({ field }) => (
-                <input
-                  {...field}
-                  id="default-userName"
-                  className="block bg-opacity-0 text-white border-Neutral-200 border-b-2 py-3 text-sm bg-gray-50 w-full focus:outline-none "
-                  placeholder="Email or Phone Number"
-                />
-              )}
+            <input
+              {...register("userName")}
+              className="block bg-opacity-0 text-white border-Neutral-200 border-b-2 py-3 text-sm bg-gray-50 w-full focus:outline-none "
+              placeholder="Email or Phone Number"
             />
             {errors.userName && (
               <p className="text-Red-500">{errors.userName.message}</p>
@@ -88,18 +80,11 @@ function SignupForm() {
           </div>
 
           <div className="relative bg-black pb-10">
-            <Controller
-              name="password"
-              control={control}
-              render={({ field }) => (
-                <input
-                  {...field}
-                  type="password"
-                  id="default-password"
-                  className="block bg-opacity-0 text-white border-Neutral-200 border-b-2 py-3 text-sm bg-gray-50 w-full focus:outline-none "
-                  placeholder="Password"
-                />
-              )}
+            <input
+              {...register("password")}
+              type="password"
+              className="block bg-opacity-0 text-white border-Neutral-200 border-b-2 py-3 text-sm bg-gray-50 w-full focus:outline-none "
+              placeholder="Password"
             />
             {errors.password && (
               <p className="text-Red-500">{errors.password.message}</p>
@@ -109,7 +94,7 @@ function SignupForm() {
           <div className="w-full bg-Secondary-2 rounded-md h-14 text-white-0 flex justify-center items-center mb-4">
             <button
               type="submit"
-              className="font-poppins leading-6 font-semibold"
+              className="font-poppins leading-6 font-semibold w-full h-full"
             >
               Create Account
             </button>
@@ -117,7 +102,7 @@ function SignupForm() {
           <div className="w-full bg-white-0 border border-Neutral-200 rounded-md h-14 text-white-0 flex justify-center items-center mb-8">
             <button
               type="submit"
-              className="font-poppins leading-6 font-semibold flex flex-row justify-center items-center"
+              className="w-full font-poppins leading-6 font-semibold flex flex-row justify-center items-center"
             >
               <Search color="black" />
               <span className="px-2 text-black-0">Login with google</span>

@@ -54,7 +54,6 @@ function FunctionNavigation({ isUser }) {
             <input
               defaultValue={field.value}
               value={field.value}
-              id="default-search"
               {...field}
               className="text-[12px] bg-Secondary-0 w-[153px] outline-none"
               placeholder="What are you looking for?"

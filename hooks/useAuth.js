@@ -37,8 +37,8 @@ const useAuthStore = create(
         user: {},
         login: async (userLogin) => {
           const { data } = await axiosClient.post("/auth/login", {
-            email: "john@mail.com",
-            password: "changeme",
+            email: userLogin.userName,
+            password: userLogin.password,
           });
 
           // set token in cookie

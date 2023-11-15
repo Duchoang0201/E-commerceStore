@@ -79,7 +79,7 @@ function Navigation() {
                     );
                   })}
               </ul>
-              <FunctionNavigation isUser={isUser} />
+              <FunctionNavigation isUser={isUser || {}} />
               <div className="lg:hidden flex flex-row">
                 <Draw />
               </div>

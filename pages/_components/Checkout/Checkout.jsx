@@ -11,6 +11,18 @@ import useCartStore from "@/hooks/useCartStore";
 import useTrans from "@/hooks/useTrans";
 
 const validationSchema = yup.object().shape({
+  firstName: yup.string().required("Please enter your name"),
+  company: yup.string(),
+  address: yup.string().required("Please enter your address"),
+  appartment: yup.string(),
+  phoneNumber: yup
+    .string()
+    .required("Phone number is required")
+
+    .matches(
+      /^((\+84)|0)(3[2-9]|5[689]|7[06-9]|8[1-689]|9[0-46-9])\d{7}$/,
+      "Invalid Vietnamese phone number",
+    ),
   userName: yup
     .string()
     .required("Email or Phone Number is required")
@@ -229,7 +241,6 @@ function Checkout() {
               <div className="flex flex-row justify-between">
                 <input
                   type="search"
-                  id="default-search"
                   className="block p-3 text-sm text-gray-900 bg-gray-50 w-[300px] border border-Neutral-600 rounded-md"
                   placeholder="Coupon Code"
                   required

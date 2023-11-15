@@ -111,7 +111,6 @@ function CartCom() {
             <div className="flex flex-row justify-between">
               <input
                 type="search"
-                id="default-search"
                 className="block p-3 text-sm text-gray-900 bg-gray-50 max-w-[300px] w-full border border-Neutral-600 rounded-md"
                 placeholder="Coupon Code"
                 required

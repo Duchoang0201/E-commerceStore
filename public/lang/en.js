@@ -66,7 +66,7 @@ export default {
       route: "moreAddress",
       require: false,
     },
-    { name: "Phone Number", route: "phoneNumbber", require: true },
+    { name: "Phone Number", route: "phoneNumber", require: true },
     { name: "Email Address", route: "email", require: true },
   ],
   accountMenu: [

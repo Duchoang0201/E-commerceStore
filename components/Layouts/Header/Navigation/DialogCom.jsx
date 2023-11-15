@@ -37,7 +37,6 @@ export function DialogCom() {
                 <div className="relative">
                   <input
                     type="search"
-                    id="default-search"
                     className="block p-3 text-sm text-gray-900 bg-gray-50 w-[243px]"
                     placeholder="Looking for..."
                     required

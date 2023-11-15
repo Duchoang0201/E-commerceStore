@@ -62,7 +62,7 @@ export default {
     { name: "Tên công ty", route: "companyName", require: false },
     { name: "Địa chỉ", route: "streetAddress", require: true },
     { name: "Chung cư, tầng,...", route: "moreAddress", require: false },
-    { name: "Số điện thoại", route: "phoneNumbber", require: true },
+    { name: "Số điện thoại", route: "phoneNumber", require: true },
     { name: "Địa chỉ email", route: "email", require: true },
   ],
   accountMenu: [
