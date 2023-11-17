@@ -15,6 +15,7 @@ const validationSchema = yup.object().shape({
   company: yup.string(),
   address: yup.string().required("Please enter your address"),
   appartment: yup.string(),
+  email: yup.string().email().required(),
   phoneNumber: yup
     .string()
     .required("Phone number is required")
@@ -56,7 +57,10 @@ function Checkout() {
     <div>
       <div className="text-3xl font-medium"> Billing Details</div>
       <div className="flex flex-row justify-between pt-12 ">
-        <form className="w-[470px]" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="max-w-[470px] w-full"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           {checkoutForm &&
             checkoutForm.map((item) => {
               return (
@@ -163,11 +167,11 @@ function Checkout() {
             <div className="text-Secondary-2"> Forget Passwword?</div>
           </div>
         </form>
-        <div className="flex flex-col gap-y-8">
-          <div className="w-[527px] h-auto ">
-            <div className="w-[425px] ">
+        <div className="flex flex-col gap-y-8 max-w-[527px] ">
+          <div className="max-w-[422px] w-full h-auto ">
+            <div className=" w-full ">
               {" "}
-              <div className="w-auto h-auto gap-y-8">
+              <div className="w-full h-auto gap-y-8">
                 {carts &&
                   carts.map((item) => {
                     return (
@@ -236,12 +240,12 @@ function Checkout() {
               </div>
             </div>
           </div>
-          <div className=" w-[527px]">
+          <div className=" w-full xl:w-[527px]">
             <form>
               <div className="flex flex-row justify-between">
                 <input
                   type="search"
-                  className="block p-3 text-sm text-gray-900 bg-gray-50 w-[300px] border border-Neutral-600 rounded-md"
+                  className="block p-3 text-sm text-gray-900 bg-gray-50 max-w-[300px] w-full border border-Neutral-600 rounded-md"
                   placeholder="Coupon Code"
                   required
                 />
