@@ -16,6 +16,10 @@ export default function Document() {
           property="og:image"
           content="../components/Layouts/IndexPage/HerroBanner/Banner.jpg"
         />
+        <meta property="og:image:alt" content="Exclusive shop" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
       </Head>
       <body>
         <Main />
