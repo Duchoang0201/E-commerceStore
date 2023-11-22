@@ -71,7 +71,7 @@ function Draw({ open, setOpen }) {
                   value={item.name}
                   onMouseLeave={closeChild}
                   onMouseOver={openChild}
-                  href={item.href}
+                  href={`/${item.href}`}
                   className={`${
                     isLastItem ? "pt-2" : "py-2"
                   } text-base text-end max-w-[150px] align-bottom text-black flex flex-row justify-between hover:bg-TEXT-1 hover:rounded-md duration-200 transition-all`}
@@ -88,7 +88,7 @@ function Draw({ open, setOpen }) {
                         return (
                           <li key={child.name}>
                             <Link
-                              href={child.href}
+                              href={`/${child.href}`}
                               className="text-base h-10 items-center hover:bg-TEXT-1 hover:rounded-md text-black w-auto flex flex-row justify-between"
                               aria-current="page"
                             >

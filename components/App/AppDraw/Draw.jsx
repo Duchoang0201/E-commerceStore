@@ -90,7 +90,7 @@ function Draw() {
             <div className="items-center flex flex-row justify-around w-full">
               {" "}
               <Link
-                href="wishlist"
+                href="/wishlist"
                 className=" group relative inline-flex justify-center "
               >
                 <Heart
@@ -106,7 +106,7 @@ function Draw() {
                 </div>
               </Link>
               <Link
-                href="cart"
+                href="/cart"
                 className=" group relative inline-flex justify-center "
               >
                 <ShoppingCart
@@ -138,7 +138,7 @@ function Draw() {
                 return (
                   <li key={`${item.name}`} className="w-auto py-2">
                     <Link
-                      href={item.href}
+                      href={`/${item.href}`}
                       className=" block py-2  pr-4 text-black rounded hover:bg-TEXT-1 hover:text-white-0   text-center"
                       aria-current="page"
                     >

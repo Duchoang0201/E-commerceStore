@@ -63,11 +63,11 @@ export default async function middleware(req) {
   const token = req.cookies.get("token")?.value || "";
   const refreshToken = req.cookies.get("refreshToken")?.value || "";
 
-  const currentTime = new Date();
+  // const currentTime = new Date();
 
-  const expirationTime = new Date(
-    currentTime.getTime() + 3 * 24 * 60 * 60 * 1000,
-  );
+  // const expirationTime = new Date(
+  //   currentTime.getTime() + 3 * 24 * 60 * 60 * 1000,
+  // );
 
   if (pathname === "/signin" || pathname === "/signup") {
     if (token) {
@@ -88,7 +88,8 @@ export default async function middleware(req) {
         if (response.ok) {
           const data = await response.json();
           respon.cookies.set("user", JSON.stringify(data), {
-            expires: expirationTime,
+            // expires: expirationTime,
+            maxAge: 24 * 60 * 60 * 1000,
           });
           return respon;
         }

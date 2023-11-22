@@ -49,7 +49,7 @@ function ModalDraw() {
                 return (
                   <li key={`${item.name}`} className="w-auto py-2">
                     <a
-                      href={item.href}
+                      href={`/${item.href}`}
                       className=" block px-2 py-2 pl-3 pr-4 text-black rounded hover:bg-gray-300   "
                       aria-current="page"
                     >

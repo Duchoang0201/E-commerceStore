@@ -46,12 +46,18 @@ const useAuthStore = create(
           // set token in cookie
 
           const { access_token: token } = data;
-          setCookie("token", token);
+          setCookie("token", token, {
+            // expires: expirationTime,
+            maxAge: 24 * 60 * 60 * 1000,
+          });
 
           // set refreshToken in cookie
 
           const { refresh_token: refreshToken } = data;
-          setCookie("refreshToken", refreshToken);
+          setCookie("refreshToken", refreshToken, {
+            // expires: expirationTime,
+            maxAge: 365 * 24 * 60 * 60 * 1000,
+          });
 
           const { data: user } = await axiosClient.get(`/auth/profile`, {
             headers: {

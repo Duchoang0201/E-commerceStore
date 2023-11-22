@@ -60,7 +60,7 @@ function Dropdown({ data, color }) {
                   onClick={() => {
                     changeLang(item.href);
                   }}
-                  href={item.href}
+                  href={`/${item.href}`}
                   className="w-full"
                 >
                   <LoadingCom language={item.name} open={loading} />

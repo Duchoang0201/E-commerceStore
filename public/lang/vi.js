@@ -3,7 +3,7 @@ import { Inbox, LogOut, Star, User, XCircle } from "lucide-react";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   navigationList: [
-    { name: "Trang chủ", href: "/" },
+    { name: "Trang chủ", href: "" },
     { name: "Liên hệ", href: "contact" },
     { name: "Thông tin", href: "about" },
     { name: "Đăng ký", href: "signup" },

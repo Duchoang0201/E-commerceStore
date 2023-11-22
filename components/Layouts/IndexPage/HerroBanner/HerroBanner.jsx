@@ -47,7 +47,7 @@ function HerroBanner() {
                         value={item.name}
                         onMouseLeave={closeChild}
                         onMouseOver={openChild}
-                        href={item.href}
+                        href={`/${item.href}`}
                         className={`${
                           isLastItem ? "pt-2" : "py-2"
                         } text-base max-w-[217px] align-bottom text-black flex flex-row justify-between hover:bg-TEXT-1 hover:rounded-md duration-200 transition-all`}
@@ -63,7 +63,7 @@ function HerroBanner() {
                               return (
                                 <li key={child.name}>
                                   <Link
-                                    href={child.href}
+                                    href={`/${child.href}`}
                                     className="text-base h-10 items-center hover:bg-TEXT-1 hover:rounded-md text-black w-auto flex flex-row justify-between"
                                     aria-current="page"
                                   >
