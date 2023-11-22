@@ -19,13 +19,15 @@ function ProductDetail({ product }) {
     image: product.images[0],
     title: "hello",
   });
+
   useEffect(() => {
     setPickImage({
       index: 0,
       image: product.images[0],
       title: "hello",
     });
-  }, [product.id, product.image, product.title]);
+  }, [product.id, product.image, product.images, product.title]);
+
   const [amountProduct, setAmountProduct] = useState(0);
   return (
     <div className="xl:flex xl:flex-row xl:justify-between flex flex-col gap-y-24 items-center">

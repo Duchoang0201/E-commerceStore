@@ -5,10 +5,10 @@ import { axiosClient } from "@/libraries/axiosClient";
 import FilterComponent from "@/pages/_components/Searchpage/FilterComponent";
 import SearchPage from "@/pages/_components/Searchpage/SearchPage";
 
-function SearchCom({ data }) {
+function SearchCom({ data, categories }) {
   return (
     <div>
-      <FilterComponent />
+      <FilterComponent categories={categories} />
       <div className="my-[140px]">
         <SearchPage data={data} />
       </div>
@@ -32,14 +32,16 @@ export async function getServerSideProps(context) {
   const resCarts = await axiosClient.get(url);
   const { data: configOne } = resCarts;
   const data = configOne.filter((item) => item.images[0].includes("https"));
-
+  const { data: categories } = await axiosClient.get("/categories");
   return {
     props: {
       data,
+      categories,
     },
   };
 }
 
 SearchCom.propTypes = {
   data: PropTypes.instanceOf(Object).isRequired,
+  categories: PropTypes.instanceOf(Object).isRequired,
 };

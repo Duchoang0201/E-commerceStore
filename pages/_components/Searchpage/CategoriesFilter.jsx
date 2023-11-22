@@ -1,25 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useRouter } from "next/router";
+import PropTypes from "prop-types";
 
-import { axiosClient } from "@/libraries/axiosClient";
-
-function CategoriesFilter() {
+function CategoriesFilter({ categories }) {
   const [openDropdown, setOpenDropdown] = useState(false);
-  const [categories, setCategories] = useState([]);
   const router = useRouter();
   const categoryIdRef = useRef();
-  useEffect(() => {
-    const handleGetCategories = async () => {
-      try {
-        const { data } = await axiosClient.get("/categories");
-        setCategories(data);
-      } catch (error) {
-        console.log(`🚀🚀🚀!..error`, error);
-      }
-    };
-    handleGetCategories();
-  }, []);
 
   return (
     <div>
@@ -94,3 +81,7 @@ function CategoriesFilter() {
 }
 
 export default CategoriesFilter;
+
+CategoriesFilter.propTypes = {
+  categories: PropTypes.instanceOf(Object).isRequired,
+};

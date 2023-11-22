@@ -37,6 +37,7 @@ function OurProducts({ ourProducts }) {
         onNext={handleSlideNext}
         bgButton=""
         buttonText=""
+        isCountDown={false}
       />
 
       <div className="container  pt-[65px] ">

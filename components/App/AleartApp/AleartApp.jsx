@@ -8,15 +8,16 @@ function AleartApp() {
   const { messages } = useMessage();
 
   const [toasts, setToasts] = useState([]);
+
   useEffect(() => {
-    if (messages) {
+    if (messages.id && messages.type) {
       const newToast = {
         id: Date.now(),
         message: messages,
       };
       setToasts((prevToasts) => [...prevToasts, newToast]);
     }
-  }, [messages]);
+  }, [messages, messages.length]);
 
   const closeToast = useCallback((id) => {
     setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id));
