@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { axiosClient } from "@/libraries/axiosClient";
 import FilterComponent from "@/pages/_components/Searchpage/FilterComponent";
 import SearchPage from "@/pages/_components/Searchpage/SearchPage";
-
-import { axiosClient } from "@/libraries/axiosClient";
 
 function SearchCom({ data }) {
   return (
