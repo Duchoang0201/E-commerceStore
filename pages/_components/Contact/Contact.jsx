@@ -4,7 +4,7 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Mail, Phone } from "lucide-react";
 
-import AppButton from "@/components/AppButton/AppButton";
+import AppButton from "@/components/App/AppButton/AppButton";
 
 function Contact() {
   const {

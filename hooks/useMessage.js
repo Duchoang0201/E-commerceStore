@@ -1,15 +1,17 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
+function getUniqueID() {
+  return Math.floor(Math.random() * Date.now()).toString();
+}
+
 const useMessage = create(
-  devtools((set, get) => ({
-    newClick: 0,
+  devtools((set) => ({
     messages: {},
     setMessage: async (item) => {
-      let { newClick } = get();
-      newClick += 1;
-
-      set({ messages: item, newClick });
+      const newData = item;
+      newData.id = getUniqueID();
+      set({ messages: newData });
     },
   })),
 );

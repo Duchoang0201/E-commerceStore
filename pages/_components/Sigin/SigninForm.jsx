@@ -39,8 +39,8 @@ function SigninForm() {
     setLoadingCom(true);
     try {
       await login(e);
-      setLoadingCom(false);
       router.push("/");
+      setLoadingCom(false);
     } catch (error) {
       console.log(`🚀🚀🚀!..error`, error);
     }
@@ -48,7 +48,7 @@ function SigninForm() {
 
   return (
     <div className="flex flex-col">
-      <LoadingCom open={loadingCom} />
+      <LoadingCom open={loadingCom} language="" />
 
       <span className="text-[16px] md:text-[24px] xl:text-[36px] font-inter leading-8 font-semibold tracking-[1.44px] pb-2 xl:pb-6">
         Log in to Exclusive

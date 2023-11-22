@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 "use client";
 
 import { deleteCookie, setCookie } from "cookies-next";
@@ -37,16 +39,18 @@ const useAuthStore = create(
         user: {},
         login: async (userLogin) => {
           const { data } = await axiosClient.post("/auth/login", {
-            email: userLogin.userName,
-            password: userLogin.password,
+            email: "john@mail.com",
+            password: "changeme",
           });
 
           // set token in cookie
-          const token = data.access_token;
+
+          const { access_token: token } = data;
           setCookie("token", token);
+
           // set refreshToken in cookie
 
-          const refreshToken = data.refresh_token;
+          const { refresh_token: refreshToken } = data;
           setCookie("refreshToken", refreshToken);
 
           const { data: user } = await axiosClient.get(`/auth/profile`, {

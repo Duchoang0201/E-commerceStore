@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { getCookie } from "cookies-next";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,17 +13,25 @@ import useSearch from "@/hooks/useSearch";
 import useWishList from "@/hooks/useWishList";
 
 function FunctionNavigation({ isUser }) {
+  let user;
+  if (getCookie("user")) {
+    user = JSON.parse(getCookie("user"));
+  }
+
   const searchRef = useRef();
   const router = useRouter();
 
   const { wishList: loveList } = useWishList();
+
   const { carts } = useCartStore();
+
   const { handleSubmit, control } = useForm({
     defaultValues: {
       search: router.query.title,
     },
   });
   const { setSearch } = useSearch();
+
   const onSubmit = (data) => {
     if (searchRef.current) {
       clearTimeout(searchRef.current);
@@ -113,7 +122,7 @@ function FunctionNavigation({ isUser }) {
         </Link>
         {isUser && isUser.name && (
           // <Link href="/account">
-          <UserDropdown isUser={isUser} />
+          <UserDropdown isUser={user} />
           // </Link>
         )}
       </div>

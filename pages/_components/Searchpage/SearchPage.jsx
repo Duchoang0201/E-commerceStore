@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-import ProductCard from "../Commons/ProductCard";
+import ProductCard from "../../../components/Commons/ProductCard";
 
 function SearchPage({ data }) {
   return (

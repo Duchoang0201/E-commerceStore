@@ -5,7 +5,7 @@ import { Eye, Heart } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
-import Rated from "@/components/Rating/Rated";
+import Rated from "@/components/App/AppRating/Rated";
 
 import useCartStore from "@/hooks/useCartStore";
 import useOpenPhoto from "@/hooks/useOpenPhoto";

@@ -9,7 +9,7 @@ import useCartStore from "@/hooks/useCartStore";
 import useOpenPhoto from "@/hooks/useOpenPhoto";
 import useWishList from "@/hooks/useWishList";
 
-import Rated from "../../../components/Rating/Rated";
+import Rated from "../../../components/App/AppRating/Rated";
 
 function WishItem({ item, isEye, isTrash }) {
   const { setOpenPhoto } = useOpenPhoto();

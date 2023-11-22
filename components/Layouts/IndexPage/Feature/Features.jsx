@@ -6,7 +6,7 @@ import Image from "next/image";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 
-import Title from "@/components/Commons/Title";
+import TitleFunction from "@/components/Commons/TitleFunction";
 
 import useTrans from "@/hooks/useTrans";
 
@@ -31,7 +31,7 @@ function Features() {
   };
   return (
     <div>
-      <Title
+      <TitleFunction
         content={featureContent.content}
         title={featureContent.title}
         onPrev={handleSlidePrev}

@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { getNextDay } from "@/hooks/getSpecificDay";
 import { useCountdown } from "@/hooks/useCountDown";
 
-import AppButton from "../AppButton/AppButton";
-import ButtonArrow from "../AppButton/ButtonArrow";
+import AppButton from "../App/AppButton/AppButton";
+import ButtonArrow from "../App/AppButton/ButtonArrow";
 
 import ShowTime from "./ShowTime";
 
@@ -70,11 +70,10 @@ function TitleFunction({
 export default memo(TitleFunction);
 
 TitleFunction.propTypes = {
-  onPrev: PropTypes.oneOfType([PropTypes.func, PropTypes.any]).isRequired, // onPrev can be a function or null
+  onPrev: PropTypes.oneOfType([PropTypes.func, PropTypes.any]).isRequired,
   onNext: PropTypes.oneOfType([PropTypes.func, PropTypes.any]).isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   isCountDown: PropTypes.bool.isRequired,
-  // paddingY: PropTypes.string.isRequired,
 };

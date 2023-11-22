@@ -8,7 +8,7 @@ import useCartStore from "@/hooks/useCartStore";
 import useSearch from "@/hooks/useSearch";
 import useTrans from "@/hooks/useTrans";
 
-import Dropdown from "../Dropdown/Dropdown";
+import Dropdown from "../AppLangue/Dropdown";
 
 function Draw() {
   const [open, setOpen] = useState(false);

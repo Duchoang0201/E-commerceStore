@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
-import AppButton from "@/components/AppButton/AppButton";
+import AppButton from "@/components/App/AppButton/AppButton";
 
 import CardBanner from "./CardBanner";
 

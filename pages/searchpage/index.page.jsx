@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import FilterComponent from "@/components/Searchpage/FilterComponent";
-import SearchPage from "@/components/Searchpage/SearchPage";
+import FilterComponent from "@/pages/_components/Searchpage/FilterComponent";
+import SearchPage from "@/pages/_components/Searchpage/SearchPage";
 
 import { axiosClient } from "@/libraries/axiosClient";
 

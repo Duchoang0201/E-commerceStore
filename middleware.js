@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable consistent-return */
 // import { NextResponse } from "next/server";
 
@@ -57,12 +58,16 @@
 import { NextResponse } from "next/server";
 
 export default async function middleware(req) {
-  // const newUrl = req.nextUrl.clone();
   const { pathname } = req.nextUrl;
-
   const respon = NextResponse.next();
   const token = req.cookies.get("token")?.value || "";
   const refreshToken = req.cookies.get("refreshToken")?.value || "";
+
+  const currentTime = new Date();
+
+  const expirationTime = new Date(
+    currentTime.getTime() + 3 * 24 * 60 * 60 * 1000,
+  );
 
   if (pathname === "/signin" || pathname === "/signup") {
     if (token) {
@@ -82,7 +87,9 @@ export default async function middleware(req) {
         );
         if (response.ok) {
           const data = await response.json();
-          respon.cookies.set("user", JSON.stringify(data));
+          respon.cookies.set("user", JSON.stringify(data), {
+            expires: expirationTime,
+          });
           return respon;
         }
         if (response.message === "Unauthorized") {
@@ -112,3 +119,17 @@ export default async function middleware(req) {
 // export const config = {
 //   matcher: ["/signin/:path*", "/signup/:path*"],
 // };
+
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    "/",
+  ],
+};

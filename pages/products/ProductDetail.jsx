@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/navigation";
 
-import Rated from "@/components/Rating/Rated";
+import Rated from "@/components/App/AppRating/Rated";
 
 import ProductInfo from "./ProductInfo";
 

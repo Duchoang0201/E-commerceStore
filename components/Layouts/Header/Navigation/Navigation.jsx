@@ -1,8 +1,10 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Draw from "@/components/Draw/Draw";
+import Draw from "@/components/App/AppDraw/Draw";
 
 import useAuthStore from "@/hooks/useAuth";
 import useCartStore from "@/hooks/useCartStore";
@@ -16,11 +18,7 @@ function Navigation() {
   const { navigationList } = useTrans();
   const router = useRouter();
   const { user: isUser } = useAuthStore();
-  // let isUser = {};
-  // const checkUser = getCookie("user");
-  // if (checkUser) {
-  //   isUser = JSON.parse(checkUser);
-  // }
+
   useEffect(() => {
     useAuthStore.persist.rehydrate();
     useWishList.persist.rehydrate();
@@ -30,6 +28,7 @@ function Navigation() {
   useEffect(() => {
     setActiveNav(router.pathname);
   }, [router.pathname]);
+
   const isUserClass = `${
     router.pathname === "/signin" || router.pathname === "/signup"
       ? `max-w-[820px] w-full `

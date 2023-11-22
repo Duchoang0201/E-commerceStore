@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import AleartApp from "@/components/AleartApp/AleartApp";
+import AleartApp from "@/components/App/AleartApp/AleartApp";
+// import AleartApp from "@/components/AleartApp/AleartApp";
+import MoveTop from "@/components/App/AppMoveTop/MoveTop";
+import PhotoPreview from "@/components/App/AppPhotoView/PhotoPreview";
 import Footer from "@/components/Layouts/Footer/Footer";
 import Header from "@/components/Layouts/Header/Header";
-// import AleartApp from "@/components/AleartApp/AleartApp";
-import MoveTop from "@/components/MoveTop/MoveTop";
-import PhotoPreview from "@/components/PhotoPreview/PhotoPreview";
 
 import "@/styles/globals.css";
 

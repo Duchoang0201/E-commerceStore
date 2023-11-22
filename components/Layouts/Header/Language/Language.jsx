@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import Dropdown from "@/components/Dropdown/Dropdown";
+import Dropdown from "@/components/App/AppLangue/Dropdown";
 
 function Language() {
   return (

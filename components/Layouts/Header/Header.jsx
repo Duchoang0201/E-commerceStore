@@ -1,23 +1,27 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { getCookie } from "cookies-next";
-
-import useAuthStore from "@/hooks/useAuth";
+import React from "react";
 
 import Language from "./Language/Language";
 import Navigation from "./Navigation/Navigation";
 
 function Header() {
-  const token = getCookie("token") || "";
-  const { getUser } = useAuthStore();
-
-  useEffect(() => {
-    if (!token) {
-      getUser({});
-    }
-  }, [token]);
-
+  // const { getUser } = useAuthStore();
+  // useEffect(() => {
+  //   if (!token) {
+  //     getUser({});
+  //   } else {
+  //     const handleGetUser = async () => {
+  //       const { data: user } = await axiosClient.get(`/auth/profile`, {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       });
+  //       getUser(user);
+  //     };
+  //     handleGetUser();
+  //   }
+  // }, [token]);
   return (
     <>
       <div className="bg-black-0">

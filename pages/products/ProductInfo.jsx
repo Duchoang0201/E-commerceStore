@@ -3,7 +3,7 @@ import { Bus, Heart, Minus, Plus, Repeat } from "lucide-react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-import AppButton from "@/components/AppButton/AppButton";
+import AppButton from "@/components/App/AppButton/AppButton";
 
 import useWishList from "@/hooks/useWishList";
 

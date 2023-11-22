@@ -9,9 +9,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 
-import AppButton from "@/components/AppButton/AppButton";
-import ProductCardFill from "@/components/Commons/ProductCardFill";
-import Title from "@/components/Commons/Title";
+import AppButton from "@/components/App/AppButton/AppButton";
+import ProductCard from "@/components/Commons/ProductCard";
+import TitleFunction from "@/components/Commons/TitleFunction";
 
 import useTrans from "@/hooks/useTrans";
 
@@ -29,7 +29,7 @@ function OurProducts({ ourProducts }) {
   };
   return (
     <div>
-      <Title
+      <TitleFunction
         paddingY="16"
         content={ourProductsContent.content}
         title={ourProductsContent.title}
@@ -85,7 +85,7 @@ function OurProducts({ ourProducts }) {
               >
                 <Link href={`/products/${item.id}`}>
                   {" "}
-                  <ProductCardFill
+                  <ProductCard
                     item={item}
                     isEye={{ isActive: true }}
                     isDiscount={{ isActive: false, value: 20 }}

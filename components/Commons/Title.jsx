@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { getNextDay } from "@/hooks/getSpecificDay";
 import { useCountdown } from "@/hooks/useCountDown";
 
-import AppButton from "../AppButton/AppButton";
+import AppButton from "../App/AppButton/AppButton";
 
 import Content from "./Content";
 import ShowTime from "./ShowTime";

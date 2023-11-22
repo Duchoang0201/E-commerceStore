@@ -7,7 +7,7 @@ import useCartStore from "@/hooks/useCartStore";
 import useOpenPhoto from "@/hooks/useOpenPhoto";
 import useWishList from "@/hooks/useWishList";
 
-import Rated from "../Rating/Rated";
+import Rated from "../App/AppRating/Rated";
 
 function ProductCard({ item, isHeart, isEye, isDiscount }) {
   const { setOpenPhoto } = useOpenPhoto();
