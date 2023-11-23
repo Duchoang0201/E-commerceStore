@@ -1,15 +1,10 @@
 import React from "react";
 
-import SpaceBottom from "@/components/Commons/SpaceBottom";
-import SpaceTop from "@/components/Commons/SpaceTop";
-
 export default function Custom404() {
   return (
-    <div className="container">
+    <div className="container pb-[140px]">
       {" "}
-      <SpaceTop />
-      <div> Home / 404 Error</div>
-      <SpaceTop />
+      <div className="py-[70px]"> Home / 404 Error</div>
       <div className="flex flex-row justify-center">
         <div className="flex flex-col text-center ">
           <div className="font-inter text-[110px] pb-10 ">404 Not Found</div>
@@ -26,8 +21,6 @@ export default function Custom404() {
           </div>
         </div>
       </div>
-      <SpaceBottom />
-      <SpaceBottom />
     </div>
   );
 }
