@@ -48,6 +48,7 @@ function Features() {
             <div className="relative w-auto h-auto mt-[89px] mx-[29px]">
               <div className="relative">
                 <Image
+                  loading="lazy"
                   className="!w-[511px] !h-auto"
                   src={Banner1}
                   alt="Banner1"
@@ -79,7 +80,13 @@ function Features() {
               <div className="relative ">
                 {" "}
                 <div className=" text-white-0 md:pl-[138px]">
-                  <Image src={Banner2} alt="Banner2" width={432} height={286} />
+                  <Image
+                    loading="lazy"
+                    src={Banner2}
+                    alt="Banner2"
+                    width={432}
+                    height={286}
+                  />
                 </div>
               </div>
               <div className="flex flex-col justify-between gap-y-4 max-w-[255px] ml-[24px] max-h-[122px] h-full w-auto absolute bottom-6  bg-opacity-50 text-white-0">

@@ -56,6 +56,7 @@ function Categories({ categories }) {
                 <Link href={`/products/category/${item.id}`}>
                   <div className="w-full min-h-full flex flex-col items-center justify-center">
                     <Image
+                      loading="lazy"
                       src={item.image}
                       alt={item.name}
                       width={56}

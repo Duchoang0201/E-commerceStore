@@ -37,7 +37,13 @@ function PhotoPreview() {
         </div>
         <div className="w-full pt-4 flex flex-row justify-center items-center">
           {photoOpen && (
-            <Image src={photoOpen} alt="Pick" width={400} height={400} />
+            <Image
+              loading="lazy"
+              src={photoOpen}
+              alt="Pick"
+              width={400}
+              height={400}
+            />
           )}
         </div>
       </div>

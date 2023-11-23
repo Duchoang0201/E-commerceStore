@@ -80,15 +80,23 @@ function Footer() {
                     href="/"
                     className="hover:underline flex flex-row justify-between max-w-[200px]"
                   >
-                    <Image width={80} height={80} src={QrCode} alt="qrcode" />
+                    <Image
+                      loading="lazy"
+                      width={80}
+                      height={80}
+                      src={QrCode}
+                      alt="qrcode"
+                    />
                     <div className="flex flex-col">
                       <Image
+                        loading="lazy"
                         width={110}
                         height={40}
                         src={Ggbanner}
                         alt="Ggbanner"
                       />
                       <Image
+                        loading="lazy"
                         width={110}
                         height={40}
                         src={AppStore}

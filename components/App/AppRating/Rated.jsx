@@ -16,14 +16,26 @@ export default function Rated({ data }) {
 
   const starArray = Array.from({ length: Math.floor(fixRated) }, (_, index) => (
     <div key={index}>
-      <Image src={StarYellow} width="auto" height="auto" alt="'StarYellow" />
+      <Image
+        loading="lazy"
+        src={StarYellow}
+        width="auto"
+        height="auto"
+        alt="'StarYellow"
+      />
     </div>
   ));
   const starLeft = Array.from(
     { length: 5 - Math.ceil(fixRated) },
     (_, index) => (
       <div key={index}>
-        <Image src={StarGray} width="auto" height="auto" alt="'StarGray" />
+        <Image
+          loading="lazy"
+          src={StarGray}
+          width="auto"
+          height="auto"
+          alt="'StarGray"
+        />
       </div>
     ),
   );
@@ -31,7 +43,13 @@ export default function Rated({ data }) {
     <div className="flex flex-row items-center">
       {starArray}
       {Math.ceil(fixRated) - fixRated === 0.5 && (
-        <Image src={HalfStar} width="auto" height="auto" alt="'HalfStar" />
+        <Image
+          loading="lazy"
+          src={HalfStar}
+          width="auto"
+          height="auto"
+          alt="'HalfStar"
+        />
       )}
       {starLeft}{" "}
     </div>
