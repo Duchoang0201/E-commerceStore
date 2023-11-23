@@ -55,11 +55,6 @@ function Categories({ categories }) {
               >
                 <Link href={`/products/category/${item.id}`}>
                   <div className="w-full min-h-full flex flex-col items-center justify-center">
-                    {/* <MonitorSmartphone
-                      strokeWidth={1}
-                      size={56}
-                      className="hover:text-white-0"
-                    /> */}
                     <Image
                       src={item.image}
                       alt={item.name}

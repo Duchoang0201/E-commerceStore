@@ -17,6 +17,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
     <div className="w-full relative ">
       <div className="group overflow-hidden relative w-auto rounded-md">
         <Image
+          loading="lazy"
           className=" aspect-[270/250] w-full"
           width={270}
           height={250}
@@ -84,10 +85,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         <div className=" flex flex-row items-center font-semibold">
           <Rated data={{ rate: 4 }} />
           <div>
-            <span className="px-2 opacity-50 text-[14px]">
-              {/* ({item.rating.count}) */}
-              100
-            </span>
+            <span className="px-2 opacity-50 text-[14px]">100</span>
           </div>
         </div>
       </div>
