@@ -91,10 +91,22 @@ function HerroBanner() {
               className="mySwiper !max-w-[892px] w-full !mr-0"
             >
               <SwiperSlide className=" ">
-                <Image src={Banner} alt="banner" width="auto" height="auto" />
+                <Image
+                  src={Banner}
+                  alt="banner"
+                  loading="eager"
+                  width="auto"
+                  height="auto"
+                />
               </SwiperSlide>
               <SwiperSlide className=" ">
-                <Image src={Banner} alt="banner" width="auto" height="auto" />
+                <Image
+                  src={Banner}
+                  alt="banner"
+                  loading="eager"
+                  width="auto"
+                  height="auto"
+                />
               </SwiperSlide>
 
               <style>
