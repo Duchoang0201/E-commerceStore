@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 "use client";
 
 import React, { useMemo } from "react";
@@ -9,13 +11,12 @@ import useCartStore from "@/hooks/useCartStore";
 
 function CartCom() {
   const { increase, decrease, carts, remove } = useCartStore();
-  const dep = carts.map((item) => item.quantity).join(",");
   const total = useMemo(() => {
     const result = carts.reduce((acc, item) => {
       return item.quantity * item.product.price + acc;
     }, 0);
     return result;
-  }, [carts, dep]);
+  }, [carts, carts.map((item) => item.quantity).join(",")]);
 
   return (
     <div className="mb-[140px]">

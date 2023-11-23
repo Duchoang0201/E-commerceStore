@@ -36,8 +36,6 @@ export async function getStaticProps() {
       },
     };
   } catch (error) {
-    console.error("Error fetching data:", error);
-
     return {
       props: {
         data: [],

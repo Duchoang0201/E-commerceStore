@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import useCartStore from "@/hooks/useCartStore";
-import useSearch from "@/hooks/useSearch";
 import useTrans from "@/hooks/useTrans";
 
 import Dropdown from "../AppLangue/Dropdown";
@@ -15,12 +14,9 @@ function Draw() {
   const { navigationList } = useTrans();
   const { carts } = useCartStore();
   const router = useRouter();
-  const { setSearch } = useSearch();
 
   const { handleSubmit, control } = useForm();
-  const onSubmit = (data) => {
-    setSearch(data.search);
-
+  const onSubmit = () => {
     router.push("/searchpage");
   };
   return (

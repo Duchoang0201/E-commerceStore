@@ -25,8 +25,6 @@ export async function getStaticPaths() {
 
     return { paths, fallback: false };
   } catch (error) {
-    console.error("Error fetching data for paths:", error);
-
     return { paths: [], fallback: false };
   }
 }

@@ -9,7 +9,6 @@ import PropTypes from "prop-types";
 import UserDropdown from "@/components/User/UserDropdown";
 
 import useCartStore from "@/hooks/useCartStore";
-import useSearch from "@/hooks/useSearch";
 import useWishList from "@/hooks/useWishList";
 
 function FunctionNavigation({ isUser }) {
@@ -30,7 +29,6 @@ function FunctionNavigation({ isUser }) {
       search: router.query.title,
     },
   });
-  const { setSearch } = useSearch();
 
   const onSubmit = (data) => {
     if (searchRef.current) {
@@ -38,12 +36,8 @@ function FunctionNavigation({ isUser }) {
     }
     searchRef.current = setTimeout(() => {
       if (data.search) {
-        setSearch(data.search);
-
         router.push(`/searchpage?title=${data.search}`);
       } else {
-        setSearch("");
-
         router.push(`/searchpage?title=${""}`);
       }
     }, [1000]);
