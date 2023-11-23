@@ -4,9 +4,8 @@ import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="en" suppressHydrationWarning>
       <Head>
-        <title>Exclusive E-commerce Shop</title>
         <meta
           name="description"
           content=" Where luxury meets exclusivity in a meticulously curated digital haven, offering rare treasures and bespoke experiences tailored to the most discerning tastes. Welcome to a realm of sophistication and personalized indulgence at your fingertips."

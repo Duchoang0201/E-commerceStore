@@ -12,6 +12,8 @@ import "@/styles/globals.css";
 export default function App({ Component, pageProps }) {
   return (
     <div className="font-poppins">
+      <title>Exclusive E-commerce Shop</title>
+
       <Header />
       <Component {...pageProps} />
       {/* FOOTER HAVE PROBLEM */}

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useCallback, useRef } from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
@@ -86,7 +88,7 @@ function CardBanner({ products }) {
               products.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className=" swiper-slide !max-w-[270px] !h-auto"
+                    className=" !max-w-[270px] !w-full !h-auto"
                     key={item.id}
                   >
                     <Link href={`/products/${item.id}`}>

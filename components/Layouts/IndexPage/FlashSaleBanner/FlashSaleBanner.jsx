@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 

@@ -14,11 +14,11 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
   const { addWishList } = useWishList();
   const { addCart } = useCartStore();
   return (
-    <div className="w-full relative ">
+    <div className="w-full relative  ">
       <div className="group overflow-hidden relative w-auto rounded-md">
         <Image
           loading="lazy"
-          className=" aspect-[270/250] w-full"
+          className=" aspect-[270/250] w-full swiper-lazy"
           width={270}
           height={250}
           src={item.images[0]}

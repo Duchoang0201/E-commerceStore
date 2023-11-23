@@ -15,43 +15,46 @@ export default function Rated({ data }) {
       : rated;
 
   const starArray = Array.from({ length: Math.floor(fixRated) }, (_, index) => (
-    <div key={index}>
-      <Image
-        loading="lazy"
-        src={StarYellow}
-        width="auto"
-        height="auto"
-        alt="'StarYellow"
-      />
-    </div>
+    <Image
+      key={index}
+      loading="lazy"
+      src={StarYellow}
+      width="auto"
+      height="auto"
+      alt="StarYellow"
+    />
   ));
+
   const starLeft = Array.from(
     { length: 5 - Math.ceil(fixRated) },
     (_, index) => (
-      <div key={index}>
-        <Image
-          loading="lazy"
-          src={StarGray}
-          width="auto"
-          height="auto"
-          alt="'StarGray"
-        />
-      </div>
+      <Image
+        key={index}
+        loading="lazy"
+        src={StarGray}
+        width="auto"
+        height="auto"
+        alt="StarGray"
+      />
     ),
   );
+
+  const halfStar =
+    Math.ceil(fixRated) - fixRated === 0.5 ? (
+      <Image
+        loading="lazy"
+        src={HalfStar}
+        width="auto"
+        height="auto"
+        alt="HalfStar"
+      />
+    ) : null;
+
   return (
     <div className="flex flex-row items-center">
       {starArray}
-      {Math.ceil(fixRated) - fixRated === 0.5 && (
-        <Image
-          loading="lazy"
-          src={HalfStar}
-          width="auto"
-          height="auto"
-          alt="'HalfStar"
-        />
-      )}
-      {starLeft}{" "}
+      {halfStar}
+      {starLeft}
     </div>
   );
 }
