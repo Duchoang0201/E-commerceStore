@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useCallback, useRef } from "react";
 // import { MonitorSmartphone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,13 +20,13 @@ function Categories({ categories }) {
   const { categoriesContent } = useTrans();
   const swiperRef = useRef();
 
-  const handleSlidePrev = () => {
+  const handleSlidePrev = useCallback(() => {
     swiperRef.current.slidePrev();
-  };
+  }, []);
 
-  const handleSlideNext = () => {
+  const handleSlideNext = useCallback(() => {
     swiperRef.current.slideNext();
-  };
+  }, []);
   return (
     <div className=" mt-[80px] pb-[70px] border-b border-Neutral-200">
       <TitleFunction

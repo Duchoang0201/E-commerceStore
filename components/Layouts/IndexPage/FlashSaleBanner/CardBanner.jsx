@@ -40,8 +40,6 @@ function CardBanner({ products }) {
         <div className="xxl:ml-[115px] ">
           <Swiper
             watchSlidesProgress
-            // slidesPerView="auto"
-            // spaceBetween={30}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import Image from "next/image";
 
 import "swiper/css/grid";
@@ -22,13 +22,13 @@ function Features() {
   const swiperRef = useRef();
   const { featureContent } = useTrans();
 
-  const handleSlidePrev = () => {
+  const handleSlidePrev = useCallback(() => {
     swiperRef.current.slidePrev();
-  };
+  }, []);
 
-  const handleSlideNext = () => {
+  const handleSlideNext = useCallback(() => {
     swiperRef.current.slideNext();
-  };
+  }, []);
   return (
     <div>
       <TitleFunction
