@@ -35,17 +35,9 @@ function CardBanner({ products }) {
         paddingY="16"
         buttonText="View All"
       />
-      {/* <div className="w-full relative">
-        <div
-          className="absolute inset-0 bg-black-0 bg-opacity-50 filter blur-md"
-          style={{ zIndex: -1 }}
-        />
-        <div className="container bg-Red-300  p-4 relative z-10">
-          <div className="content">Your content goes here.</div>
-        </div>
-      </div> */}
+
       <div className="container xxl:max-w-[1465px] mt-[40px] relative max-h-[350px]">
-        <div className="xxl:ml-[115px] ">
+        <div className="xxl:ml-[103px] ">
           <Swiper
             watchSlidesProgress
             // slidesPerView="auto"
@@ -108,49 +100,6 @@ function CardBanner({ products }) {
                 );
               })}
           </Swiper>
-
-          {/* // STYLE */}
-          <style>
-            {`
-
-    
-          /* Style for all swiper slides */
-          .swiper-slide {
-            opacity: 0.4  ;
-            filter: blur(2px);
-            z-index: -1;
-          }
-          .swiper-slide.swiper-slide-prev {
-            filter: none; /* Remove blur for visible slides */
-
-            opacity: 0.7 !important;
-          }
-          /* Style for slides that are currently visible */
-          .swiper-slide.swiper-slide-visible {
-            opacity: 1;
-            z-index: 10;
-            filter: none; /* Remove blur for visible slides */
-          }
-          
-          /* Style for slides that are fully visible in the viewport */
-          .swiper-slide.swiper-slide-visible-active {
-            opacity: 1 ;
-            filter: none; /* Remove blur for visible slides */
-          }
-          
-          /* Style for the currently active slide */
-       
-          
-          /* Style for slides that are both visible and fully visible */
-          .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible {
-            opacity: 1;
-            filter: none; /* Remove blur for visible slides */
-          }
-   
-    `}
-          </style>
-
-          {/* // */}
         </div>
       </div>
     </div>

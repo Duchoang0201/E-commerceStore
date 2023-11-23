@@ -120,27 +120,22 @@ function AboutCom() {
         pagination={{ clickable: true }}
         className="mySwiper"
         breakpoints={{
-          // 1280: {
-          //   slidesPerView: "auto",
-          //   spaceBetween: 30,
-          //   grid: { fill: "row", rows: 2 },
-          // },
-          // 830: {
-          //   slidesPerView: 4,
-          //   spaceBetween: 30,
-          //   grid: { fill: "row", rows: 2 },
-          // },
           480: {
+            watchSlidesProgress: true,
             slidesPerView: 3,
             spaceBetween: 30,
             grid: { fill: "row", rows: 2 },
           },
           400: {
+            watchSlidesProgress: true,
+
             slidesPerView: 2.5,
             spaceBetween: 30,
             grid: { fill: "row", rows: 2 },
           },
           320: {
+            watchSlidesProgress: true,
+
             slidesPerView: 2,
             spaceBetween: 30,
             grid: { fill: "row", rows: 2 },

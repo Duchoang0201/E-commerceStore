@@ -108,30 +108,6 @@ function HerroBanner() {
                   height="auto"
                 />
               </SwiperSlide>
-
-              <style>
-                {`
-      /* Style the border of Swiper pagination bullets inline */
-      .swiper-pagination-bullet {
-        width: 16px;
-        height: 16px;
-        margin: 0 5px;
-        cursor: pointer;
-        border-radius: 50%;
-        background-color: #999999; /* Change to your desired color for the active bullet */
-        opacity: 0.9
-
-      }
-
-      /* Change the color of the active (selected) bullet */
-      .swiper-pagination-bullet-active {
-        background-color: #DB4444; /* Change to your desired color for the active bullet */
-        border: 2px solid white; /* Set the border style */
-
-      },
-   
-    `}
-              </style>
             </Swiper>
           </div>
         </div>
