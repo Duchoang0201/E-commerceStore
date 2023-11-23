@@ -4,7 +4,7 @@ import useMessage from "@/hooks/useMessage";
 
 import Toast from "./Toast";
 
-function AleartApp() {
+function AppAlert() {
   const { messages } = useMessage();
 
   const [toasts, setToasts] = useState([]);
@@ -42,4 +42,4 @@ function AleartApp() {
   );
 }
 
-export default AleartApp;
+export default AppAlert;

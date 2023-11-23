@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import AleartApp from "@/components/App/AleartApp/AleartApp";
-// import AleartApp from "@/components/AleartApp/AleartApp";
+import AppAlert from "@/components/App/AppAlert/AppAlert";
 import MoveTop from "@/components/App/AppMoveTop/MoveTop";
 import PhotoPreview from "@/components/App/AppPhotoView/PhotoPreview";
 import Footer from "@/components/Layouts/Footer/Footer";
@@ -18,7 +17,7 @@ export default function App({ Component, pageProps }) {
       {/* FOOTER HAVE PROBLEM */}
       <Footer />
       <MoveTop />
-      <AleartApp />
+      <AppAlert />
       <PhotoPreview />
     </div>
   );
