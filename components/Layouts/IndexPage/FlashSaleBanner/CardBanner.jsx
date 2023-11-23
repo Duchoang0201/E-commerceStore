@@ -37,7 +37,7 @@ function CardBanner({ products }) {
       />
 
       <div className="container xxl:max-w-[1465px] mt-[40px] relative max-h-[350px]">
-        <div className="xxl:ml-[103px] ">
+        <div className="xxl:ml-[115px] ">
           <Swiper
             watchSlidesProgress
             // slidesPerView="auto"
@@ -52,10 +52,14 @@ function CardBanner({ products }) {
             pagination={{
               clickable: true,
             }}
-            className="mySwiper xxl:!overflow-visible "
+            className="mySwiper xxl:!overflow-visible  "
             breakpoints={{
               1280: {
                 slidesPerView: "auto",
+                spaceBetween: 30,
+              },
+              990: {
+                slidesPerView: 4,
                 spaceBetween: 30,
               },
               860: {

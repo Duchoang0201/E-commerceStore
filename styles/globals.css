@@ -43,11 +43,11 @@
 
 @keyframes fadeDirect {
   0% {
-    opacity: 0.6;
+    opacity: 1;
   }
-  50% {
+  /* 50% {
     opacity: 0.8;
-  }
+  } */
   100% {
     opacity: 0.4; /* Set the final opacity to 0.4 */
   }
@@ -61,9 +61,22 @@
 }
 
 /* Style for slides that are fully visible in the viewport */
-.swiper-slide.swiper-slide-visible-active {
+.swiper-slide.swiper-slide-active {
   opacity: 1 ;
   filter: none; /* Remove blur for visible slides */
+  animation: fadeDirectActive 1.5s forwards; /* Ensure the animation retains its end state */
+
+}
+@keyframes fadeDirectActive {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1; /* Set the final opacity to 0.4 */
+  }
 }
 
 /* Style for the currently active slide */
