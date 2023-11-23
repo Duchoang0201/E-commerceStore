@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp, Globe } from "lucide-react";
 // import Link from "next/link";
