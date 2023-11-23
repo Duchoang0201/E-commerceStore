@@ -3,7 +3,7 @@ import { Inbox, LogOut, Star, User, XCircle } from "lucide-react";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   navigationList: [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "" },
     { name: "Contact", href: "contact" },
     { name: "About", href: "about" },
     { name: "Sign up", href: "signup" },

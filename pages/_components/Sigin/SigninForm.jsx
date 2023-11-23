@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import * as yup from "yup";
 
-import { LoadingCom } from "@/components/Commons/LoadingCom";
+import { LoadingCom } from "@/components/App/AppLoading/LoadingCom";
 
 import useAuthStore from "@/hooks/useAuth";
 

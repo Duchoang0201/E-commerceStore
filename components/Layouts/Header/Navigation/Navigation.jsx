@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -14,7 +14,6 @@ import useWishList from "@/hooks/useWishList";
 import FunctionNavigation from "./FunctionNavigation";
 
 function Navigation() {
-  const [activeNav, setActiveNav] = useState("/");
   const { navigationList } = useTrans();
   const router = useRouter();
   const { user: isUser } = useAuthStore();
@@ -24,10 +23,6 @@ function Navigation() {
     useWishList.persist.rehydrate();
     useCartStore.persist.rehydrate();
   }, []);
-
-  useEffect(() => {
-    setActiveNav(router.pathname);
-  }, [router.pathname]);
 
   const isUserClass = `${
     router.pathname === "/signin" || router.pathname === "/signup"
@@ -59,14 +54,14 @@ function Navigation() {
                     return (
                       <li key={item.name} className=" py-2 whitespace-nowrap">
                         <Link
-                          onClick={() => {
-                            setActiveNav(
-                              `/${item.href === "/" ? "" : item.href}`,
-                            );
-                          }}
+                          // onClick={() => {
+                          //   setActiveNav(
+                          //     `/${item.href === "/" ? "" : item.href}`,
+                          //   );
+                          // }}
                           href={`/${item.href === "/" ? "" : item.href}`}
                           className={`${
-                            activeNav ===
+                            router.asPath ===
                               `/${item.href === "/" ? "" : item.href}` &&
                             "underline "
                           } decoration-Neutral-300 underline-offset-4 font-normal text-base hover:font-bold hover:duration-300`}

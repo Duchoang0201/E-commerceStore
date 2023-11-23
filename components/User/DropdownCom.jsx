@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp, Globe } from "lucide-react";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 
-import { LoadingCom } from "../Commons/LoadingCom";
+import { LoadingCom } from "../App/AppLoading/LoadingCom";
 
 function DropdowCom({ data, color }) {
   const [loading, setLoading] = useState(false);
