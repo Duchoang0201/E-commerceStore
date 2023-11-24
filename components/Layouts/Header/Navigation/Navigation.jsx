@@ -6,8 +6,6 @@ import { getCookie } from "cookies-next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Draw from "@/components/App/AppDraw/Draw";
-
 // import useAuthStore from "@/hooks/useAuth";
 // import useAuthStore from "@/hooks/useAuth";
 // import useCartStore from "@/hooks/useCartStore";
@@ -16,6 +14,7 @@ import useTrans from "@/hooks/useTrans";
 // import { axiosClient } from "@/libraries/axiosClient";
 // import useWishList from "@/hooks/useWishList";
 import FunctionNavigation from "./FunctionNavigation";
+import NavigateDropdown from "./NavigateDropdown";
 
 function Navigation() {
   const { navigationList } = useTrans();
@@ -87,7 +86,7 @@ function Navigation() {
               </ul>
               <FunctionNavigation isUser={isUser} />
               <div className="lg:hidden flex flex-row">
-                <Draw />
+                <NavigateDropdown isUser={isUser} />
               </div>
             </div>
           </div>

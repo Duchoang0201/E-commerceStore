@@ -12,11 +12,6 @@ import useCartStore from "@/hooks/useCartStore";
 import useWishList from "@/hooks/useWishList";
 
 function FunctionNavigation({ isUser }) {
-  // let user;
-  // if (getCookie("user")) {
-  //   user = JSON.parse(getCookie("user"));
-  // }
-
   const searchRef = useRef();
   const router = useRouter();
 

@@ -8,7 +8,7 @@ import useOpenPhoto from "@/hooks/useOpenPhoto";
 function PhotoPreview() {
   const { photoOpen, setOpenPhoto } = useOpenPhoto();
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex items-center ">
       {photoOpen && (
         <div
           aria-hidden="true"
@@ -18,11 +18,11 @@ function PhotoPreview() {
       )}
       <div
         aria-hidden={photoOpen ? "false" : "true"}
-        className={`fixed inset-0 bg-black-0 bg-opacity-5 backdrop-blur-0 my-[20px]  mx-auto w-fit transform duration-700  transition-transform z-50 ${
-          photoOpen ? "translate-x-0" : "-translate-x-[2000px]"
+        className={`fixed inset-0 px-10 bg-black-0 bg-opacity-5 backdrop-blur-0 mt-[20%] md:mt-[5%]   mx-auto w-fit transform duration-700  transition-transform z-50 ${
+          photoOpen ? "translate-x-0" : "-translate-x-[2000px] "
         }`}
       >
-        <div className="flex flex-row justify-between items-center w-full ">
+        <div className=" flex flex-row justify-between items-center ">
           <div
             title="HomePage"
             type="button"
@@ -39,14 +39,14 @@ function PhotoPreview() {
             {/* <X size={16} color="white" /> */}X
           </button>
         </div>
-        <div className="w-full pt-4 flex flex-row justify-center items-center">
+        <div className=" flex flex-row justify-center items-center">
           {photoOpen && (
             <Image
               loading="lazy"
               src={photoOpen}
               alt="Pick"
-              width={400}
-              height={400}
+              width={800}
+              height={800}
             />
           )}
         </div>

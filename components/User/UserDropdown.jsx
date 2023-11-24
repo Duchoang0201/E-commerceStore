@@ -34,7 +34,7 @@ function UserDropdown() {
 
   const { logout } = useAuthStore();
   return (
-    <div className="relative items-center  w-full">
+    <div className="relative items-center  w-fit">
       <button
         title="User dropdown"
         ref={dropdownRef}
@@ -51,7 +51,7 @@ function UserDropdown() {
       {open && (
         <div
           id="dropdown"
-          className={` z-10 origin-top-right absolute right-0  bg-white-0 bg-opacity-5 backdrop-blur-[75px] rounded-md shadow-lg`}
+          className={` z-10 origin-top-right absolute md:right-0 -right-52  bg-white-0 bg-opacity-5 backdrop-blur-[75px] rounded-md shadow-lg`}
           role="listbox"
         >
           <ul className="bg-black-0 bg-opacity-60 backdrop-blur-lg rounded-md pl-[20px] py-[10px] flex flex-col gap-[13px]">

@@ -92,7 +92,7 @@ function Categories({ categories }) {
                     className="object-contain aspect-[56/56]"
                   />
 
-                  <span className="py-4">{item.name}</span>
+                  <span className="py-4 truncate">{item.name}</span>
                 </Link>
               </SwiperSlide>
             );

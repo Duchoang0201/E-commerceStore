@@ -57,13 +57,13 @@ function CardBanner({ products }) {
               1280: {
                 slidesPerView: "auto",
                 spaceBetween: 30,
+                // slidesOffsetBefore: 135,
+                slidesOffsetAfter: 115,
               },
-              990: {
+
+              1010: {
                 slidesPerView: 4,
-                spaceBetween: 30,
-              },
-              860: {
-                slidesPerView: 4,
+
                 spaceBetween: 30,
               },
               480: {

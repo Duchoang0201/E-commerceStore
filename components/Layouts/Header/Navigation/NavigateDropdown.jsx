@@ -4,12 +4,13 @@ import { Heart, List, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import Dropdown from "@/components/App/AppLangue/Dropdown";
+import UserDropdown from "@/components/User/UserDropdown";
+
 import useCartStore from "@/hooks/useCartStore";
 import useTrans from "@/hooks/useTrans";
 
-import Dropdown from "../AppLangue/Dropdown";
-
-function Draw() {
+function NavigateDropdown() {
   const [open, setOpen] = useState(false);
   const { navigationList } = useTrans();
   const { carts } = useCartStore();
@@ -120,7 +121,7 @@ function Draw() {
                   </div>
                 </div>
               </Link>
-              123
+              <UserDropdown />
               <div className="md:hiden ">
                 <Dropdown
                   color="black"
@@ -155,4 +156,4 @@ function Draw() {
   );
 }
 
-export default Draw;
+export default NavigateDropdown;
