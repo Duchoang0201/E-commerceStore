@@ -10,8 +10,8 @@ import Draw from "@/components/App/AppDraw/Draw";
 // import useAuthStore from "@/hooks/useAuth";
 // import useCartStore from "@/hooks/useCartStore";
 import useTrans from "@/hooks/useTrans";
-// import useWishList from "@/hooks/useWishList";
 
+// import useWishList from "@/hooks/useWishList";
 import FunctionNavigation from "./FunctionNavigation";
 
 function Navigation() {
