@@ -38,10 +38,10 @@ function CardBanner({ products }) {
         buttonText="View All"
       />
 
-      <div className="container xxl:max-w-[1465px] mt-[40px] relative max-h-[350px]">
+      <div className="container xxl:max-w-[1465px] mt-[40px]  ">
         <div className="xxl:ml-[115px] ">
           <Swiper
-            watchSlidesProgress
+            watchSlidesProgress="true"
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
@@ -63,15 +63,11 @@ function CardBanner({ products }) {
                 spaceBetween: 30,
               },
               860: {
-                slidesPerView: 3.5,
-                spaceBetween: 30,
-              },
-              680: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 30,
               },
               480: {
-                slidesPerView: 2.5,
+                slidesPerView: 3.5,
                 spaceBetween: 30,
               },
               400: {
@@ -88,7 +84,7 @@ function CardBanner({ products }) {
               products.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className=" !max-w-[270px] !w-full !h-auto"
+                    className="!max-w-[270px] !max-h-[350px]"
                     key={item.id}
                   >
                     <Link href={`/products/${item.id}`}>

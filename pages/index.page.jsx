@@ -29,14 +29,13 @@ export async function getStaticProps() {
     { dataName: "categories", apiLink: "/categories?offset=10" },
     {
       dataName: "thisMonth",
-      apiLink: "/products/?price_min=100&price_max=1000&offset=10&limit=10",
+      apiLink: "/products/?price_min=100",
     },
     { dataName: "ourProducts", apiLink: "/products?offset=10" },
   ];
 
   const result = await getDataFunction(data);
   const props = result;
-
   // try {
   //   const [resProducts, resCategories, resThisMonth, resOurProducts] =
   //     await Promise.all([

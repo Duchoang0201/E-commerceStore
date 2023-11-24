@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { Grid } from "swiper/modules";
@@ -20,13 +20,13 @@ import "swiper/css";
 function OurProducts({ ourProducts }) {
   const { ourProductsContent } = useTrans();
   const swiperRef = useRef();
-  const handleSlidePrev = () => {
+  const handleSlidePrev = useCallback(() => {
     swiperRef.current.slidePrev();
-  };
+  }, []);
 
-  const handleSlideNext = () => {
+  const handleSlideNext = useCallback(() => {
     swiperRef.current.slideNext();
-  };
+  }, []);
   return (
     <div>
       <TitleFunction
