@@ -32,8 +32,8 @@ function ProductDetail({ product }) {
 
   const [amountProduct, setAmountProduct] = useState(0);
   return (
-    <div className="xl:flex xl:flex-row xl:justify-between flex flex-col gap-y-24 items-center">
-      <div className=" lg:flex lg:flex-row">
+    <div className="xl:flex xl:flex-row xl:justify-between xl:items-start flex flex-col gap-y-24 items-center">
+      <div className=" lg:flex lg:flex-row ">
         <Swiper
           watchSlidesProgress
           breakpoints={{
