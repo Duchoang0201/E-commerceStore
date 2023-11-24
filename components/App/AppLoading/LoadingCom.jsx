@@ -11,10 +11,7 @@ export function LoadingCom({ open, language }) {
         </div>
       )}
       {open && (
-        <div
-          aria-hidden="true"
-          className="fixed items-center flex inset-0 z-40 bg-black-0 bg-opacity-40 h-screen w-full"
-        >
+        <div className="fixed items-center flex inset-0 z-40 bg-black-0 bg-opacity-40 h-screen w-full">
           <div className="mx-auto ">
             <ReactLoading />
           </div>

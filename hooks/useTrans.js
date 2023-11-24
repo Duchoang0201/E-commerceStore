@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter } from "next/router";
 
 import en from "@/public/lang/en";

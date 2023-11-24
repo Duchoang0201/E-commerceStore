@@ -1,3 +1,5 @@
+"use client";
+
 export const getNextDay = (dayName) => {
   // The current day
   const date = new Date();

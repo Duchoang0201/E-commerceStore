@@ -83,7 +83,6 @@ function Categories({ categories }) {
                   href={`/products/category/${item.id}`}
                   className="w-full min-h-full flex flex-col items-center justify-center"
                 >
-                  {/* <div className="w-full min-h-full flex flex-col items-center justify-center"> */}
                   <Image
                     loading="lazy"
                     src={item.image}
@@ -94,7 +93,6 @@ function Categories({ categories }) {
                   />
 
                   <span className="py-4">{item.name}</span>
-                  {/* </div> */}
                 </Link>
               </SwiperSlide>
             );
