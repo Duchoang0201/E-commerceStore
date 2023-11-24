@@ -26,12 +26,16 @@
 /* Swiper style */
 
 .swiper-slide {
-  /* opacity: 0.4  ; */
+  opacity: 0.9  ;
   /* animation: fadeLeft 2s ease-out; */
-  filter: blur(2px);
+  filter: blur(4px);
   z-index: -1;
 }
+/* .swiper-slide:nth-of-type(5){
+  opacity: 1 !important;
+  filter: none;
 
+} */
 .swiper-slide.swiper-slide-prev {
   filter: none; /* Remove blur for visible slides */
   animation: fadeDirect 1.2s forwards; /* Ensure the animation retains its end state */
