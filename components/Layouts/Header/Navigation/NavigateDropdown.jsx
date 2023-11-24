@@ -9,12 +9,14 @@ import UserDropdown from "@/components/User/UserDropdown";
 
 import useCartStore from "@/hooks/useCartStore";
 import useTrans from "@/hooks/useTrans";
+import useWishList from "@/hooks/useWishList";
 
 function NavigateDropdown() {
   const [open, setOpen] = useState(false);
   const { navigationList } = useTrans();
   const { carts } = useCartStore();
   const router = useRouter();
+  const { wishList: loveList } = useWishList();
 
   const { handleSubmit, control } = useForm();
   const onSubmit = () => {
@@ -93,33 +95,40 @@ function NavigateDropdown() {
                 href="/wishlist"
                 className=" group relative inline-flex justify-center "
               >
-                <Heart
-                  className="relative"
-                  strokeWidth={1.25}
-                  color="black"
-                  size={24}
-                />
-                <div className="absolute inline-flex items-start justify-end w-12 h-12 text-xs -top-2 -right-2 ">
-                  <div className="bg-Secondary-2 w-6 h-6 rounded-full text-white-0 flex justify-center">
-                    {carts.length}
+                {loveList.length > 0 ? (
+                  <div className="flex flex-row justify-center items-center w-[32px] h-[32px]  ">
+                    <Heart
+                      className="relative"
+                      strokeWidth={1.5}
+                      width={24}
+                      height={24}
+                    />
+                    <div className="absolute inline-flex items-start justify-end text-xs bottom-1/2 right-0">
+                      <div className="bg-Secondary-2 w-[16px] h-[16px] rounded-full text-[12px] text-white-0 flex justify-center">
+                        {loveList.length}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <Heart className="relative" strokeWidth={1.5} size={28} />
+                )}
               </Link>
               <Link
                 href="/cart"
                 className=" group relative inline-flex justify-center "
               >
-                <ShoppingCart
-                  className="relative"
-                  strokeWidth={1.25}
-                  color="black"
-                  size={24}
-                />
-                <div className="absolute inline-flex items-start justify-end w-12 h-12 text-xs -top-2 -right-2 ">
-                  <div className="bg-Secondary-2 w-6 h-6 rounded-full text-white-0 flex justify-center">
-                    {carts.length}
+                {carts && carts.length > 0 ? (
+                  <div className="flex flex-col items-start justify-end w-[32px] h-[32px]  ">
+                    <ShoppingCart strokeWidth={1.5} size={24} />
+                    <div className="absolute inline-flex items-start justify-end text-xs bottom-1/2 left-1/2">
+                      <div className="bg-Secondary-2 w-[16px] h-[16px] rounded-full text-[12px] text-white-0 flex justify-center">
+                        {carts.length}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <ShoppingCart strokeWidth={1.5} size={28} />
+                )}
               </Link>
               <UserDropdown />
               <div className="md:hiden ">
