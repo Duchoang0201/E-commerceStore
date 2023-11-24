@@ -35,7 +35,7 @@ function NavigateDropdown() {
       {open && (
         <div
           aria-hidden="true"
-          className="fixed inset-0 z-40 bg-opacity-80 bg-black-0   h-screen w-full"
+          className="fixed inset-0 z-40 bg-opacity-80 bg-black-0 backdrop-blur-sm  h-screen w-full"
           onClick={() => setOpen(false)}
         >
           12
