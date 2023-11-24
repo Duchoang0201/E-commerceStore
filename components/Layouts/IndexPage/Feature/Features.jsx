@@ -52,10 +52,8 @@ function Features() {
                   className="!w-[511px] !h-auto"
                   src={Banner1}
                   alt="Banner1"
-                  layout="responsive"
                   width={511}
                   height={511}
-                  objectFit="contain"
                 />
               </div>
               <div className="flex flex-col justify-between gap-y-4 max-w-[242px] ml-[3px] max-h-[122px] h-full w-auto absolute bottom-8  bg-opacity-50 text-white-0">

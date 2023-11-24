@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { ChevronLeft, List, X } from "lucide-react";
 import Link from "next/link";
@@ -43,13 +45,13 @@ function Draw({ open, setOpen }) {
         // style={{ right: 0, left: "auto" }}
       >
         <div className="flex flex-row justify-between items-center max-w-[200px]">
-          <div
+          <span
             title="Home page"
             type="button"
             className="text-xs font-bold text-white bg-red-500 border-white p-2 rounded"
           >
             Exclusive
-          </div>
+          </span>
 
           <button
             title="Close"
