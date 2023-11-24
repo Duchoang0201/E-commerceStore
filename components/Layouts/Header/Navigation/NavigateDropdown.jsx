@@ -133,23 +133,26 @@ function NavigateDropdown() {
               </div>
             </div>
           </div>
-          <div>
-            <ul className="flex flex-col w-full  py-2 h-auto">
-              {navigationList.map((item) => {
-                return (
-                  <li key={`${item.name}`} className="w-auto py-2">
-                    <Link
-                      href={`/${item.href}`}
-                      className=" block py-2  pr-4 text-black rounded hover:bg-TEXT-1 hover:text-white-0   text-center"
-                      aria-current="page"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <ul className="flex flex-col w-full  py-2 h-auto">
+            {navigationList.map((item) => {
+              return (
+                <li key={`${item.name}`} className="w-auto py-2">
+                  <Link
+                    onClick={() => {
+                      setOpen(false);
+                    }}
+                    href={`/${item.href}`}
+                    className={`${
+                      router.asPath === `/${item.href}` && "bg-TEXT-1"
+                    } block py-2  pr-4 text-black rounded hover:bg-TEXT-1 hover:text-white-0   text-center`}
+                    aria-current="page"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </div>

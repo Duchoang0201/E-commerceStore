@@ -25,7 +25,7 @@ function ShowTime({ days, hours, minutes, seconds }) {
                 </span>
               </div>
               {!isLastItem && (
-                <span className="text-[18px] font-bold text-Button-2 mt-8 sm:mt-6 md:mt-7  pl-3 ssm:pl-[13px]">
+                <span className="text-[18px] font-bold text-Button-2 mt-6 sm:mt-6 md:mt-7  pl-3 ssm:pl-[13px] ssm:pr-[7px]">
                   :
                 </span>
               )}

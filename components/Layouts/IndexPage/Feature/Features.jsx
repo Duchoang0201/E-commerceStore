@@ -43,7 +43,7 @@ function Features() {
       />
 
       <div className="container  mt-[65px] ">
-        <div className="flex flex-col gap-y-2 sm:flex sm:flex-row sm:justify-between sm: ">
+        <div className="flex flex-col gap-y-2 sm:flex sm:flex-row sm:justify-between sm:gap-2 ">
           <div className="max-w-[570px]  bg-black-0 relative">
             <div className="relative w-auto h-auto mt-[89px] mx-[29px]">
               <div className="relative">
@@ -102,7 +102,7 @@ function Features() {
               </div>
             </div>
 
-            <div className=" max-h-[284px] flex flex-row justify-between">
+            <div className=" md:max-h-[284px] md:flex md:flex-row md:justify-between flex flex-row gap-2 ">
               <div className="bg-black-0 relative ">
                 {" "}
                 <div className="w-full h-auto text-white-0 px-10 pt-[31px] pb-8 relative">
@@ -126,15 +126,15 @@ function Features() {
                   <Image src={Banner4} alt="Banner4" width={190} height={221} />
                 </div>
                 <div className="flex flex-col justify-between gap-y-2 max-w-[191px] ml-[24px]  absolute bottom-16  bg-opacity-50 text-white-0">
-                  <div className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
+                  <span className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
                     Perfume
-                  </div>
-                  <div className="text-[14px] font-poppins">
+                  </span>
+                  <span className="text-[14px] font-poppins">
                     GUCCI INTENSE OUD EDP
-                  </div>
-                  <div className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
+                  </span>
+                  <span className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
                     Shop Now
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>

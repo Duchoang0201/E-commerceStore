@@ -125,13 +125,13 @@
 :root {
   margin-top: 0;
 
-  font-size: 8px;
+  font-size: 12px;
 
 
-  @media (min-width: theme("screens.ssm")) {
+  /* @media (min-width: theme("screens.ssm")) {
     font-size: 10px;
 
-  };
+  }; */
 
   @media (min-width: theme("screens.sm")) {
     font-size: 12px;
@@ -146,11 +146,11 @@
     font-size: 16px;
   }
 
-  @media (min-width: theme("screens.xl")) {
+  /* @media (min-width: theme("screens.xl")) {
     font-size: 16px;
   }
 
   @media (min-width: theme("screens.2xl")) {
     font-size: 16px;
-  }
+  } */
 }
