@@ -25,7 +25,7 @@ function Navigation() {
   //   isUser = JSON.parse(getCookie("user"));
   // }
   useEffect(() => {
-    if (!isUser && !isUser.name) {
+    if (!isUser && !isUser?.name) {
       axiosClient
         .get(`/auth/profile`)
         .then(({ data: user }) => {
@@ -33,7 +33,7 @@ function Navigation() {
         })
         .catch(() => {});
     }
-  }, [getUser, isUser, isUser.name]);
+  }, [getUser, isUser]);
 
   const isUserClass = `${
     router.pathname === "/signin" || router.pathname === "/signup"

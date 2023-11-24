@@ -74,7 +74,6 @@ export default async function middleware(req) {
       return NextResponse.rewrite(new URL("/", req.url));
     }
   } else {
-    console.log(`🚀🚀🚀!..pathname`, pathname);
     try {
       if (token) {
         const response = await fetch(
