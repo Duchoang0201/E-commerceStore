@@ -75,7 +75,7 @@ const useCartStore = create(
       {
         name: "cartStorage",
         storage: createJSONStorage(() => localStorage),
-        skipHydration: true,
+        // skipHydration: true,
       },
     ),
   ),

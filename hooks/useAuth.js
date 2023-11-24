@@ -98,7 +98,6 @@ const useAuthStore = create(
       {
         name: "authStorage",
         storage: createJSONStorage(() => localStorage),
-        skipHydration: true,
       },
     ),
   ),
