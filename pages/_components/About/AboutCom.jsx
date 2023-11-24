@@ -91,12 +91,12 @@ function AboutCom() {
           <Image src={Banner} alt="banner" width={837} height={609} />
         </div>
       </div>
-      <div className="my-[140px] flex flex-col items-center gap-y-6 xl:flex xl:flex-row justify-between w-full ">
+      <div className="my-[140px] flex flex-col items-center gap-y-6 sm:flex sm:flex-row sm:gap-[30px] justify-between w-full ">
         {arrList.map((item) => {
           return (
             <div
               key={item.title}
-              className=" border rounded border-opacity-10 border-black-0 max-w-[270px] w-full max-h-[230px] "
+              className=" border rounded border-opacity-10 border-black-0 max-w-[270px] w-full max-h-[230px] h-auto "
             >
               <div className=" justify-center items-center flex flex-col gap-y-6  my-[30px]">
                 <div className="flex flex-row justify-center">
@@ -108,7 +108,7 @@ function AboutCom() {
                   <p className="font-inter text-[32px] font-bold">
                     {item.amount}{" "}
                   </p>
-                  <p>{item.title}</p>
+                  <p className="text-center">{item.title}</p>
                 </div>
               </div>
             </div>
@@ -118,27 +118,24 @@ function AboutCom() {
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}
-        className="mySwiper"
+        className="!w-full !mx-0"
         breakpoints={{
           480: {
             watchSlidesProgress: true,
             slidesPerView: 3,
             spaceBetween: 30,
-            grid: { fill: "row", rows: 2 },
           },
           400: {
             watchSlidesProgress: true,
 
             slidesPerView: 2.5,
             spaceBetween: 30,
-            grid: { fill: "row", rows: 2 },
           },
           320: {
             watchSlidesProgress: true,
 
             slidesPerView: 2,
             spaceBetween: 30,
-            grid: { fill: "row", rows: 2 },
           },
         }}
       >
@@ -146,7 +143,7 @@ function AboutCom() {
           .fill(null)
           .map((_, index) => {
             return (
-              <SwiperSlide className="!max-w-[370px] w-full" key={index + 1}>
+              <SwiperSlide className="max-w-[370px] " key={index + 1}>
                 <div className=" flex flex-col ">
                   <div className="max-w-[370px] w-full h-auto">
                     <Image
