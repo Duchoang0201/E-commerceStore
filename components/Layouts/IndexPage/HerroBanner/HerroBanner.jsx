@@ -28,7 +28,7 @@ function HerroBanner() {
   };
   return (
     <div>
-      <div className="container relative flex flex-row">
+      <div className="container relative flex flex-row justify-center">
         <div className="hidden xl:flex xl:w-full  border-r border-Neutral-200 pt-[32px] max-w-[233px] w-full">
           <ul className="w-full">
             {menuList.map((item, index) => {
