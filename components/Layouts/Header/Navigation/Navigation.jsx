@@ -1,16 +1,16 @@
-// "use client";
+"use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { getCookie } from "cookies-next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Draw from "@/components/App/AppDraw/Draw";
 
-import useAuthStore from "@/hooks/useAuth";
-import useCartStore from "@/hooks/useCartStore";
+// import useAuthStore from "@/hooks/useAuth";
+// import useCartStore from "@/hooks/useCartStore";
 import useTrans from "@/hooks/useTrans";
-import useWishList from "@/hooks/useWishList";
+// import useWishList from "@/hooks/useWishList";
 
 import FunctionNavigation from "./FunctionNavigation";
 
@@ -22,11 +22,11 @@ function Navigation() {
   if (getCookie("user")) {
     isUser = JSON.parse(getCookie("user"));
   }
-  useEffect(() => {
-    useAuthStore.persist.rehydrate();
-    useWishList.persist.rehydrate();
-    useCartStore.persist.rehydrate();
-  }, []);
+  // useEffect(() => {
+  //   useAuthStore.persist.rehydrate();
+  //   useWishList.persist.rehydrate();
+  //   useCartStore.persist.rehydrate();
+  // }, []);
 
   const isUserClass = `${
     router.pathname === "/signin" || router.pathname === "/signup"

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { AlertTriangle, CheckCircle, Info, XOctagon } from "lucide-react";
 import PropTypes from "prop-types";
 
@@ -42,7 +42,7 @@ function Toast({ item, closeToast }) {
   );
 }
 
-export default Toast;
+export default memo(Toast);
 
 Toast.propTypes = {
   item: PropTypes.instanceOf(Object).isRequired,
