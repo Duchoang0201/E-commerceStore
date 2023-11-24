@@ -35,7 +35,7 @@ function NavigateDropdown() {
       {open && (
         <div
           aria-hidden="true"
-          className="fixed inset-0 z-40 bg-black-0 bg-opacity-90 h-screen w-full"
+          className="fixed inset-0 z-40 bg-opacity-80 bg-black-0   h-screen w-full"
           onClick={() => setOpen(false)}
         >
           12
@@ -43,7 +43,7 @@ function NavigateDropdown() {
       )}
       <div
         aria-hidden={open ? "false" : "true"}
-        className={`fixed inset-0 bg-white-0 bg-opacity-90 backdrop-blur-0 left-0 top-0 h-screen max-w-fit  transform duration-700  transition-transform z-50 ${
+        className={`fixed inset-0 bg-white-0 backdrop-blur-0 left-0 top-0 h-screen max-w-fit  transform duration-700  transition-transform z-50 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >

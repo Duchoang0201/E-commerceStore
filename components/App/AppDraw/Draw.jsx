@@ -120,7 +120,6 @@ function Draw() {
                   </div>
                 </div>
               </Link>
-              123
               <div className="md:hiden ">
                 <Dropdown
                   color="black"
