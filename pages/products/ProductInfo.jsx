@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Bus, Heart, Minus, Plus, Repeat } from "lucide-react";
 import Link from "next/link";
 import PropTypes from "prop-types";
@@ -8,8 +10,16 @@ import AppButton from "@/components/App/AppButton/AppButton";
 import useWishList from "@/hooks/useWishList";
 
 function ProductInfo({ product, amountProduct, setAmountProduct }) {
+  const [pickSize, setPickSize] = useState("XS");
   const { addWishList } = useWishList();
 
+  const arrColors = [
+    { id: 1, color: "Blue-300" },
+    { id: 2, color: "Secondary-2" },
+    { id: 3, color: "Green-400" },
+  ];
+  const [pickColor, setPickColor] = useState(`Blue-300`);
+  const arraySize = ["XS", "S", "M", "L", "XL"];
   return (
     <div>
       {" "}
@@ -22,29 +32,63 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
         <div className="flex flex-row gap-8 items-center">
           <span className="text-[20px] tracking-[0.6px]">Colours:</span>
           <div className="flex flex-row gap-2">
-            <div className="w-[20px] h-[20px] rounded-full bg-success-800" />
-            <div className="w-[20px] h-[20px] rounded-full bg-Purple-600" />
+            {arrColors.map((circle) => (
+              <div
+                key={circle.id}
+                className={`${
+                  circle.color === pickColor
+                    ? "border-black-0 border-2 w-[20px] h-[20px]"
+                    : `bg-${circle.color} `
+                }  flex items-center justify-center rounded-full  w-[20px] h-[20px] relative `}
+              >
+                <div
+                  className={`w-full h-full rounded-full  ${
+                    pickColor === circle.color
+                      ? `border-white-0 bg-${circle.color} border-2`
+                      : `border-white-0 `
+                  } absolute `}
+                />
+                <input
+                  name="color"
+                  type="radio"
+                  id={`${circle.color}`}
+                  value={circle.color}
+                  onChange={() => setPickColor(circle.color)}
+                  className="w-full h-full opacity-0 cursor-pointer"
+                />
+              </div>
+            ))}
           </div>
         </div>
         <div className="flex flex-row gap-8 items-center">
           <span className="text-[20px] tracking-[0.6px]">Size:</span>
           <div className="flex flex-row gap-2">
-            <div className="w-[32px] h-[32px] rounded-sm border flex justify-center items-center">
-              <span>XS</span>
-            </div>
-            <div className="w-[32px] h-[32px] rounded-sm border flex justify-center items-center">
-              <span>S</span>
-            </div>
-            <div className="w-[32px] h-[32px] rounded-sm border flex justify-center items-center">
-              <span>M</span>
-            </div>
-            <div className="w-[32px] h-[32px] rounded-sm border flex justify-center items-center">
-              <span>L</span>
-            </div>
-            <div className="w-[32px] h-[32px] rounded-sm border flex justify-center items-center">
-              <span>XL</span>
-            </div>
-          </div>
+            {arraySize.map((item) => {
+              return (
+                <label
+                  key={item}
+                  htmlFor={`size${item}`}
+                  className={`${
+                    pickSize === item
+                      ? "bg-Secondary-2 text-white-0 border-none"
+                      : "border-black-0/50"
+                  } w-[32px] h-[32px] rounded-md border flex justify-center items-center cursor-pointer  font-poppins`}
+                >
+                  <input
+                    onChange={() => {
+                      setPickSize(item);
+                    }}
+                    className="hidden"
+                    type="radio"
+                    id={`size${item}`}
+                    name="size"
+                    value={item}
+                  />
+                  <span className="text-[14px] leading-[14px]">{item}</span>
+                </label>
+              );
+            })}
+          </div>{" "}
         </div>
         <div className="flex flex-row max-h-[44px] justify-between">
           <div className="flex flex-row border border-opacity-50 border-black-0 justify-between max-w-[160px] w-full items-center rounded-md">

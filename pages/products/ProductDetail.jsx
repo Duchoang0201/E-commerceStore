@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
@@ -33,6 +35,7 @@ function ProductDetail({ product }) {
     <div className="xl:flex xl:flex-row xl:justify-between flex flex-col gap-y-24 items-center">
       <div className=" lg:flex lg:flex-row">
         <Swiper
+          watchSlidesProgress
           breakpoints={{
             1080: {
               slidesPerView: 4,
@@ -80,7 +83,7 @@ function ProductDetail({ product }) {
             width={300}
             height={300}
             src={pickImage.image}
-            alt={pickImage.title}
+            alt={pickImage?.title}
             className="object-contain mx-auto"
           />
           <div className="absolute mx-auto top-2">{pickImage.index + 1}</div>
