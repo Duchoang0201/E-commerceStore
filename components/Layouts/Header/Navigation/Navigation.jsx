@@ -63,10 +63,10 @@ function Navigation() {
                           //     `/${item.href === "/" ? "" : item.href}`,
                           //   );
                           // }}
-                          href={`/${item.href === "/" ? "" : item.href}`}
+                          href={`/${item.href === "" ? "" : item.href}`}
                           className={`${
                             router.asPath ===
-                              `/${item.href === "/" ? "" : item.href}` &&
+                              `/${item.href === "" ? "" : item.href}` &&
                             "underline "
                           } decoration-Neutral-300 underline-offset-4 font-normal text-base hover:font-bold hover:duration-300`}
                           aria-current="page"
@@ -77,7 +77,7 @@ function Navigation() {
                     );
                   })}
               </ul>
-              <FunctionNavigation isUser={isUser || {}} />
+              <FunctionNavigation isUser={isUser} />
               <div className="lg:hidden flex flex-row">
                 <Draw />
               </div>

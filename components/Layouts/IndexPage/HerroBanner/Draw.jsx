@@ -19,6 +19,7 @@ function Draw({ open, setOpen }) {
   return (
     <div className="relative flex items-center">
       <button
+        title="Menu list"
         className="bg-white"
         onClick={() => {
           setOpen(!open);
@@ -43,6 +44,7 @@ function Draw({ open, setOpen }) {
       >
         <div className="flex flex-row justify-between items-center max-w-[200px]">
           <div
+            title="Home page"
             type="button"
             className="text-xs font-bold text-white bg-red-500 border-white p-2 rounded"
           >
@@ -50,6 +52,7 @@ function Draw({ open, setOpen }) {
           </div>
 
           <button
+            title="Close"
             onClick={() => setOpen(false)}
             type="button"
             className="w-4 h-4 text-white bg-Red-500 rounded-full"

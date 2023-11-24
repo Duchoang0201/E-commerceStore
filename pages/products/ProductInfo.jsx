@@ -49,6 +49,7 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
         <div className="flex flex-row max-h-[44px] justify-between">
           <div className="flex flex-row border border-opacity-50 border-black-0 justify-between max-w-[160px] w-full items-center rounded-md">
             <button
+              title="Minus"
               onClick={() => {
                 if (amountProduct <= 0) {
                   setAmountProduct(0);
@@ -63,6 +64,7 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
             </button>
             <span>{amountProduct}</span>
             <button
+              title="Plus"
               type="button"
               onClick={() => {
                 setAmountProduct((prev) => prev + 1);
@@ -74,6 +76,7 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
           </div>
           <AppButton buttonText="Buy Now" paddingY="10" />
           <button
+            title="Add Wishlist"
             type="button"
             onClick={() => {
               addWishList(product);

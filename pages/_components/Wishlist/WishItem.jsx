@@ -27,6 +27,7 @@ function WishItem({ item, isEye, isTrash }) {
         />
         <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center bottom-0   ">
           <button
+            title="Add to Cart"
             type="submit"
             onClick={(e) => {
               e.preventDefault();
@@ -40,6 +41,7 @@ function WishItem({ item, isEye, isTrash }) {
 
         {isEye.isActive && (
           <button
+            title="Preview"
             onClick={(e) => {
               e.preventDefault();
 
@@ -53,6 +55,7 @@ function WishItem({ item, isEye, isTrash }) {
         )}
         {isTrash.isActive && (
           <button
+            title="Delete"
             onClick={(e) => {
               e.preventDefault();
               removeWishList(item);

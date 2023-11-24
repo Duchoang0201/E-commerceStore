@@ -22,6 +22,7 @@ function Draw() {
   return (
     <div className="relative flex items-center">
       <button
+        title="openDraw"
         className=""
         onClick={() => {
           setOpen(!open);
@@ -47,12 +48,14 @@ function Draw() {
       >
         <div className="flex flex-row justify-between items-center w-[244px] ">
           <div
+            title="homepage"
             type="button"
             className=" text-xl font-bold text-white bg-red-500 border-white  "
           >
             Exclusive
           </div>
           <button
+            title="Exit"
             onClick={() => setOpen(false)}
             type="button"
             className=" w-4 h-4 text-white-0 text-center bg-Red-500  rounded-full "
@@ -78,7 +81,7 @@ function Draw() {
                 )}
               />
 
-              <button type="submit">
+              <button title="Search" type="submit">
                 <Search strokeWidth={1.25} />
               </button>
             </form>

@@ -36,6 +36,7 @@ function UserDropdown() {
   return (
     <div className="relative items-center  w-full">
       <button
+        title="User dropdown"
         ref={dropdownRef}
         onClick={handleOpen}
         type="button"

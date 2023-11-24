@@ -22,6 +22,7 @@ function StarRating({ rating, onRatingChange }) {
       {arr.map((star) => (
         <div key={star}>
           <button
+            title="rating"
             type="button"
             className={`star ${
               star <= (hoveredRating || rating)

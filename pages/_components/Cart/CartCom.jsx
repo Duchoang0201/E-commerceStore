@@ -36,6 +36,7 @@ function CartCom() {
               >
                 <div className=" flex flex-col justify-center items-center xl:flex xl:flex-row xl:items-center xl:w-[347px] xl:pl-10 gap-x-4">
                   <button
+                    title="Remove product"
                     type="button"
                     onClick={() => {
                       remove(item.product);
@@ -68,6 +69,7 @@ function CartCom() {
                       <div>{item.quantity}</div>
                       <div className="flex flex-col items-center">
                         <button
+                          title="Plus"
                           className="mouseup"
                           type="button"
                           onClick={() => {
@@ -78,6 +80,7 @@ function CartCom() {
                           <ChevronUp size={16} />
                         </button>
                         <button
+                          title="Minus"
                           type="button"
                           onClick={() => {
                             decrease(item.product);
@@ -117,6 +120,7 @@ function CartCom() {
                 required
               />
               <button
+                title="Apply Coupun"
                 type="submit"
                 className="text-white-0 bg-Secondary-2 font-medium rounded-md border px-12 py-4"
               >
@@ -143,10 +147,11 @@ function CartCom() {
 
             <div className="flex justify-center">
               <button
+                title="Check out"
                 type="submit"
                 className="text-white-0 bg-Secondary-2 font-medium rounded-md border px-12 py-4"
               >
-                Procees to checkout
+                Process to checkout
               </button>
             </div>
           </div>

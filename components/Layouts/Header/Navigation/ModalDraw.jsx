@@ -33,6 +33,7 @@ function ModalDraw() {
                   required
                 />
                 <button
+                  title="Search"
                   type="submit"
                   className="text-black absolute right-2.5 bottom-2.5  focus:ring-4 focus:outline-none  font-medium rounded-lg "
                 >

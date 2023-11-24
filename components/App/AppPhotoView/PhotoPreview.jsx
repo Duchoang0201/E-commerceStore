@@ -24,12 +24,14 @@ function PhotoPreview() {
       >
         <div className="flex flex-row justify-between items-center w-full ">
           <div
+            title="HomePage"
             type="button"
             className=" text-xs font-bold text-white-0 bg-Red-500 border-white-0  "
           >
             Exclusive
           </div>
           <button
+            title="Exit"
             onClick={() => setOpenPhoto(false)}
             type="button"
             className=" w-4 h-4 text-white-0 bg-Red-500  rounded-full  flex flex-row items-center justify-center  "

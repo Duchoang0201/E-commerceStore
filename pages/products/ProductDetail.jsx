@@ -52,6 +52,7 @@ function ProductDetail({ product }) {
                 key={item}
               >
                 <button
+                  title="Pick image"
                   className="w-full h-auto"
                   type="button"
                   onClick={() => {

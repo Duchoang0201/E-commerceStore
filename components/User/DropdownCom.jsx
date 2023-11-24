@@ -25,6 +25,7 @@ function DropdowCom({ data, color }) {
   return (
     <div className="relative inline-block text-end text-white-0 ">
       <button
+        title="dropdown"
         type="submit"
         onClick={handleOpen}
         className={` text-white-0  text-sm  py-2.5 text-center inline-flex items-center`}

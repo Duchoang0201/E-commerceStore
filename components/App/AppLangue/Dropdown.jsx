@@ -28,6 +28,7 @@ function Dropdown({ data, color }) {
   return (
     <div className="relative inline-block text-end text-white-0 ">
       <button
+        title="Dropdown"
         type="submit"
         onClick={handleOpen}
         className={` text-white-0  text-sm  py-2.5 text-center inline-flex items-center`}
@@ -43,7 +44,6 @@ function Dropdown({ data, color }) {
       </button>
       {open && (
         <div
-          id="dropdown"
           className={`${
             color !== "white" ? "bg-white-0" : "bg-black-0"
           } z-10 origin-top-right absolute right-0 mt-2 w-44 bg-black-0  rounded-lg shadow-lg`}
@@ -58,6 +58,7 @@ function Dropdown({ data, color }) {
             {data?.map((item) => (
               <li key={item.name} className="">
                 <button
+                  title={item.name}
                   type="submit"
                   onClick={() => {
                     changeLang(item.href);

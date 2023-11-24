@@ -26,6 +26,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         />
         <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <button
+            title="Add to Cart"
             type="submit"
             onClick={(e) => {
               e.preventDefault();
@@ -38,6 +39,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         </div>
         {isHeart.isActive && (
           <button
+            title="Add wish list"
             type="button"
             onClick={(e) => {
               e.preventDefault();
@@ -51,6 +53,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         )}
         {isEye.isActive && (
           <button
+            title="Preview"
             onClick={(e) => {
               e.preventDefault();
               setOpenPhoto(item.images[0]);
@@ -62,7 +65,10 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           </button>
         )}
         {isDiscount.isActive && (
-          <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900">
+          <div
+            title="Discount"
+            className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900"
+          >
             <div className="text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 bg-Secondary-2 rounded-sm text-white-0">
               -{isDiscount.value}%
             </div>

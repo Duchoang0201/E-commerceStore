@@ -6,6 +6,7 @@ function AppButton({ paddingY, buttonText }) {
   const router = useRouter();
   return (
     <button
+      title={buttonText}
       type="button"
       onClick={() => {
         router.push("/searchpage");

@@ -159,6 +159,7 @@ function Checkout() {
 
           <div className="w-full  rounded-md h-14 text-white-0 flex justify-between items-center mb-4">
             <button
+              title="login"
               type="submit"
               className="px-12 py-4 bg-Secondary-2 text-sm rounded-sm"
             >
@@ -250,6 +251,7 @@ function Checkout() {
                   required
                 />
                 <button
+                  title="Apply Coupon"
                   type="submit"
                   className="text-white-0 bg-Secondary-2 font-medium rounded-md border px-12 py-4"
                 >
@@ -261,6 +263,7 @@ function Checkout() {
           <div>
             {" "}
             <button
+              title="Place Order"
               type="submit"
               className=" text-white-0 bg-Secondary-2 font-medium rounded-md border px-12 py-4"
             >

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { getCookie } from "cookies-next";
+// import { getCookie } from "cookies-next";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,10 +12,10 @@ import useCartStore from "@/hooks/useCartStore";
 import useWishList from "@/hooks/useWishList";
 
 function FunctionNavigation({ isUser }) {
-  let user;
-  if (getCookie("user")) {
-    user = JSON.parse(getCookie("user"));
-  }
+  // let user;
+  // if (getCookie("user")) {
+  //   user = JSON.parse(getCookie("user"));
+  // }
 
   const searchRef = useRef();
   const router = useRouter();
@@ -64,7 +64,7 @@ function FunctionNavigation({ isUser }) {
           )}
         />
 
-        <button type="submit">
+        <button title="Search" type="submit">
           <Search strokeWidth={1.5} />
         </button>
       </form>
@@ -116,7 +116,7 @@ function FunctionNavigation({ isUser }) {
         </Link>
         {isUser && isUser.name && (
           // <Link href="/account">
-          <UserDropdown isUser={user} />
+          <UserDropdown isUser={isUser} />
           // </Link>
         )}
       </div>

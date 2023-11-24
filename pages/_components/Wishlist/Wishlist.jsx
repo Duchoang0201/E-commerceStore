@@ -20,6 +20,7 @@ function Wishlist({ data }) {
             Wishlist ({wishList.length})
           </div>
           <button
+            title="Move all to bag"
             type="button"
             className="py-[16px] rounded-md min-h-[44px] border border-Neutral-200  text-black-0 px-4 md:px-12 whitespace-nowrap"
           >
@@ -77,6 +78,7 @@ function Wishlist({ data }) {
           </div>
         </div>
         <button
+          title="See All"
           type="button"
           className="py-[16px] rounded-md min-h-[44px] border border-Neutral-200  text-black-0 px-4 md:px-12 whitespace-nowrap"
         >

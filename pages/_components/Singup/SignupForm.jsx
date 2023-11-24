@@ -93,6 +93,7 @@ function SignupForm() {
 
           <div className="w-full bg-Secondary-2 rounded-md h-14 text-white-0 flex justify-center items-center mb-4">
             <button
+              title="Create Account"
               type="submit"
               className="font-poppins leading-6 font-semibold w-full h-full"
             >
@@ -101,6 +102,7 @@ function SignupForm() {
           </div>
           <div className="w-full bg-white-0 border border-Neutral-200 rounded-md h-14 text-white-0 flex justify-center items-center mb-8">
             <button
+              title="Google"
               type="submit"
               className="w-full font-poppins leading-6 font-semibold flex flex-row justify-center items-center"
             >

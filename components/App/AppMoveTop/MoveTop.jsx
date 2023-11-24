@@ -30,6 +30,7 @@ function MoveTop() {
       {openMoveTop && (
         <div className="fixed right-[50px] bottom-[50px]">
           <button
+            title="MoveTop"
             onClick={handleScrollUp}
             className="max-w-[46px] max-h-[46px] w-full h-auto justify-center p-[11px] rounded-full bg-Secondary-0"
             type="button"
