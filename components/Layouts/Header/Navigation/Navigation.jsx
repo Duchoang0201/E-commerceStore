@@ -1,39 +1,40 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
+import { getCookie } from "cookies-next";
 // import { getCookie } from "cookies-next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Draw from "@/components/App/AppDraw/Draw";
 
-import useAuthStore from "@/hooks/useAuth";
+// import useAuthStore from "@/hooks/useAuth";
 // import useAuthStore from "@/hooks/useAuth";
 // import useCartStore from "@/hooks/useCartStore";
 import useTrans from "@/hooks/useTrans";
-import { axiosClient } from "@/libraries/axiosClient";
 
+// import { axiosClient } from "@/libraries/axiosClient";
 // import useWishList from "@/hooks/useWishList";
 import FunctionNavigation from "./FunctionNavigation";
 
 function Navigation() {
   const { navigationList } = useTrans();
   const router = useRouter();
-  const { user: isUser, getUser } = useAuthStore();
-  // let isUser;
-  // if (getCookie("user")) {
-  //   isUser = JSON.parse(getCookie("user"));
-  // }
-  useEffect(() => {
-    if (!isUser && !isUser?.name) {
-      axiosClient
-        .get(`/auth/profile`)
-        .then(({ data: user }) => {
-          getUser(user);
-        })
-        .catch(() => {});
-    }
-  }, [getUser, isUser]);
+  // const { user: isUser, getUser } = useAuthStore();
+  let isUser;
+  if (getCookie("user")) {
+    isUser = JSON.parse(getCookie("user"));
+  }
+  // useEffect(() => {
+  //   if (!isUser && !isUser?.name) {
+  //     axiosClient
+  //       .get(`/auth/profile`)
+  //       .then(({ data: user }) => {
+  //         getUser(user);
+  //       })
+  //       .catch(() => {});
+  //   }
+  // }, [getUser, isUser]);
 
   const isUserClass = `${
     router.pathname === "/signin" || router.pathname === "/signup"

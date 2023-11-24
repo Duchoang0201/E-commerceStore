@@ -12,6 +12,7 @@ import "@/styles/globals.css";
 
 const Header = dynamic(() => import("@/components/Layouts/Header/Header"), {
   ssr: false,
+  // loading: lazy,
 });
 
 export default function App({ Component, pageProps }) {
