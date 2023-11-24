@@ -15,28 +15,39 @@ function Footer() {
   const columnFirst = {
     title: "Support",
     list: [
-      { name: "111 Bijoy sarani, Dhaka, DH 1515, Bangladesh." },
-      { name: "exclusive@gmail.com" },
-      { name: "+88015-88888-9999" },
+      {
+        name: "111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.",
+        href: "",
+      },
+      {
+        name: "exclusive@gmail.com",
+        href: "mailto:exclusive@gmail.com",
+        type: "email",
+      },
+      {
+        name: "+88015-88888-9999",
+        href: "tel:+88015-88888-9999",
+        type: "phone",
+      },
     ],
   };
   const columnSecond = {
     title: "Account",
     list: [
-      { name: "My Account" },
-      { name: "Login / Register" },
-      { name: "Cart" },
-      { name: "Wishlist" },
-      { name: "Shop" },
+      { name: "My Account", href: "account" },
+      { name: "Login / Register", href: "signup" },
+      { name: "Cart", href: "cart" },
+      { name: "Wishlist", href: "wishlist" },
+      { name: "Shop", href: "" },
     ],
   };
   const columnThird = {
     title: "Quick Link",
     list: [
-      { name: "Privacy Policy" },
-      { name: "Terms Of Use" },
-      { name: "FAQ" },
-      { name: "Contact" },
+      { name: "Privacy Policy", href: "" },
+      { name: "Terms Of Use", href: "" },
+      { name: "FAQ", href: "" },
+      { name: "Contact", href: "contact" },
     ],
   };
   return (
@@ -44,7 +55,7 @@ function Footer() {
       <footer className="bg-black-0">
         <div className="container pt-20 bg-black ">
           <div className="grid grid-cols-1 items-center sm:grid sm:grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5 pb-16">
-            <div>
+            <div className="h-full ">
               <h2 className="text-xl mb-6 font-semibold  dark:text-white">
                 Exclusive
               </h2>
