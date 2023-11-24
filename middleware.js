@@ -70,7 +70,7 @@ export default async function middleware(req) {
   // );
 
   if (pathname === "/signin" || pathname === "/signup") {
-    if (token) {
+    if (token && refreshToken) {
       return NextResponse.rewrite(new URL("/", req.url));
     }
   } else {
