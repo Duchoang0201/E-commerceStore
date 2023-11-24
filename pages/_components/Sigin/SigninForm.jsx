@@ -39,7 +39,7 @@ function SigninForm() {
     setLoadingCom(true);
     try {
       await login(e);
-      router.push("/");
+      router.reload("/");
       setLoadingCom(false);
     } catch (error) {
       console.log(`🚀🚀🚀!..error`, error);

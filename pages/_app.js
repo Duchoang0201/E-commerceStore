@@ -13,6 +13,7 @@ import "@/styles/globals.css";
 const Header = dynamic(() => import("@/components/Layouts/Header/Header"), {
   ssr: false,
 });
+
 export default function App({ Component, pageProps }) {
   return (
     <div className="font-poppins">
