@@ -12,7 +12,7 @@ function Language() {
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           </span>
           <Link
-            className="font-semibold underline text-sm px-2 flex flex-row justify-center text-center items-center"
+            className="md:visible  hidden font-semibold underline text-sm px-2 flex flex-row justify-center text-center items-center"
             href="/"
           >
             ShopNow

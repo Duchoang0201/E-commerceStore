@@ -11,12 +11,12 @@ function ShowTime({ days, hours, minutes, seconds }) {
   return (
     <div className="leading-[30px] ">
       {" "}
-      <div className="w-full flex flex-row  md:flex md:flex-row md:gap-[17px] text-center">
+      <div className="w-full md:flex md:flex-row md:gap-[17px] flex flex-row gap-[5px] text-center">
         {arr.map((item, index) => {
           const isLastItem = index === arr.length - 1;
           return (
             <div key={item.title} className="flex flex-row">
-              <div className="flex flex-col gap-y-2">
+              <div className="md:flex md:flex-col md:gap-y-2 flex flex-col">
                 <div className="text-[8px] md:text-[12px] font-medium leading-[18px] text-start">
                   {item.title}
                 </div>
@@ -25,7 +25,7 @@ function ShowTime({ days, hours, minutes, seconds }) {
                 </span>
               </div>
               {!isLastItem && (
-                <span className="text-[18px] font-bold text-Button-2 mt-7 sm:mt-6 md:mt-7 pl-[13px]">
+                <span className="text-[18px] font-bold text-Button-2 mt-8 sm:mt-6 md:mt-7  pl-3 ssm:pl-[13px]">
                   :
                 </span>
               )}

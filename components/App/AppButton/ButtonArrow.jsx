@@ -4,22 +4,22 @@ import PropTypes from "prop-types";
 
 function ButtonArrow({ onPrev, onNext }) {
   return (
-    <div className="flex flex-row gap-x-2">
+    <div className="flex flex-row gap-x-2 items-end">
       <button
         title="Prev"
-        className="max-w-[46px] max-h-[46px] w-full h-auto justify-center p-[11px] rounded-full bg-Secondary-0"
+        className="  w-12 h-12 p-2 md:p-[11px] rounded-full bg-Secondary-0 flex flex-row justify-center items-center"
         type="button"
         onClick={onPrev}
       >
-        <ArrowLeft size={24} />
+        <ArrowLeft />
       </button>
       <button
         title="Next"
-        className="max-w-[46px] max-h-[46px] w-full h-auto justify-center p-[11px] rounded-full bg-Secondary-0"
+        className="  w-12 h-12 p-2 md:p-[11px] rounded-full bg-Secondary-0 flex flex-row justify-center items-center"
         type="button"
         onClick={onNext}
       >
-        <ArrowRight size={24} />
+        <ArrowRight />
       </button>
     </div>
   );

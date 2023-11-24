@@ -66,8 +66,12 @@ function CardBanner({ products }) {
 
                 spaceBetween: 30,
               },
-              480: {
+              680: {
                 slidesPerView: 3.5,
+                spaceBetween: 30,
+              },
+              480: {
+                slidesPerView: 3,
                 spaceBetween: 30,
               },
               400: {
