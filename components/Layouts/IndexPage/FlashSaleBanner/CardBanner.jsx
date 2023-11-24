@@ -25,7 +25,7 @@ function CardBanner({ products }) {
   const handleSlideNext = useCallback(() => {
     swiperRef.current.slideNext();
   }, []);
-  const [hideSlide, setHideSlide] = useState(0);
+  const [hideSlide, setHideSlide] = useState(5);
   return (
     <div className="relative">
       <TitleFunction
@@ -177,7 +177,7 @@ function CardBanner({ products }) {
         </Swiper>
         <style>
           {`
-          .swiper-slide:nth-of-type(${5 + hideSlide}){
+          .swiper-slide:nth-of-type(${hideSlide}){
             opacity: 1 !important;
             filter: none;
           
