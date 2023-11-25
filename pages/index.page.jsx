@@ -1,14 +1,15 @@
 import React from "react";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
 
-// import IndexPage from "@/components/Layouts/IndexPage/IndexPage";
+import IndexPage from "@/components/Layouts/IndexPage/IndexPage";
+
 import { getDataFunction } from "@/libraries/getDataFunction"; // Import PropTypes from the correct module
 
-const IndexPage = dynamic(
-  () => import("@/components/Layouts/IndexPage/IndexPage"),
-  { ssr: false },
-);
+// const IndexPage = dynamic(
+//   () => import("@/components/Layouts/IndexPage/IndexPage"),
+//   { ssr: false },
+// );
 
 export default function Home({ products, categories, thisMonth, ourProducts }) {
   return (
