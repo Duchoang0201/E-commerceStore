@@ -3,6 +3,7 @@ import { Controller, useForm } from "react-hook-form";
 import { Heart, List, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import PropTypes from "prop-types";
 
 import Dropdown from "@/components/App/AppLangue/Dropdown";
 import UserDropdown from "@/components/User/UserDropdown";
@@ -11,7 +12,7 @@ import useCartStore from "@/hooks/useCartStore";
 import useTrans from "@/hooks/useTrans";
 import useWishList from "@/hooks/useWishList";
 
-function NavigateDropdown() {
+function NavigateDropdown({ isUser }) {
   const [open, setOpen] = useState(false);
   const { navigationList } = useTrans();
   const { carts } = useCartStore();
@@ -23,7 +24,7 @@ function NavigateDropdown() {
     router.push("/searchpage");
   };
   return (
-    <div className="relative flex items-center">
+    <div className={`relative flex items-center `}>
       <button
         title="openDraw"
         className=""
@@ -130,7 +131,7 @@ function NavigateDropdown() {
                   <ShoppingCart strokeWidth={1.5} size={28} />
                 )}
               </Link>
-              <UserDropdown />
+              {isUser && isUser.name && <UserDropdown />}
               <div className="md:hiden ">
                 <Dropdown
                   color="black"
@@ -169,3 +170,6 @@ function NavigateDropdown() {
 }
 
 export default NavigateDropdown;
+NavigateDropdown.propTypes = {
+  isUser: PropTypes.instanceOf(Object).isRequired,
+};

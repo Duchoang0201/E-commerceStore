@@ -5,12 +5,16 @@ import PropTypes from "prop-types";
 import AppAlert from "@/components/App/AppAlert/AppAlert";
 import MoveTop from "@/components/App/AppMoveTop/MoveTop";
 import PhotoPreview from "@/components/App/AppPhotoView/PhotoPreview";
-import Footer from "@/components/Layouts/Footer/Footer";
 
+// import Footer from "@/components/Layouts/Footer/Footer";
 // import Header from "@/components/Layouts/Header/Header";
 import "@/styles/globals.css";
 
 const Header = dynamic(() => import("@/components/Layouts/Header/Header"), {
+  ssr: false,
+  // loading: lazy,
+});
+const Footer = dynamic(() => import("@/components/Layouts/Footer/Footer"), {
   ssr: false,
   // loading: lazy,
 });
