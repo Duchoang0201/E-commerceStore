@@ -50,10 +50,10 @@ function Navigation() {
     <div className="pb-[14px] pt-[40px] border-b border-Neutral-200">
       <div className="container">
         <div className=" flex flex-row justify-between  items-center">
-          <div className="max-w-[118px]  ">
+          <div className="xl:max-w-[118px] max-w-[125px]  w-full">
             <Link
               href="/"
-              className="font-inter w-full text-[24px] tracking-[0.72px] not-italic  !font-bold text-black "
+              className="font-inter w-full text-[24px] tracking-[0.72px] not-italic  !font-bold text-black  "
             >
               Exclusive
             </Link>
@@ -61,7 +61,7 @@ function Navigation() {
 
           <div className={isUserClass}>
             <div className="flex flex-row justify-end gap-4  lg:flex lg:flex-row lg:justify-between w-full">
-              <ul className="hidden  lg:flex lg:flex-row lg:justify-between lg:!max-w-[367px] lg:gap-x-12 lg:w-full">
+              <ul className="hidden  lg:flex lg:flex-row lg:justify-between lg:!max-w-[367px] lg:gap-12 lg:w-full">
                 {navigationList &&
                   navigationList.map((item) => {
                     return (
