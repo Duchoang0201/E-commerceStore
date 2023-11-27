@@ -88,7 +88,7 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
           })}
         </div>{" "}
       </div>
-      <div className="lg:flex lg:flex-row lg:max-h-[44px] lg:justify-between flex flex-row gap-4">
+      <div className="xl:flex xl:flex-row xl:max-h-[44px] xl:justify-between flex flex-row gap-4">
         <div className="flex flex-row border border-opacity-50 border-black-0 justify-between max-w-[160px] w-full items-center rounded-md">
           <button
             title="Minus"
