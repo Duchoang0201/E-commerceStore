@@ -30,7 +30,7 @@ function ProductId({ product, related }) {
         <span>Home / {product?.title}</span>
       </div>
 
-      <ProductDetail product={product} related={related} />
+      <ProductDetail product={product} />
 
       <div className="flex flex-row justify-between mt-[140px] mb-[60px]">
         <div className=" flex flex-row items-center justify-start  ">
