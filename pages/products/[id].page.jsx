@@ -53,12 +53,21 @@ function ProductId({ product, related }) {
 
 export default ProductId;
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
   const results = await axiosClient.get(`/products`);
   const products = results.data;
-  const paths = products.map((item) => ({
-    params: { id: `${item.id}` },
-  }));
+
+  const paths = products.flatMap((item) => {
+    return locales.map((locale) => ({
+      params: {
+        id: `${item.id}`,
+      },
+      locale,
+    }));
+  });
+  // const paths = products.map((item) => ({
+  //   params: { id: `${item.id}` },
+  // }));
   return { paths, fallback: false };
 }
 

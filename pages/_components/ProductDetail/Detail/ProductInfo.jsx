@@ -23,9 +23,9 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
   return (
     <div className="flex flex-col gap-y-6 mt-4">
       <p className="font-inter text-[24px] leading-6 tracking-[0.72px]">
-        ${product.price}
+        ${product?.price}
       </p>
-      <p className=" overflow-hidden  leading-[21px]">{product.description}</p>
+      <p className=" overflow-hidden  leading-[21px]">{product?.description}</p>
       <hr />
       <div className="flex flex-row gap-8 items-center">
         <span className="text-[20px] tracking-[0.6px]">Colours:</span>

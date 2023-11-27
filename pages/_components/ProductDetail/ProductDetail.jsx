@@ -1,9 +1,11 @@
+/* eslint-disable react/forbid-prop-types */
+
 "use client";
 
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import PropTypes from "prop-types";
+import PropTypes, { any } from "prop-types";
 // import required modules
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,17 +23,17 @@ const ProductInfo = dynamic(() => import("./Detail/ProductInfo"), {
 function ProductDetail({ product }) {
   const [pickImage, setPickImage] = useState({
     index: 0,
-    image: product.images[0],
+    image: product?.images ? product?.images[0] : "",
     title: "hello",
   });
 
   useEffect(() => {
     setPickImage({
       index: 0,
-      image: product.images[0],
+      image: product?.images[0],
       title: "hello",
     });
-  }, [product.id, product.image, product.images, product.title]);
+  }, [product?.id, product?.image, product?.images, product?.title]);
 
   const [amountProduct, setAmountProduct] = useState(0);
   return (
@@ -51,7 +53,7 @@ function ProductDetail({ product }) {
             },
           }}
         >
-          {product.images.map((item, index) => {
+          {product?.images?.map((item, index) => {
             return (
               <SwiperSlide
                 className=" !w-[75px] md:!w-[170px] md:!h-[138px]"
@@ -85,7 +87,7 @@ function ProductDetail({ product }) {
           <Image
             width={300}
             height={300}
-            src={pickImage.image}
+            src={pickImage?.image}
             alt={pickImage?.title}
             className="object-contain mx-auto"
           />
@@ -120,5 +122,5 @@ function ProductDetail({ product }) {
 export default ProductDetail;
 
 ProductDetail.propTypes = {
-  product: PropTypes.instanceOf(Object).isRequired,
+  product: PropTypes.instanceOf(any).isRequired,
 };
