@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 "use client";
 
 import { deleteCookie, setCookie } from "cookies-next";
@@ -37,7 +35,7 @@ const useAuthStore = create(
     persist(
       (set) => ({
         user: {},
-        login: async (userLogin) => {
+        login: async () => {
           const { data } = await axiosClient.post("/auth/login", {
             email: "john@mail.com",
             password: "changeme",

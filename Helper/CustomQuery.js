@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 export function customizeMongoQuery(query) {
   const mongoQuery = {};
   if (query.name) {

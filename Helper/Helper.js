@@ -29,6 +29,7 @@ let clientPromise;
 //   clientPromise = client.connect();
 // }
 
+// eslint-disable-next-line no-constant-condition
 if (true) {
   if (!global._mongoClientPromise) {
     client = new MongoClient(uri, options);
