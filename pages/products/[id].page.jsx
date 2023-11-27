@@ -15,7 +15,7 @@ function ProductId({ product, related }) {
     <div className="container mt-[80px] mb-[140px] ">
       <div className="my-[80px] flex flex-row justify-between">
         {" "}
-        <span>Home / {product.title}</span>
+        <span>Home / {product?.title}</span>
       </div>
 
       <ProductDetail product={product} related={related} />
