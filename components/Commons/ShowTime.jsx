@@ -11,7 +11,7 @@ function ShowTime({ days, hours, minutes, seconds }) {
   return (
     <div className="leading-[30px] ">
       {" "}
-      <div className="w-full md:flex md:flex-row md:gap-[17px] flex flex-row gap-[5px] text-center">
+      <div className="w-full md:flex md:flex-row md:gap-[17px] flex flex-row ssm:gap-[2px] gap-[1px] text-center">
         {arr.map((item, index) => {
           const isLastItem = index === arr.length - 1;
           return (
@@ -25,7 +25,7 @@ function ShowTime({ days, hours, minutes, seconds }) {
                 </span>
               </div>
               {!isLastItem && (
-                <span className="text-[18px] font-bold text-Button-2 mt-6 sm:mt-6 md:mt-7  px-3 ssm:pl-[13px] ssm:pr-[7px]">
+                <span className="text-[18px] font-bold text-Button-2 pl-3  mt-6 sm:mt-6 md:mt-7  px-3 ssm:pl-[9px] ssm:pr-[7px]">
                   :
                 </span>
               )}
