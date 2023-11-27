@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import PropTypes from "prop-types";
 // import required modules
@@ -11,14 +11,13 @@ import "swiper/css/navigation";
 
 import Rated from "@/components/App/AppRating/Rated";
 
-import ProductInfo from "./Detail/ProductInfo";
-
+// import ProductInfo from "./Detail/ProductInfo";
 // Import Swiper stylesgit
 import "swiper/css";
 
-// const ProductInfo = dynamic(() => import("./Detail/ProductInfo"), {
-//   ssr: false,
-// });
+const ProductInfo = dynamic(() => import("./Detail/ProductInfo"), {
+  ssr: false,
+});
 function ProductDetail({ product }) {
   const [pickImage, setPickImage] = useState({
     index: 0,

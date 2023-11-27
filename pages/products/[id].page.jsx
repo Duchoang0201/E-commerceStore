@@ -4,19 +4,19 @@ import PropTypes from "prop-types";
 
 import { axiosClient } from "@/libraries/axiosClient";
 
-// import ProductRelated from "../_components/ProductDetail/Detail/ProductRelated";
+import ProductRelated from "../_components/ProductDetail/Detail/ProductRelated";
 // import ProductDetail from "../_components/ProductDetail/ProductDetail";
 
 const ProductDetail = dynamic(
   () => import("../_components/ProductDetail/ProductDetail"),
   { ssr: false },
 );
-const ProductRelated = dynamic(
-  () => import("../_components/ProductDetail/Detail/ProductRelated"),
-  {
-    ssr: false,
-  },
-);
+// const ProductRelated = dynamic(
+//   () => import("../_components/ProductDetail/Detail/ProductRelated"),
+//   {
+//     ssr: false,
+//   },
+// );
 
 function hasHttps(url) {
   return url.includes("https");
