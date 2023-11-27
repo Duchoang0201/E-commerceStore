@@ -1,10 +1,16 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
 
 import { axiosClient } from "@/libraries/axiosClient";
 
-import ProductDetail from "./ProductDetail";
-import ProductRelated from "./ProductRelated";
+// import ProductDetail from "./ProductDetail";
+// import ProductRelated from "./ProductRelated";
+
+const ProductDetail = dynamic(() => import("./ProductDetail"), { ssr: false });
+const ProductRelated = dynamic(() => import("./ProductRelated"), {
+  ssr: false,
+});
 
 function hasHttps(url) {
   return url.includes("https");
