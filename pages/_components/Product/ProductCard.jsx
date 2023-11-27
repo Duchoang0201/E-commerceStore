@@ -7,14 +7,14 @@ import PropTypes from "prop-types";
 
 import Rated from "@/components/App/AppRating/Rated";
 
-import useCartStore from "@/hooks/useCartStore";
+// import useCartStore from "@/hooks/useCartStore";
 import useOpenPhoto from "@/hooks/useOpenPhoto";
 import useWishList from "@/hooks/useWishList";
 
 function ProductCard({ item, isHeart, isEye, isDiscount }) {
   const { setOpenPhoto } = useOpenPhoto();
   const { addWishList } = useWishList();
-  const { addCart } = useCartStore();
+  // const { addCart } = useCartStore();
   return (
     <div className="w-full relative ">
       <div className="group overflow-hidden relative w-auto rounded-md">
@@ -25,7 +25,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           src={item.images[0]}
           alt={item.title}
         />
-        <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+        {/* <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <button
             type="submit"
             onClick={(e) => {
@@ -36,7 +36,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           >
             Add to cart
           </button>
-        </div>
+        </div> */}
         {isHeart.isActive && (
           <button
             type="button"
