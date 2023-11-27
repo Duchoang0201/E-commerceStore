@@ -89,7 +89,7 @@ function ProductDetail({ product }) {
           <div className="absolute mx-auto top-2">{pickImage.index + 1}</div>
         </div>
       </div>
-      <div className="w-2/3 xl:max-w-[400px]">
+      <div className="w-full xl:w-2/3 xl:max-w-[400px]">
         <div className="flex flex-col gap-y-4">
           <p className="text-[14px] md:text-[24px] font-bold leading-6 tracking-[0.72px] w-full ">
             {product?.title}

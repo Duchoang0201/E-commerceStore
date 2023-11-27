@@ -16,7 +16,7 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
   const arrColors = [
     { id: 1, color: "Blue-300" },
     { id: 2, color: "Secondary-2" },
-    { id: 3, color: "Green-400" },
+    { id: 3, color: "success-400" },
   ];
   const [pickColor, setPickColor] = useState(`Blue-300`);
   const arraySize = ["XS", "S", "M", "L", "XL"];
@@ -25,7 +25,7 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
       <p className="font-inter text-[24px] leading-6 tracking-[0.72px]">
         ${product.price}
       </p>
-      <p className=" overflow-hidden leading-[21px]">{product.description}</p>
+      <p className=" overflow-hidden  leading-[21px]">{product.description}</p>
       <hr />
       <div className="flex flex-row gap-8 items-center">
         <span className="text-[20px] tracking-[0.6px]">Colours:</span>
@@ -42,7 +42,7 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
               <div
                 className={`w-full h-full rounded-full  ${
                   pickColor === circle.color
-                    ? `border-white-0 bg-${circle.color} border-2`
+                    ? ` bg-${circle.color} border-white-0 border-2`
                     : `border-white-0 `
                 } absolute `}
               />
