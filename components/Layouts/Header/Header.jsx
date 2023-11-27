@@ -1,9 +1,15 @@
-"use client";
+// "use client";
 
 import React from "react";
 
+// import dynamic from "next/dynamic";
 import Language from "./Language/Language";
 import Navigation from "./Navigation/Navigation";
+
+// const Language = dynamic(
+//   () => import("@/components/Layouts/IndexPage/IndexPage"),
+//   { ssr: false },
+// );
 
 function Header() {
   return (
