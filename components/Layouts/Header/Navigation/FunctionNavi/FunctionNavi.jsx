@@ -20,7 +20,7 @@ function FunctionNavi() {
     }
   }, [getUser, isUser]);
   return (
-    <div>
+    <div className="flex flex-row gap-4">
       {" "}
       <FunctionNavigation isUser={isUser || {}} />
       <div className="lg:hidden flex flex-row">
