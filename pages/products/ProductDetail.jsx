@@ -92,7 +92,7 @@ function ProductDetail({ product }) {
       <div className="w-2/3 xl:max-w-[400px]">
         <div className="flex flex-col gap-y-4">
           <p className="text-[14px] md:text-[24px] font-bold leading-6 tracking-[0.72px] w-full ">
-            {product.title}
+            {product?.title}
           </p>
           <div className="flex flex-row items-center">
             <Rated data={{ rate: 4 }} />
