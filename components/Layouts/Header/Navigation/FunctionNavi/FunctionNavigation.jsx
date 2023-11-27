@@ -91,7 +91,7 @@ function FunctionNavigation({ isUser }) {
               </div>
             </div>
           ) : (
-            <Heart className="relative" strokeWidth={1.5} size={28} />
+            <Heart className="relative" strokeWidth={1.5} size={26} />
           )}
         </Link>
         <Link
