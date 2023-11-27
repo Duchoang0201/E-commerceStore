@@ -1,6 +1,7 @@
 "use client";
 
 import React, { memo } from "react";
+import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
 
 import { getNextDay } from "@/hooks/getSpecificDay";
@@ -9,7 +10,11 @@ import { useCountdown } from "@/hooks/useCountDown";
 import AppButton from "../App/AppButton/AppButton";
 import ButtonArrow from "../App/AppButton/ButtonArrow";
 
-import ShowTime from "./ShowTime";
+// import ShowTime from "./ShowTime";
+
+const ShowTime = dynamic(() => import("./ShowTime"), {
+  ssr: false,
+});
 
 function TitleFunction({
   content,
