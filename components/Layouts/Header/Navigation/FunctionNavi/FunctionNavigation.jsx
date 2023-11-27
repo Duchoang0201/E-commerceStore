@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from "react";
 import { Controller, useForm } from "react-hook-form";
 // import { getCookie } from "cookies-next";

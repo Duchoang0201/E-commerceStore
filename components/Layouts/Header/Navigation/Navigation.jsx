@@ -1,18 +1,18 @@
-// "use client";
+"use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import useAuthStore from "@/hooks/useAuth";
 import useTrans from "@/hooks/useTrans";
 
-// import FunctionNavi from "./FunctionNavi/FunctionNavi";
+import FunctionNavi from "./FunctionNavi/FunctionNavi";
 
-const FunctionNavi = dynamic(() => import("./FunctionNavi/FunctionNavi"), {
-  ssr: false,
-});
+// const FunctionNavi = dynamic(() => import("./FunctionNavi/FunctionNavi"), {
+//   ssr: false,
+// });
 
 function Navigation() {
   const { navigationList } = useTrans();

@@ -1,10 +1,24 @@
+/* eslint-disable no-undef */
+
+"use client";
+
 import React, { useEffect } from "react";
+import dynamic from "next/dynamic";
 
 import useAuthStore from "@/hooks/useAuth";
 import { axiosClient } from "@/libraries/axiosClient";
 
-import FunctionNavigation from "./FunctionNavigation";
-import NavigateDropdown from "./NavigateDropdown";
+import FNLoading from "../FunctionNaviLoading/FNLoading";
+import NDLoading from "../FunctionNaviLoading/NDLoading";
+
+const FunctionNavigation = dynamic(() => import("./FunctionNavigation"), {
+  ssr: false,
+  loading: () => <FNLoading />,
+});
+const NavigateDropdown = dynamic(() => import("./NavigateDropdown"), {
+  ssr: false,
+  loading: () => <NDLoading />,
+});
 
 function FunctionNavi() {
   const { user: isUser, getUser } = useAuthStore();
@@ -19,6 +33,7 @@ function FunctionNavi() {
         .catch(() => {});
     }
   }, [getUser, isUser]);
+
   return (
     <div className="flex flex-row gap-4">
       {" "}
