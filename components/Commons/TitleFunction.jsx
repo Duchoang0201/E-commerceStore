@@ -34,10 +34,14 @@ function TitleFunction({
     <div className="lg:!max-h-[108px] container flex flex-row justify-between">
       <div className="md:flex md:flex-row md:gap-x-[87px] flex flex-col">
         <div
-          className={`${!isCountDown ? "gap-y-5" : "gap-y-6"}  flex flex-col `}
+          className={`${
+            !isCountDown
+              ? "flex flex-col justify-between h-full lg:gap-y-5 lg:flex lg:flex-col"
+              : "flex flex-col justify-between lg:gap-y-6 lg:flex lg:flex-col"
+          }   `}
         >
           <div className=" flex flex-row items-center justify-start  ">
-            <div className="w-5 h-10 bg-Secondary-2 rounded-sm " />
+            <span className="w-5 h-10 bg-Secondary-2 rounded-sm " />
             <span className="text-Secondary-2 px-5 font-semibold font-poppins">
               {title}
             </span>

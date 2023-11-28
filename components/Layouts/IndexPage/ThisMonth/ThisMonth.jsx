@@ -82,7 +82,7 @@ function ThisMonth({ thisMonth }) {
       <div className="container max-h-[500px] h-full flex flex-row mt-[139px]">
         {" "}
         <div className="bg-black-0  pt-[37px] pr-[44px] py-[43px] pl-20 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
-          <div className="w-2/3 h-fit flex flex-col gap-12  md:gap-8 md:relative absolute z-30 ">
+          <div className="w-2/3 h-fit flex flex-col ssm:gap-12 gap-5  md:gap-8 md:relative absolute z-30 ">
             <span className="font-poppins" style={{ color: "#0F6" }}>
               {" "}
               Categories
@@ -90,29 +90,29 @@ function ThisMonth({ thisMonth }) {
             <span className="font-inter  text-14px sm:text-5xl font-semibold text-white-0">
               Enhance Your Music Experience
             </span>
-            <div className="flex flex-row w-full gap-2 md:gap-6">
-              <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+            <div className="flex flex-row w-full gap-2 ">
+              <div className="md:w-[62px] md:h-[62px] w-[42px] h-[42px]  rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
                 {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
-                <span className="">23</span>
-                <span className="md:text-[11px]">Day</span>
+                <span className="md:text-[12px] text-[10px]">23</span>
+                <span className="md:text-[12px] text-[10px]">Day</span>
                 {/* </div> */}
               </div>
-              <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+              <div className="md:w-[62px] md:h-[62px] w-[42px] h-[42px]  rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
                 {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
-                <span className="">23</span>
-                <span className="md:text-[11px]"> Hours</span>
+                <span className="md:text-[12px] text-[10px]">23</span>
+                <span className="md:text-[12px] text-[10px]"> Hours</span>
                 {/* </div> */}
               </div>
-              <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+              <div className="md:w-[62px] md:h-[62px] w-[42px] h-[42px]  rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
                 {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
-                <span className="">23</span>
-                <span className="md:text-[11px]">Minutes</span>
+                <span className="md:text-[12px] text-[10px]">23</span>
+                <span className="md:text-[12px] text-[10px]">Minutes</span>
                 {/* </div> */}
               </div>
-              <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+              <div className="md:w-[62px] md:h-[62px] w-[42px] h-[42px]  rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
                 {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
-                <span className="">23</span>
-                <span className="md:text-[11px]">Second</span>
+                <span className="md:text-[12px] text-[10px]">23</span>
+                <span className="md:text-[12px] text-[10px]">Second</span>
                 {/* </div> */}
               </div>
             </div>
