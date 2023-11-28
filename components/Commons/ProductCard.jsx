@@ -15,16 +15,28 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
   const { addCart } = useCartStore();
   return (
     <>
-      <div className="group overflow-hidden relative rounded-md w-auto">
-        <Image
+      <div className="group overflow-hidden relative rounded-md ">
+        {/* <Image
           // loading="lazy"
-          className="aspect-[270/250]"
+          // className="aspect-[270/250]"
           width={270}
           height={250}
           src={item.images[0]}
           alt={item.id}
-        />
-
+        /> */}
+        <div className="relative h-[150px] md:h-[200px] lg:h-[250px] ">
+          <Image
+            alt={item.id}
+            src={item.images[0]}
+            fill
+            // sizes="(min-width: 1320px) 270px, (min-width: 1020px) calc(18.21vw + 33px), (min-width: 680px) calc(27.81vw - 30px), (min-width: 560px) calc(33vw - 34px), (min-width: 500px) calc(15vw + 56px), (min-width: 460px) calc(-115vw + 676px), (min-width: 400px) calc(20vw + 43px), (min-width: 340px) calc(25vw + 46px), 252px"
+            // style={{
+            //   objectFit: "cover", // cover, contain, none
+            // }}
+            sizes="(max-width: 768px) 270px, (max-width: 1200px) 180px, 120px"
+            // sizes="(min-width: 1320px) 270px, (min-width: 1040px) calc(18.46vw + 30px), (min-width: 680px) calc(26.18vw - 19px), (min-width: 480px) calc(33.33vw - 36px), (min-width: 400px) calc(40vw - 37px), (min-width: 340px) calc(50vw - 39px), calc(-655vw + 2217px)"
+          />
+        </div>
         <button
           title="Add to Cart"
           type="submit"
@@ -32,7 +44,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
             e.preventDefault();
             addCart(item);
           }}
-          className="bg-black text-white-0 lg:py-2 px-5 absolute h-10 w-full bg-black-0  lg:flex lg:items-center lg:justify-center hidden  lg:-bottom-10 
+          className=" text-white-0 lg:py-2 px-5 absolute h-10 w-full bg-black-0  lg:flex lg:items-center lg:justify-center hidden  lg:-bottom-10 
           lg:group-hover:bottom-0 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300"
         >
           Add to cart
