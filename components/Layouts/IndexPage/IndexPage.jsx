@@ -35,7 +35,7 @@ import ThisMonth from "./ThisMonth/ThisMonth";
 // });
 function IndexPage({ products, categories, thisMonth, ourProducts }) {
   return (
-    <div className=" w-full container ">
+    <div className="container">
       <section>
         <HerroBanner />
       </section>

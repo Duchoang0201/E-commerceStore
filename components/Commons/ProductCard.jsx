@@ -23,6 +23,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           height={250}
           src={item.images[0]}
           alt={item.id}
+          priority
         />
         <button
           title="Add to Cart"
