@@ -95,7 +95,8 @@ function HerroBanner() {
               <Image
                 src={Banner}
                 alt="banner"
-                loading="lazy"
+                // loading="lazy"
+                priority="true"
                 width={892}
                 height={344}
               />
@@ -104,7 +105,8 @@ function HerroBanner() {
               <Image
                 src={Banner}
                 alt="banner"
-                loading="lazy"
+                priority="true"
+                // loading="lazy"
                 width={892}
                 height={344}
               />
