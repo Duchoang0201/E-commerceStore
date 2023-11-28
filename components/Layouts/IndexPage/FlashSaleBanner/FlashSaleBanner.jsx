@@ -1,15 +1,18 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
 import AppButton from "@/components/App/AppButton/AppButton";
 
-import CardBanner from "./CardBanner";
-
+// import CardBanner from "./CardBanner";
+const CardBanner = dynamic(() => import("./CardBanner"), {
+  ssr: false,
+});
 function FlashSaleBanner({ products }) {
   return (
-    <div className=" text-black  ">
+    <>
       <CardBanner products={products} />
 
       <div className="pt-[59px] pb-[60px] flex flex-row justify-center border-b border-Neutral-200 container ">
@@ -19,7 +22,7 @@ function FlashSaleBanner({ products }) {
           href="/searchpage"
         />
       </div>
-    </div>
+    </>
   );
 }
 
