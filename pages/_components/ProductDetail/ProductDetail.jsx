@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 
 import Rated from "@/components/App/AppRating/Rated";
+import CircleLoading from "@/components/App/CircleLoading/CircleLoading";
 
 // import ProductInfo from "./Detail/ProductInfo";
 // Import Swiper stylesgit
@@ -19,6 +20,9 @@ import "swiper/css";
 
 const ProductInfo = dynamic(() => import("./Detail/ProductInfo"), {
   ssr: false,
+  loading: () => {
+    <CircleLoading />;
+  },
 });
 function ProductDetail({ product }) {
   const [pickImage, setPickImage] = useState({

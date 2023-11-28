@@ -2,6 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
 
+import CircleLoading from "@/components/App/CircleLoading/CircleLoading";
 // import AppAlert from "@/components/App/AppAlert/AppAlert";
 // import MoveTop from "@/components/App/AppMoveTop/MoveTop";
 // import PhotoPreview from "@/components/App/AppPhotoView/PhotoPreview";
@@ -20,11 +21,15 @@ import "@/styles/globals.css";
 // });
 const MoveTop = dynamic(() => import("@/components/App/AppMoveTop/MoveTop"), {
   ssr: false,
-  // loading: lazy,
+  loading: () => {
+    <CircleLoading />;
+  },
 });
 const AppAlert = dynamic(() => import("@/components/App/AppAlert/AppAlert"), {
   ssr: false,
-  // loading: lazy,
+  loading: () => {
+    <CircleLoading />;
+  },
 });
 
 const PhotoPreview = dynamic(

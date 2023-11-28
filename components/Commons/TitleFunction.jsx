@@ -9,11 +9,15 @@ import { useCountdown } from "@/hooks/useCountDown";
 
 import AppButton from "../App/AppButton/AppButton";
 import ButtonArrow from "../App/AppButton/ButtonArrow";
+import CircleLoading from "../App/CircleLoading/CircleLoading";
 
 // import ShowTime from "./ShowTime";
 
 const ShowTime = dynamic(() => import("./ShowTime"), {
   ssr: false,
+  loading: () => {
+    <CircleLoading />;
+  },
 });
 
 function TitleFunction({
