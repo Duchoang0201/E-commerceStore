@@ -98,7 +98,7 @@ function HerroBanner() {
                 // loading="lazy"
                 width={892}
                 height={344}
-                priority
+                priority="true"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -108,7 +108,7 @@ function HerroBanner() {
                 // loading="lazy"
                 width={892}
                 height={344}
-                priority
+                priority="true"
               />
             </SwiperSlide>
           </Swiper>
