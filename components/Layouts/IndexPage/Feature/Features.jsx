@@ -53,17 +53,17 @@ function Features() {
               width={511}
               height={511}
             />
-            <div className="flex flex-col justify-between gap-y-4 max-w-[242px] ml-[3px] max-h-[122px] h-full w-auto absolute bottom-8  bg-opacity-50 text-white-0">
-              <span className="font-inter text-[24px] font-semibold leading-6">
+            <ul className="flex flex-col justify-between gap-y-4 max-w-[242px] ml-[3px] max-h-[122px] h-full w-auto absolute bottom-8  bg-opacity-50 text-white-0">
+              <li className="font-inter text-[24px] font-semibold leading-6">
                 PlayStation 5
-              </span>
-              <span className="text-[14px] font-poppins">
+              </li>
+              <li className="text-[14px] font-poppins">
                 Black and White version of the PS5 coming out on sale.
-              </span>
-              <span className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
+              </li>
+              <li className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
                 Shop Now
-              </span>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
 

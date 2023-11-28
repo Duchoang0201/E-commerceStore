@@ -36,16 +36,15 @@ function TitleFunction({
         <div
           className={`${!isCountDown ? "gap-y-5" : "gap-y-6"}  flex flex-col `}
         >
-          {" "}
           <div className=" flex flex-row items-center justify-start  ">
             <div className="w-5 h-10 bg-Secondary-2 rounded-sm " />
-            <div className="text-Secondary-2 px-5 font-semibold font-poppins">
+            <span className="text-Secondary-2 px-5 font-semibold font-poppins">
               {title}
-            </div>
+            </span>
           </div>
-          <div className="leading-[48px] tracking-[1.44px] font-inter font-semibold text-[20px] sm:text-[28px] md:text-[36px] ">
+          <span className="leading-[48px] tracking-[1.44px] font-inter font-semibold text-[20px] sm:text-[28px] md:text-[36px] ">
             {content}
-          </div>
+          </span>
         </div>
         <div className="flex flex-col justify-end">
           {isCountDown && (
@@ -58,20 +57,12 @@ function TitleFunction({
           )}
         </div>
       </div>
-      <div>
+      <div className="flex flex-col justify-end">
         {" "}
         {onPrev && onNext ? (
-          <div className="flex flex-col justify-end h-full ">
-            <ButtonArrow onPrev={onPrev} onNext={onNext} />
-          </div>
+          <ButtonArrow onPrev={onPrev} onNext={onNext} />
         ) : (
-          <div className="flex flex-col justify-end h-full ">
-            <AppButton
-              buttonText={buttonText}
-              paddingY="16"
-              href="/searchpage"
-            />
-          </div>
+          <AppButton buttonText={buttonText} paddingY="16" href="/searchpage" />
         )}
       </div>
     </div>
