@@ -16,24 +16,12 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
   return (
     <>
       <div className="group overflow-hidden relative rounded-md ">
-        {/* <Image
-          // loading="lazy"
-          // className="aspect-[270/250]"
-          width={270}
-          height={250}
-          src={item.images[0]}
-          alt={item.id}
-        /> */}
         <div className="relative h-[150px] md:h-[200px] lg:h-[250px] ">
           <Image
             alt={item.id}
             src={item.images[0]}
             fill
             quality={100}
-            // sizes="(min-width: 1320px) 270px, (min-width: 1020px) calc(18.21vw + 33px), (min-width: 680px) calc(27.81vw - 30px), (min-width: 560px) calc(33vw - 34px), (min-width: 500px) calc(15vw + 56px), (min-width: 460px) calc(-115vw + 676px), (min-width: 400px) calc(20vw + 43px), (min-width: 340px) calc(25vw + 46px), 252px"
-            // style={{
-            //   objectFit: "cover", // cover, contain, none
-            // }}
             sizes="(min-width: 1320px) 270px, (min-width: 1040px) calc(18.46vw + 30px), (min-width: 680px) calc(26.18vw - 19px), (min-width: 480px) calc(33.33vw - 36px), (min-width: 400px) calc(40vw - 37px), (min-width: 340px) calc(50vw - 39px), calc(-655vw + 2217px)"
           />
         </div>

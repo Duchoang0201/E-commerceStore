@@ -16,9 +16,8 @@ export default function Rated({ data }) {
 
   const starArray = Array.from({ length: Math.floor(fixRated) }, (_, index) => (
     <Image
-      className="aspect-square w-3 h-3 md:w-4 md:h-4"
+      className=" w-3 h-3 md:w-4 md:h-4"
       key={index}
-      loading="lazy"
       src={StarYellow}
       width="auto"
       height="auto"
@@ -30,9 +29,8 @@ export default function Rated({ data }) {
     { length: 5 - Math.ceil(fixRated) },
     (_, index) => (
       <Image
-        className="aspect-square w-3 h-3 md:w-4 md:h-4"
+        className=" w-3 h-3 md:w-4 md:h-4"
         key={index}
-        loading="lazy"
         src={StarGray}
         width="auto"
         height="auto"
@@ -44,8 +42,7 @@ export default function Rated({ data }) {
   const halfStar =
     Math.ceil(fixRated) - fixRated === 0.5 ? (
       <Image
-        className="aspect-square w-3 h-3 md:w-4 md:h-4"
-        loading="lazy"
+        className=" w-3 h-3 md:w-4 md:h-4"
         src={HalfStar}
         width="auto"
         height="auto"
