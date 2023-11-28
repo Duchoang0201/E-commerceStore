@@ -17,7 +17,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
     <>
       <div className="group overflow-hidden relative w-auto rounded-md">
         <Image
-          loading="lazy"
+          priority
           className="aspect-[270/250]"
           width={270}
           height={250}
@@ -68,10 +68,9 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         {isDiscount.isActive && (
           <span
             title="Discount"
-            className="absolute inline-flex items-center justify-center md:w-[55px] md:h-[26px] w-10 h-auto text-xs
-              text-white 
+            className="absolute inline-flex items-center justify-center md:w-[55px] md:h-[26px] w-10 h-auto 
                 top-4 left-6 dark:border-gray-900
-               text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 
+               text-[8px] md:text-[12px]  px-2 py-1 md:px-3 md:py-1 
                bg-Secondary-2 rounded-sm text-white-0"
           >
             -{isDiscount.value}%
