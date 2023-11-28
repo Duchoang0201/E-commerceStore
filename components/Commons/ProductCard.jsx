@@ -14,7 +14,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
   const { addWishList } = useWishList();
   const { addCart } = useCartStore();
   return (
-    <div className="w-full relative  " href={`/products/${item.id}`}>
+    <>
       <div className="group overflow-hidden relative w-auto rounded-md">
         <Image
           loading="lazy"
@@ -65,14 +65,16 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           </button>
         )}
         {isDiscount.isActive && (
-          <div
+          <span
             title="Discount"
-            className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900"
+            className="absolute inline-flex items-center justify-center w-[55px] h-[26px] text-xs
+              text-white 
+                top-4 left-6 dark:border-gray-900
+               text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 
+               bg-Secondary-2 rounded-sm text-white-0"
           >
-            <span className="text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 bg-Secondary-2 rounded-sm text-white-0">
-              -{isDiscount.value}%
-            </span>
-          </div>
+            -{isDiscount.value}%
+          </span>
         )}
       </div>
 
@@ -91,7 +93,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           <span className="px-2 opacity-50 text-[14px]">100</span>
         </li>
       </ul>
-    </div>
+    </>
   );
 }
 

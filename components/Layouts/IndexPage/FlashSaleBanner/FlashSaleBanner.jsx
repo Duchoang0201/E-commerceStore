@@ -13,7 +13,11 @@ function FlashSaleBanner({ products }) {
       <CardBanner products={products} />
 
       <div className="pt-[59px] pb-[60px] flex flex-row justify-center border-b border-Neutral-200 container ">
-        <AppButton buttonText="View All Products" paddingY="16" />
+        <AppButton
+          buttonText="View All Products"
+          paddingY="16"
+          href="/searchpage"
+        />
       </div>
     </div>
   );

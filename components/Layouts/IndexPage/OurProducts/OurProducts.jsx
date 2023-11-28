@@ -107,7 +107,11 @@ function OurProducts({ ourProducts }) {
       </div>
 
       <div className="container flex flex-row justify-center mt-[58px] mb-[140px]">
-        <AppButton buttonText="View All Products" paddingY="16" />
+        <AppButton
+          buttonText="View All Products"
+          paddingY="16"
+          href="/searchpage"
+        />
       </div>
     </div>
   );

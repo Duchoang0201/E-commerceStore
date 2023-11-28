@@ -126,7 +126,7 @@ function Contact() {
             <div className="flex flex-row justify-end ">
               <div className="xl:flex flex-row gap-8">
                 <button type="button">Cancel</button>
-                <AppButton buttonText="Save Change" paddingY="16" />
+                <AppButton buttonText="Save Change" paddingY="16" href="#" />
               </div>
             </div>
           </form>

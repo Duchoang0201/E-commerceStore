@@ -116,7 +116,7 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
             <Plus color="white" />
           </button>
         </div>
-        <AppButton buttonText="Buy Now" paddingY="10" />
+        <AppButton buttonText="Buy Now" paddingY="10" href="/checkout" />
         <button
           title="Add Wishlist"
           type="button"

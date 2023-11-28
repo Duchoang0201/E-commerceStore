@@ -66,7 +66,11 @@ function TitleFunction({
           </div>
         ) : (
           <div className="flex flex-col justify-end h-full ">
-            <AppButton buttonText={buttonText} paddingY="16" />
+            <AppButton
+              buttonText={buttonText}
+              paddingY="16"
+              href="/searchpage"
+            />
           </div>
         )}
       </div>
