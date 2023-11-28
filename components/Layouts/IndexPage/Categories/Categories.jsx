@@ -86,7 +86,7 @@ function Categories({ categories }) {
                   <Image
                     loading="lazy"
                     src={item.image}
-                    alt={item.name}
+                    alt={item.id}
                     width={56}
                     height={56}
                     className="object-contain aspect-[56/56]"

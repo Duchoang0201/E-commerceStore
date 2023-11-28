@@ -22,7 +22,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           width={270}
           height={250}
           src={item.images[0]}
-          alt={item.title}
+          alt={item.id}
         />
         <button
           title="Add to Cart"
