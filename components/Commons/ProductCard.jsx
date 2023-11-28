@@ -18,7 +18,9 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
       <div className="group overflow-hidden relative rounded-md w-auto">
         <Image
           // priority="true"
-          loading="lazy"
+          // loading="lazy"
+          loading="eager"
+          priority="true"
           quality={75}
           width={270}
           height={250}
