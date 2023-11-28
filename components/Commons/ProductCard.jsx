@@ -17,7 +17,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
     <>
       <div className="group overflow-hidden relative rounded-md w-auto">
         <Image
-          loading="lazy"
+          // loading="lazy"
           className="aspect-[270/250]"
           width={270}
           height={250}
