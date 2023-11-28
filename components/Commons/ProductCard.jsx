@@ -24,19 +24,17 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
           src={item.images[0]}
           alt={item.title}
         />
-        <div className="absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <button
-            title="Add to Cart"
-            type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              addCart(item);
-            }}
-            className="bg-black text-white-0 py-2 px-5"
-          >
-            Add to cart
-          </button>
-        </div>
+        <button
+          title="Add to Cart"
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            addCart(item);
+          }}
+          className="bg-black text-white-0 py-2 px-5 absolute h-10 w-full bg-black-0  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
+        >
+          Add to cart
+        </button>
         {isHeart.isActive && (
           <button
             title="Add wish list"
@@ -59,7 +57,9 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
               setOpenPhoto(item.images[0]);
             }}
             type="button"
-            className="w-[24px] h-[24px] md:w-[34px] md:h-[34px] absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-[4.5rem] sm:top-14 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
+            className="w-[24px] h-[24px] md:w-[34px] md:h-[34px] absolute flex-col justify-center bg-Secondary-0
+             inline-flex items-center rounded-full top-[3.5rem] sm:top-14 right-2
+              hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
           >
             <Eye className="w-2/3 h-2/3 " />
           </button>
@@ -69,9 +69,9 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
             title="Discount"
             className="absolute inline-flex items-center justify-center w-6 h-6 text-xs  text-white bg-red-500  rounded-full top-4 left-6 dark:border-gray-900"
           >
-            <div className="text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 bg-Secondary-2 rounded-sm text-white-0">
+            <span className="text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 bg-Secondary-2 rounded-sm text-white-0">
               -{isDiscount.value}%
-            </div>
+            </span>
           </div>
         )}
       </div>
