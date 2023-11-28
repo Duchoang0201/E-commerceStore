@@ -15,7 +15,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
   const { addCart } = useCartStore();
   return (
     <>
-      <div className="group overflow-hidden relative rounded-md w-full">
+      <div className="group overflow-hidden relative rounded-md w-auto">
         <Image
           loading="lazy"
           quality={75}

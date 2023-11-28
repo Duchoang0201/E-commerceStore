@@ -3,7 +3,7 @@ import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en" suppressHydrationWarning="false">
+    <Html lang="en" title="Exclusive" suppressHydrationWarning="false">
       <Head>
         <meta
           name="description"
