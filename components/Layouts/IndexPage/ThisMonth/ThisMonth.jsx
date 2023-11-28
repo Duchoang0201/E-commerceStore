@@ -81,8 +81,8 @@ function ThisMonth({ thisMonth }) {
       </div>{" "}
       <div className="container max-h-[500px] h-full flex flex-row mt-[139px]">
         {" "}
-        <div className="bg-black-0  pt-[37px] pr-[44px] py-[43px] pl-20 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
-          <div className="w-2/3 h-fit flex flex-col ssm:gap-12 gap-5  md:gap-8 md:relative absolute z-30 ">
+        <div className="bg-black-0  pt-[37px] pr-[44px] py-[43px] pl-10 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
+          <div className="w-2/3 h-fit flex flex-col ssm:gap-12 gap-6  md:gap-8 md:relative absolute z-30 ">
             <span className="font-poppins" style={{ color: "#0F6" }}>
               {" "}
               Categories
