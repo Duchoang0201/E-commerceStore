@@ -81,77 +81,70 @@ function ThisMonth({ thisMonth }) {
               </SwiperSlide>
             ))}
         </Swiper>
-      </div>
-      <div className=" mt-[139px]">
-        <div className="container max-h-[500px] h-full">
-          {" "}
-          <div className="w-full h-auto bg-black-0 flex flex-row">
-            {" "}
-            <div className="pt-[37px] pr-[44px] py-[43px] pl-20 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
-              <div className="w-2/3 h-fit flex flex-col gap-12  md:gap-8 md:relative absolute z-30 ">
-                <span className="font-poppins" style={{ color: "#0F6" }}>
-                  {" "}
-                  Categories
-                </span>
-                <span className="font-inter  text-14px sm:text-5xl font-semibold text-white-0">
-                  Enhance Your Music Experience
-                </span>
-                <div className="flex flex-row w-full gap-2 md:gap-6">
-                  <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
-                    {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
-                    <span className="">23</span>
-                    <span className="md:text-[11px]">Day</span>
-                    {/* </div> */}
-                  </div>
-                  <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
-                    {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
-                    <span className="">23</span>
-                    <span className="md:text-[11px]"> Hours</span>
-                    {/* </div> */}
-                  </div>
-                  <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
-                    {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
-                    <span className="">23</span>
-                    <span className="md:text-[11px]">Minutes</span>
-                    {/* </div> */}
-                  </div>
-                  <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
-                    {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
-                    <span className="">23</span>
-                    <span className="md:text-[11px]">Second</span>
-                    {/* </div> */}
-                  </div>
-                </div>
-                <div>
-                  <button
-                    style={{ backgroundColor: "#0F6" }}
-                    type="button"
-                    className="max-w-[171px] w-full text-[8px] sm:text-base text-white py-4 px-4 rounded-md"
-                  >
-                    {" "}
-                    Buy Now!
-                  </button>
-                </div>
+      </div>{" "}
+      <div className="container max-h-[500px] h-full flex flex-row mt-[139px]">
+        {" "}
+        <div className="bg-black-0  pt-[37px] pr-[44px] py-[43px] pl-20 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
+          <div className="w-2/3 h-fit flex flex-col gap-12  md:gap-8 md:relative absolute z-30 ">
+            <span className="font-poppins" style={{ color: "#0F6" }}>
+              {" "}
+              Categories
+            </span>
+            <span className="font-inter  text-14px sm:text-5xl font-semibold text-white-0">
+              Enhance Your Music Experience
+            </span>
+            <div className="flex flex-row w-full gap-2 md:gap-6">
+              <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+                {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
+                <span className="">23</span>
+                <span className="md:text-[11px]">Day</span>
+                {/* </div> */}
               </div>
-              <div className="relative my-[45px] mx-[16px] z-20 max-w-[600px] w-full h-auto flex flex-col justify-center md:flex">
-                <div
-                  className="absolute top-0 left-0 w-full h-full rounded-full  md:flex"
-                  style={{
-                    opacity: 0.3,
-                    background: "#D9D9D9",
-                    filter: "blur(100px)",
-                    zIndex: -1,
-                  }}
-                />
-                <Image
-                  // className="object-contain aspect-auto"
-                  src={Banner}
-                  alt="banner"
-                  width={568} // Set the width to match the parent div's width
-                  height={330} // Set the height to match the parent div's height
-                />
+              <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+                {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
+                <span className="">23</span>
+                <span className="md:text-[11px]"> Hours</span>
+                {/* </div> */}
+              </div>
+              <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+                {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
+                <span className="">23</span>
+                <span className="md:text-[11px]">Minutes</span>
+                {/* </div> */}
+              </div>
+              <div className="max-w-[48px] w-full h-full md:max-w-[62px] md:w-full relative rounded-full bg-white-0 aspect-square flex flex-col justify-center items-center">
+                {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center"> */}
+                <span className="">23</span>
+                <span className="md:text-[11px]">Second</span>
+                {/* </div> */}
               </div>
             </div>
+            <button
+              style={{ backgroundColor: "#0F6" }}
+              type="button"
+              className="max-w-[171px] w-full text-[8px] sm:text-base text-white py-4 px-4 rounded-md"
+            >
+              {" "}
+              Buy Now!
+            </button>
+          </div>
+          <div className="relative my-[45px] mx-[16px] z-20 max-w-[600px] w-full h-auto flex flex-col justify-center md:flex">
+            <div
+              className="absolute top-0 left-0 w-full h-full rounded-full  md:flex"
+              style={{
+                opacity: 0.3,
+                background: "#D9D9D9",
+                filter: "blur(100px)",
+                zIndex: -1,
+              }}
+            />
+            <Image
+              // className="object-contain aspect-auto"
+              src={Banner}
+              alt="banner"
+              width={568} // Set the width to match the parent div's width
+              height={330} // Set the height to match the parent div's height
+            />
           </div>
         </div>
       </div>

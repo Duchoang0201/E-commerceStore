@@ -31,7 +31,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
             e.preventDefault();
             addCart(item);
           }}
-          className="bg-black text-white-0 py-2 px-5 absolute h-10 w-full bg-black-0  flex items-center justify-center bottom-0 lg:-bottom-10 
+          className="bg-black text-white-0 lg:py-2 px-5 absolute h-10 w-full bg-black-0  lg:flex lg:items-center lg:justify-center flex flex-col items-center -bottom-4 lg:-bottom-10 
           lg:group-hover:bottom-0 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300"
         >
           Add to cart
@@ -68,7 +68,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         {isDiscount.isActive && (
           <span
             title="Discount"
-            className="absolute inline-flex items-center justify-center w-[55px] h-[26px] text-xs
+            className="absolute inline-flex items-center justify-center md:w-[55px] md:h-[26px] w-10 h-auto text-xs
               text-white 
                 top-4 left-6 dark:border-gray-900
                text-[8px] md:text-[12px] font-thin px-2 py-1 md:px-3 md:py-1 

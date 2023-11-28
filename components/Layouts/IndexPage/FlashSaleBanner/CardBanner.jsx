@@ -52,9 +52,6 @@ function CardBanner({ products }) {
             nextEl: ".review-swiper-button-next",
             prevEl: ".review-swiper-button-prev",
           }}
-          pagination={{
-            clickable: true,
-          }}
           className="mySwiper xxl:!overflow-visible "
           breakpoints={{
             1280: {

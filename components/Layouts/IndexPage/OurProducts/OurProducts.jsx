@@ -43,8 +43,6 @@ function OurProducts({ ourProducts }) {
       <div className="container  pt-[65px] ">
         <Swiper
           watchSlidesProgress="true"
-          // slidesPerView="auto"
-          // spaceBetween={30}
           modules={[Grid]}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
@@ -93,14 +91,6 @@ function OurProducts({ ourProducts }) {
                     isHeart={{ isActive: true }}
                   />
                 </Link>
-                {/* <div className="absolute h-10 w-full bg-Neutral-200  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <button
-                    type="submit"
-                    className="bg-black text-white-0 py-2 px-5"
-                  >
-                    Add to cart
-                  </button>
-                </div> */}
               </SwiperSlide>
             ))}
         </Swiper>
