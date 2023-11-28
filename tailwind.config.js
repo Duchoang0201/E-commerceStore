@@ -53,6 +53,8 @@ module.exports = {
       black: "900",
     },
     colors: {
+      // transparent: "transparent",
+      // current: "currentColor",
       white: {
         0: "#fff",
       },

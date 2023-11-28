@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
 import AppButton from "@/components/App/AppButton/AppButton";
 
-// import CardBanner from "./CardBanner";
-const CardBanner = dynamic(() => import("./CardBanner"), {
-  ssr: false,
-});
+import CardBanner from "./CardBanner";
+// const CardBanner = dynamic(() => import("./CardBanner"), {
+//   ssr: false,
+// });
 function FlashSaleBanner({ products }) {
   return (
     <>

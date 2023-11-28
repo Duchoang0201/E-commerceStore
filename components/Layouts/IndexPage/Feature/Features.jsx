@@ -42,7 +42,7 @@ function Features() {
         paddingY="16"
       />
 
-      <div className="  mt-[65px] flex flex-col gap-y-2 sm:flex sm:flex-row sm:justify-between sm:gap-2 ">
+      <div className="mt-[65px] flex flex-col gap-y-2 sm:flex sm:flex-row sm:justify-between sm:gap-2 ">
         <div className=" relative bg-black-0">
           <div className=" max-w-[570px] w-full h-auto mt-[89px] mx-[29px]">
             <Image
