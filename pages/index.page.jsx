@@ -4,11 +4,16 @@ import PropTypes from "prop-types";
 
 import IndexPage from "@/components/Layouts/IndexPage/IndexPage";
 
-import { getDataFunction } from "@/libraries/getDataFunction"; // Import PropTypes from the correct module
+import { getDataFunction } from "@/libraries/getDataFunction";
 
 // const IndexPage = dynamic(
 //   () => import("@/components/Layouts/IndexPage/IndexPage"),
-//   { ssr: false },
+//   {
+//     ssr: false,
+//     loading: () => {
+//       <span>...</span>;
+//     },
+//   },
 // );
 
 export default function Home({ products, categories, thisMonth, ourProducts }) {

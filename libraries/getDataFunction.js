@@ -1,36 +1,34 @@
 import { axiosClient } from "./axiosClient";
 
+// Check if a URL has 'https' protocol
 function hasHttps(url) {
-  return url.includes("https");
+  return url.startsWith("https");
 }
 
-const configData = (data) => {
-  const newData = data.filter((item) => {
-    if (item.image) {
-      return hasHttps(item.image);
-    }
-    if (item.images && item.images[0]) {
-      return hasHttps(item.images[0]);
-    }
-    // Return false if neither condition is met
-    return false;
+// Filter data based on 'https' images
+const filterData = (data) => {
+  return data.filter((item) => {
+    const imageUrl = item.image || (item.images && item.images[0]);
+    return imageUrl && hasHttps(imageUrl);
   });
-
-  return newData;
 };
 
 export const getDataFunction = async (data) => {
   try {
     const arrayData = await Promise.all(
       data.map(async (item) => {
-        const { data: newData } = await axiosClient.get(item.apiLink);
-        const updateOne = configData(newData);
-        return { [item.dataName]: updateOne };
+        try {
+          const { data: newData } = await axiosClient.get(item.apiLink);
+          const updateOne = filterData(newData);
+          return { [item.dataName]: updateOne };
+        } catch (error) {
+          return { [item.dataName]: [] };
+        }
       }),
     );
-    return Object.assign({}, ...arrayData);
+
+    return arrayData.reduce((acc, obj) => ({ ...acc, ...obj }), {});
   } catch (error) {
-    const arrayData = data.map((item) => ({ [item.dataName]: [] }));
-    return Object.assign({}, ...arrayData);
+    return data.reduce((acc, item) => ({ ...acc, [item.dataName]: [] }), {});
   }
 };

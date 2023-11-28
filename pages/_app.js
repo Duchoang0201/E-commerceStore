@@ -37,6 +37,9 @@ const PhotoPreview = dynamic(
   {
     ssr: false,
     // loading: lazy,
+    loading: () => {
+      <CircleLoading />;
+    },
   },
 );
 export default function App({ Component, pageProps }) {
