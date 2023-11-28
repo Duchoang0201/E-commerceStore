@@ -95,10 +95,10 @@ function HerroBanner() {
               <Image
                 src={Banner}
                 alt="banner"
-                // loading="lazy"
+                loading="lazy"
                 // priority="true"
-                loading="eager"
-                priority="true"
+                // loading="eager"
+                // priority="true"
                 width={892}
                 height={344}
               />
@@ -108,9 +108,9 @@ function HerroBanner() {
                 src={Banner}
                 alt="banner"
                 // priority="true"
-                // loading="lazy"
-                loading="eager"
-                priority="true"
+                loading="lazy"
+                // loading="eager"
+                // priority="true"
                 width={892}
                 height={344}
               />
