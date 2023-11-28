@@ -58,13 +58,15 @@ export async function getStaticPaths({ locales }) {
   const products = results.data;
 
   const paths = products.flatMap((item) => {
-    return locales.map((locale) => ({
+    const result = locales.map((locale) => ({
       params: {
         id: `${item.id}`,
       },
       locale,
     }));
+    return result;
   });
+  console.log(`🚀🚀🚀!..paths`, paths);
   // const paths = products.map((item) => ({
   //   params: { id: `${item.id}` },
   // }));

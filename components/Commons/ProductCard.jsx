@@ -14,7 +14,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
   const { addWishList } = useWishList();
   const { addCart } = useCartStore();
   return (
-    <div className="w-full relative  ">
+    <div className="w-full relative  " href={`/products/${item.id}`}>
       <div className="group overflow-hidden relative w-auto rounded-md">
         <Image
           loading="lazy"
@@ -76,25 +76,21 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         )}
       </div>
 
-      <div className="pt-4 flex flex-col gap-y-2">
-        <span className="font-medium truncate text-ellipsis overflow-hidden">
+      <ul className="pt-4 flex flex-col gap-y-2">
+        <li className="font-medium truncate text-ellipsis overflow-hidden">
           {item.title}
-        </span>
-        <div className="justify-center items-center font-medium">
-          <span className="text-Button-1  ">
+        </li>
+        <li className="justify-center items-center font-medium">
+          <span className="text-Button-1">
             ${Math.round(Number(item.price) * 0.8)}
           </span>
-
           <span className="px-4 line-through opacity-50">${item.price}</span>
-        </div>
-
-        <div className=" flex flex-row items-center font-semibold">
+        </li>
+        <li className="flex flex-row items-center font-semibold">
           <Rated data={{ rate: 4 }} />
-          <div>
-            <span className="px-2 opacity-50 text-[14px]">100</span>
-          </div>
-        </div>
-      </div>
+          <span className="px-2 opacity-50 text-[14px]">100</span>
+        </li>
+      </ul>
     </div>
   );
 }
