@@ -28,7 +28,7 @@ function OurProducts({ ourProducts }) {
     swiperRef.current.slideNext();
   }, []);
   return (
-    <div>
+    <>
       <TitleFunction
         paddingY="16"
         content={ourProductsContent.content}
@@ -103,7 +103,7 @@ function OurProducts({ ourProducts }) {
           href="/searchpage"
         />
       </div>
-    </div>
+    </>
   );
 }
 

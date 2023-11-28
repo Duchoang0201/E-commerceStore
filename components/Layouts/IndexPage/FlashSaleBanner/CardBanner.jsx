@@ -27,7 +27,7 @@ function CardBanner({ products }) {
   }, []);
   const [hideSlide, setHideSlide] = useState(5);
   return (
-    <div className="relative">
+    <>
       <TitleFunction
         content={flashSaleContent.content}
         title={flashSaleContent.title}
@@ -113,7 +113,7 @@ function CardBanner({ products }) {
           }`}
         </style>
       </div>
-    </div>
+    </>
   );
 }
 

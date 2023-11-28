@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import React, { useRef } from "react";
 import Image from "next/image";
@@ -34,10 +34,7 @@ function ThisMonth({ thisMonth }) {
       />
       <div className=" container mt-[60px] ">
         <Swiper
-          freeMode
           watchSlidesProgress="true"
-          // slidesPerView="auto"
-          // spaceBetween={30}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
@@ -139,7 +136,6 @@ function ThisMonth({ thisMonth }) {
               }}
             />
             <Image
-              // className="object-contain aspect-auto"
               src={Banner}
               alt="banner"
               width={568} // Set the width to match the parent div's width

@@ -29,7 +29,7 @@ function HerroBanner() {
     setShowChild("");
   };
   return (
-    <div>
+    <>
       <div className="container relative flex flex-row justify-center mt-10 xl:mt-0">
         <div className="hidden xl:flex xl:w-full  border-r border-Neutral-200 pt-[32px] max-w-[233px] w-full">
           <ul className="w-full">
@@ -115,7 +115,7 @@ function HerroBanner() {
       <div className="visible xl:hidden absolute left-[2px] top-[150px]  z-10">
         <Draw open={open} setOpen={setOpen} />
       </div>
-    </div>
+    </>
   );
 }
 
