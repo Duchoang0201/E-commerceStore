@@ -95,19 +95,20 @@ function HerroBanner() {
               <Image
                 src={Banner}
                 alt="banner"
-                loading="lazy"
+                // loading="lazy"
                 width={892}
                 height={344}
-                // priority
+                priority
               />
             </SwiperSlide>
             <SwiperSlide>
               <Image
                 src={Banner}
                 alt="banner"
-                loading="lazy"
-                width="892"
-                height="344"
+                // loading="lazy"
+                width={892}
+                height={344}
+                priority
               />
             </SwiperSlide>
           </Swiper>
