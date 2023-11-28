@@ -38,81 +38,79 @@ function CardBanner({ products }) {
         buttonText="View All"
       />
 
-      <div className=" mx-auto w-full mt-[40px]">
-        <Swiper
-          watchOverflow="true"
-          watchSlidesProgress="true"
-          onBeforeInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          onSlideChange={() => {
-            setHideSlide((prev) => prev + 1);
-          }}
-          navigation={{
-            nextEl: ".review-swiper-button-next",
-            prevEl: ".review-swiper-button-prev",
-          }}
-          className="mySwiper xxl:!overflow-visible "
-          breakpoints={{
-            1280: {
-              slidesPerView: "auto",
-              spaceBetween: 30,
-              // slidesOffsetBefore: 135,
-              slidesOffsetAfter: 115,
-            },
+      <Swiper
+        watchOverflow="true"
+        watchSlidesProgress="true"
+        onBeforeInit={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        onSlideChange={() => {
+          setHideSlide((prev) => prev + 1);
+        }}
+        navigation={{
+          nextEl: ".review-swiper-button-next",
+          prevEl: ".review-swiper-button-prev",
+        }}
+        className="mySwiper xxl:!overflow-visible mt-[40px]"
+        breakpoints={{
+          1280: {
+            slidesPerView: "auto",
+            spaceBetween: 30,
+            // slidesOffsetBefore: 135,
+            slidesOffsetAfter: 115,
+          },
 
-            1010: {
-              slidesPerView: 4,
+          1010: {
+            slidesPerView: 4,
 
-              spaceBetween: 30,
-            },
-            680: {
-              slidesPerView: 3.5,
-              spaceBetween: 30,
-            },
-            480: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            400: {
-              slidesPerView: 2.5,
-              spaceBetween: 30,
-            },
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-          }}
-        >
-          {products.length > 0 &&
-            products.map((item, index) => {
-              return (
-                <SwiperSlide
-                  className="!max-w-[270px] !max-h-[350px]"
-                  key={item.id}
-                >
-                  <Link href={`/products/${item.id}`}>
-                    <ProductCart
-                      index={index}
-                      item={item}
-                      isEye={{ isActive: true }}
-                      isDiscount={{ isActive: true, value: 20 }}
-                      isHeart={{ isActive: true }}
-                    />
-                  </Link>
-                </SwiperSlide>
-              );
-            })}
-        </Swiper>
-        <style>
-          {`
+            spaceBetween: 30,
+          },
+          680: {
+            slidesPerView: 3.5,
+            spaceBetween: 30,
+          },
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          400: {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        }}
+      >
+        {products.length > 0 &&
+          products.map((item, index) => {
+            return (
+              <SwiperSlide
+                className="!max-w-[270px] !max-h-[350px]"
+                key={item.id}
+              >
+                <Link href={`/products/${item.id}`}>
+                  <ProductCart
+                    index={index}
+                    item={item}
+                    isEye={{ isActive: true }}
+                    isDiscount={{ isActive: true, value: 20 }}
+                    isHeart={{ isActive: true }}
+                  />
+                </Link>
+              </SwiperSlide>
+            );
+          })}
+      </Swiper>
+      <style>
+        {`
           .swiper-slide:nth-of-type(${hideSlide}){
             opacity: 1 !important;
             filter: none;
           
           }`}
-        </style>
-      </div>
+      </style>
     </>
   );
 }

@@ -38,67 +38,66 @@ function Categories({ categories }) {
         bgButton=""
         isCountDown={false}
       />
-      <div className="mt-[60px] ">
-        <Swiper
-          watchSlidesProgress="true"
-          slidesPerView="auto"
-          spaceBetween={30}
-          onBeforeInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          breakpoints={{
-            1280: {
-              slidesPerView: 6,
-              spaceBetween: 30,
-            },
-            990: {
-              slidesPerView: 5,
-              spaceBetween: 30,
-            },
-            860: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-            480: {
-              slidesPerView: 3.5,
-              spaceBetween: 30,
-            },
-            400: {
-              slidesPerView: 2.5,
-              spaceBetween: 30,
-            },
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-          }}
-        >
-          {categories.map((item) => {
-            return (
-              <SwiperSlide
-                key={item.id}
-                className="!max-w-[170px] !max-h-[145px] py-6 border border-Neutral-100 hover:text-white-0 hover:!bg-Secondary-2 hover:transition-all hover:duration-500  rounded-lg"
+      <Swiper
+        className="mt-[60px]"
+        watchSlidesProgress="true"
+        slidesPerView="auto"
+        spaceBetween={30}
+        onBeforeInit={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        breakpoints={{
+          1280: {
+            slidesPerView: 6,
+            spaceBetween: 30,
+          },
+          990: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+          860: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          480: {
+            slidesPerView: 3.5,
+            spaceBetween: 30,
+          },
+          400: {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        }}
+      >
+        {categories.map((item) => {
+          return (
+            <SwiperSlide
+              key={item.id}
+              className="!max-w-[170px] !max-h-[145px] py-6 border border-Neutral-100 hover:text-white-0 hover:!bg-Secondary-2 hover:transition-all hover:duration-500  rounded-lg"
+            >
+              <Link
+                href={`/products/category/${item.id}`}
+                className="w-full min-h-full flex flex-col items-center justify-center"
               >
-                <Link
-                  href={`/products/category/${item.id}`}
-                  className="w-full min-h-full flex flex-col items-center justify-center"
-                >
-                  <Image
-                    loading="lazy"
-                    src={item.image}
-                    alt={item.id}
-                    width={56}
-                    height={56}
-                    className="object-contain aspect-[56/56]"
-                  />
+                <Image
+                  loading="lazy"
+                  src={item.image}
+                  alt={item.id}
+                  width={56}
+                  height={56}
+                  className="object-contain aspect-[56/56]"
+                />
 
-                  <span className="py-4 truncate">{item.name}</span>
-                </Link>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
+                <span className="py-4 truncate">{item.name}</span>
+              </Link>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </div>
   );
 }

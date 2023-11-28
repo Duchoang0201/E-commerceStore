@@ -40,61 +40,60 @@ function OurProducts({ ourProducts }) {
         isCountDown={false}
       />
 
-      <div className="  pt-[65px] ">
-        <Swiper
-          watchSlidesProgress="true"
-          modules={[Grid]}
-          onBeforeInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          grid={{ fill: "row", rows: 2 }}
-          breakpoints={{
-            1280: {
-              slidesPerView: "auto",
-              spaceBetween: 30,
-              grid: { fill: "row", rows: 2 },
-            },
-            830: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-              grid: { fill: "row", rows: 2 },
-            },
-            480: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-              grid: { fill: "row", rows: 2 },
-            },
-            400: {
-              slidesPerView: 2.5,
-              spaceBetween: 30,
-              grid: { fill: "row", rows: 2 },
-            },
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-              grid: { fill: "row", rows: 2 },
-            },
-          }}
-        >
-          {ourProducts &&
-            ourProducts.map((item) => (
-              <SwiperSlide
-                key={item.id}
-                className="!max-w-[270px] !max-h-[350px]  "
-              >
-                <Link href={`/products/${item.id}`}>
-                  {" "}
-                  <ProductCard
-                    item={item}
-                    isEye={{ isActive: true }}
-                    isDiscount={{ isActive: false, value: 20 }}
-                    isHeart={{ isActive: true }}
-                  />
-                </Link>
-              </SwiperSlide>
-            ))}
-        </Swiper>
-      </div>
+      <Swiper
+        className="mt-[65px]"
+        watchSlidesProgress="true"
+        modules={[Grid]}
+        onBeforeInit={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        grid={{ fill: "row", rows: 2 }}
+        breakpoints={{
+          1280: {
+            slidesPerView: "auto",
+            spaceBetween: 30,
+            grid: { fill: "row", rows: 2 },
+          },
+          830: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            grid: { fill: "row", rows: 2 },
+          },
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            grid: { fill: "row", rows: 2 },
+          },
+          400: {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+            grid: { fill: "row", rows: 2 },
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            grid: { fill: "row", rows: 2 },
+          },
+        }}
+      >
+        {ourProducts &&
+          ourProducts.map((item) => (
+            <SwiperSlide
+              key={item.id}
+              className="!max-w-[270px] !max-h-[350px]  "
+            >
+              <Link href={`/products/${item.id}`}>
+                {" "}
+                <ProductCard
+                  item={item}
+                  isEye={{ isActive: true }}
+                  isDiscount={{ isActive: false, value: 20 }}
+                  isHeart={{ isActive: true }}
+                />
+              </Link>
+            </SwiperSlide>
+          ))}
+      </Swiper>
 
       <div className=" flex flex-row justify-center mt-[58px] mb-[140px]">
         <AppButton

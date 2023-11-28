@@ -32,53 +32,52 @@ function ThisMonth({ thisMonth }) {
         onPrev=""
         isCountDown={false}
       />
-      <div className="  mt-[60px] ">
-        <Swiper
-          watchSlidesProgress="true"
-          onBeforeInit={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          breakpoints={{
-            1280: {
-              slidesPerView: "auto",
-              spaceBetween: 30,
-            },
-            860: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-            480: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            400: {
-              slidesPerView: 2.5,
-              spaceBetween: 30,
-            },
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-          }}
-        >
-          {thisMonth &&
-            thisMonth.map((item) => (
-              <SwiperSlide
-                key={item.id}
-                className="!max-w-[270px] !max-h-[350px]"
-              >
-                <Link href={`/products/${item.id}`}>
-                  <ProductCard
-                    item={item}
-                    isEye={{ isActive: true }}
-                    isDiscount={{ isActive: false, value: 20 }}
-                    isHeart={{ isActive: true }}
-                  />
-                </Link>
-              </SwiperSlide>
-            ))}
-        </Swiper>
-      </div>{" "}
+      <Swiper
+        className="mt-[60px]"
+        watchSlidesProgress="true"
+        onBeforeInit={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        breakpoints={{
+          1280: {
+            slidesPerView: "auto",
+            spaceBetween: 30,
+          },
+          860: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          400: {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        }}
+      >
+        {thisMonth &&
+          thisMonth.map((item) => (
+            <SwiperSlide
+              key={item.id}
+              className="!max-w-[270px] !max-h-[350px]"
+            >
+              <Link href={`/products/${item.id}`}>
+                <ProductCard
+                  item={item}
+                  isEye={{ isActive: true }}
+                  isDiscount={{ isActive: false, value: 20 }}
+                  isHeart={{ isActive: true }}
+                />
+              </Link>
+            </SwiperSlide>
+          ))}
+      </Swiper>
       <div className=" max-h-[500px] h-full flex flex-row mt-[139px]">
         {" "}
         <div className="bg-black-0  pt-[37px] pr-[44px] py-[43px] pl-10 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
