@@ -91,22 +91,22 @@ function HerroBanner() {
             pagination={{ clickable: true }}
             className="mySwiper !max-w-[892px] w-full !mr-0"
           >
-            <SwiperSlide className=" ">
+            <SwiperSlide>
               <Image
                 src={Banner}
                 alt="banner"
                 loading="lazy"
-                width="auto"
-                height="auto"
+                width="892"
+                height="344"
               />
             </SwiperSlide>
-            <SwiperSlide className=" ">
+            <SwiperSlide>
               <Image
                 src={Banner}
                 alt="banner"
                 loading="lazy"
-                width="auto"
-                height="auto"
+                width="892"
+                height="344"
               />
             </SwiperSlide>
           </Swiper>
