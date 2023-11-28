@@ -36,13 +36,13 @@ import ThisMonth from "./ThisMonth/ThisMonth";
 function IndexPage({ products, categories, thisMonth, ourProducts }) {
   return (
     <div className="container">
-      {/* <section>
+      <section>
         <HerroBanner />
-      </section> */}
+      </section>
       <section className="mt-[25px] lg:mt-[140px]">
         <FlashSaleBanner products={products} />
       </section>
-      {/* <section className="mt-[80px] ">
+      <section className="mt-[80px] ">
         <Categories categories={categories} />
       </section>
       <section className="mt-[70px] mb-[6px]">
@@ -51,7 +51,7 @@ function IndexPage({ products, categories, thisMonth, ourProducts }) {
       <section className="pt-[65px] ">
         <OurProducts ourProducts={ourProducts} />
       </section>
-      <Features /> */}
+      <Features />
     </div>
   );
 }
