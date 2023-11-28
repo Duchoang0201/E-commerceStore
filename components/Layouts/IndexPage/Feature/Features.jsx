@@ -73,15 +73,13 @@ function Features() {
             style={{ backgroundColor: "#0D0D0D" }}
           >
             {" "}
-            <div className=" text-white-0 md:pl-[138px]">
-              <Image
-                loading="lazy"
-                src={Banner2}
-                alt="Banner2"
-                width={432}
-                height={286}
-              />
-            </div>
+            <Image
+              loading="lazy"
+              src={Banner2}
+              alt="Banner2"
+              width={432}
+              height={286}
+            />
             <ul className="flex flex-col justify-between gap-y-4 max-w-[255px] ml-[24px] max-h-[122px] h-full w-auto absolute bottom-6  bg-opacity-50 text-white-0">
               <li className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
                 Women’s Collections

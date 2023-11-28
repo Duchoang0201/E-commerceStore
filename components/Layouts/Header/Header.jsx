@@ -17,9 +17,7 @@ function Header() {
       <div className="bg-black-0">
         <Language />
       </div>
-      <div className="">
-        <Navigation />
-      </div>
+      <Navigation />
     </div>
   );
 }
