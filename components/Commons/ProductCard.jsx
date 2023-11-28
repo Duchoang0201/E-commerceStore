@@ -31,7 +31,7 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
             e.preventDefault();
             addCart(item);
           }}
-          className="bg-black text-white-0 lg:py-2 px-5 absolute h-10 w-full bg-black-0  lg:flex lg:items-center lg:justify-center flex flex-col items-center -bottom-4 lg:-bottom-10 
+          className="bg-black text-white-0 lg:py-2 px-5 absolute h-10 w-full bg-black-0  lg:flex lg:items-center lg:justify-center hidden  lg:-bottom-10 
           lg:group-hover:bottom-0 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300"
         >
           Add to cart
