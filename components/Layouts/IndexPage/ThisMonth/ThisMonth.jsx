@@ -32,7 +32,7 @@ function ThisMonth({ thisMonth }) {
         onPrev=""
         isCountDown={false}
       />
-      <div className=" container mt-[60px] ">
+      <div className="  mt-[60px] ">
         <Swiper
           watchSlidesProgress="true"
           onBeforeInit={(swiper) => {
@@ -79,7 +79,7 @@ function ThisMonth({ thisMonth }) {
             ))}
         </Swiper>
       </div>{" "}
-      <div className="container max-h-[500px] h-full flex flex-row mt-[139px]">
+      <div className=" max-h-[500px] h-full flex flex-row mt-[139px]">
         {" "}
         <div className="bg-black-0  pt-[37px] pr-[44px] py-[43px] pl-10 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
           <div className="w-2/3 h-fit flex flex-col ssm:gap-12 gap-6  md:gap-8 md:relative absolute z-30 ">

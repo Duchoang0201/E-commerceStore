@@ -38,7 +38,7 @@ function CardBanner({ products }) {
         buttonText="View All"
       />
 
-      <div className="container mx-auto w-full mt-[40px]">
+      <div className=" mx-auto w-full mt-[40px]">
         <Swiper
           watchOverflow="true"
           watchSlidesProgress="true"

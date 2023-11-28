@@ -40,7 +40,7 @@ function OurProducts({ ourProducts }) {
         isCountDown={false}
       />
 
-      <div className="container  pt-[65px] ">
+      <div className="  pt-[65px] ">
         <Swiper
           watchSlidesProgress="true"
           modules={[Grid]}
@@ -96,7 +96,7 @@ function OurProducts({ ourProducts }) {
         </Swiper>
       </div>
 
-      <div className="container flex flex-row justify-center mt-[58px] mb-[140px]">
+      <div className=" flex flex-row justify-center mt-[58px] mb-[140px]">
         <AppButton
           buttonText="View All Products"
           paddingY="16"

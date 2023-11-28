@@ -35,7 +35,7 @@ import ThisMonth from "./ThisMonth/ThisMonth";
 // });
 function IndexPage({ products, categories, thisMonth, ourProducts }) {
   return (
-    <div className=" w-full ">
+    <div className=" w-full container ">
       <section>
         <HerroBanner />
       </section>
@@ -48,7 +48,7 @@ function IndexPage({ products, categories, thisMonth, ourProducts }) {
       <section className="mt-[70px] mb-[6px]">
         <ThisMonth thisMonth={thisMonth} />
       </section>
-      <section className="pt-[65px]">
+      <section className="pt-[65px] ">
         <OurProducts ourProducts={ourProducts} />
       </section>
       <Features />

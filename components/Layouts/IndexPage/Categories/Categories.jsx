@@ -38,7 +38,7 @@ function Categories({ categories }) {
         bgButton=""
         isCountDown={false}
       />
-      <div className="mt-[60px] container">
+      <div className="mt-[60px] ">
         <Swiper
           watchSlidesProgress="true"
           slidesPerView="auto"

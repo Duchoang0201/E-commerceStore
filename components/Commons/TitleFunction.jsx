@@ -31,7 +31,7 @@ function TitleFunction({
     7 * 60 * 60 * 1000;
   const [days, hours, minutes, seconds] = useCountdown(saturdayOfWeek);
   return (
-    <div className="lg:!max-h-[108px] container flex flex-row justify-between">
+    <div className="lg:!max-h-[108px]  flex flex-row justify-between">
       <div className="md:flex md:flex-row md:gap-x-[87px] flex flex-col">
         <div
           className={`${
