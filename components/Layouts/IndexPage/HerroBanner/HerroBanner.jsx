@@ -30,7 +30,7 @@ function HerroBanner() {
   };
   return (
     <>
-      <div className=" relative flex flex-row justify-center mt-10 xl:mt-0">
+      <div className=" relative flex flex-row justify-between mt-10 xl:mt-0">
         <div className="hidden xl:flex xl:w-full  border-r border-Neutral-200 pt-[32px] max-w-[233px] w-full">
           <ul className="w-full">
             {menuList.map((item, index) => {
@@ -83,20 +83,17 @@ function HerroBanner() {
           </ul>
         </div>
 
-        <div className="flex flex-col-reverse max-w-[937px] w-full ">
+        <div className="flex mt-10  flex-row  max-w-[892px] w-full ">
           <Swiper
             watchSlidesProgress="true"
             centeredSlides={false}
             modules={[Pagination]}
             pagination={{ clickable: true }}
-            className="mySwiper !max-w-[892px] w-full !mr-0"
           >
             <SwiperSlide>
               <Image
                 src={Banner}
                 alt="banner"
-                loading="lazy"
-                // priority="true"
                 // loading="eager"
                 // priority="true"
                 width={892}
@@ -107,8 +104,6 @@ function HerroBanner() {
               <Image
                 src={Banner}
                 alt="banner"
-                // priority="true"
-                loading="lazy"
                 // loading="eager"
                 // priority="true"
                 width={892}
