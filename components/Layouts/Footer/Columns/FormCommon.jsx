@@ -22,10 +22,11 @@ function Form() {
   };
 
   return (
-    <div className="max-w-[217px]">
+    <div className="md:max-w-[217px] w-fit">
       <form
+        title="Form Email"
         onSubmit={handleSubmit(onSubmit)}
-        className="border-2 border-Neutral-50 rounded-md w-full flex flex-row justify-evenly"
+        className="border-2 border-Neutral-50 rounded-md w-full md:flex md:flex-row md:justify-evenly flex flex-row justify-between md:w-full"
       >
         <Controller
           name="search"
@@ -35,7 +36,7 @@ function Form() {
               {...field}
               type="search"
               id="default-searchFooter"
-              className=" bg-opacity-0 bg-black-0 overflow-visible rounded w-5/6  p-3 text-sm "
+              className=" bg-opacity-0 bg-black-0 overflow-visible rounded w-1/2 md:w-5/6  p-3 text-sm "
               placeholder="Enter your email"
             />
           )}
