@@ -67,9 +67,8 @@ function TitleFunction({
       </div>
       <div className="flex flex-col justify-end">
         {" "}
-        {onPrev && onNext ? (
-          <ButtonArrow onPrev={onPrev} onNext={onNext} />
-        ) : (
+        {onPrev && onNext && <ButtonArrow onPrev={onPrev} onNext={onNext} />}
+        {buttonText && (
           <AppButton buttonText={buttonText} paddingY="16" href="/searchpage" />
         )}
       </div>
@@ -80,8 +79,8 @@ function TitleFunction({
 export default memo(TitleFunction);
 
 TitleFunction.propTypes = {
-  onPrev: PropTypes.oneOfType([PropTypes.func, PropTypes.any]).isRequired,
-  onNext: PropTypes.oneOfType([PropTypes.func, PropTypes.any]).isRequired,
+  onPrev: PropTypes.instanceOf(Object).isRequired,
+  onNext: PropTypes.instanceOf(Object).isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,

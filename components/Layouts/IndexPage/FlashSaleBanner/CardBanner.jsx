@@ -35,7 +35,6 @@ function CardBanner({ products }) {
         onNext={handleSlideNext}
         isCountDown
         paddingY="16"
-        buttonText="View All"
       />
 
       <Swiper

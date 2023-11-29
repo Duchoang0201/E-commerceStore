@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef } from "react";
+import React from "react";
 import Image from "next/image";
 
 import "swiper/css/grid";
@@ -19,27 +19,14 @@ import Banner6 from "./Frame 702.png";
 import Banner7 from "./Frame 704.png";
 
 function Features() {
-  const swiperRef = useRef();
   const { featureContent } = useTrans();
 
-  const handleSlidePrev = useCallback(() => {
-    swiperRef.current.slidePrev();
-  }, []);
-
-  const handleSlideNext = useCallback(() => {
-    swiperRef.current.slideNext();
-  }, []);
   return (
     <div>
       <TitleFunction
         content={featureContent.content}
         title={featureContent.title}
-        onPrev={handleSlidePrev}
-        onNext={handleSlideNext}
-        bgButton=""
-        buttonText=""
         isCountDown={false}
-        paddingY="16"
       />
 
       <div className="mt-[65px] flex flex-col gap-y-2 sm:flex sm:flex-row sm:justify-between sm:gap-2 ">
