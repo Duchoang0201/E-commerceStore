@@ -12,7 +12,7 @@ import OurProducts from "./OurProducts/OurProducts";
 import ThisMonth from "./ThisMonth/ThisMonth";
 
 const HerroBanner = dynamic(() => import("./HerroBanner/HerroBanner"), {
-  ssr: false,
+  // ssr: false,
 });
 // const FlashSaleBanner = dynamic(
 //   () => import("./FlashSaleBanner/FlashSaleBanner"),

@@ -14,7 +14,7 @@ import CircleLoading from "../App/CircleLoading/CircleLoading";
 // import ShowTime from "./ShowTime";
 
 const ShowTime = dynamic(() => import("./ShowTime"), {
-  ssr: false,
+  // ssr: false,
   loading: () => {
     <CircleLoading />;
   },
