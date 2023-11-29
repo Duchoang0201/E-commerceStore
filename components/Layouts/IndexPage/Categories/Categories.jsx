@@ -77,12 +77,12 @@ function Categories({ categories }) {
           return (
             <SwiperSlide
               key={item.id}
-              className="!max-w-[170px] !max-h-[145px]  border border-Neutral-100 hover:text-white-0     "
+              className="!max-w-[170px] !max-h-[145px]  border border-Neutral-100 hover:text-white-0   rounded-lg  "
             >
               <Link
                 href={`/products/category/${item.id}`}
-                className="w-full min-h-full flex flex-col items-center justify-end 
-                shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg rounded-lg hover:shadow-black-0/30
+                className="w-full min-h-full flex flex-col items-center justify-end rounded-lg
+                shadow-none transition-shadow duration-300 ease-in-out hover:shadow-2xl  hover:shadow-black-0/70
                 "
               >
                 <Image
@@ -92,7 +92,7 @@ function Categories({ categories }) {
                   width={170}
                   height={145}
                   quality={100}
-                  className=" aspect-[170/145] rounded-lg"
+                  className=" aspect-[170/145] rounded-lg hover:scale-110 hover:rounded-2xl duration-300 transition-all "
                 />
 
                 <span className=" truncate absolute text-white-0 font-bold text-[18px] shadow-2xl ">
