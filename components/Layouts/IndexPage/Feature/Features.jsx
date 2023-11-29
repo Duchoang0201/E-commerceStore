@@ -36,7 +36,7 @@ function Features() {
         <div className=" relative bg-black-0">
           <div className=" max-w-[570px] w-full h-auto mt-[89px] mx-[29px]">
             <Image
-              loading="lazy"
+              priority
               className="!w-[511px] !h-auto"
               src={Banner1}
               alt="Banner1"
@@ -64,7 +64,7 @@ function Features() {
           >
             {" "}
             <Image
-              loading="lazy"
+              priority
               src={Banner2}
               alt="Banner2"
               width={432}
@@ -87,7 +87,13 @@ function Features() {
             <div className="bg-black-0 relative ">
               {" "}
               <div className="w-full h-auto text-white-0 px-10 pt-[31px] pb-8 relative">
-                <Image src={Banner3} alt="Banner3" width={190} height={221} />
+                <Image
+                  priority
+                  src={Banner3}
+                  alt="Banner3"
+                  width={190}
+                  height={221}
+                />
               </div>
               <ul className="flex flex-col justify-between gap-y-2 max-w-[191px] ml-[24px]  absolute  bottom-6  bg-opacity-50 text-white-0">
                 <li className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
@@ -104,7 +110,13 @@ function Features() {
             <div className="bg-black-0 relative ">
               {" "}
               <div className="w-full h-auto text-white-0 px-10 pt-[31px] pb-8 relative">
-                <Image src={Banner4} alt="Banner4" width={190} height={221} />
+                <Image
+                  priority
+                  src={Banner4}
+                  alt="Banner4"
+                  width={190}
+                  height={221}
+                />
               </div>
               <ul className="flex flex-col justify-between gap-y-2 max-w-[191px] ml-[24px]  absolute bottom-16  bg-opacity-50 text-white-0">
                 <li className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
@@ -122,9 +134,9 @@ function Features() {
         </div>
       </div>
       <div className="container items-center flex flex-col justify-between lg:flex lg:flex-row lg:justify-center gap-x-[88px] my-[140px] ">
-        <Image src={Banner5} alt="Banner5" />
-        <Image src={Banner6} alt="Banner6" />
-        <Image src={Banner7} alt="Banner7" />
+        <Image priority src={Banner5} alt="Banner5" />
+        <Image priority src={Banner6} alt="Banner6" />
+        <Image priority src={Banner7} alt="Banner7" />
       </div>
     </div>
   );
