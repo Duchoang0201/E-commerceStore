@@ -44,8 +44,11 @@ function CardBanner({ products }) {
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
-        onSlideChange={() => {
-          setHideSlide((prev) => prev + 1);
+        onSlideChange={(swiper) => {
+          // eslint-disable-next-line no-unused-expressions
+          swiper.touches.startX > swiper.touches.currentX
+            ? setHideSlide((prev) => prev + 1)
+            : setHideSlide((prev) => prev - 1);
         }}
         navigation={{
           nextEl: ".review-swiper-button-next",
