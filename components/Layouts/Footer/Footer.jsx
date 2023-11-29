@@ -91,23 +91,15 @@ function Footer() {
                 href="/"
                 className="hover:underline flex flex-row justify-between max-w-[200px]"
               >
-                <Image
-                  loading="lazy"
-                  width={80}
-                  height={80}
-                  src={QrCode}
-                  alt="qrcode"
-                />
+                <Image width={80} height={80} src={QrCode} alt="qrcode" />
                 <div className="flex flex-col">
                   <Image
-                    loading="lazy"
                     width={110}
                     height={40}
                     src={Ggbanner}
                     alt="Ggbanner"
                   />
                   <Image
-                    loading="lazy"
                     width={110}
                     height={40}
                     src={AppStore}
@@ -121,10 +113,10 @@ function Footer() {
                 href="/"
                 className="hover:underline flex flex-row justify-between max-w-[200px]"
               >
-                <FacebookIcon size={20} />
-                <Twitter size={20} />
-                <Instagram size={20} />
-                <LinkedinIcon size={20} />
+                <FacebookIcon name="facebook" size={20} />
+                <Twitter name="twiter" size={20} />
+                <Instagram name="IG" size={20} />
+                <LinkedinIcon name="linked" size={20} />
               </Link>
             </li>
           </ul>

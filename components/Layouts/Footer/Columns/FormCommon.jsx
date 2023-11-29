@@ -44,7 +44,7 @@ function Form() {
         {errors.search && (
           <p className="text-red-500">{errors.search.message}</p>
         )}
-        <button className="mr-5" type="submit">
+        <button name="send email" className="mr-5" type="submit">
           <SendHorizontal color="white" />
         </button>
       </form>
