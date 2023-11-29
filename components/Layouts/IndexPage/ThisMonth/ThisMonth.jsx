@@ -28,8 +28,6 @@ function ThisMonth({ thisMonth }) {
         title={thismonthContent.title}
         bgButton="bg-Secondary-2"
         buttonText="View all"
-        onNext=""
-        onPrev=""
         isCountDown={false}
       />
       <Swiper

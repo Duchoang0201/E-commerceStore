@@ -1,3 +1,5 @@
+/* eslint-disable react/require-default-props */
+
 "use client";
 
 import React, { memo } from "react";
@@ -79,8 +81,8 @@ function TitleFunction({
 export default memo(TitleFunction);
 
 TitleFunction.propTypes = {
-  onPrev: PropTypes.instanceOf(Object).isRequired,
-  onNext: PropTypes.instanceOf(Object).isRequired,
+  onPrev: PropTypes.instanceOf(Object),
+  onNext: PropTypes.instanceOf(Object),
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,

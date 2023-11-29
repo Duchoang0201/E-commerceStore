@@ -26,7 +26,10 @@ function Features() {
       <TitleFunction
         content={featureContent.content}
         title={featureContent.title}
+        bgButton=""
+        buttonText=""
         isCountDown={false}
+        paddingY="16"
       />
 
       <div className="mt-[65px] flex flex-col gap-y-2 sm:flex sm:flex-row sm:justify-between sm:gap-2 ">

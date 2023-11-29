@@ -33,6 +33,7 @@ function CardBanner({ products }) {
         title={flashSaleContent.title}
         onPrev={handleSlidePrev}
         onNext={handleSlideNext}
+        buttonText=""
         isCountDown
         paddingY="16"
       />
@@ -53,7 +54,7 @@ function CardBanner({ products }) {
           nextEl: ".review-swiper-button-next",
           prevEl: ".review-swiper-button-prev",
         }}
-        className="mySwiper xxl:!overflow-visible mt-[40px]"
+        className="mySwiper !-mr-32 mt-[40px]"
         breakpoints={{
           1280: {
             slidesPerView: "auto",
@@ -89,7 +90,7 @@ function CardBanner({ products }) {
           products.map((item, index) => {
             return (
               <SwiperSlide
-                className="!max-w-[270px] !max-h-[350px]"
+                className="!max-w-[270px] max-h-[350px]"
                 key={item.id}
               >
                 <Link href={`/products/${item.id}`}>
