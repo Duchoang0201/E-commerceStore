@@ -16,8 +16,9 @@ function Footer() {
     title: "Support",
     list: [
       {
-        name: "111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.",
-        href: "",
+        passHref: true,
+        name: "66/01 Ta My Thuat, Son Tra, Da Nang",
+        href: "https://www.google.com/maps/place/66+T%E1%BA%A1+M%E1%BB%B9+Du%E1%BA%ADt,+An+H%E1%BA%A3i+B%E1%BA%AFc,+S%C6%A1n+Tr%C3%A0,+%C4%90%C3%A0+N%E1%BA%B5ng+550000,+Vi%E1%BB%87t+Nam/@16.0688645,108.2335382,17z/data=!3m1!4b1!4m6!3m5!1s0x314218298cec2cf7:0x4c87f03368b4043c!8m2!3d16.0688645!4d108.2361185!16s%2Fg%2F11hhv29yg4?hl=vi-VN&entry=ttu",
       },
       {
         name: "exclusive@gmail.com",

@@ -80,9 +80,7 @@ function HerroBanner() {
           </ul>
         </div>
 
-        <div className="flex mt-10  flex-row  max-w-[892px] w-full ">
-          <SlidesBanner />
-        </div>
+        <SlidesBanner />
       </div>{" "}
       <div className="visible xl:hidden absolute left-[2px] top-[150px]  z-10">
         <Draw open={open} setOpen={setOpen} />
