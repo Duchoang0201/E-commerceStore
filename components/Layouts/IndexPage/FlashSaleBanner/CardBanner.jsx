@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef } from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -25,7 +25,7 @@ function CardBanner({ products }) {
   const handleSlideNext = useCallback(() => {
     swiperRef.current.slideNext();
   }, []);
-  const [hideSlide, setHideSlide] = useState(5);
+  // const [hideSlide, setHideSlide] = useState(5);
   return (
     <>
       <TitleFunction
@@ -44,12 +44,12 @@ function CardBanner({ products }) {
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
-        onSlideChange={(swiper) => {
-          // eslint-disable-next-line no-unused-expressions
-          swiper.touches.startX > swiper.touches.currentX
-            ? setHideSlide((prev) => prev + 1)
-            : setHideSlide((prev) => prev - 1);
-        }}
+        // onSlideChange={(swiper) => {
+        //   // eslint-disable-next-line no-unused-expressions
+        //   swiper.touches.startX > swiper.touches.currentX
+        //     ? setHideSlide((prev) => prev + 1)
+        //     : setHideSlide((prev) => prev - 1);
+        // }}
         navigation={{
           nextEl: ".review-swiper-button-next",
           prevEl: ".review-swiper-button-prev",
@@ -106,14 +106,14 @@ function CardBanner({ products }) {
             );
           })}
       </Swiper>
-      <style>
+      {/* <style>
         {`
           .swiper-slide:nth-of-type(${hideSlide}){
             opacity: 1 !important;
             filter: none;
           
           }`}
-      </style>
+      </style> */}
     </>
   );
 }
