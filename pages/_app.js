@@ -50,7 +50,9 @@ export default function App({ Component, pageProps }) {
       <Header />
       <Component {...pageProps} />
       {/* FOOTER HAVE PROBLEM */}
-      <Footer />
+      <div className="bg-black-0">
+        <Footer />
+      </div>
       <MoveTop />
       <AppAlert />
       <PhotoPreview />
