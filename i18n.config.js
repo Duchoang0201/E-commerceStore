@@ -3,7 +3,7 @@ module.exports = {
     locales: ["en", "vi"],
     defaultLocale: "en",
     localeDetection: false,
-    trailingSlash: true,
+    // trailingSlash: true,
     // domains: [
     //   {
     //     domain: "localhost:3000",

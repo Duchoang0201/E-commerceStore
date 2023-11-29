@@ -2,16 +2,13 @@
 
 import React, { useRef, useState } from "react";
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/pagination";
 
 import useTrans from "@/hooks/useTrans";
 
-import Banner from "./Banner.jpg";
+import SlidesBanner from "./Banner/Banner";
 import Draw from "./Draw";
 
 import "swiper/css";
@@ -84,19 +81,7 @@ function HerroBanner() {
         </div>
 
         <div className="flex mt-10  flex-row  max-w-[892px] w-full ">
-          <Swiper
-            watchSlidesProgress="true"
-            centeredSlides={false}
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-          >
-            <SwiperSlide>
-              <Image src={Banner} alt="banner" width={892} height={344} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={Banner} alt="banner2" width={892} height={344} />
-            </SwiperSlide>
-          </Swiper>
+          <SlidesBanner />
         </div>
       </div>{" "}
       <div className="visible xl:hidden absolute left-[2px] top-[150px]  z-10">

@@ -2,6 +2,9 @@
 const { i18n } = require("./i18n.config");
 
 const nextConfig = {
+  // experimental: {
+  //   nextScriptWorkers: true,
+  // },
   pageExtensions: ["js", "ts", "page.jsx", "page.tsx"],
   i18n,
   reactStrictMode: true,
@@ -20,10 +23,11 @@ const nextConfig = {
       "github.com",
       "t3.ftcdn.net",
       "images.saymedia-content.com",
+      "prodimage.images-bn.com",
     ],
     remotePatterns: [
       {
-        protocol: "https",
+        protocol: "https" || "http",
         hostname: "**",
       },
     ],

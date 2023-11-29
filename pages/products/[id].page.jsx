@@ -66,7 +66,6 @@ export async function getStaticPaths({ locales }) {
     }));
     return result;
   });
-  console.log(`🚀🚀🚀!..paths`, paths);
   // const paths = products.map((item) => ({
   //   params: { id: `${item.id}` },
   // }));

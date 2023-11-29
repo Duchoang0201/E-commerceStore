@@ -9,7 +9,7 @@ import useWishList from "@/hooks/useWishList";
 
 import Rated from "../App/AppRating/Rated";
 
-function ProductCard({ item, isHeart, isEye, isDiscount }) {
+function ProductCard({ item, isDiscount }) {
   const { setOpenPhoto } = useOpenPhoto();
   const { addWishList } = useWishList();
   const { addCart } = useCartStore();
@@ -37,46 +37,40 @@ function ProductCard({ item, isHeart, isEye, isDiscount }) {
         >
           Add to cart
         </button>
-        {isHeart.isActive && (
-          <button
-            title="Add wish list"
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
+        <button
+          title="Add wish list"
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
 
-              addWishList(item);
-            }}
-            className="w-[24px] h-[24px] md:w-[34px] md:h-[34px]  absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
-          >
-            <Heart className="w-2/3 h-2/3" />
-          </button>
-        )}
-        {isEye.isActive && (
-          <button
-            title="Preview"
-            onClick={(e) => {
-              e.preventDefault();
-              setOpenPhoto(item.images[0]);
-            }}
-            type="button"
-            className="w-[24px] h-[24px] md:w-[34px] md:h-[34px] absolute flex-col justify-center bg-Secondary-0
+            addWishList(item);
+          }}
+          className="w-[24px] h-[24px] md:w-[34px] md:h-[34px]  absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
+        >
+          <Heart className="w-2/3 h-2/3" />
+        </button>
+        <button
+          title="Preview"
+          onClick={(e) => {
+            e.preventDefault();
+            setOpenPhoto(item.images[0]);
+          }}
+          type="button"
+          className="w-[24px] h-[24px] md:w-[34px] md:h-[34px] absolute flex-col justify-center bg-Secondary-0
              inline-flex items-center rounded-full top-[3.5rem] sm:top-14 right-2
               hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
-          >
-            <Eye className="w-2/3 h-2/3 " />
-          </button>
-        )}
-        {isDiscount.isActive && (
-          <span
-            title="Discount"
-            className="absolute inline-flex items-center justify-center md:w-[55px] md:h-[26px] w-10 h-auto 
+        >
+          <Eye className="w-2/3 h-2/3 " />
+        </button>
+        <span
+          title="Discount"
+          className="absolute inline-flex items-center justify-center md:w-[55px] md:h-[26px] w-10 h-auto 
                 top-4 left-6 dark:border-gray-900
                text-[8px] md:text-[12px]  px-2 py-1 md:px-3 md:py-1 
                bg-Secondary-2 rounded-sm text-white-0"
-          >
-            -{isDiscount.value}%
-          </span>
-        )}
+        >
+          -{isDiscount.value}%
+        </span>
       </div>
 
       <ul className="pt-4 flex flex-col gap-y-2">
@@ -102,13 +96,13 @@ export default ProductCard;
 
 ProductCard.propTypes = {
   item: PropTypes.shape(Object),
-  isHeart: PropTypes.instanceOf(Object),
-  isEye: PropTypes.instanceOf(Object),
+  // isHeart: PropTypes.instanceOf(Object),
+  // isEye: PropTypes.instanceOf(Object),
   isDiscount: PropTypes.instanceOf(Object),
 };
 ProductCard.defaultProps = {
   item: {},
-  isHeart: {},
-  isEye: {},
+  // isHeart: {},
+  // isEye: {},
   isDiscount: {},
 };
