@@ -77,22 +77,27 @@ function Categories({ categories }) {
           return (
             <SwiperSlide
               key={item.id}
-              className="!max-w-[170px] !max-h-[145px] py-6 border border-Neutral-100 hover:text-white-0 hover:!bg-Secondary-2 hover:transition-all hover:duration-500  rounded-lg"
+              className="!max-w-[170px] !max-h-[145px]  border border-Neutral-100 hover:text-white-0     "
             >
               <Link
                 href={`/products/category/${item.id}`}
-                className="w-full min-h-full flex flex-col items-center justify-center"
+                className="w-full min-h-full flex flex-col items-center justify-end 
+                shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg rounded-lg hover:shadow-black-0/30
+                "
               >
                 <Image
                   loading="lazy"
                   src={item.image}
                   alt={item.id}
-                  width={56}
-                  height={56}
-                  className="object-contain aspect-[56/56]"
+                  width={170}
+                  height={145}
+                  quality={100}
+                  className=" aspect-[170/145] rounded-lg"
                 />
 
-                <span className="py-4 truncate">{item.name}</span>
+                <span className=" truncate absolute text-white-0 font-bold text-[18px] shadow-2xl ">
+                  {item.name}
+                </span>
               </Link>
             </SwiperSlide>
           );
