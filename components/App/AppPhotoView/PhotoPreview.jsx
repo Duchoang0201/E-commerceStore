@@ -11,9 +11,9 @@ function PhotoPreview() {
     <div className="relative flex items-center ">
       {photoOpen && (
         <div
-          aria-hidden="true"
+          // aria-hidden="true"
           className="fixed inset-0 z-40 bg-black-0 bg-opacity-90 h-screen w-full"
-          onClick={() => setOpenPhoto("")}
+          // onClick={() => setOpenPhoto("")}
         />
       )}
       <div
@@ -23,13 +23,13 @@ function PhotoPreview() {
         }`}
       >
         <div className=" flex flex-row justify-between items-center ">
-          <div
+          <span
             title="HomePage"
             type="button"
             className=" text-xs font-bold text-white-0 bg-Red-500 border-white-0  "
           >
             Exclusive
-          </div>
+          </span>
           <button
             title="Exit"
             onClick={() => setOpenPhoto(false)}
