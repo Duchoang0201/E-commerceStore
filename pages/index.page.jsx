@@ -35,16 +35,16 @@ export async function getStaticProps() {
   const data = [
     {
       dataName: "products",
-      apiLink: "/products/?price_min=1&price_max=1000&offset=10&limit=10",
+      apiLink: "/products?offset=0&limit=10",
     },
     { dataName: "categories", apiLink: "/categories?offset=10" },
     {
       dataName: "thisMonth",
-      apiLink: "/products/?price_min=1&price_max=1000&offset=10&limit=10",
+      apiLink: "/products?offset=0&limit=10",
     },
     {
       dataName: "ourProducts",
-      apiLink: "/products/?price_min=1&price_max=1000&offset=10&limit=10",
+      apiLink: "/products?offset=0&limit=10",
     },
   ];
 

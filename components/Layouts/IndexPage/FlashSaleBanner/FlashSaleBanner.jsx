@@ -8,7 +8,7 @@ import AppButton from "@/components/App/AppButton/AppButton";
 
 // import CardBanner from "./CardBanner";
 const CardBanner = dynamic(() => import("./CardBanner"), {
-  ssr: false,
+  // ssr: false,
 });
 function FlashSaleBanner({ products }) {
   return (

@@ -36,7 +36,6 @@ const PhotoPreview = dynamic(
   () => import("@/components/App/AppPhotoView/PhotoPreview"),
   {
     ssr: false,
-    // loading: lazy,
     loading: () => {
       <CircleLoading />;
     },
