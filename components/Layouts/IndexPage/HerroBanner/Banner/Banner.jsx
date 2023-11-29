@@ -19,26 +19,28 @@ function SlidesBanner() {
       <SwiperSlide>
         <div className="relative w-full h-0 pb-[38.55%]">
           <Image
+            priority
             src={Banner}
             alt="..."
             layout="fill"
             objectFit="cover"
             objectPosition="center"
             className="rounded-md"
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 892px"
+            sizes="(min-width: 1000px) 892px, (min-width: 400px) calc(93.1vw - 20px), (min-width: 340px) calc(50vw + 122px), calc(-3100vw + 10192px)"
           />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="relative w-full h-0 pb-[38.55%]">
           <Image
+            priority
             src={Banner}
             alt="..."
             layout="fill"
             objectFit="cover"
             objectPosition="center"
             className="rounded-md"
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 892px"
+            sizes="(min-width: 1000px) 892px, (min-width: 400px) calc(93.1vw - 20px), (min-width: 340px) calc(50vw + 122px), calc(-3100vw + 10192px)"
           />
         </div>
       </SwiperSlide>
