@@ -24,7 +24,7 @@ function Form() {
   return (
     <div className="md:max-w-[217px] w-fit">
       <form
-        title="Form Email"
+        title="Send Email"
         onSubmit={handleSubmit(onSubmit)}
         className="border-2 border-Neutral-50 rounded-md w-full md:flex md:flex-row md:justify-evenly flex flex-row justify-between md:w-full"
       >
@@ -44,7 +44,7 @@ function Form() {
         {errors.search && (
           <p className="text-red-500">{errors.search.message}</p>
         )}
-        <button name="send email" className="mr-5" type="submit">
+        <button name="Send" className="mr-5" type="submit">
           <SendHorizontal color="white" />
         </button>
       </form>
