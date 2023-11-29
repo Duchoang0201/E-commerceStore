@@ -1,19 +1,19 @@
 "use client";
 
 import React from "react";
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import PropTypes from "prop-types"; // Import PropTypes from the correct module
 
 import Categories from "./Categories/Categories";
 import Features from "./Feature/Features";
 import FlashSaleBanner from "./FlashSaleBanner/FlashSaleBanner";
-import HerroBanner from "./HerroBanner/HerroBanner";
+// import HerroBanner from "./HerroBanner/HerroBanner";
 import OurProducts from "./OurProducts/OurProducts";
 import ThisMonth from "./ThisMonth/ThisMonth";
 
-// const HerroBanner = dynamic(() => import("./HerroBanner/HerroBanner"), {
-//   ssr: false,
-// });
+const HerroBanner = dynamic(() => import("./HerroBanner/HerroBanner"), {
+  // ssr: false,
+});
 // const FlashSaleBanner = dynamic(
 //   () => import("./FlashSaleBanner/FlashSaleBanner"),
 //   {

@@ -18,11 +18,11 @@ function ProductCard({ item, isDiscount }) {
       <div className="group overflow-hidden relative rounded-md ">
         <div className="relative h-[150px] md:h-[200px] lg:h-[250px] ">
           <Image
-            priority
+            // priority
             alt={item.id}
             src={item.images[0]}
             fill
-            quality={100}
+            quality={75}
             sizes="(min-width: 1320px) 270px, (min-width: 1040px) calc(18.46vw + 30px), (min-width: 680px) calc(26.18vw - 19px), (min-width: 480px) calc(33.33vw - 36px), (min-width: 400px) calc(40vw - 37px), (min-width: 340px) calc(50vw - 39px), calc(-655vw + 2217px)"
           />
         </div>

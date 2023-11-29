@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,13 +17,13 @@ function SlidesBanner() {
       pagination={{ clickable: true }}
     >
       <SwiperSlide>
-        <Link href="/cart" className="max-w-[892px] max-h-[344px]">
-          <Image width={892} height={344} src={Banner} alt="Banner1" />
+        <Link href="/cart">
+          <Image width={892} height={344} src={Banner} alt="..." />
         </Link>
       </SwiperSlide>
       <SwiperSlide>
-        <Link href="/cart" className="max-w-[892px] max-h-[344px]">
-          <Image width={892} height={344} src={Banner} alt="Banner2" />
+        <Link href="/cart">
+          <Image width={892} height={344} src={Banner} alt="..." />
         </Link>
       </SwiperSlide>
     </Swiper>
