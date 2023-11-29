@@ -16,26 +16,12 @@ function SlidesBanner() {
     >
       <SwiperSlide>
         <Link href="/cart" className="max-w-[892px] max-h-[344px]">
-          <Image
-            width={892}
-            height={344}
-            src={Banner}
-            alt="Banner1"
-            priority
-            loading="eager"
-          />
+          <Image width={892} height={344} src={Banner} alt="Banner1" />
         </Link>
       </SwiperSlide>
       <SwiperSlide>
         <Link href="/cart" className="max-w-[892px] max-h-[344px]">
-          <Image
-            width={892}
-            height={344}
-            src={Banner}
-            alt="Banner2"
-            priority
-            loading="eager"
-          />
+          <Image width={892} height={344} src={Banner} alt="Banner2" />
         </Link>
       </SwiperSlide>
     </Swiper>
