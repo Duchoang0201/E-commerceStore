@@ -95,7 +95,6 @@ function Footer() {
                 <Image width={80} height={80} src={QrCode} alt="qrcode" />
                 <div className="flex flex-col">
                   <Image
-                    priority
                     width={110}
                     height={40}
                     src={Ggbanner}
