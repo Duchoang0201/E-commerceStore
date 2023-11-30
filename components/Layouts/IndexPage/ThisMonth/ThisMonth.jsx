@@ -80,10 +80,7 @@ function ThisMonth({ thisMonth }) {
         {" "}
         <div className="bg-black-0  pt-[37px] pr-[44px] py-[43px] pl-10 ssm:pl-[56px] ssm:flex ssm:flex-row relative">
           <div className="w-2/3 h-fit flex flex-col ssm:gap-12 gap-6  md:gap-8 md:relative absolute z-30 ">
-            <span className="font-poppins" style={{ color: "#0F6" }}>
-              {" "}
-              Categories
-            </span>
+            <span className=" text-green-500"> Categories</span>
             <span className="font-inter  text-14px sm:text-5xl font-semibold text-white-0">
               Enhance Your Music Experience
             </span>

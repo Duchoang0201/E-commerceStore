@@ -47,10 +47,10 @@ function Features() {
               <li className="font-inter text-[24px] font-semibold leading-6">
                 PlayStation 5
               </li>
-              <li className="text-[14px] font-poppins">
+              <li className="text-[14px] ">
                 Black and White version of the PS5 coming out on sale.
               </li>
-              <li className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
+              <li className=" text-base font-medium underline decoration-Neutral-300 underline-offset-4">
                 Shop Now
               </li>
             </ul>
@@ -74,10 +74,10 @@ function Features() {
               <li className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
                 Women’s Collections
               </li>
-              <li className="text-[14px] font-poppins">
+              <li className="text-[14px] ">
                 Featured woman collections that give you another vibe.
               </li>
-              <li className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
+              <li className=" text-base font-medium underline decoration-Neutral-300 underline-offset-4">
                 Shop Now
               </li>
             </ul>
@@ -99,10 +99,8 @@ function Features() {
                 <li className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
                   Speakers
                 </li>
-                <li className="text-[14px] font-poppins">
-                  Amazon wireless speakers
-                </li>
-                <li className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
+                <li className="text-[14px] ">Amazon wireless speakers</li>
+                <li className=" text-base font-medium underline decoration-Neutral-300 underline-offset-4">
                   Shop Now
                 </li>
               </ul>
@@ -122,10 +120,8 @@ function Features() {
                 <li className="font-inter text-[24px] font-semibold leading-6 tracking-[0.72px]">
                   Perfume
                 </li>
-                <li className="text-[14px] font-poppins">
-                  GUCCI INTENSE OUD EDP
-                </li>
-                <li className="font-poppins text-base font-medium underline decoration-Neutral-300 underline-offset-4">
+                <li className="text-[14px] ">GUCCI INTENSE OUD EDP</li>
+                <li className=" text-base font-medium underline decoration-Neutral-300 underline-offset-4">
                   Shop Now
                 </li>
               </ul>

@@ -51,7 +51,7 @@ function SignupForm() {
       <span className="text-[16px] md:text-[24px] xl:text-[36px] font-inter leading-8 font-semibold tracking-[1.44px] pb-2 xl:pb-6">
         Create an account
       </span>
-      <span className="text-[8px] md:text-[12px] xl:text-[16px] font-poppins leading-6 pb-2 xl:pb-12">
+      <span className="text-[8px] md:text-[12px] xl:text-[16px]  leading-6 pb-2 xl:pb-12">
         Enter your details below
       </span>
       <div className="text-black-0">
@@ -95,7 +95,7 @@ function SignupForm() {
             <button
               title="Create Account"
               type="submit"
-              className="font-poppins leading-6 font-semibold w-full h-full"
+              className=" leading-6 font-semibold w-full h-full"
             >
               Create Account
             </button>
@@ -104,7 +104,7 @@ function SignupForm() {
             <button
               title="Google"
               type="submit"
-              className="w-full font-poppins leading-6 font-semibold flex flex-row justify-center items-center"
+              className="w-full  leading-6 font-semibold flex flex-row justify-center items-center"
             >
               <Search color="black" />
               <span className="px-2 text-black-0">Login with google</span>

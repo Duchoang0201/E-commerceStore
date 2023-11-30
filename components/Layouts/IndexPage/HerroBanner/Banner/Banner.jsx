@@ -22,10 +22,6 @@ function SlidesBanner() {
             priority
             src={Banner}
             alt="..."
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            className="rounded-md"
             sizes="(min-width: 1000px) 892px, (min-width: 400px) calc(93.1vw - 20px), (min-width: 340px) calc(50vw + 122px), calc(-3100vw + 10192px)"
           />
         </div>
@@ -36,10 +32,6 @@ function SlidesBanner() {
             priority
             src={Banner}
             alt="..."
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            className="rounded-md"
             sizes="(min-width: 1000px) 892px, (min-width: 400px) calc(93.1vw - 20px), (min-width: 340px) calc(50vw + 122px), calc(-3100vw + 10192px)"
           />
         </div>

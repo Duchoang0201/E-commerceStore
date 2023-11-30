@@ -8,12 +8,18 @@ function getUniqueID() {
 }
 
 const useMessage = create(
-  devtools((set) => ({
-    messages: {},
+  devtools((set, get) => ({
+    messages: [],
     setMessage: async (item) => {
+      const { messages } = get();
       const newData = item;
       newData.id = getUniqueID();
-      set({ messages: newData });
+      const data = [...messages, newData];
+      set({ messages: data });
+    },
+    reSetMessages: async (item) => {
+      console.log(`🚀🚀🚀!..item`, item);
+      set({ messages: item });
     },
   })),
 );

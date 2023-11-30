@@ -5,6 +5,7 @@ const nextConfig = {
   // experimental: {
   //   nextScriptWorkers: true,
   // },
+
   pageExtensions: ["js", "ts", "page.jsx", "page.tsx"],
   i18n,
   reactStrictMode: true,

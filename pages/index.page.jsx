@@ -75,3 +75,7 @@ Home.propTypes = {
   thisMonth: PropTypes.instanceOf(Object).isRequired,
   ourProducts: PropTypes.instanceOf(Object).isRequired,
 };
+
+// export const config = {
+//   unstable_runtimeJS: false,
+// };

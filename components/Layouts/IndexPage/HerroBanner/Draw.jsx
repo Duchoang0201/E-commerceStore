@@ -42,7 +42,6 @@ function Draw({ open, setOpen }) {
         className={`fixed inset-0 bg-white-0 bg-opacity-90  h-screen w-fit transform duration-700 transition-transform right-0 left-auto z-50 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
-        // style={{ right: 0, left: "auto" }}
       >
         <div className="flex flex-row justify-between items-center max-w-[200px]">
           <span

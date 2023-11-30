@@ -70,7 +70,7 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
                   pickSize === item
                     ? "bg-Secondary-2 text-white-0 border-none"
                     : "border-black-0/50"
-                } w-[32px] h-[32px] rounded-md border flex justify-center items-center cursor-pointer  font-poppins`}
+                } w-[32px] h-[32px] rounded-md border flex justify-center items-center cursor-pointer  `}
               >
                 <input
                   onChange={() => {

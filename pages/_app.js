@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 // import MoveTop from "@/components/App/AppMoveTop/MoveTop";
 // import PhotoPreview from "@/components/App/AppPhotoView/PhotoPreview";
 import CircleLoading from "@/components/App/CircleLoading/CircleLoading";
-// import Footer from "@/components/Layouts/Footer/Footer";
+import Footer from "@/components/Layouts/Footer/Footer";
 import Header from "@/components/Layouts/Header/Header";
 
 import "@/styles/globals.css";
@@ -15,10 +15,10 @@ import "@/styles/globals.css";
 //   ssr: false,
 //   // loading: lazy,
 // });
-const Footer = dynamic(() => import("@/components/Layouts/Footer/Footer"), {
-  ssr: false,
-  // loading: lazy,
-});
+// const Footer = dynamic(() => import("@/components/Layouts/Footer/Footer"), {
+// ssr: false,
+// loading: lazy,
+// });
 const MoveTop = dynamic(() => import("@/components/App/AppMoveTop/MoveTop"), {
   ssr: false,
   loading: () => {

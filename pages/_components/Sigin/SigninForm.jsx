@@ -53,7 +53,7 @@ function SigninForm() {
       <span className="text-[16px] md:text-[24px] xl:text-[36px] font-inter leading-8 font-semibold tracking-[1.44px] pb-2 xl:pb-6">
         Log in to Exclusive
       </span>
-      <span className="text-[8px] md:text-[12px] xl:text-[16px] font-poppins leading-6 pb-2 xl:pb-12">
+      <span className="text-[8px] md:text-[12px] xl:text-[16px] leading-6 pb-2 xl:pb-12">
         Enter your details below
       </span>
       <div className="text-black-0">

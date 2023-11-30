@@ -14,7 +14,7 @@ export default function Custom404() {
           <div>
             <button
               type="button"
-              className={` px-12 py-4 border bg-Secondary-2 rounded-md text-white-0 items-center text-white font-poppins text-base `}
+              className={` px-12 py-4 border bg-Secondary-2 rounded-md text-white-0 items-center `}
             >
               Back to home page
             </button>
