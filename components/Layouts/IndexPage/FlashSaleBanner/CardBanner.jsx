@@ -54,7 +54,7 @@ function CardBanner({ products }) {
           nextEl: ".review-swiper-button-next",
           prevEl: ".review-swiper-button-prev",
         }}
-        className="mySwiper xxl:!-mr-70 mt-[40px]"
+        className="mySwiper xxl:!-mr-72 mt-[40px]"
         breakpoints={{
           1280: {
             slidesPerView: "auto",

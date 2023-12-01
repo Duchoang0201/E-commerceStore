@@ -1,23 +1,38 @@
-"use client";
-
 import React from "react";
 
 import useMessage from "@/hooks/useMessage";
 
 import Toast from "./Toast";
+// import Toast2 from "./Toast2";
 
 function AppAlert() {
   const { messages } = useMessage();
 
+  // const removeMessage = useCallback(
+  //   (idToRemove) => {
+  //     const newData =
+  //       messages.length > 0 &&
+  //       messages.filter((toast) => toast.id !== idToRemove);
+  //     reSetMessages(newData);
+  //   },
+  //   [messages],
+  // );
+
   return (
-    <div
-      className="fixed block right-[50px] z-10 top-[50px]  min-h-0 border-2 max-h-fit transition-all duration-1000
-     "
-    >
-      {messages.length > 0 &&
-        messages.map((item, index) => {
-          return <Toast key={item.id} item={item} index={index} />;
+    <div className="fixed  right-[50px] z-10 top-[50px] ">
+      {messages?.length > 0 &&
+        messages?.map((item, index) => {
+          return (
+            <Toast
+              key={item.id}
+              item={item}
+              index={index}
+              // messages={messages}
+              // removeMessage={removeMessage}
+            />
+          );
         })}
+      {/* <Toast2 /> */}
     </div>
   );
 }

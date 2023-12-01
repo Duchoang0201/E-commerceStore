@@ -8,7 +8,7 @@ const nextConfig = {
 
   pageExtensions: ["js", "ts", "page.jsx", "page.tsx"],
   i18n,
-  reactStrictMode: true,
+  // reactStrictMode: true,
   images: {
     domains: [
       "fakestoreapi.com",

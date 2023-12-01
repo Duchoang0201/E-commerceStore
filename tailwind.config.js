@@ -1,4 +1,5 @@
 /* eslint-disable global-require */
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
@@ -85,11 +86,31 @@ module.exports = {
         "width-down": {
           to: { width: 0 },
         },
+        "hieght-down": {
+          to: { display: "100%" },
+        },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+        toastOut: {
+          "0%": { transform: "scale(1)", opacity: 1 },
+          "20%": { transform: "translate(0px) scale(0.7)", opacity: 0.7 },
+          "100%": { transform: "translate(2000px) scale(0.7)", opacity: 0.7 },
+        },
+        toastIn: {
+          "0%": { transform: "translate(2000px) scale(0.7)", opacity: 0.7 },
+          "80%": { transform: "translate(0px) scale(0.7)", opacity: 0.7 },
+          "100%": { transform: "scale(1)", opacity: 1 },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "width-down": "width-down 2s linear 1 forwards",
+        "hieght-down": "hieght-down 5s linear 1 ",
+        toastIn: "toastIn 0.7s both",
+        toastOut: "toastOut 0.7s both",
       },
       colors: {
         transparent: "transparent",
