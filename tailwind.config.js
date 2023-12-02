@@ -93,15 +93,21 @@ module.exports = {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
         },
+        toastIn: {
+          "0%": {
+            transform: "translate(2000px) scale(0.7)",
+            opacity: 0.7,
+          },
+          "80%": { transform: "translate(0px) scale(0.7)", opacity: 0.7 },
+          "100%": { transform: "scale(1)", opacity: 1 },
+        },
         toastOut: {
           "0%": { transform: "scale(1)", opacity: 1 },
           "20%": { transform: "translate(0px) scale(0.7)", opacity: 0.7 },
-          "100%": { transform: "translate(2000px) scale(0.7)", opacity: 0.7 },
-        },
-        toastIn: {
-          "0%": { transform: "translate(2000px) scale(0.7)", opacity: 0.7 },
-          "80%": { transform: "translate(0px) scale(0.7)", opacity: 0.7 },
-          "100%": { transform: "scale(1)", opacity: 1 },
+          "100%": {
+            transform: "translate(2000px) scale(0.7)",
+            opacity: 0.7,
+          },
         },
       },
       animation: {
@@ -109,8 +115,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "width-down": "width-down 2s linear 1 forwards",
         "hieght-down": "hieght-down 5s linear 1 ",
-        toastIn: "toastIn 0.7s both",
-        toastOut: "toastOut 0.7s both",
+        toastIn: "toastIn .8s both",
+        toastOut: "toastOut .8s both",
       },
       colors: {
         transparent: "transparent",

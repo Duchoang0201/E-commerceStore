@@ -3,7 +3,7 @@
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
-import useMessage from "./useMessage";
+// import useMessage from "./useMessage";
 
 const useCartStore = create(
   devtools(
@@ -23,10 +23,17 @@ const useCartStore = create(
           } else {
             carts.push({ quantity: 1, product: item });
           }
-          useMessage
-            .getState()
-            .setMessage({ type: "success", time: 2000, text: "Add a Cart" });
+          // useMessage
+          //   .getState()
+          //   .setMessage({ type: "success", time: 2000, text: "Add a Cart" });
           set({ carts });
+          return {
+            message: {
+              type: "success",
+              time: 2000,
+              text: "Add a Product to Cart",
+            },
+          };
         },
         increase: async (item) => {
           const { carts } = get();

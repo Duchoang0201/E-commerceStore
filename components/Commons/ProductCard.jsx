@@ -8,11 +8,13 @@ import useOpenPhoto from "@/hooks/useOpenPhoto";
 import useWishList from "@/hooks/useWishList";
 
 import Rated from "../App/AppRating/Rated";
+import { useToast } from "../ToastContext/ToastProvider";
 
 function ProductCard({ item, isDiscount }) {
   const { setOpenPhoto } = useOpenPhoto();
   const { addWishList } = useWishList();
   const { addCart } = useCartStore();
+  const { add: AddToast } = useToast();
   return (
     <>
       <div className="group overflow-hidden relative rounded-md ">
@@ -29,9 +31,10 @@ function ProductCard({ item, isDiscount }) {
         <button
           title="Add to Cart"
           type="submit"
-          onClick={(e) => {
+          onClick={async (e) => {
             e.preventDefault();
-            addCart(item);
+            const { message } = await addCart(item);
+            AddToast(message);
           }}
           className=" text-white-0 lg:py-2 px-5 absolute h-10 w-full bg-black-0  lg:flex lg:items-center lg:justify-center hidden  lg:-bottom-10 
           lg:group-hover:bottom-0 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300"
@@ -41,10 +44,11 @@ function ProductCard({ item, isDiscount }) {
         <button
           title="Add wish list"
           type="button"
-          onClick={(e) => {
+          onClick={async (e) => {
             e.preventDefault();
 
-            addWishList(item);
+            const { message } = await addWishList(item);
+            AddToast(message);
           }}
           className="w-[24px] h-[24px] md:w-[34px] md:h-[34px]  absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4 right-2 hover:bg-Secondary-2 hover:duration-500 hover:text-white-0"
         >

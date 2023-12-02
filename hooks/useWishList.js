@@ -14,20 +14,36 @@ const useWishList = create(
           const { wishList } = get();
           const checkValue = wishList.find((child) => child.id === item.id);
           if (checkValue) {
-            useMessage.getState().setMessage({
-              type: "warning",
-              time: 2000,
-              text: "product already taken in Wish List",
-            });
-          } else {
-            wishList.push(item);
-            useMessage.getState().setMessage({
+            // useMessage.getState().setMessage({
+            //   type: "warning",
+            //   time: 2000,
+            //   text: "product already taken in Wish List",
+            // });
+
+            return {
+              message: {
+                type: "warning",
+                time: 2000,
+                text: "product already taken in Wish List",
+              },
+            };
+          }
+          wishList.push(item);
+
+          // useMessage.getState().setMessage({
+          //   type: "success",
+          //   time: 2000,
+          //   text: "Add a product to Wish List",
+          // });
+          set({ wishList });
+
+          return {
+            message: {
               type: "success",
               time: 2000,
               text: "Add a product to Wish List",
-            });
-          }
-          set({ wishList });
+            },
+          };
         },
         removeWishList: async (item) => {
           const { wishList } = get();

@@ -6,13 +6,14 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 
 import AppButton from "@/components/App/AppButton/AppButton";
+import { useToast } from "@/components/ToastContext/ToastProvider";
 
 import useWishList from "@/hooks/useWishList";
 
 function ProductInfo({ product, amountProduct, setAmountProduct }) {
   const [pickSize, setPickSize] = useState("XS");
   const [pickColor, setPickColor] = useState(`bg-Blue-300`);
-
+  const { add: AddToast } = useToast();
   const { addWishList } = useWishList();
   const arrColors = [
     { id: 1, color: "bg-Blue-300" },
@@ -120,8 +121,9 @@ function ProductInfo({ product, amountProduct, setAmountProduct }) {
         <button
           title="Add Wishlist"
           type="button"
-          onClick={() => {
-            addWishList(product);
+          onClick={async () => {
+            const { message } = await addWishList(product);
+            AddToast(message);
           }}
           className="w-[44px] h-[44px] rounded-sm border flex justify-center items-center"
         >

@@ -1,40 +1,29 @@
+"use client";
+
 import React from "react";
+import dynamic from "next/dynamic";
 
 import useMessage from "@/hooks/useMessage";
+// import PropTypes from "prop-types";
 
-import Toast from "./Toast";
-// import Toast2 from "./Toast2";
+const Toast = dynamic(() => import("./ToastBackup"), {
+  ssr: false,
+});
 
 function AppAlert() {
   const { messages } = useMessage();
-
-  // const removeMessage = useCallback(
-  //   (idToRemove) => {
-  //     const newData =
-  //       messages.length > 0 &&
-  //       messages.filter((toast) => toast.id !== idToRemove);
-  //     reSetMessages(newData);
-  //   },
-  //   [messages],
-  // );
-
+  // console.log(`🚀🚀🚀!..messages`, messages);
   return (
     <div className="fixed  right-[50px] z-10 top-[50px] ">
-      {messages?.length > 0 &&
-        messages?.map((item, index) => {
-          return (
-            <Toast
-              key={item.id}
-              item={item}
-              index={index}
-              // messages={messages}
-              // removeMessage={removeMessage}
-            />
-          );
-        })}
-      {/* <Toast2 /> */}
+      {messages?.map((item, index) => {
+        return <Toast key={item.id} item={item} index={index} />;
+      })}
     </div>
   );
 }
 
 export default AppAlert;
+
+// AppAlert.propTypes = {
+//   messages: PropTypes.instanceOf(Object).isRequired,
+// };

@@ -1,13 +1,15 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import { AlertTriangle, CheckCircle, Info, XOctagon } from "lucide-react";
 import PropTypes from "prop-types";
 
 import useMessage from "@/hooks/useMessage";
 
-function Toast({ item }) {
+function Toast({ item, index }) {
   const { type, text, time } = item;
   const { reSetMessages, messages } = useMessage();
-  const wrapperRef = useRef();
+  const wrapperRef = useRef(null);
   // Time out
   const timeoutRef = useRef();
 
@@ -15,22 +17,23 @@ function Toast({ item }) {
     if (time) {
       timeoutRef.current = setTimeout(() => {
         wrapperRef?.current?.classList.add("animate-toastOut");
+        wrapperRef?.current?.addEventListener("animationend", () => {
+          const data = messages.filter((toast) => toast.id !== item.id);
+          console.log(`🚀🚀🚀!..data`, index);
+          reSetMessages(data);
+        });
       }, time);
     }
-    const cleartimeB = setTimeout(() => {
-      wrapperRef?.current?.addEventListener("animationend", () => {
-        reSetMessages(messages.filter((toast) => toast.id !== item.id));
-      });
-    }, time);
+
     return () => {
       clearTimeout(timeoutRef.current);
-      clearTimeout(cleartimeB);
     };
   }, []);
 
   // Progress (CUSTOME, USE IT OR NOT , IT"S UP TO YOU)
   const progressRef = useRef();
   const [progress, setProgress] = useState(0);
+
   useEffect(() => {
     const complete = 100;
     if (time) {
@@ -38,7 +41,7 @@ function Toast({ item }) {
         if (progress < complete) {
           setProgress((prev) => prev + 1);
         } else {
-          /* empty */
+          console.log(`🎶🎶🎶.. BYE BYE`);
         }
       }, time / complete);
     }
@@ -73,7 +76,7 @@ function Toast({ item }) {
         <span className="font-medium">Info alert! - </span> {text}
         <span
           style={{ width: `${progress}%` }}
-          className={`absolute bg-yellow-600 w-full h-2 rounded-lg bottom-0 right-0
+          className={`absolute bg-yellow-600 w-full h-2 rounded-lg bottom-0 -right-0
         
       `}
         />
@@ -89,7 +92,7 @@ function Toast({ item }) {
       </div>
 
       <p className=" text-base font-bold text-white-0">
-        Alert close after : {progress}
+        {/* Alert close after : {progress} */}
       </p>
     </div>
   );
@@ -101,4 +104,5 @@ Toast.propTypes = {
   item: PropTypes.instanceOf(Object).isRequired,
   // messages: PropTypes.instanceOf(Object).isRequired,
   // removeMessage: PropTypes.instanceOf(Function).isRequired,
+  index: PropTypes.instanceOf(Number).isRequired,
 };

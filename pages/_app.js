@@ -1,13 +1,14 @@
 import React from "react";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
 
 // import AppAlert from "@/components/App/AppAlert/AppAlert";
 // import MoveTop from "@/components/App/AppMoveTop/MoveTop";
 // import PhotoPreview from "@/components/App/AppPhotoView/PhotoPreview";
-import CircleLoading from "@/components/App/CircleLoading/CircleLoading";
-import Footer from "@/components/Layouts/Footer/Footer";
-import Header from "@/components/Layouts/Header/Header";
+// import CircleLoading from "@/components/App/CircleLoading/CircleLoading";
+// import Footer from "@/components/Layouts/Footer/Footer";
+// import Header from "@/components/Layouts/Header/Header";
+import ToastProvider from "@/components/ToastContext/ToastProvider";
 
 import "@/styles/globals.css";
 
@@ -19,42 +20,37 @@ import "@/styles/globals.css";
 // ssr: false,
 // loading: lazy,
 // });
-const MoveTop = dynamic(() => import("@/components/App/AppMoveTop/MoveTop"), {
-  ssr: false,
-  loading: () => {
-    <CircleLoading />;
-  },
-});
-const AppAlert = dynamic(() => import("@/components/App/AppAlert/AppAlert"), {
-  ssr: false,
-  loading: () => {
-    <CircleLoading />;
-  },
-});
+// const MoveTop = dynamic(() => import("@/components/App/AppMoveTop/MoveTop"), {
+//   ssr: false,
+//   loading: () => {
+//     <CircleLoading />;
+//   },
+// });
+// const AppAlert = dynamic(() => import("@/components/App/AppAlert/AppAlert"), {
+//   ssr: false,
+//   loading: () => {
+//     <CircleLoading />;
+//   },
+// });
 
-const PhotoPreview = dynamic(
-  () => import("@/components/App/AppPhotoView/PhotoPreview"),
-  {
-    ssr: false,
-    loading: () => {
-      <CircleLoading />;
-    },
-  },
-);
+// const PhotoPreview = dynamic(
+//   () => import("@/components/App/AppPhotoView/PhotoPreview"),
+//   {
+//     ssr: false,
+//     loading: () => {
+//       <CircleLoading />;
+//     },
+//   },
+// );
 export default function App({ Component, pageProps }) {
   return (
     <div className="font-poppins">
-      <title>Exclusive E-commerce Shop</title>
+      <ToastProvider Component={Component} pageProps={pageProps}>
+        <title>Exclusive E-commerce Shop</title>
 
-      <Header />
-      <Component {...pageProps} />
-      {/* FOOTER HAVE PROBLEM */}
-      <div className="bg-black-0">
-        <Footer />
-      </div>
-      <MoveTop />
-      <AppAlert />
-      <PhotoPreview />
+        <Component {...pageProps} />
+        {/* FOOTER HAVE PROBLEM */}
+      </ToastProvider>
     </div>
   );
 }

@@ -30,15 +30,14 @@ const useMessage = create(
       messages.push(newData);
       set({ messages });
     },
-    reSetMessages: async (itemId, ref) => {
-      const { messages } = get();
-      let newMessages = [];
-      await ref?.current?.classList.add("animate-toastOut");
+    reSetMessages: async (messages) => {
+      // console.log(`🚀🚀🚀!..itemId,ref`, itemId, ref);
+      // const { messages } = get();
+      // let newMessages = [];
+      // await ref?.current?.classList.add("animate-toastOut");
 
-      await ref?.current?.addEventListener("animationend", () => {
-        newMessages = messages.filter((toast) => toast.id !== itemId);
-      });
-      set({ messages: newMessages });
+      // console.log(`🚀🚀🚀!..newMessages`, newMessages);
+      set({ messages });
     },
   })),
 );
