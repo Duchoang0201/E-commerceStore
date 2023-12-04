@@ -60,7 +60,7 @@ function CardBanner({ products }) {
             slidesPerView: "auto",
             spaceBetween: 30,
             // slidesOffsetBefore: 135,
-            slidesOffsetAfter: 115,
+            slidesOffsetAfter: 285,
           },
 
           1010: {
@@ -97,9 +97,7 @@ function CardBanner({ products }) {
                   <ProductCart
                     index={index}
                     item={item}
-                    isEye={{ isActive: true }}
                     isDiscount={{ isActive: true, value: 20 }}
-                    isHeart={{ isActive: true }}
                   />
                 </Link>
               </SwiperSlide>

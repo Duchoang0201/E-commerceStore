@@ -3,7 +3,7 @@
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
 
-import useMessage from "./useMessage";
+// import useMessage from "./useMessage";
 
 const useWishList = create(
   devtools(
@@ -49,12 +49,19 @@ const useWishList = create(
           const { wishList } = get();
           const newList = wishList.filter((child) => child.id !== item.id);
 
-          useMessage.getState().setMessage({
-            type: "success",
-            time: 2000,
-            text: "Delete a product ",
-          });
+          // useMessage.getState().setMessage({
+          //   type: "success",
+          //   time: 2000,
+          //   text: "Delete a product ",
+          // });
           set({ wishList: newList });
+          return {
+            message: {
+              type: "success",
+              time: 2000,
+              text: "Delete a product out of Wish List",
+            },
+          };
         },
 
         reset: () => {

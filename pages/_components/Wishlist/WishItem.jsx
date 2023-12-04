@@ -5,6 +5,8 @@ import { Eye, Trash } from "lucide-react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
+import { useToast } from "@/components/ToastContext/ToastProvider";
+
 import useCartStore from "@/hooks/useCartStore";
 import useOpenPhoto from "@/hooks/useOpenPhoto";
 import useWishList from "@/hooks/useWishList";
@@ -15,6 +17,8 @@ function WishItem({ item, isEye, isTrash }) {
   const { setOpenPhoto } = useOpenPhoto();
   const { removeWishList } = useWishList();
   const { addCart } = useCartStore();
+  const { add: AddToast } = useToast();
+
   return (
     <div className="w-full relative ">
       <div className="group overflow-hidden relative w-auto rounded-md">
@@ -29,9 +33,10 @@ function WishItem({ item, isEye, isTrash }) {
           <button
             title="Add to Cart"
             type="submit"
-            onClick={(e) => {
+            onClick={async (e) => {
               e.preventDefault();
-              addCart(item);
+              const { message } = await addCart(item);
+              AddToast(message);
             }}
             className="bg-black text-white-0 py-2 px-5"
           >
@@ -56,9 +61,10 @@ function WishItem({ item, isEye, isTrash }) {
         {isTrash.isActive && (
           <button
             title="Delete"
-            onClick={(e) => {
+            onClick={async (e) => {
               e.preventDefault();
-              removeWishList(item);
+              const { message } = await removeWishList(item);
+              AddToast(message);
             }}
             type="button"
             className="max-w-[34px] max-h-[34px] w-full h-full absolute flex-col justify-center bg-Secondary-0 inline-flex items-center rounded-full top-4  right-2"

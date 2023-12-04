@@ -96,7 +96,7 @@ function Toasts({ id, time: duration, type, text }) {
       )}
 
       <div className="flex p-3">
-        <div className="inline-flex justify-center items-center  text-red-500">
+        <div className="inline-flex justify-center items-center  ">
           {type === "infor" && <Info size={60} />}
           {type === "danger" && <XOctagon size={60} />}
           {type === "success" && <CheckCircle size={60} />}

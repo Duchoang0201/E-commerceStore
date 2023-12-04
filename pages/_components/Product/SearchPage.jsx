@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "@/components/Commons/ProductCard";
 
 function SearchPage({ data }) {
   return (

@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-import ProductCard from "../../../components/Commons/ProductCard";
+import ProductCard from "@/components/Commons/ProductCard";
 
 function SearchPage({ data }) {
   return (
@@ -16,9 +16,7 @@ function SearchPage({ data }) {
               <Link key={item.title} href={`/products/${item.id}`}>
                 <ProductCard
                   item={item}
-                  isEye={{ isActive: true }}
                   isDiscount={{ isActive: false, value: 20 }}
-                  isHeart={{ isActive: true }}
                 />
               </Link>
             ))
