@@ -4,8 +4,6 @@ import { Head, Html, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en" title="Exclusive" suppressHydrationWarning="false">
-      <title>Exclusive E-commerce Shop</title>
-
       <Head>
         <link rel="preload" href="/path/to/image.ext" as="image" />
         <meta

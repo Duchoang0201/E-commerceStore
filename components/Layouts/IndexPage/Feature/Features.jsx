@@ -57,7 +57,7 @@ function Features() {
           </div>
         </div>
 
-        <div className=" flex flex-col justify-between gap-y-2">
+        <div className=" flex flex-col gap-2 md:justify-between ">
           <div
             className="max-w-[570px]  relative"
             style={{ backgroundColor: "#0D0D0D" }}
@@ -83,7 +83,7 @@ function Features() {
             </ul>
           </div>
 
-          <div className=" md:max-h-[284px] md:flex md:flex-row md:justify-between flex flex-row gap-2 ">
+          <div className="  h-auto flex flex-row justify-between gap-2 ">
             <div className="bg-black-0 relative ">
               {" "}
               <div className="w-full h-auto text-white-0 px-10 pt-[31px] pb-8 relative">

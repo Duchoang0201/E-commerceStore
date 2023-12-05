@@ -21,6 +21,8 @@ import { getDataFunction } from "@/libraries/getDataFunction";
 export default function Home({ products, categories, thisMonth, ourProducts }) {
   return (
     <main>
+      {/* <title>Exclusive E-commerce Shop</title> */}
+
       <IndexPage
         products={products}
         categories={categories}

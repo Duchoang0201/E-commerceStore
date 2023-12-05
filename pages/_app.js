@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 // import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
 
@@ -44,10 +45,12 @@ import "@/styles/globals.css";
 // );
 export default function App({ Component, pageProps }) {
   return (
-    <div className="font-poppins">
-      <ToastProvider Component={Component} pageProps={pageProps}>
-        <title>Exclusive E-commerce Shop</title>
+    <div className="font-poppins" title="Exclusive">
+      <Head>
+        <title>Exclusive</title>
+      </Head>
 
+      <ToastProvider Component={Component} pageProps={pageProps}>
         <Component {...pageProps} />
         {/* FOOTER HAVE PROBLEM */}
       </ToastProvider>

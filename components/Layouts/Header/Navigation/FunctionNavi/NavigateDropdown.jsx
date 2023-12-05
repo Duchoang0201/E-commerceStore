@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Heart, List, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
@@ -20,10 +20,21 @@ function NavigateDropdown({ isUser }) {
   const { carts } = useCartStore();
   const router = useRouter();
   const { wishList: loveList } = useWishList();
+  const searchRef = useRef();
 
   const { handleSubmit, control } = useForm();
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     router.push("/searchpage");
+    if (searchRef.current) {
+      clearTimeout(searchRef.current);
+    }
+    searchRef.current = setTimeout(() => {
+      if (data.search) {
+        router.push(`/searchpage?title=${data.search}`);
+      } else {
+        router.push(`/searchpage?title=${""}`);
+      }
+    }, [1000]);
   };
   return (
     <div className={`relative flex items-center `}>
