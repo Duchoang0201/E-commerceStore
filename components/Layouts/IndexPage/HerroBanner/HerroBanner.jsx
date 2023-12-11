@@ -61,7 +61,7 @@ function HerroBanner() {
                             <li key={child.name}>
                               <Link
                                 href={`/${child.href}`}
-                                className="text-base h-10 items-center   text-black w-auto flex flex-row justify-between"
+                                className="text-base h-10 items-center px-2  text-black w-auto flex flex-row justify-between"
                                 aria-current="page"
                               >
                                 <span className="hover:opacity-60">
