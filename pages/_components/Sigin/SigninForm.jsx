@@ -42,7 +42,7 @@ function SigninForm() {
       router.reload("/");
       setLoadingCom(false);
     } catch (error) {
-      console.log(`🚀🚀🚀!..error`, error);
+      setLoadingCom(false);
     }
   };
 

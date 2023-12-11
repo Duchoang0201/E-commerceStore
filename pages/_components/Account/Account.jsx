@@ -116,7 +116,6 @@ function Account() {
                               email: enteredEmail,
                             },
                           );
-                          console.log(`🚀🚀🚀!..data`, data);
                           if (data.isAvailable) {
                             setError("email", {
                               type: "pattern",
@@ -130,7 +129,6 @@ function Account() {
                           }
                         } catch (error) {
                           // Handle Axios request errors here
-                          console.error("Error:", error);
                         }
                       }, 1500);
                     } else {

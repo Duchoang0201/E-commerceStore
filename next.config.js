@@ -25,6 +25,7 @@ const nextConfig = {
       "t3.ftcdn.net",
       "images.saymedia-content.com",
       "prodimage.images-bn.com",
+      "https://imgur.com/",
     ],
     remotePatterns: [
       {
